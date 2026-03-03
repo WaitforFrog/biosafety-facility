@@ -2,1202 +2,458 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>洁净与生物安全工程解决方案矩阵</title>
+  <title>洁净与生物安全工程解决方案矩阵 · 文档导航</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="面向生物制药、P2/P3/P4 实验室与高等级洁净空间的整体装备与工程解决方案矩阵：气密门、传递窗、BIBO、VHP 灭菌系统等关键设备选型与技术洞察。">
   <style>
-    :root {
-      --bg: #050816;
-      --bg-elevated: rgba(15, 23, 42, 0.92);
-      --bg-card: rgba(15, 23, 42, 0.88);
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.18);
-      --accent-strong: rgba(56, 189, 248, 0.55);
-      --accent-secondary: #a855f7;
-      --border-subtle: rgba(148, 163, 184, 0.35);
-      --text-main: #e5e7eb;
-      --text-soft: #9ca3af;
-      --text-muted: #6b7280;
-      --danger: #fb7185;
-      --radius-lg: 18px;
-      --radius-xl: 28px;
-      --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.85);
-      --shadow-subtle: 0 18px 50px rgba(15, 23, 42, 0.7);
-      --blur: 18px;
+    :root{
+      --bg:#ffffff;
+      --bg-alt:#f3f4f6;
+      --border:#e5e7eb;
+      --border-soft:#e5e7eb;
+      --text-main:#111827;
+      --text-soft:#4b5563;
+      --text-muted:#6b7280;
+      --accent:#2563eb;
+      --accent-soft:#eff6ff;
+      --sidebar-width:270px;
     }
-
-    * {
-      box-sizing: border-box;
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+      color:var(--text-main);
+      background:var(--bg-alt);
+      -webkit-font-smoothing:antialiased;
     }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background:
-        radial-gradient(130% 180% at 10% 0%, #0f172a 0%, #020617 45%, #020617 100%),
-        radial-gradient(120% 190% at 110% 20%, #0b1120 0%, #020617 55%, #020617 100%);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
+    .layout{
+      display:flex;
+      min-height:100vh;
     }
-
-    .page-frame {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 32px 18px 72px;
+    .sidebar{
+      width:var(--sidebar-width);
+      border-right:1px solid var(--border);
+      background:#ffffff;
+      padding:24px 20px;
+      position:sticky;
+      top:0;
+      align-self:flex-start;
+      max-height:100vh;
+      overflow:auto;
     }
-
-    @media (min-width: 1024px) {
-      .page-frame {
-        padding: 40px 12px 88px;
+    .logo{
+      font-weight:600;
+      font-size:17px;
+      margin-bottom:4px;
+    }
+    .logo span{
+      color:var(--accent);
+    }
+    .site-subtitle{
+      font-size:12px;
+      color:var(--text-muted);
+      margin-bottom:20px;
+    }
+    .menu-title{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--text-muted);
+      margin:16px 0 8px;
+    }
+    .nav-section{
+      margin-bottom:12px;
+    }
+    .nav-section-title{
+      font-size:13px;
+      font-weight:500;
+      margin-bottom:4px;
+    }
+    .nav-section-desc{
+      font-size:12px;
+      color:var(--text-soft);
+      margin-bottom:4px;
+    }
+    .nav-list{
+      list-style:none;
+      margin:0;
+      padding:0;
+      font-size:13px;
+    }
+    .nav-list li{
+      margin:1px 0;
+    }
+    .nav-list a{
+      display:block;
+      padding:3px 6px;
+      border-radius:4px;
+      color:var(--text-soft);
+      text-decoration:none;
+    }
+    .nav-list a:hover{
+      background:var(--accent-soft);
+      color:var(--accent);
+    }
+    .nav-list a strong{
+      font-weight:500;
+      color:var(--text-main);
+    }
+    .content{
+      flex:1;
+      min-width:0;
+      padding:32px 24px 48px;
+    }
+    @media (max-width:768px){
+      .layout{
+        flex-direction:column;
+      }
+      .sidebar{
+        width:100%;
+        position:static;
+        border-right:none;
+        border-bottom:1px solid var(--border);
+      }
+      .content{
+        padding:20px 16px 32px;
       }
     }
-
-    .glass-shell {
-      border-radius: 26px;
-      border: 1px solid rgba(148, 163, 184, 0.38);
-      background:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.18), transparent 60%),
-        radial-gradient(circle at 100% 0, rgba(168, 85, 247, 0.16), transparent 55%),
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.92));
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-      position: relative;
+    article{
+      max-width:860px;
+      margin:0 auto;
+      background:#ffffff;
+      border-radius:8px;
+      border:1px solid var(--border);
+      padding:28px 26px 32px;
     }
-
-    .glass-shell::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 10% 0%, rgba(148, 163, 184, 0.12), transparent 55%),
-        radial-gradient(circle at 90% 0%, rgba(148, 163, 184, 0.16), transparent 50%);
-      mix-blend-mode: soft-light;
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .shell-inner {
-      position: relative;
-      z-index: 1;
-      padding: 26px 18px 28px;
-    }
-
-    @media (min-width: 1024px) {
-      .shell-inner {
-        padding: 32px 26px 34px;
+    @media (max-width:640px){
+      article{
+        padding:18px 16px 24px;
       }
     }
-
-    header {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.32);
-      padding-bottom: 18px;
-      margin-bottom: 18px;
-    }
-
-    @media (min-width: 768px) {
-      header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
-
-    .brand-block {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background:
-        radial-gradient(circle at 30% 0, rgba(56, 189, 248, 0.7), transparent 55%),
-        radial-gradient(circle at 80% 100%, rgba(59, 130, 246, 0.7), transparent 60%),
-        radial-gradient(circle at 0 100%, rgba(8, 47, 73, 0.95), rgba(15, 23, 42, 1));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 0 1px rgba(15, 23, 42, 1),
-        0 18px 45px rgba(15, 23, 42, 0.95);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .brand-mark::after {
-      content: "";
-      position: absolute;
-      inset: 18%;
-      border-radius: inherit;
-      border: 1px solid rgba(226, 232, 240, 0.38);
-      box-shadow: inset 0 0 22px rgba(15, 23, 42, 0.8);
-    }
-
-    .brand-mark span {
-      font-size: 18px;
-      font-weight: 650;
-      letter-spacing: 0.08em;
-      color: #e5f6ff;
-      text-shadow: 0 0 18px rgba(15, 23, 42, 0.9);
-    }
-
-    .brand-meta h1 {
-      margin: 0;
-      font-size: 20px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #e5e7eb;
-    }
-
-    .brand-meta p {
-      margin: 4px 0 0;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .tagline {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    @media (min-width: 768px) {
-      .tagline {
-        align-items: flex-end;
-      }
-    }
-
-    .tagline-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 11px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.2), transparent 60%),
-        rgba(15, 23, 42, 0.9);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-
-    .tag-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #22c55e, #166534);
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
-    }
-
-    .tagline span {
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr;
-      gap: 20px;
-      margin-bottom: 10px;
-    }
-
-    @media (min-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-        gap: 24px;
-        align-items: flex-start;
-      }
-    }
-
-    .hero-main-title {
-      font-size: clamp(24px, 3vw, 30px);
-      line-height: 1.25;
-      margin: 4px 0 12px;
-      background: linear-gradient(120deg, #e5e7eb, #bae6fd, #e5e7eb);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 13px;
-      color: var(--text-soft);
-      max-width: 32rem;
-    }
-
-    .hero-subtitle strong {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
-
-    .hero-meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .hero-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.96));
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .hero-chip span.icon {
-      width: 16px;
-      height: 16px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, var(--accent), transparent 60%);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      color: #e5f6ff;
-    }
-
-    .hero-panel {
-      border-radius: 20px;
-      padding: 14px 14px 13px;
-      background:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.16), transparent 60%),
-        radial-gradient(circle at 100% 0, rgba(168, 85, 247, 0.18), transparent 55%),
-        rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: var(--shadow-subtle);
-      position: relative;
-      overflow: hidden;
-    }
-
-    @media (min-width: 900px) {
-      .hero-panel {
-        padding: 16px 16px 15px;
-      }
-    }
-
-    .hero-panel::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 0, rgba(248, 250, 252, 0.14), transparent 60%);
-      mix-blend-mode: soft-light;
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    .hero-panel-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 10px;
-      align-items: center;
-    }
-
-    @media (max-width: 640px) {
-      .hero-panel-inner {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .hero-panel-label {
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .hero-panel-title {
-      margin: 0 0 8px;
-      font-size: 14px;
-      color: #e5e7eb;
-    }
-
-    .hero-panel-title strong {
-      color: #f9fafb;
-      font-weight: 600;
-    }
-
-    .hero-panel-ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .hero-panel-ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-      margin-bottom: 4px;
-    }
-
-    .hero-panel-bullet {
-      width: 4px;
-      height: 4px;
-      margin-top: 6px;
-      border-radius: 999px;
-      background: var(--accent-secondary);
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      align-items: flex-end;
-      font-size: 11px;
-    }
-
-    @media (max-width: 640px) {
-      .hero-badges {
-        align-items: flex-start;
-      }
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.15), transparent 60%),
-        rgba(15, 23, 42, 0.96);
-      color: var(--text-soft);
-    }
-
-    .hero-badge strong {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
-
-    .hero-badge-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, var(--accent), #0369a1);
-      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18);
-    }
-
-    .section-header {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin: 22px 0 12px;
-    }
-
-    @media (min-width: 768px) {
-      .section-header {
-        flex-direction: row;
-        align-items: baseline;
-        justify-content: space-between;
-      }
-    }
-
-    .section-title {
-      font-size: 13px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .section-subtitle {
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .pill-switch-row {
-      display: inline-flex;
-      padding: 3px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: rgba(15, 23, 42, 0.85);
-      font-size: 11px;
-      gap: 4px;
-    }
-
-    .pill-switch-pill {
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      color: var(--text-muted);
-      cursor: default;
-    }
-
-    .pill-switch-pill.is-active {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(56, 189, 248, 0.05));
-      border-color: rgba(56, 189, 248, 0.65);
-      color: #e5f6ff;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 12px;
-    }
-
-    @media (min-width: 800px) {
-      .grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    .category-card {
-      position: relative;
-      border-radius: 18px;
-      padding: 12px 12px 11px;
-      background:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.16), transparent 60%),
-        rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: var(--shadow-subtle);
-      overflow: hidden;
-    }
-
-    .category-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.4), transparent 55%);
-      pointer-events: none;
-      opacity: 0.8;
-    }
-
-    .category-inner {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      height: 100%;
-    }
-
-    .category-label-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 4px;
-    }
-
-    .category-tag {
-      font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .category-chip {
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      font-size: 10px;
-      color: var(--text-muted);
-    }
-
-    .category-title {
-      margin: 0;
-      font-size: 13px;
-      color: #e5e7eb;
-    }
-
-    .category-title span {
-      color: #bae6fd;
-    }
-
-    .category-meta {
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .category-meta strong {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
-
-    .link-list {
-      margin: 6px 0 0;
-      padding: 0;
-      list-style: none;
-      font-size: 11px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .link-list li {
-      display: flex;
-      align-items: baseline;
-      gap: 5px;
-    }
-
-    .link-dot {
-      width: 3px;
-      height: 3px;
-      margin-top: 6px;
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.9);
-      flex-shrink: 0;
-    }
-
-    .link-list a {
-      color: #e5e7eb;
-      text-decoration: none;
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding-bottom: 1px;
-      border-bottom: 1px solid transparent;
-    }
-
-    .link-list a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -1px;
-      width: 0;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(56, 189, 248, 0.8), rgba(59, 130, 246, 0.9));
-      transition: width 0.18s ease-out;
-    }
-
-    .link-list a span.path {
-      color: var(--text-muted);
-      font-size: 10px;
-    }
-
-    .category-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 6px;
-      font-size: 10px;
-      color: var(--text-muted);
-    }
-
-    .category-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.6);
-      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.25), transparent 60%),
-        rgba(15, 23, 42, 0.96);
-      color: #e0f2fe;
-      text-decoration: none;
-    }
-
-    .category-cta span.icon {
-      font-size: 11px;
-    }
-
-    .category-cta span.label {
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 9px;
-    }
-
-    .advisory {
-      margin-top: 18px;
-      border-radius: 17px;
-      border: 1px dashed rgba(148, 163, 184, 0.5);
-      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.16), transparent 55%),
-        rgba(15, 23, 42, 0.92);
-      padding: 10px 11px;
-      font-size: 11px;
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 10px;
-      align-items: start;
-    }
-
-    @media (max-width: 640px) {
-      .advisory {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .advisory-title {
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .advisory p {
-      margin: 0;
-      color: var(--text-soft);
-    }
-
-    .advisory strong {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
-
-    .advisory-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      justify-content: flex-end;
-    }
-
-    @media (max-width: 640px) {
-      .advisory-grid {
-        justify-content: flex-start;
-      }
-    }
-
-    .advisory-pill {
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.95);
-      color: var(--text-soft);
-    }
-
-    .advisory-pill strong {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
-
-    a:hover {
-      color: #f9fafb;
-    }
-
-    .category-card:hover {
-      border-color: rgba(56, 189, 248, 0.7);
-    }
-
-    .category-card:hover .category-title span {
-      color: #f9fafb;
-    }
-
-    .category-card:hover .link-list a::after {
-      width: 100%;
+    header.doc-header{
+      border-bottom:1px solid var(--border-soft);
+      padding-bottom:12px;
+      margin-bottom:20px;
+    }
+    .doc-eyebrow{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:var(--text-muted);
+      margin-bottom:4px;
+    }
+    h1{
+      font-size:22px;
+      margin:0 0 4px;
+    }
+    .doc-lead{
+      font-size:14px;
+      color:var(--text-soft);
+      margin:0;
+    }
+    section+section{
+      margin-top:24px;
+    }
+    h2{
+      font-size:16px;
+      margin:0 0 8px;
+      padding-top:8px;
+      border-top:1px solid var(--border-soft);
+    }
+    p{
+      font-size:14px;
+      line-height:1.7;
+      margin:6px 0 10px;
+    }
+    ul{
+      padding-left:18px;
+      margin:6px 0 10px;
+    }
+    li{
+      font-size:14px;
+      line-height:1.6;
+      margin:2px 0;
+    }
+    code{
+      font-family:Menlo,Monaco,Consolas,monospace;
+      font-size:13px;
+      background:#f3f4f6;
+      padding:1px 4px;
+      border-radius:3px;
+    }
+    a{
+      color:var(--accent);
+    }
+    a:hover{
+      text-decoration:none;
+    }
+    .category-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:12px;
+    }
+    .category-card{
+      border:1px solid var(--border-soft);
+      border-radius:6px;
+      padding:10px 10px 12px;
+      background:#f9fafb;
+    }
+    .category-name{
+      font-size:14px;
+      font-weight:500;
+      margin:0 0 2px;
+    }
+    .category-note{
+      font-size:12px;
+      color:var(--text-soft);
+      margin:0 0 6px;
+    }
+    .link-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .link-list li{
+      margin:2px 0;
+    }
+    .link-list a{
+      font-size:13px;
+      color:var(--accent);
+      text-decoration:none;
+    }
+    .link-list a span.path{
+      font-size:11px;
+      color:var(--text-muted);
+    }
+    .advisory{
+      margin-top:20px;
+      padding:10px 11px;
+      border-radius:6px;
+      border:1px dashed var(--border);
+      background:#f9fafb;
+      font-size:12px;
+      color:var(--text-soft);
+    }
+    .advisory strong{
+      color:var(--text-main);
     }
   </style>
 </head>
 <body>
-  <div class="page-frame">
-    <div class="glass-shell">
-      <div class="shell-inner">
-        <header>
-          <div class="brand-block">
-            <div class="brand-mark">
-              <span>JB</span>
-            </div>
-            <div class="brand-meta">
-              <h1>JIEHAO BIOSAFETY MATRIX</h1>
-              <p>洁净与生物安全工程 · 选型推荐矩阵</p>
-            </div>
-          </div>
-          <div class="tagline">
-            <div class="tagline-pill">
-              <span class="tag-dot"></span>
-              <span>From landing page drafts to an interconnected solution portal</span>
-            </div>
-            <span>基于现有引流文章，按产品维度重组为可浏览的方案导航。</span>
-          </div>
-        </header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="logo"><span>Jiehao</span> Biosafety Matrix</div>
+    <p class="site-subtitle">将单篇引流文整理成可浏览的「文档站」导航。</p>
 
-        <section class="hero">
-          <div>
-            <h2 class="hero-main-title">
-              生物安全实验室 & GMP 洁净空间<br>
-              关键装备选型与场景化解决方案矩阵
-            </h2>
-            <p class="hero-subtitle">
-              将单篇引流文组合为可导航的信息架构：围绕
-              <strong>气密门、传递窗、BIBO、VHP 灭菌、洗眼/冲淋、防爆</strong>
-              等核心设备，按
-              <strong>应用场景 · 参数边界 · 采购避坑</strong>
-              三个维度梳理内容。
-            </p>
-            <div class="hero-meta-row">
-              <div class="hero-chip">
-                <span class="icon">●</span>
-                <span>覆盖 P2 / P3 / P4 & 高等级 GMP 典型场景</span>
-              </div>
-              <div class="hero-chip">
-                <span class="icon">∞</span>
-                <span>持续扩展：新增引流文可直接挂载到矩阵中</span>
-              </div>
-            </div>
-          </div>
+    <div class="menu-title">Sections</div>
 
-          <aside class="hero-panel">
-            <div class="hero-panel-inner">
-              <div>
-                <div class="hero-panel-label">Information Architecture Snapshot</div>
-                <p class="hero-panel-title">
-                  从“单页 SEO 文案”升级为
-                  <strong>可被浏览、可被记住的解决方案入口</strong>
-                </p>
-                <ul class="hero-panel-ul">
-                  <li>
-                    <span class="hero-panel-bullet"></span>
-                    <span>以「装备维度」组织：气密门、传递窗、BIBO、VHP、洁净门/房、冲淋/洗眼等核心族群。</span>
-                  </li>
-                  <li>
-                    <span class="hero-panel-bullet"></span>
-                    <span>每个族群下挂接多篇深度文章：<em>选型指南 · 参数边界 · 5 年使用成本对比 · 典型项目坑位</em>。</span>
-                  </li>
-                  <li>
-                    <span class="hero-panel-bullet"></span>
-                    <span>结构上留足余量，后续可引入「行业场景」或「标准条款」二级导航。</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="hero-badges">
-                <div class="hero-badge">
-                  <span class="hero-badge-dot"></span>
-                  <span><strong>两类入口</strong> · 「门 / 通道」与「空间 / 环境控制」</span>
-                </div>
-                <div class="hero-badge">
-                  <span class="hero-badge-dot"></span>
-                  <span><strong>三类内容形态</strong> · 指南 / 对比 / 避坑案例</span>
-                </div>
-              </div>
-            </div>
-          </aside>
-        </section>
-
-        <section class="section-header">
-          <div>
-            <div class="section-title">Primary Navigation · 按装备族群浏览</div>
-            <div class="section-subtitle">
-              以下分组基于你当前的引流文分类，后续新增产品可按同样结构接入。
-            </div>
-          </div>
-          <div class="pill-switch-row">
-            <div class="pill-switch-pill is-active">按产品族群</div>
-            <div class="pill-switch-pill">（预留）按应用场景 / 实验室等级</div>
-          </div>
-        </section>
-
-        <section class="grid">
-          <!-- 气密门 / 门系统 -->
-          <article class="category-card">
-            <div class="category-inner">
-              <div class="category-label-row">
-                <div class="category-tag">Door & Containment</div>
-                <div class="category-chip">气密门 · 洁净门 · 密闭房</div>
-              </div>
-              <h3 class="category-title">
-                <span>门系统与密闭空间</span> · 从人流与压差边界入手
-              </h3>
-              <p class="category-meta">
-                覆盖 <strong>不锈钢密闭门 / 洁净门 / 生物安全充气气密门 / 压紧式气密门 / 不锈钢密闭房</strong> 等，
-                聚焦高压差工况、VHP 兼容性与 5–10 年使用周期 TCO。
-              </p>
-              <ul class="link-list">
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="不锈钢密闭门/引流层/2025生物安全实验室密闭门选型指南：P2P3P4级实验室主流气密门厂家盘点/2025生物安全实验室密闭门选型指南：P2P3P4级实验室主流气密门厂家盘点_EN.html">
-                    2025 生物安全实验室密闭门选型指南
-                    <span class="path">/ 不锈钢密闭门</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="不锈钢密闭门/引流层/应对≥2500Pa压差+VHP灭菌工况：生物安全实验室密闭门采购必看的3个硬核指标/应对≥2500Pa压差+VHP灭菌工况：生物安全实验室密闭门采购必看的3个硬核指标_EN.html">
-                    ≥2500Pa + VHP 工况下的密闭门三大硬指标
-                    <span class="path">/ 不锈钢密闭门</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="不锈钢密闭门/引流层/避坑指南：普通密闭门vs高标准气密门，5年使用周期的隐性成本对比分析/避坑指南：普通密闭门vs高标准气密门，5年使用周期的隐性成本对比分析_EN.html">
-                    普通密闭门 vs 高标准气密门：5 年隐性成本对比
-                    <span class="path">/ 不锈钢密闭门</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="不锈钢洁净门/引流层/2025生物制药洁净室不锈钢门选型指南：304vs316L材质对比及国内主流供应商盘点/2025生物制药洁净室不锈钢门选型指南：304vs316L材质对比及国内主流供应商盘点_EN.html">
-                    洁净室不锈钢门 304 vs 316L 选型指南
-                    <span class="path">/ 不锈钢洁净门</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="category-footer">
-                <span>同时关联：生物安全充气气密门 / 生物安全压紧气密门 / 机械压紧式气密门</span>
-                <a class="category-cta" href="生物安全充气气密门/引流层">
-                  <span class="icon">↗</span>
-                  <span class="label">View all</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 传递窗 / BIBO / 高效进排风口 -->
-          <article class="category-card">
-            <div class="category-inner">
-              <div class="category-label-row">
-                <div class="category-tag">Transfer & Filtration</div>
-                <div class="category-chip">传递窗 · BIBO · 高效进排风口</div>
-              </div>
-              <h3 class="category-title">
-                <span>物料与样品流转</span> · 泄漏风险最集中的接口
-              </h3>
-              <p class="category-meta">
-                围绕 <strong>普通 / 自净 / 生物安全充气 / 机械压紧 / 防爆 / 氙光传递窗</strong> 与
-                <strong>BIBO / 生物安全型高效进排风口</strong>，聚焦压差分级、过滤效率与灭菌兼容性。
-              </p>
-              <ul class="link-list">
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="BIBO（袋进袋出）/引流层">
-                    BIBO（袋进袋出）系统应用与典型工况
-                    <span class="path">/ BIBO（袋进袋出）</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="生物安全充气密闭传递窗/引流层">
-                    生物安全充气密闭传递窗：适用场景与参数边界
-                    <span class="path">/ 生物安全充气密闭传递窗</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="生物安全机械压紧传递窗/引流层">
-                    机械压紧传递窗：如何兼顾操作便利与气密性能
-                    <span class="path">/ 生物安全机械压紧传递窗</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="防爆传递窗/引流层">
-                    防爆传递窗在高危化学 / 易燃环境下的选型要点
-                    <span class="path">/ 防爆传递窗</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="category-footer">
-                <span>补充：生物安全型高效进排风口 / UV 传递窗 / 氙光传递窗</span>
-                <a class="category-cta" href="传递窗/引流层">
-                  <span class="icon">↗</span>
-                  <span class="label">View all</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- VHP / 熏蒸 / 雾化消毒 -->
-          <article class="category-card">
-            <div class="category-inner">
-              <div class="category-label-row">
-                <div class="category-tag">Decontamination</div>
-                <div class="category-chip">VHP · 熏蒸舱 · 雾淋 / 雾化</div>
-              </div>
-              <h3 class="category-title">
-                <span>空间与物体表面消毒</span> · VHP 与化学熏蒸体系
-              </h3>
-              <p class="category-meta">
-                包含 <strong>VHP 发生器 / VHP 传递窗 / 汽化过氧化氢头套熏蒸消毒舱 / 头套熏蒸舱 / 雾淋室 / 移动式雾化消毒机</strong> 等，
-                从材质兼容性与验证逻辑出发组织内容。
-              </p>
-              <ul class="link-list">
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="VHP 发生器/引流层">
-                    VHP 发生器：适配哪些实验室与密闭空间？
-                    <span class="path">/ VHP 发生器</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="VHP传递窗/引流层">
-                    带 VHP 功能的传递窗：项目常见误区与验证要点
-                    <span class="path">/ VHP 传递窗</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="汽化过氧化氢头套熏蒸消毒舱/引流层">
-                    汽化过氧化氢头套熏蒸消毒舱：对接人员与物料流程
-                    <span class="path">/ 汽化过氧化氢头套熏蒸消毒舱</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="雾淋室/引流层">
-                    雾淋室 vs 传统风淋：适用边界与组合方案
-                    <span class="path">/ 雾淋室</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="category-footer">
-                <span>扩展：头套熏蒸舱 / 移动式雾化消毒机 / 化学淋浴</span>
-                <a class="category-cta" href="头套熏蒸舱/引流层">
-                  <span class="icon">↗</span>
-                  <span class="label">View all</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 洁净室局部控制：层流罩 / 称量罩 / 层流转运车 -->
-          <article class="category-card">
-            <div class="category-inner">
-              <div class="category-label-row">
-                <div class="category-tag">Localized Clean Environments</div>
-                <div class="category-chip">层流罩 · 称量罩 · 层流转运车</div>
-              </div>
-              <h3 class="category-title">
-                <span>局部A级 / 关键工位控制</span> · 从场景而不是设备出发
-              </h3>
-              <p class="category-meta">
-                覆盖 <strong>层流罩 / 称量罩 / 层流转运车</strong> 与
-                <strong>无菌检查隔离器</strong>，回答“是建整间 A 级？还是用局部净化补强？”这类预算与合规并行的问题。
-              </p>
-              <ul class="link-list">
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="层流罩/引流层/2025年制药洁净室层流罩选型指南：A级区域局部净化方案与主流供应商对比/2025年制药洁净室层流罩选型指南：A级区域局部净化方案与主流供应商对比_EN.html">
-                    制药洁净室层流罩选型指南：A级局部净化方案
-                    <span class="path">/ 层流罩</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="称量罩/引流层/2025年制药实验室称量罩选型指南：GMP合规厂家技术对比与应用场景解析/2025年制药实验室称量罩选型指南：GMP合规厂家技术对比与应用场景解析_EN.html">
-                    称量罩选型指南：GMP 合规与关键参数
-                    <span class="path">/ 称量罩</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="称量罩/引流层/高活性API称量环境下≥500Pa压差工况：称量罩气密性与过滤效率的3大核心指标/高活性API称量环境下≥500Pa压差工况：称量罩气密性与过滤效率的3大核心指标_EN.html">
-                    高活性 API 称量环境 ≥500Pa 压差工况下的关键指标
-                    <span class="path">/ 称量罩</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="无菌检查隔离器/引流层">
-                    无菌检查隔离器：什么时候值得上隔离器体系？
-                    <span class="path">/ 无菌检查隔离器</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="category-footer">
-                <span>同时串联：层流转运车 / 生物安全密闭房 / 紧急冲淋房</span>
-                <a class="category-cta" href="无菌检查隔离器/引流层">
-                  <span class="icon">↗</span>
-                  <span class="label">View all</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 安全互锁 / 门禁 / 人员流线 -->
-          <article class="category-card">
-            <div class="category-inner">
-              <div class="category-label-row">
-                <div class="category-tag">Flow & Interlock</div>
-                <div class="category-chip">互锁系统 · 机械 / 充气门 · 压差联动</div>
-              </div>
-              <h3 class="category-title">
-                <span>人流 & 物流路径设计</span> · 互锁与压差控制的交汇点
-              </h3>
-              <p class="category-meta">
-                围绕 <strong>互锁系统 / 单气囊 & 双气囊充气式气密门 / 机械压紧式气密门</strong> 等，
-                聚焦门禁、BMS / BAS 联动与 VHP / 压差安全逻辑。
-              </p>
-              <ul class="link-list">
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="互锁系统/引流层">
-                    生物安全实验室互锁系统：从逻辑图到现场调试
-                    <span class="path">/ 互锁系统</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="单气囊充气式气密门/引流层">
-                    单气囊充气式气密门：适配哪些实验室和压差等级？
-                    <span class="path">/ 单气囊充气式气密门</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="双气囊充气式气密门/引流层">
-                    双气囊充气式气密门：相对单气囊的升级点在哪里？
-                    <span class="path">/ 双气囊充气式气密门</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="生物安全压紧气密门/引流层">
-                    生物安全压紧气密门：项目验收中的高频问题
-                    <span class="path">/ 生物安全压紧气密门</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="category-footer">
-                <span>延伸阅读：机械压紧式气密门 / 生物安全充气气密门</span>
-                <a class="category-cta" href="机械压紧式气密门/引流层">
-                  <span class="icon">↗</span>
-                  <span class="label">View all</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 洗眼 / 冲淋 / 人员防护 -->
-          <article class="category-card">
-            <div class="category-inner">
-              <div class="category-label-row">
-                <div class="category-tag">Emergency Protection</div>
-                <div class="category-chip">洗眼器 · 冲淋房 · 化学淋浴</div>
-              </div>
-              <h3 class="category-title">
-                <span>紧急冲淋 / 洗眼与化学防护</span> · 人因工程与合规并重
-              </h3>
-              <p class="category-meta">
-                覆盖 <strong>立式 / 挂壁式 / 复合式洗眼器 · 紧急冲淋房 · 化学淋浴</strong> 等，
-                对应生物制药、化学品与高危物料环境的应急预案要求。
-              </p>
-              <ul class="link-list">
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="复合式洗眼器/引流层">
-                    复合式洗眼器：与实验室布置 / 管路条件的匹配关系
-                    <span class="path">/ 复合式洗眼器</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="立式洗眼器/引流层">
-                    立式洗眼器 vs 挂壁式：不同工位下的优先选择
-                    <span class="path">/ 立式洗眼器 & 挂壁式洗眼器</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="紧急冲淋房/引流层">
-                    紧急冲淋房：与人员流线、排风系统的协同设计
-                    <span class="path">/ 紧急冲淋房</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="化学淋浴/引流层">
-                    化学淋浴：区别于普通冲淋系统的关键技术点
-                    <span class="path">/ 化学淋浴</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="category-footer">
-                <span>与前端：气密门 / 传递窗 / 雾淋室 的应急预案联动</span>
-                <a class="category-cta" href="紧急冲淋房/引流层">
-                  <span class="icon">↗</span>
-                  <span class="label">View all</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 其他 / 预留拓展位 -->
-          <article class="category-card">
-            <div class="category-inner">
-              <div class="category-label-row">
-                <div class="category-tag">Extended Matrix</div>
-                <div class="category-chip">UV / 氙光 / 防爆 · 阀门 · 未来扩展</div>
-              </div>
-              <h3 class="category-title">
-                <span>补充模块与未来扩展</span> · 留给后续新增内容的空间
-              </h3>
-              <p class="category-meta">
-                用于承载 <strong>UV 传递窗 / 氙光传递窗 / 防爆传递窗 / 密闭阀</strong> 等补充型设备，
-                以及未来计划新增的行业场景文章（ABSL-3、细胞治疗、疫苗车间等）。
-              </p>
-              <ul class="link-list">
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="UV传递窗/引流层">
-                    UV 传递窗在微生物与细胞实验中的适配场景
-                    <span class="path">/ UV 传递窗</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="氙光传递窗/引流层">
-                    氙光传递窗：与传统紫外 / VHP 的互补关系
-                    <span class="path">/ 氙光传递窗</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="密闭阀/引流层">
-                    密闭阀：在 BIBO 与排风系统中的角色
-                    <span class="path">/ 密闭阀</span>
-                  </a>
-                </li>
-                <li>
-                  <span class="link-dot"></span>
-                  <a href="防爆传递窗/引流层">
-                    防爆模块：与危化品 / 高能量设备对接的接口设计
-                    <span class="path">/ 防爆传递窗</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="category-footer">
-                <span>这一区域可以按后续内容扩展为「行业场景导航」</span>
-                <a class="category-cta" href="生物安全型高效进排风口/引流层">
-                  <span class="icon">↗</span>
-                  <span class="label">View all</span>
-                </a>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="advisory">
-          <div>
-            <div class="advisory-title">Content Strategy Note · 给未来扩展时看的几句话</div>
-            <p>
-              当前导航以 <strong>“装备族群”</strong> 为主轴，将你已有的深度引流文串成一个
-              <strong>可浏览的方案矩阵</strong>。后续若要做「行业场景」或「标准条款分解」，
-              可以在顶部再加一层「按场景浏览」入口，而不必推翻现有结构。
-            </p>
-          </div>
-          <div class="advisory-grid">
-            <div class="advisory-pill">
-              <strong>内容层</strong> · 继续用 Markdown 写长文，通过现有脚本生成 HTML
-            </div>
-            <div class="advisory-pill">
-              <strong>结构层</strong> · 按分类挂载到本页对应卡片中
-            </div>
-            <div class="advisory-pill">
-              <strong>表现层</strong> · 如有需要，可再叠加导航条 & 搜索功能
-            </div>
-          </div>
-        </section>
-      </div>
+    <div class="nav-section">
+      <div class="nav-section-title">门系统与密闭空间</div>
+      <p class="nav-section-desc">不锈钢密闭门、洁净门、密闭房等。</p>
+      <ul class="nav-list">
+        <li><a href="#doors"><strong>概览</strong> · 适用场景与文章入口</a></li>
+      </ul>
     </div>
-  </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">传递窗 / BIBO / 进排风口</div>
+      <ul class="nav-list">
+        <li><a href="#transfer"><strong>物料与样品流转</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">VHP & 空间消毒</div>
+      <ul class="nav-list">
+        <li><a href="#vhp"><strong>VHP / 熏蒸 / 雾化</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">局部洁净控制</div>
+      <ul class="nav-list">
+        <li><a href="#localized"><strong>层流罩 / 称量罩</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">互锁 & 流线</div>
+      <ul class="nav-list">
+        <li><a href="#interlock"><strong>互锁系统与门禁</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">紧急防护</div>
+      <ul class="nav-list">
+        <li><a href="#emergency"><strong>洗眼 / 冲淋 / 化学淋浴</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">扩展模块</div>
+      <ul class="nav-list">
+        <li><a href="#extended"><strong>UV / 氙光 / 防爆 / 阀门</strong></a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="content">
+    <article>
+      <header class="doc-header">
+        <div class="doc-eyebrow">Documentation · Overview</div>
+        <h1>洁净与生物安全工程解决方案矩阵</h1>
+        <p class="doc-lead">
+          参考 Hugo Book 风格，将所有引流文章当成一套「文档」，按设备族群整理导航，方便横向浏览与后续扩展。
+        </p>
+      </header>
+
+      <section id="doors">
+        <h2>1. 门系统与密闭空间（Door &amp; Containment）</h2>
+        <p>
+          这里收纳与 <strong>不锈钢密闭门 / 洁净门 / 生物安全充气门 / 压紧式气密门 / 不锈钢密闭房</strong>
+          相关的文章，重点回答压差等级、VHP 兼容性与 5–10 年 TCO。
+        </p>
+
+        <div class="category-grid">
+          <div class="category-card">
+            <p class="category-name">不锈钢密闭门</p>
+            <p class="category-note">P2 / P3 / P4 实验室通用的门体与选型边界。</p>
+            <ul class="link-list">
+              <li>
+                <a href="不锈钢密闭门/引流层/2025生物安全实验室密闭门选型指南：P2P3P4级实验室主流气密门厂家盘点/2025生物安全实验室密闭门选型指南：P2P3P4级实验室主流气密门厂家盘点_EN.html">
+                  2025 生物安全实验室密闭门选型指南
+                  <span class="path">/ 不锈钢密闭门</span>
+                </a>
+              </li>
+              <li>
+                <a href="不锈钢密闭门/引流层/应对≥2500Pa压差+VHP灭菌工况：生物安全实验室密闭门采购必看的3个硬核指标/应对≥2500Pa压差+VHP灭菌工况：生物安全实验室密闭门采购必看的3个硬核指标_EN.html">
+                  ≥2500Pa + VHP 工况下的三大硬指标
+                  <span class="path">/ 不锈钢密闭门</span>
+                </a>
+              </li>
+              <li>
+                <a href="不锈钢密闭门/引流层/避坑指南：普通密闭门vs高标准气密门，5年使用周期的隐性成本对比分析/避坑指南：普通密闭门vs高标准气密门，5年使用周期的隐性成本对比分析_EN.html">
+                  普通密闭门 vs 高标准气密门 · 5 年成本对比
+                  <span class="path">/ 不锈钢密闭门</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="category-card">
+            <p class="category-name">不锈钢洁净门</p>
+            <p class="category-note">洁净室用门的材质选择与厂商对比。</p>
+            <ul class="link-list">
+              <li>
+                <a href="不锈钢洁净门/引流层/2025生物制药洁净室不锈钢门选型指南：304vs316L材质对比及国内主流供应商盘点/2025生物制药洁净室不锈钢门选型指南：304vs316L材质对比及国内主流供应商盘点_EN.html">
+                  洁净室不锈钢门 304 vs 316L 选型指南
+                  <span class="path">/ 不锈钢洁净门</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="transfer">
+        <h2>2. 物料与样品流转（Transfer &amp; Filtration）</h2>
+        <p>
+          覆盖 <strong>普通 / 自净 / 生物安全充气 / 机械压紧 / 防爆 / 氙光传递窗</strong> 以及
+          <strong>BIBO</strong> 与生物安全型高效进排风口，聚焦泄漏风险与过滤 / 灭菌参数。
+        </p>
+        <p>导航入口（示例）：</p>
+        <ul>
+          <li><a href="传递窗/引流层">传递窗 · 中文索引页</a></li>
+          <li><a href="自净传递窗/引流层">自净传递窗 · 中文索引页</a></li>
+          <li><a href="BIBO（袋进袋出）/引流层">BIBO（袋进袋出）过滤系统</a></li>
+          <li><a href="生物安全型高效进排风口/引流层">生物安全型高效进排风口</a></li>
+        </ul>
+      </section>
+
+      <section id="vhp">
+        <h2>3. VHP 与空间消毒（Decontamination）</h2>
+        <p>
+          包含 <strong>VHP 发生器 / VHP 传递窗 / 汽化过氧化氢头套熏蒸消毒舱 / 头套熏蒸舱 / 雾淋室 / 移动式雾化消毒机</strong>，
+          重点是材料耐受性、灭菌验证与与 HVAC / BMS 的联动。
+        </p>
+        <ul>
+          <li><a href="VHP 发生器/引流层">VHP 发生器 · 相关文章入口</a></li>
+          <li><a href="VHP传递窗/引流层">VHP 传递窗 · 相关文章入口</a></li>
+          <li><a href="雾淋室/引流层">雾淋室 · 相关文章入口</a></li>
+          <li><a href="移动式雾化消毒机/引流层">移动式雾化消毒机 · 相关文章入口</a></li>
+        </ul>
+      </section>
+
+      <section id="localized">
+        <h2>4. 局部洁净环境（Localized Clean Environments）</h2>
+        <p>
+          围绕 <strong>层流罩 / 称量罩 / 层流转运车 / 无菌检查隔离器</strong>，比较「建整间 A 级房间」与
+          「用局部净化设备补强」两种策略的成本与风险。
+        </p>
+        <ul>
+          <li><a href="层流罩/引流层/2025年制药洁净室层流罩选型指南：A级区域局部净化方案与主流供应商对比/2025年制药洁净室层流罩选型指南：A级区域局部净化方案与主流供应商对比_EN.html">制药洁净室层流罩选型指南</a></li>
+          <li><a href="称量罩/引流层/2025年制药实验室称量罩选型指南：GMP合规厂家技术对比与应用场景解析/2025年制药实验室称量罩选型指南：GMP合规厂家技术对比与应用场景解析_EN.html">称量罩选型指南</a></li>
+          <li><a href="称量罩/引流层/高活性API称量环境下≥500Pa压差工况：称量罩气密性与过滤效率的3大核心指标/高活性API称量环境下≥500Pa压差工况：称量罩气密性与过滤效率的3大核心指标_EN.html">高活性 API 称量环境 ≥500Pa 指标</a></li>
+          <li><a href="无菌检查隔离器/引流层">无菌检查隔离器 · 索引页</a></li>
+        </ul>
+      </section>
+
+      <section id="interlock">
+        <h2>5. 互锁系统与流线（Flow &amp; Interlock）</h2>
+        <p>
+          聚焦 <strong>互锁系统、单 / 双气囊充气式气密门、生物安全压紧气密门、机械压紧式气密门</strong>，
+          对接人流 / 物流路径、门禁系统与压差 / 灭菌安全逻辑。
+        </p>
+        <ul>
+          <li><a href="互锁系统/引流层">互锁系统 · 技术路线与厂商对比</a></li>
+          <li><a href="单气囊充气式气密门/引流层">单气囊充气式气密门 · 应用场景</a></li>
+          <li><a href="双气囊充气式气密门/引流层">双气囊充气式气密门 · 对比分析</a></li>
+          <li><a href="生物安全压紧气密门/引流层">生物安全压紧气密门 · 项目验收要点</a></li>
+          <li><a href="机械压紧式气密门/引流层">机械压紧式气密门 · 相关文章入口</a></li>
+        </ul>
+      </section>
+
+      <section id="emergency">
+        <h2>6. 紧急防护（Emergency Protection）</h2>
+        <p>
+          收纳 <strong>立式 / 挂壁式 / 复合式洗眼器、紧急冲淋房、化学淋浴</strong> 等设备，讨论
+          人因工程、布局与法规要求。
+        </p>
+        <ul>
+          <li><a href="复合式洗眼器/引流层">复合式洗眼器 · 选型与布置</a></li>
+          <li><a href="立式洗眼器/引流层">立式洗眼器 · 相关文章入口</a></li>
+          <li><a href="挂壁式洗眼器/引流层">挂壁式洗眼器 · 相关文章入口</a></li>
+          <li><a href="紧急冲淋房/引流层">紧急冲淋房 · 与排风系统协同</a></li>
+          <li><a href="化学淋浴/引流层">化学淋浴 · 与普通冲淋区别</a></li>
+        </ul>
+      </section>
+
+      <section id="extended">
+        <h2>7. 扩展模块与未来内容（Extended Matrix）</h2>
+        <p>
+          用于承载 <strong>UV 传递窗 / 氙光传递窗 / 防爆传递窗 / 密闭阀</strong> 等补充设备，以及后续计划新增的行业场景文章。
+        </p>
+        <ul>
+          <li><a href="UV传递窗/引流层">UV 传递窗 · 相关文章入口</a></li>
+          <li><a href="氙光传递窗/引流层">氙光传递窗 · 光谱与应用场景</a></li>
+          <li><a href="防爆传递窗/引流层">防爆传递窗 · 危化场景设计</a></li>
+          <li><a href="密闭阀/引流层">密闭阀 · 在 BIBO / 排风系统中的角色</a></li>
+        </ul>
+      </section>
+
+      <div class="advisory">
+        <strong>如何继续往 Hugo Book 风格靠拢？</strong>
+        现在已经有了「左侧目录 + 右侧正文」的基础框架，后续如果你愿意，可以：
+        （1）把其它 EN 文章的样式也统一成正文区这种简洁排版；
+        （2）逐步加上顶部面包屑、上一页 / 下一页导航，甚至全文搜索，整体体验会更像
+        <a href="https://hugo-book-demo.netlify.app/">Hugo Book 示例站</a>。
+      </div>
+    </article>
+  </main>
+</div>
 </body>
 </html>
 
