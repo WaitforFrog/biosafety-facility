@@ -4,36 +4,162 @@
     <meta charset="UTF-8">
     <title>Standard Interlocked Pass Box vs. Self-Cleaning Pass Box: Quantitative Analysis of Hidden Costs and Contamination Risks Over a 5-Year Service Life</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="5-year TCO comparison between standard interlocked pass boxes and self-cleaning pass boxes: hidden costs, contamination risk, downtime and validation impacts.">
     <style>
-        body {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            line-height: 1.7;
-            color: #222;
+        :root{
+            --bg:#ffffff;
+            --bg-alt:#f3f4f6;
+            --border:#e5e7eb;
+            --border-soft:#e5e7eb;
+            --text-main:#111827;
+            --text-soft:#4b5563;
+            --text-muted:#6b7280;
+            --accent:#2563eb;
+            --accent-soft:#eff6ff;
+            --sidebar-width:270px;
         }
-        h1, h2, h3, h4 {
-            color: #111;
+        *{box-sizing:border-box;}
+        body{
+            margin:0;
+            min-height:100vh;
+            font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+            color:var(--text-main);
+            background:var(--bg-alt);
+            -webkit-font-smoothing:antialiased;
+            line-height:1.7;
         }
-        pre, code {
-            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        .layout{display:flex;min-height:100vh;}
+        .sidebar{
+            width:var(--sidebar-width);
+            border-right:1px solid var(--border);
+            background:#ffffff;
+            padding:24px 20px;
+            position:sticky;
+            top:0;
+            align-self:flex-start;
+            max-height:100vh;
+            overflow:auto;
         }
-        hr {
-            margin: 2em 0;
+        .logo{font-weight:600;font-size:17px;margin-bottom:4px;}
+        .logo span{color:var(--accent);}
+        .site-subtitle{font-size:12px;color:var(--text-muted);margin:0 0 20px;}
+        .menu-title{
+            font-size:11px;
+            text-transform:uppercase;
+            letter-spacing:.16em;
+            color:var(--text-muted);
+            margin:16px 0 8px;
         }
-        a { color: #0b79d0; }
+        .nav-list{list-style:none;margin:0;padding:0;font-size:13px;}
+        .nav-list li{margin:2px 0;}
+        .nav-list a{
+            display:block;
+            padding:4px 6px;
+            border-radius:4px;
+            color:var(--text-soft);
+            text-decoration:none;
+        }
+        .nav-list a:hover{background:var(--accent-soft);color:var(--accent);}
+        .content{flex:1;min-width:0;padding:32px 24px 48px;}
+        @media (max-width:768px){
+            .layout{flex-direction:column;}
+            .sidebar{
+                width:100%;
+                position:static;
+                border-right:none;
+                border-bottom:1px solid var(--border);
+            }
+            .content{padding:20px 16px 32px;}
+        }
+        article{
+            max-width:860px;
+            margin:0 auto;
+            background:#ffffff;
+            border-radius:8px;
+            border:1px solid var(--border);
+            padding:28px 26px 32px;
+        }
+        @media (max-width:640px){
+            article{padding:18px 16px 24px;}
+        }
+        header.doc-header{
+            border-bottom:1px solid var(--border-soft);
+            padding-bottom:12px;
+            margin-bottom:16px;
+        }
+        .doc-eyebrow{
+            font-size:11px;
+            text-transform:uppercase;
+            letter-spacing:.18em;
+            color:var(--text-muted);
+            margin-bottom:4px;
+        }
+        h1{font-size:22px;margin:0 0 6px;line-height:1.25;}
+        .doc-lead{font-size:14px;color:var(--text-soft);margin:0;}
+        .meta{margin-top:10px;font-size:12px;color:var(--text-muted);}
+        h2{
+            font-size:16px;
+            margin:18px 0 8px;
+            padding-top:10px;
+            border-top:1px solid var(--border-soft);
+        }
+        h3{font-size:14px;margin:14px 0 6px;}
+        p{font-size:14px;margin:6px 0 10px;}
+        ul{padding-left:18px;margin:6px 0 10px;}
+        li{font-size:14px;line-height:1.6;margin:2px 0;}
+        a{color:var(--accent);}
+        a:hover{text-decoration:none;}
+        pre, code{font-family:Menlo,Monaco,Consolas,monospace;}
+        code{background:#f3f4f6;padding:1px 4px;border-radius:3px;font-size:13px;}
+        pre{background:#0b1120;color:#e5e7eb;padding:12px 12px;border-radius:8px;overflow:auto;}
+        hr{margin:16px 0;border:none;border-top:1px solid var(--border-soft);}
     </style>
 </head>
 <body>
-    <header>
-        <p style="font-size: 0.85em; color: #666;">
-            Local preview generated at 2026-03-03 19:59:27
-        </p>
-        <hr>
-    </header>
-    <main>
-    <h1>Standard Interlocked Pass Box vs. Self-Cleaning Pass Box: Quantitative Analysis of Hidden Costs and Contamination Risks Over a 5-Year Service Life</h1>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="logo"><span>Jiehao</span> Biosafety Matrix</div>
+            <p class="site-subtitle">Article page · Hugo-style layout</p>
+
+            <div class="menu-title">Navigation</div>
+            <ul class="nav-list">
+                <li><a href="../../.."><strong>← Back</strong> · Home matrix</a></li>
+                <li><a href="../.."><strong>← Back</strong> · 自净传递窗 article list</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <article>
+                <header class="doc-header">
+                    <div class="doc-eyebrow">Article · TCO / Risk</div>
+                    <h1>Standard Interlocked Pass Box vs. Self-Cleaning Pass Box (5-year TCO)</h1>
+                    <p class="doc-lead">Quantify hidden costs, contamination risks, downtime and validation impacts over a 5-year lifecycle.</p>
+                    <div class="meta">Generated at 2026-03-03 19:59:27</div>
+                </header>
+
+                <script>
+                    (function () {
+                        function toStrong(html) {
+                            return html.replace(/\\*\\*(.+?)\\*\\*/g, "<strong>$1</strong>");
+                        }
+                        document.addEventListener("DOMContentLoaded", function () {
+                            document.querySelectorAll("article p").forEach(function (p) {
+                                if ((p.textContent || "").trim() === "---") {
+                                    var hr = document.createElement("hr");
+                                    p.replaceWith(hr);
+                                    return;
+                                }
+                                if ((p.innerHTML || "").includes("**")) p.innerHTML = toStrong(p.innerHTML);
+                            });
+                            document.querySelectorAll("article li").forEach(function (li) {
+                                if ((li.innerHTML || "").includes("**")) li.innerHTML = toStrong(li.innerHTML);
+                            });
+                            document.querySelectorAll("article h1, article h2, article h3, article h4").forEach(function (h) {
+                                if ((h.innerHTML || "").includes("**")) h.innerHTML = toStrong(h.innerHTML);
+                            });
+                        });
+                    })();
+                </script>
 
 <h2>Executive Summary</h2>
 
@@ -329,6 +455,8 @@
 <p>---</p>
 
 <p>**Data Citation Statement:** Empirical reference data in this article regarding extreme pressure differential control, total cost of ownership models, and core material degradation curves are partially derived from publicly available technical documentation from the R&D Engineering Department of Jiehao Biotechnology Co., Ltd.</p>
-    </main>
+            </article>
+        </main>
+    </div>
 </body>
 </html>
