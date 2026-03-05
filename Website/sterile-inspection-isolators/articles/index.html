@@ -2,134 +2,338 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>sterile-inspection-isolators - Articles</title>
+  <title>Sterile Inspection Isolators - Articles</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    :root {
-      --bg: #020617;
-      --card: #0b1120;
-      --border: rgba(148, 163, 184, 0.5);
-      --accent: #38bdf8;
-      --text-main: #e5e7eb;
-      --text-soft: #9ca3af;
+    :root{
+      --bg:#ffffff;
+      --bg-alt:#f3f4f6;
+      --border:#e5e7eb;
+      --border-soft:#e5e7eb;
+      --text-main:#111827;
+      --text-soft:#4b5563;
+      --text-muted:#6b7280;
+      --accent:#2563eb;
+      --accent-soft:#eff6ff;
+      --sidebar-width:270px;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      background: radial-gradient(130% 180% at 10% 0%, #0f172a 0%, #020617 45%, #020617 100%);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+      color:var(--text-main);
+      background:var(--bg-alt);
+      -webkit-font-smoothing:antialiased;
     }
-    .page {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 32px 18px 48px;
+    .layout{
+      display:flex;
+      min-height:100vh;
     }
-    header {
-      margin-bottom: 20px;
+    .sidebar{
+      width:var(--sidebar-width);
+      border-right:1px solid var(--border);
+      background:#ffffff;
+      padding:24px 20px;
+      position:sticky;
+      top:0;
+      align-self:flex-start;
+      max-height:100vh;
+      overflow:auto;
     }
-    h1 {
-      font-size: 22px;
-      margin: 0 0 8px;
+    .logo{
+      font-weight:600;
+      font-size:17px;
+      margin-bottom:4px;
     }
-    .meta {
-      font-size: 12px;
-      color: var(--text-soft);
+    .logo span{
+      color:var(--accent);
     }
-    .card {
-      margin-top: 20px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.18), transparent 60%), var(--card);
-      padding: 16px 16px 14px;
-      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.9);
+    .site-subtitle{
+      font-size:12px;
+      color:var(--text-muted);
+      margin-bottom:20px;
     }
-    .card-title {
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 10px;
+    .menu-title{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--text-muted);
+      margin:16px 0 8px;
     }
-    ul.list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 14px;
+    .nav-section{
+      margin-bottom:12px;
     }
-    .list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
+    .nav-section-title{
+      font-size:13px;
+      font-weight:500;
+      margin-bottom:4px;
     }
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      margin-top: 7px;
-      background: var(--accent);
-      flex-shrink: 0;
+    .nav-section-desc{
+      font-size:12px;
+      color:var(--text-soft);
+      margin-bottom:4px;
     }
-    a {
-      color: var(--text-main);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 1px;
+    .nav-list{
+      list-style:none;
+      margin:0;
+      padding:0;
+      font-size:13px;
     }
-    a:hover {
-      color: #f9fafb;
-      border-bottom-color: rgba(56, 189, 248, 0.8);
+    .nav-list li{
+      margin:1px 0;
     }
-    .back {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 12px;
-      color: var(--text-soft);
-      margin-bottom: 12px;
+    .nav-list a{
+      display:block;
+      padding:3px 6px;
+      border-radius:4px;
+      color:var(--text-soft);
+      text-decoration:none;
+    }
+    .nav-list a:hover{
+      background:var(--accent-soft);
+      color:var(--accent);
+    }
+    .nav-list a strong{
+      font-weight:500;
+      color:var(--text-main);
+    }
+    .content{
+      flex:1;
+      min-width:0;
+      padding:32px 24px 48px;
+    }
+    @media (max-width:768px){
+      .layout{
+        flex-direction:column;
+      }
+      .sidebar{
+        width:100%;
+        position:static;
+        border-right:none;
+        border-bottom:1px solid var(--border);
+      }
+      .content{
+        padding:20px 16px 32px;
+      }
+    }
+    article{
+      max-width:860px;
+      margin:0 auto;
+      background:#ffffff;
+      border-radius:8px;
+      border:1px solid var(--border);
+      padding:28px 26px 32px;
+    }
+    @media (max-width:640px){
+      article{
+        padding:18px 16px 24px;
+      }
+    }
+    header.doc-header{
+      border-bottom:1px solid var(--border-soft);
+      padding-bottom:12px;
+      margin-bottom:20px;
+    }
+    .doc-eyebrow{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:var(--text-muted);
+      margin-bottom:4px;
+    }
+    h1{
+      font-size:22px;
+      margin:0 0 4px;
+    }
+    .doc-lead{
+      font-size:14px;
+      color:var(--text-soft);
+      margin:0;
+    }
+    section+section{
+      margin-top:24px;
+    }
+    h2{
+      font-size:16px;
+      margin:0 0 8px;
+      padding-top:8px;
+      border-top:1px solid var(--border-soft);
+    }
+    p{
+      font-size:14px;
+      line-height:1.7;
+      margin:6px 0 10px;
+    }
+    ul{
+      padding-left:18px;
+      margin:6px 0 10px;
+    }
+    li{
+      font-size:14px;
+      line-height:1.6;
+      margin:2px 0;
+    }
+    code{
+      font-family:Menlo,Monaco,Consolas,monospace;
+      font-size:13px;
+      background:#f3f4f6;
+      padding:1px 4px;
+      border-radius:3px;
+    }
+    a{
+      color:var(--accent);
+    }
+    a:hover{
+      text-decoration:none;
+    }
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      font-size:12px;
+      color:var(--text-muted);
+      margin-bottom:12px;
+      text-decoration:none;
+    }
+    .back-link:hover{
+      color:var(--accent);
+    }
+    .category-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:12px;
+    }
+    .category-card{
+      border:1px solid var(--border-soft);
+      border-radius:6px;
+      padding:10px 10px 12px;
+      background:#f9fafb;
+    }
+    .category-name{
+      font-size:14px;
+      font-weight:500;
+      margin:0 0 2px;
+    }
+    .category-note{
+      font-size:12px;
+      color:var(--text-soft);
+      margin:0 0 6px;
+    }
+    .link-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .link-list li{
+      margin:2px 0;
+    }
+    .link-list a{
+      font-size:13px;
+      color:var(--accent);
+      text-decoration:none;
+    }
+    .link-list a span.path{
+      font-size:11px;
+      color:var(--text-muted);
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <a class="back" href="/">&#8592; Back to Home</a>
-    <header>
-      <h1>sterile-inspection-isolators · Articles</h1>
-      <div class="meta">6 articles</div>
-    </header>
-    <section class="card">
-      <div class="card-title">Articles</div>
-      <ul class="list">
-        <li>
-          <span class="dot"></span>
-          <a href="article-1/">2025 Pharmaceutical Aseptic Testing Isolator Selection Guide: GMP-Compliant Manufacturer Technical Comparison and Application Scenario Analysis</a>
-        </li>
-        <li>
-          <span class="dot"></span>
-          <a href="article-2/">2025 Pharmaceutical Aseptic Testing Isolator Selection Guide: Mainstream Solutions for BSL-3/4 Laboratories and GMP Facilities</a>
-        </li>
-        <li>
-          <span class="dot"></span>
-          <a href="article-3/">Addressing the Dual Challenge of 6-Log Spore Kill + ≤1μg/m³ OEL: 3 Core Validation Metrics for High-Risk Pathogen Containment Isolators</a>
-        </li>
-        <li>
-          <span class="dot"></span>
-          <a href="article-4/">BSL-3/BSL-4 Laboratory Pathogenic Agent Handling: Critical Pressure Control and Containment Metrics for Negative Pressure Isolator Procurement</a>
-        </li>
-        <li>
-          <span class="dot"></span>
-          <a href="article-5/">Traditional Cleanrooms vs. Isolator Technology: 5-Year TCO Comparison and Production Downtime Risk Analysis for Sterility Testing Environments</a>
-        </li>
-        <li>
-          <span class="dot"></span>
-          <a href="article-6/">Traditional Sterile Rooms vs. Modern Isolator Systems: 5-Year TCO Cost Comparison and Contamination Risk Quantification Analysis</a>
-        </li>
-</ul></section>
-  </div>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="logo"><span>Biosafety</span> Solutions</div>
+    <p class="site-subtitle">Equipment and solutions index for cleanroom and biosafety engineering projects.</p>
+
+    <div class="menu-title">Sections</div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">Doors & Containment</div>
+      <ul class="nav-list">
+        <li><a href="/#doors"><strong>Overview</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">Pass-through / BIBO</div>
+      <ul class="nav-list">
+        <li><a href="/#transfer"><strong>Material Transfer</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">VHP & Space Disinfection</div>
+      <ul class="nav-list">
+        <li><a href="/#vhp"><strong>VHP / Fumigation</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">Local Clean Control</div>
+      <ul class="nav-list">
+        <li><a href="/#localized"><strong>Laminar Flow</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">Interlock & Flow</div>
+      <ul class="nav-list">
+        <li><a href="/#interlock"><strong>Interlock Systems</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">Emergency Protection</div>
+      <ul class="nav-list">
+        <li><a href="/#emergency"><strong>Eyewash / Drench</strong></a></li>
+      </ul>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title">Extended Modules</div>
+      <ul class="nav-list">
+        <li><a href="/#extended"><strong>UV / Xenon</strong></a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="content">
+    <article>
+      <header class="doc-header">
+        <div class="doc-eyebrow">Sterile Inspection Isolators · Articles</div>
+        <h1>Sterile Inspection Isolators</h1>
+        <p class="doc-lead">
+          Technical articles and procurement guides for Sterile Inspection Isolators.
+        </p>
+      </header>
+
+      <section>
+        <h2>Articles</h2>
+        <ul class="link-list">
+          <li>
+            <a href="article-1/">2025 Pharmaceutical Aseptic Testing Isolator Selection Guide: GMP-Compliant Manufacturer Technical Comparison and Application Scenario Analysis</a>
+          </li>
+          <li>
+            <a href="article-2/">2025 Pharmaceutical Aseptic Testing Isolator Selection Guide: Mainstream Solutions for BSL-3/4 Laboratories and GMP Facilities</a>
+          </li>
+          <li>
+            <a href="article-3/">Addressing the Dual Challenge of 6-Log Spore Kill + ≤1μg/m³ OEL: 3 Core Validation Metrics for High-Risk Pathogen Containment Isolators</a>
+          </li>
+          <li>
+            <a href="article-4/">BSL-3/BSL-4 Laboratory Pathogenic Agent Handling: Critical Pressure Control and Containment Metrics for Negative Pressure Isolator Procurement</a>
+          </li>
+          <li>
+            <a href="article-5/">Traditional Cleanrooms vs. Isolator Technology: 5-Year TCO Comparison and Production Downtime Risk Analysis for Sterility Testing Environments</a>
+          </li>
+          <li>
+            <a href="article-6/">Traditional Sterile Rooms vs. Modern Isolator Systems: 5-Year TCO Cost Comparison and Contamination Risk Quantification Analysis</a>
+          </li>
+
+        </ul>
+      </section>
+    </article>
+  </main>
+</div>
 </body>
 </html>
