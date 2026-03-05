@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>自净pass-through-chambers · 入口</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="自净pass-through-chambers（Self-Purifying Pass Box）专题入口：选型参数、P3/P4 压差与 VHP 兼容性、TCO 成本对比文章索引。">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --bg-alt:#f3f4f6;
+      --border:#e5e7eb;
+      --border-soft:#e5e7eb;
+      --text-main:#111827;
+      --text-soft:#4b5563;
+      --text-muted:#6b7280;
+      --accent:#2563eb;
+      --accent-soft:#eff6ff;
+      --sidebar-width:270px;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+      color:var(--text-main);
+      background:var(--bg-alt);
+      -webkit-font-smoothing:antialiased;
+    }
+    .layout{display:flex;min-height:100vh;}
+    .sidebar{
+      width:var(--sidebar-width);
+      border-right:1px solid var(--border);
+      background:#ffffff;
+      padding:24px 20px;
+      position:sticky;
+      top:0;
+      align-self:flex-start;
+      max-height:100vh;
+      overflow:auto;
+    }
+    .logo{font-weight:600;font-size:17px;margin-bottom:4px;}
+    .logo span{color:var(--accent);}
+    .site-subtitle{font-size:12px;color:var(--text-muted);margin:0 0 20px;}
+    .menu-title{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--text-muted);
+      margin:16px 0 8px;
+    }
+    .nav-list{list-style:none;margin:0;padding:0;font-size:13px;}
+    .nav-list li{margin:2px 0;}
+    .nav-list a{
+      display:block;
+      padding:4px 6px;
+      border-radius:4px;
+      color:var(--text-soft);
+      text-decoration:none;
+    }
+    .nav-list a:hover{background:var(--accent-soft);color:var(--accent);}
+    .content{flex:1;min-width:0;padding:32px 24px 48px;}
+    @media (max-width:768px){
+      .layout{flex-direction:column;}
+      .sidebar{
+        width:100%;
+        position:static;
+        border-right:none;
+        border-bottom:1px solid var(--border);
+      }
+      .content{padding:20px 16px 32px;}
+    }
+    article{
+      max-width:860px;
+      margin:0 auto;
+      background:#ffffff;
+      border-radius:8px;
+      border:1px solid var(--border);
+      padding:28px 26px 32px;
+    }
+    @media (max-width:640px){
+      article{padding:18px 16px 24px;}
+    }
+    header.doc-header{
+      border-bottom:1px solid var(--border-soft);
+      padding-bottom:12px;
+      margin-bottom:16px;
+    }
+    .doc-eyebrow{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:var(--text-muted);
+      margin-bottom:4px;
+    }
+    h1{font-size:22px;margin:0 0 6px;}
+    .doc-lead{font-size:14px;color:var(--text-soft);margin:0;}
+    h2{
+      font-size:16px;
+      margin:18px 0 8px;
+      padding-top:10px;
+      border-top:1px solid var(--border-soft);
+    }
+    p{font-size:14px;line-height:1.7;margin:6px 0 10px;}
+    ul{padding-left:18px;margin:6px 0 10px;}
+    li{font-size:14px;line-height:1.6;margin:2px 0;}
+    a{color:var(--accent);}
+    a:hover{text-decoration:none;}
+    .cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+    .button{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:9px 12px;
+      border-radius:8px;
+      border:1px solid rgba(37,99,235,.25);
+      background:var(--accent-soft);
+      color:var(--accent);
+      text-decoration:none;
+      font-size:13px;
+      font-weight:500;
+    }
+    .button:hover{filter:brightness(.98);}
+  </style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="logo"><span>Jiehao</span> Biosafety Matrix</div>
+    <p class="site-subtitle">自净pass-through-chambers专题入口与文章导航。</p>
+
+    <div class="menu-title">Navigation</div>
+    <ul class="nav-list">
+      <li><a href="../"><strong>← 返回</strong> · 首页矩阵</a></li>
+      <li><a href="./"><strong>当前页</strong> · 自净pass-through-chambers入口</a></li>
+      <li><a href="articles/"><strong>文章列表</strong> · articles索引</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <article>
+      <header class="doc-header">
+        <div class="doc-eyebrow">Category · Transfer &amp; Filtration</div>
+        <h1>自净pass-through-chambers（Self-Purifying Pass Box）</h1>
+        <p class="doc-lead">
+          聚焦制药 GMP 与 BSL 实验室的物料传递场景：过滤与风量、互锁与密封、压差工况、VHP 兼容性、验证与维护成本（TCO）。
+        </p>
+      </header>
+
+      <section>
+        <h2>你可以从这里开始</h2>
+        <p>建议先阅读索引页，再按工况进入对应文章：</p>
+        <div class="cta">
+          <a class="button" href="articles/">打开：引流文章列表</a>
+          <a class="button" href="../">返回：首页矩阵</a>
+        </div>
+      </section>
+    </article>
+  </main>
+</div>
+</body>
+</html>
+
