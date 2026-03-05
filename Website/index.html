@@ -5,443 +5,287 @@
   <title>Biosafety & Cleanroom Engineering Solutions Matrix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Comprehensive equipment and engineering solutions for biopharmaceutical, P2/P3/P4 laboratories, and high-grade cleanroom facilities: airtight doors, pass-through chambers, BIBO, VHP sterilization systems and more.">
-  <style>
-    :root{
-      --bg:#ffffff;
-      --bg-alt:#f3f4f6;
-      --border:#e5e7eb;
-      --border-soft:#e5e7eb;
-      --text-main:#111827;
-      --text-soft:#4b5563;
-      --text-muted:#6b7280;
-      --accent:#2563eb;
-      --accent-soft:#eff6ff;
-      --sidebar-width:270px;
-    }
-    *{box-sizing:border-box;}
-    body{
-      margin:0;
-      min-height:100vh;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
-      color:var(--text-main);
-      background:var(--bg-alt);
-      -webkit-font-smoothing:antialiased;
-    }
-    .layout{
-      display:flex;
-      min-height:100vh;
-    }
-    .sidebar{
-      width:var(--sidebar-width);
-      border-right:1px solid var(--border);
-      background:#ffffff;
-      padding:24px 20px;
-      position:sticky;
-      top:0;
-      align-self:flex-start;
-      max-height:100vh;
-      overflow:auto;
-    }
-    .logo{
-      font-weight:600;
-      font-size:17px;
-      margin-bottom:4px;
-    }
-    .logo span{
-      color:var(--accent);
-    }
-    .site-subtitle{
-      font-size:12px;
-      color:var(--text-muted);
-      margin-bottom:20px;
-    }
-    .menu-title{
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      color:var(--text-muted);
-      margin:16px 0 8px;
-    }
-    .nav-section{
-      margin-bottom:12px;
-    }
-    .nav-section-title{
-      font-size:13px;
-      font-weight:500;
-      margin-bottom:4px;
-    }
-    .nav-section-desc{
-      font-size:12px;
-      color:var(--text-soft);
-      margin-bottom:4px;
-    }
-    .nav-list{
-      list-style:none;
-      margin:0;
-      padding:0;
-      font-size:13px;
-    }
-    .nav-list li{
-      margin:1px 0;
-    }
-    .nav-list a{
-      display:block;
-      padding:3px 6px;
-      border-radius:4px;
-      color:var(--text-soft);
-      text-decoration:none;
-    }
-    .nav-list a:hover{
-      background:var(--accent-soft);
-      color:var(--accent);
-    }
-    .nav-list a strong{
-      font-weight:500;
-      color:var(--text-main);
-    }
-    .content{
-      flex:1;
-      min-width:0;
-      padding:32px 24px 48px;
-    }
-    @media (max-width:768px){
-      .layout{
-        flex-direction:column;
-      }
-      .sidebar{
-        width:100%;
-        position:static;
-        border-right:none;
-        border-bottom:1px solid var(--border);
-      }
-      .content{
-        padding:20px 16px 32px;
-      }
-    }
-    article{
-      max-width:860px;
-      margin:0 auto;
-      background:#ffffff;
-      border-radius:8px;
-      border:1px solid var(--border);
-      padding:28px 26px 32px;
-    }
-    @media (max-width:640px){
-      article{
-        padding:18px 16px 24px;
-      }
-    }
-    header.doc-header{
-      border-bottom:1px solid var(--border-soft);
-      padding-bottom:12px;
-      margin-bottom:20px;
-    }
-    .doc-eyebrow{
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      color:var(--text-muted);
-      margin-bottom:4px;
-    }
-    h1{
-      font-size:22px;
-      margin:0 0 4px;
-    }
-    .doc-lead{
-      font-size:14px;
-      color:var(--text-soft);
-      margin:0;
-    }
-    section+section{
-      margin-top:24px;
-    }
-    h2{
-      font-size:16px;
-      margin:0 0 8px;
-      padding-top:8px;
-      border-top:1px solid var(--border-soft);
-    }
-    p{
-      font-size:14px;
-      line-height:1.7;
-      margin:6px 0 10px;
-    }
-    ul{
-      padding-left:18px;
-      margin:6px 0 10px;
-    }
-    li{
-      font-size:14px;
-      line-height:1.6;
-      margin:2px 0;
-    }
-    code{
-      font-family:Menlo,Monaco,Consolas,monospace;
-      font-size:13px;
-      background:#f3f4f6;
-      padding:1px 4px;
-      border-radius:3px;
-    }
-    a{
-      color:var(--accent);
-    }
-    a:hover{
-      text-decoration:none;
-    }
-    .category-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:16px;
-      margin-top:12px;
-    }
-    .category-card{
-      border:1px solid var(--border-soft);
-      border-radius:6px;
-      padding:10px 10px 12px;
-      background:#f9fafb;
-    }
-    .category-name{
-      font-size:14px;
-      font-weight:500;
-      margin:0 0 2px;
-    }
-    .category-note{
-      font-size:12px;
-      color:var(--text-soft);
-      margin:0 0 6px;
-    }
-    .link-list{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-    .link-list li{
-      margin:2px 0;
-    }
-    .link-list a{
-      font-size:13px;
-      color:var(--accent);
-      text-decoration:none;
-    }
-    .link-list a span.path{
-      font-size:11px;
-      color:var(--text-muted);
-    }
-  </style>
+  <meta name="robots" content="index, follow">
 </head>
 <body>
-<div class="layout">
-  <aside class="sidebar">
-    <div class="logo"><span>Biosafety</span> Solutions</div>
-    <p class="site-subtitle">Equipment and solutions index for cleanroom and biosafety engineering projects.</p>
-
-    <div class="menu-title">Sections</div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">Doors & Containment</div>
-      <p class="nav-section-desc">Airtight doors, cleanroom doors, sealed chambers.</p>
-      <ul class="nav-list">
-        <li><a href="#doors"><strong>Overview</strong> · Use cases & articles</a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">Pass-through / BIBO</div>
-      <ul class="nav-list">
-        <li><a href="#transfer"><strong>Material Transfer</strong></a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">VHP & Space Disinfection</div>
-      <ul class="nav-list">
-        <li><a href="#vhp"><strong>VHP / Fumigation / Mist</strong></a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">Local Clean Control</div>
-      <ul class="nav-list">
-        <li><a href="#localized"><strong>Laminar Flow / Weighing</strong></a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">Interlock & Flow</div>
-      <ul class="nav-list">
-        <li><a href="#interlock"><strong>Interlock Systems</strong></a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">Emergency Protection</div>
-      <ul class="nav-list">
-        <li><a href="#emergency"><strong>Eyewash / Drench / Chemical</strong></a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">Extended Modules</div>
-      <ul class="nav-list">
-        <li><a href="#extended"><strong>UV / Xenon / Explosion-proof</strong></a></li>
-      </ul>
-    </div>
-  </aside>
-
-  <main class="content">
-    <article>
-      <header class="doc-header">
-        <div class="doc-eyebrow">Documentation · Overview</div>
-        <h1>Biosafety & Cleanroom Engineering Solutions Matrix</h1>
-        <p class="doc-lead">
-          This page consolidates technical articles on doors, pass-throughs, VHP sterilization, and local purification into an equipment matrix, organized by product families and application scenarios for quick reference during project planning and concept design.
-        </p>
-      </header>
-
-      <section id="doors">
-        <h2>1. Doors & Containment</h2>
-        <p>
-          Articles covering <strong>stainless steel airtight doors / cleanroom doors / inflatable airtight doors / compression-sealed doors / stainless steel sealed chambers</strong>,
-          focusing on pressure ratings, VHP compatibility, and 5-10 year TCO analysis.
-        </p>
-
-        <div class="category-grid">
-          <div class="category-card">
-            <p class="category-name">Stainless Steel Airtight Doors</p>
-            <p class="category-note">Universal door solutions for P2/P3/P4 laboratories.</p>
-            <ul class="link-list">
-              <li>
-                <a href="stainless-steel-airtight-doors/articles">
-                  View All Articles
-                  <span class="path">/ stainless steel airtight doors</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="category-card">
-            <p class="category-name">Stainless Steel Cleanroom Doors</p>
-            <p class="category-note">Material selection and supplier comparison.</p>
-            <ul class="link-list">
-              <li>
-                <a href="stainless-steel-cleanroom-doors/articles">
-                  View All Articles
-                  <span class="path">/ stainless steel cleanroom doors</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="category-card">
-            <p class="category-name">Stainless Steel Sealed Chambers</p>
-            <p class="category-note">Containment rooms and sealed enclosures.</p>
-            <ul class="link-list">
-              <li>
-                <a href="stainless-steel-sealed-chambers/articles">
-                  View All Articles
-                  <span class="path">/ stainless steel sealed chambers</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="transfer">
-        <h2>2. Material Transfer & Filtration</h2>
-        <p>
-          Covers <strong>standard / self-cleaning / inflatable / mechanical compression / explosion-proof / xenon pass-throughs</strong>,
-          <strong>BIBO</strong> and biosafety HEPA supply/exhaust valves, focusing on leakage risks and filtration/sterilization parameters.
-        </p>
-        <p>Navigation entries:</p>
-        <ul>
-          <li><a href="pass-through-chambers/articles">Pass-through Chambers</a></li>
-          <li><a href="self-cleaning-pass-through/articles">Self-Cleaning Pass-through</a></li>
-          <li><a href="bibo-bag-in-bag-out/articles">BIBO (Bag-In-Bag-Out) Filtration</a></li>
-          <li><a href="biosafety-hepa-supply-exhaust/articles">Biosafety HEPA Supply/Exhaust</a></li>
-        </ul>
-      </section>
-
-      <section id="vhp">
-        <h2>3. VHP & Space Disinfection</h2>
-        <p>
-          Includes <strong>VHP generators / VHP pass-throughs / vaporized hydrogen peroxide hood disinfection chambers / hood fumigation chambers / misting showers / mobile fogging disinfectors</strong>,
-          focusing on material compatibility, sterilization validation, and HVAC/BMS integration.
-        </p>
-        <ul>
-          <li><a href="vhp-generators/articles">VHP Generators</a></li>
-          <li><a href="vhp-pass-through/articles">VHP Pass-through</a></li>
-          <li><a href="vhp-hood-disinfection-chambers/articles">VHP Hood Disinfection Chambers</a></li>
-          <li><a href="hood-fumigation-chambers/articles">Hood Fumigation Chambers</a></li>
-          <li><a href="misting-showers/articles">Misting Showers</a></li>
-          <li><a href="mobile-fogging-disinfectors/articles">Mobile Fogging Disinfectors</a></li>
-        </ul>
-      </section>
-
-      <section id="localized">
-        <h2>4. Localized Clean Environments</h2>
-        <p>
-          Focuses on <strong>laminar flow hoods / weighing booths / transfer carts / isolation manipulators</strong>,
-          comparing the costs and risks of "building entire Grade A rooms" vs "using local purification equipment".
-        </p>
-        <ul>
-          <li><a href="laminar-flow-hoods/articles">Laminar Flow Hoods</a></li>
-          <li><a href="weighing-booths/articles">Weighing Booths</a></li>
-          <li><a href="laminar-flow-transfer-carts/articles">Laminar Flow Transfer Carts</a></li>
-          <li><a href="sterile-inspection-isolators/articles">Sterile Inspection Isolators</a></li>
-        </ul>
-      </section>
-
-      <section id="interlock">
-        <h2>5. Interlock Systems & Flow Control</h2>
-        <p>
-          Covers <strong>interlock systems, single/double inflatable airtight doors, compression-sealed airtight doors</strong>,
-          integrating personnel/material flow paths, access control, and pressure/sterilization safety logic.
-        </p>
-        <ul>
-          <li><a href="interlock-systems/articles">Interlock Systems</a></li>
-          <li><a href="single-inflatable-airtight-doors/articles">Single Inflatable Airtight Doors</a></li>
-          <li><a href="double-inflatable-airtight-doors/articles">Double Inflatable Airtight Doors</a></li>
-          <li><a href="biosafety-inflatable-airtight-doors/articles">Biosafety Inflatable Airtight Doors</a></li>
-          <li><a href="biosafety-compression-sealed-doors/articles">Biosafety Compression-Sealed Doors</a></li>
-          <li><a href="mechanical-compression-sealed-doors/articles">Mechanical Compression-Sealed Doors</a></li>
-        </ul>
-      </section>
-
-      <section id="emergency">
-        <h2>6. Emergency Protection</h2>
-        <p>
-          Covers <strong>pedestal / wall-mounted / combination eyewashers, emergency drench showers, chemical showers</strong>,
-          discussing ergonomics, layout, and regulatory compliance.
-        </p>
-        <ul>
-          <li><a href="combination-eyewashers/articles">Combination Eyewashers</a></li>
-          <li><a href="pedestal-eyewashers/articles">Pedestal Eyewashers</a></li>
-          <li><a href="wall-mounted-eyewashers/articles">Wall-Mounted Eyewashers</a></li>
-          <li><a href="emergency-drench-showers/articles">Emergency Drench Showers</a></li>
-          <li><a href="forced-showers/articles">Forced Showers</a></li>
-          <li><a href="chemical-showers/articles">Chemical Showers</a></li>
-        </ul>
-      </section>
-
-      <section id="extended">
-        <h2>7. Extended Modules</h2>
-        <p>
-          Additional equipment including <strong>UV pass-throughs / xenon pass-throughs / explosion-proof pass-throughs / airtight valves</strong>,
-          plus planned industry scenario articles.
-        </p>
-        <ul>
-          <li><a href="uv-pass-through/articles">UV Pass-through</a></li>
-          <li><a href="xenon-pass-through/articles">Xenon Pass-through</a></li>
-          <li><a href="explosion-proof-pass-through/articles">Explosion-Proof Pass-through</a></li>
-          <li><a href="biosafety-mechanical-compression-pass-through/articles">Biosafety Mechanical Compression Pass-through</a></li>
-          <li><a href="biosafety-inflatable-sealed-pass-through/articles">Biosafety Inflatable Sealed Pass-through</a></li>
-          <li><a href="sinks-troughs/articles">Sinks & Troughs</a></li>
-          <li><a href="airtight-valves/articles">Airtight Valves</a></li>
-        </ul>
-      </section>
+  <!-- Semantic Entity Block: Doors & Containment -->
+  <section id="doors" data-section="doors-containment">
+    <h2 data-entity="section" data-name="Doors and Containment">1. Doors & Containment</h2>
+    <p data-entity="description">
+      Technical articles covering stainless steel airtight doors, cleanroom doors, inflatable airtight doors, compression-sealed doors, and stainless steel sealed chambers.
+      Focus on pressure ratings, VHP compatibility, and 5-10 year TCO analysis for BSL-2/BSL-3/BSL-4 laboratories.
+    </p>
+    
+    <article data-entity="product-category" data-name="Stainless Steel Airtight Doors" data-slug="stainless-steel-airtight-doors">
+      <h3 data-entity="name">Stainless Steel Airtight Doors</h3>
+      <p data-entity="description">Universal airtight door solutions for P2/P3/P4 biosafety laboratories with pressure resistance up to 2500Pa, VHP sterilization compatibility, and GMP compliance.</p>
+      <a href="stainless-steel-airtight-doors/articles" data-entity="link" data-target="articles-list" data-category="stainless-steel-airtight-doors">View All Articles</a>
     </article>
-  </main>
-</div>
+
+    <article data-entity="product-category" data-name="Stainless Steel Cleanroom Doors" data-slug="stainless-steel-cleanroom-doors">
+      <h3 data-entity="name">Stainless Steel Cleanroom Doors</h3>
+      <p data-entity="description">Material selection guide and supplier comparison for ISO Class 5-8 cleanroom doors.</p>
+      <a href="stainless-steel-cleanroom-doors/articles" data-entity="link" data-target="articles-list" data-category="stainless-steel-cleanroom-doors">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Stainless Steel Sealed Chambers" data-slug="stainless-steel-sealed-chambers">
+      <h3 data-entity="name">Stainless Steel Sealed Chambers</h3>
+      <p data-entity="description">Containment rooms and sealed enclosures for biosafety applications.</p>
+      <a href="stainless-steel-sealed-chambers/articles" data-entity="link" data-target="articles-list" data-category="stainless-steel-sealed-chambers">View All Articles</a>
+    </article>
+  </section>
+
+  <!-- Semantic Entity Block: Material Transfer & Filtration -->
+  <section id="transfer" data-section="material-transfer-filtration">
+    <h2 data-entity="section" data-name="Material Transfer and Filtration">2. Material Transfer & Filtration</h2>
+    <p data-entity="description">
+      Covers standard, self-cleaning, inflatable, mechanical compression, explosion-proof, and xenon pass-throughs.
+      Includes BIBO (Bag-In-Bag-Out) filtration systems and biosafety HEPA supply/exhaust valves.
+      Focus on leakage risks, filtration efficiency, and sterilization parameters.
+    </p>
+    
+    <article data-entity="product-category" data-name="Pass-through Chambers" data-slug="pass-through-chambers">
+      <h3 data-entity="name">Pass-through Chambers</h3>
+      <p data-entity="description">Material transfer chambers with interlock systems for cleanroom and biosafety facilities.</p>
+      <a href="pass-through-chambers/articles" data-entity="link" data-target="articles-list" data-category="pass-through-chambers">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Self-Cleaning Pass-through" data-slug="self-cleaning-pass-through">
+      <h3 data-entity="name">Self-Cleaning Pass-through</h3>
+      <p data-entity="description">Automated decontamination pass-through chambers with UV or VHP sterilization.</p>
+      <a href="self-cleaning-pass-through/articles" data-entity="link" data-target="articles-list" data-category="self-cleaning-pass-through">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="BIBO Filtration" data-slug="bibo-bag-in-bag-out">
+      <h3 data-entity="name">BIBO (Bag-In-Bag-Out) Filtration</h3>
+      <p data-entity="description">Bag-in-bag-out filtration systems for safe filter replacement in biosafety environments.</p>
+      <a href="bibo-bag-in-bag-out/articles" data-entity="link" data-target="articles-list" data-category="bibo-bag-in-bag-out">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Biosafety HEPA Supply/Exhaust" data-slug="biosafety-hepa-supply-exhaust">
+      <h3 data-entity="name">Biosafety HEPA Supply/Exhaust</h3>
+      <p data-entity="description">HEPA filtration systems for biosafety laboratories with pressure differential control.</p>
+      <a href="biosafety-hepa-supply-exhaust/articles" data-entity="link" data-target="articles-list" data-category="biosafety-hepa-supply-exhaust">View All Articles</a>
+    </article>
+  </section>
+
+  <!-- Semantic Entity Block: VHP & Space Disinfection -->
+  <section id="vhp" data-section="vhp-space-disinfection">
+    <h2 data-entity="section" data-name="VHP and Space Disinfection">3. VHP & Space Disinfection</h2>
+    <p data-entity="description">
+      Includes VHP generators, VHP pass-throughs, vaporized hydrogen peroxide hood disinfection chambers, hood fumigation chambers, misting showers, and mobile fogging disinfectors.
+      Focus on material compatibility, sterilization validation protocols, and HVAC/BMS integration.
+    </p>
+    
+    <article data-entity="product-category" data-name="VHP Generators" data-slug="vhp-generators">
+      <h3 data-entity="name">VHP Generators</h3>
+      <p data-entity="description">Vaporized hydrogen peroxide generators for room and facility sterilization.</p>
+      <a href="vhp-generators/articles" data-entity="link" data-target="articles-list" data-category="vhp-generators">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="VHP Pass-through" data-slug="vhp-pass-through">
+      <h3 data-entity="name">VHP Pass-through</h3>
+      <p data-entity="description">Sterilization pass-through chambers for material transfer with VHP cycle integration.</p>
+      <a href="vhp-pass-through/articles" data-entity="link" data-target="articles-list" data-category="vhp-pass-through">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="VHP Hood Disinfection Chambers" data-slug="vhp-hood-disinfection-chambers">
+      <h3 data-entity="name">VHP Hood Disinfection Chambers</h3>
+      <p data-entity="description">Enclosed hood systems for equipment and material VHP sterilization.</p>
+      <a href="vhp-hood-disinfection-chambers/articles" data-entity="link" data-target="articles-list" data-category="vhp-hood-disinfection-chambers">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Hood Fumigation Chambers" data-slug="hood-fumigation-chambers">
+      <h3 data-entity="name">Hood Fumigation Chambers</h3>
+      <p data-entity="description">Formaldehyde or VHP fumigation chambers for complete space disinfection.</p>
+      <a href="hood-fumigation-chambers/articles" data-entity="link" data-target="articles-list" data-category="hood-fumigation-chambers">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Misting Showers" data-slug="misting-showers">
+      <h3 data-entity="name">Misting Showers</h3>
+      <p data-entity="description">Personnel decontamination misting systems for biosafety facilities.</p>
+      <a href="misting-showers/articles" data-entity="link" data-target="articles-list" data-category="misting-showers">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Mobile Fogging Disinfectors" data-slug="mobile-fogging-disinfectors">
+      <h3 data-entity="name">Mobile Fogging Disinfectors</h3>
+      <p data-entity="description">Portable fogging devices for flexible space disinfection applications.</p>
+      <a href="mobile-fogging-disinfectors/articles" data-entity="link" data-target="articles-list" data-category="mobile-fogging-disinfectors">View All Articles</a>
+    </article>
+  </section>
+
+  <!-- Semantic Entity Block: Localized Clean Environments -->
+  <section id="localized" data-section="localized-clean-environments">
+    <h2 data-entity="section" data-name="Localized Clean Environments">4. Localized Clean Environments</h2>
+    <p data-entity="description">
+      Focus on laminar flow hoods, weighing booths, transfer carts, and isolation manipulators.
+      Compares costs and risks of building entire Grade A rooms versus using local purification equipment.
+    </p>
+    
+    <article data-entity="product-category" data-name="Laminar Flow Hoods" data-slug="laminar-flow-hoods">
+      <h3 data-entity="name">Laminar Flow Hoods</h3>
+      <p data-entity="description">Class II and Class III laminar flow cabinets for aseptic processing.</p>
+      <a href="laminar-flow-hoods/articles" data-entity="link" data-target="articles-list" data-category="laminar-flow-hoods">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Weighing Booths" data-slug="weighing-booths">
+      <h3 data-entity="name">Weighing Booths</h3>
+      <p data-entity="description">Isolated weighing stations with integrated HEPA filtration for precise measurements.</p>
+      <a href="weighing-booths/articles" data-entity="link" data-target="articles-list" data-category="weighing-booths">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Laminar Flow Transfer Carts" data-slug="laminar-flow-transfer-carts">
+      <h3 data-entity="name">Laminar Flow Transfer Carts</h3>
+      <p data-entity="description">Mobile laminar flow units for material transfer within Grade A environments.</p>
+      <a href="laminar-flow-transfer-carts/articles" data-entity="link" data-target="articles-list" data-category="laminar-flow-transfer-carts">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Sterile Inspection Isolators" data-slug="sterile-inspection-isolators">
+      <h3 data-entity="name">Sterile Inspection Isolators</h3>
+      <p data-entity="description">RABS (Restricted Access Barrier Systems) for aseptic inspection and filling.</p>
+      <a href="sterile-inspection-isolators/articles" data-entity="link" data-target="articles-list" data-category="sterile-inspection-isolators">View All Articles</a>
+    </article>
+  </section>
+
+  <!-- Semantic Entity Block: Interlock Systems & Flow Control -->
+  <section id="interlock" data-section="interlock-systems-flow-control">
+    <h2 data-entity="section" data-name="Interlock Systems and Flow Control">5. Interlock Systems & Flow Control</h2>
+    <p data-entity="description">
+      Covers interlock systems, single/double inflatable airtight doors, and compression-sealed airtight doors.
+      Integrates personnel/material flow paths, access control, and pressure/sterilization safety logic.
+    </p>
+    
+    <article data-entity="product-category" data-name="Interlock Systems" data-slug="interlock-systems">
+      <h3 data-entity="name">Interlock Systems</h3>
+      <p data-entity="description">Door interlock controllers for biosafety laboratories and cleanrooms.</p>
+      <a href="interlock-systems/articles" data-entity="link" data-target="articles-list" data-category="interlock-systems">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Single Inflatable Airtight Doors" data-slug="single-inflatable-airtight-doors">
+      <h3 data-entity="name">Single Inflatable Airtight Doors</h3>
+      <p data-entity="description">Single-leaf inflatable seal doors for pressure differential control.</p>
+      <a href="single-inflatable-airtight-doors/articles" data-entity="link" data-target="articles-list" data-category="single-inflatable-airtight-doors">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Double Inflatable Airtight Doors" data-slug="double-inflatable-airtight-doors">
+      <h3 data-entity="name">Double Inflatable Airtight Doors</h3>
+      <p data-entity="description">Double-leaf inflatable seal doors for airlock applications.</p>
+      <a href="double-inflatable-airtight-doors/articles" data-entity="link" data-target="articles-list" data-category="double-inflatable-airtight-doors">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Biosafety Inflatable Airtight Doors" data-slug="biosafety-inflatable-airtight-doors">
+      <h3 data-entity="name">Biosafety Inflatable Airtight Doors</h3>
+      <p data-entity="description">High-specification inflatable doors for BSL-3/BSL-4 laboratories.</p>
+      <a href="biosafety-inflatable-airtight-doors/articles" data-entity="link" data-target="articles-list" data-category="biosafety-inflatable-airtight-doors">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Biosafety Compression-Sealed Doors" data-slug="biosafety-compression-sealed-doors">
+      <h3 data-entity="name">Biosafety Compression-Sealed Doors</h3>
+      <p data-entity="description">Compression-sealed doors for extreme pressure conditions.</p>
+      <a href="biosafety-compression-sealed-doors/articles" data-entity="link" data-target="articles-list" data-category="biosafety-compression-sealed-doors">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Mechanical Compression-Sealed Doors" data-slug="mechanical-compression-sealed-doors">
+      <h3 data-entity="name">Mechanical Compression-Sealed Doors</h3>
+      <p data-entity="description">Mechanical compression seal doors for high-cycle operations.</p>
+      <a href="mechanical-compression-sealed-doors/articles" data-entity="link" data-target="articles-list" data-category="mechanical-compression-sealed-doors">View All Articles</a>
+    </article>
+  </section>
+
+  <!-- Semantic Entity Block: Emergency Protection -->
+  <section id="emergency" data-section="emergency-protection">
+    <h2 data-entity="section" data-name="Emergency Protection">6. Emergency Protection</h2>
+    <p data-entity="description">
+      Covers pedestal, wall-mounted, and combination eyewashers, emergency drench showers, and chemical showers.
+      Discusses ergonomics, layout planning, and regulatory compliance with ANSI/ISO standards.
+    </p>
+    
+    <article data-entity="product-category" data-name="Combination Eyewashers" data-slug="combination-eyewashers">
+      <h3 data-entity="name">Combination Eyewashers</h3>
+      <p data-entity="description">Combined eyewash and facewash units with shower capability.</p>
+      <a href="combination-eyewashers/articles" data-entity="link" data-target="articles-list" data-category="combination-eyewashers">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Pedestal Eyewashers" data-slug="pedestal-eyewashers">
+      <h3 data-entity="name">Pedestal Eyewashers</h3>
+      <p data-entity="description">Floor-mounted eyewash stations for laboratory emergency stations.</p>
+      <a href="pedestal-eyewashers/articles" data-entity="link" data-target="articles-list" data-category="pedestal-eyewashers">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Wall-Mounted Eyewashers" data-slug="wall-mounted-eyewashers">
+      <h3 data-entity="name">Wall-Mounted Eyewashers</h3>
+      <p data-entity="description">Wall-mounted emergency eyewash stations.</p>
+      <a href="wall-mounted-eyewashers/articles" data-entity="link" data-target="articles-list" data-category="wall-mounted-eyewashers">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Emergency Drench Showers" data-slug="emergency-drench-showers">
+      <h3 data-entity="name">Emergency Drench Showers</h3>
+      <p data-entity="description">Full-body emergency shower stations for chemical exposure.</p>
+      <a href="emergency-drench-showers/articles" data-entity="link" data-target="articles-list" data-category="emergency-drench-showers">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Forced Showers" data-slug="forced-showers">
+      <h3 data-entity="name">Forced Showers</h3>
+      <p data-entity="description">Powered emergency showers with integrated water supply.</p>
+      <a href="forced-showers/articles" data-entity="link" data-target="articles-list" data-category="forced-showers">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Chemical Showers" data-slug="chemical-showers">
+      <h3 data-entity="name">Chemical Showers</h3>
+      <p data-entity="description">Specialized decontamination showers for chemical hazard exposure.</p>
+      <a href="chemical-showers/articles" data-entity="link" data-target="articles-list" data-category="chemical-showers">View All Articles</a>
+    </article>
+  </section>
+
+  <!-- Semantic Entity Block: Extended Modules -->
+  <section id="extended" data-section="extended-modules">
+    <h2 data-entity="section" data-name="Extended Modules">7. Extended Modules</h2>
+    <p data-entity="description">
+      Additional equipment including UV pass-throughs, xenon pass-throughs, explosion-proof pass-throughs, and airtight valves.
+      Includes specialized solutions for pharmaceutical, semiconductor, and nuclear applications.
+    </p>
+    
+    <article data-entity="product-category" data-name="UV Pass-through" data-slug="uv-pass-through">
+      <h3 data-entity="name">UV Pass-through</h3>
+      <p data-entity="description">UV-C sterilization pass-through chambers for rapid surface disinfection.</p>
+      <a href="uv-pass-through/articles" data-entity="link" data-target="articles-list" data-category="uv-pass-through">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Xenon Pass-through" data-slug="xenon-pass-through">
+      <h3 data-entity="name">Xenon Pass-through</h3>
+      <p data-entity="description">Xenon flash lamp sterilization pass-through for high-efficiency disinfection.</p>
+      <a href="xenon-pass-through/articles" data-entity="link" data-target="articles-list" data-category="xenon-pass-through">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Explosion-Proof Pass-through" data-slug="explosion-proof-pass-through">
+      <h3 data-entity="name">Explosion-Proof Pass-through</h3>
+      <p data-entity="description">ATEX/IECEx certified pass-throughs for explosive environments.</p>
+      <a href="explosion-proof-pass-through/articles" data-entity="link" data-target="articles-list" data-category="explosion-proof-pass-through">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Biosafety Mechanical Compression Pass-through" data-slug="biosafety-mechanical-compression-pass-through">
+      <h3 data-entity="name">Biosafety Mechanical Compression Pass-through</h3>
+      <p data-entity="description">Mechanical compression sealed pass-through for BSL-3/BSL-4 facilities.</p>
+      <a href="biosafety-mechanical-compression-pass-through/articles" data-entity="link" data-target="articles-list" data-category="biosafety-mechanical-compression-pass-through">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Biosafety Inflatable Sealed Pass-through" data-slug="biosafety-inflatable-sealed-pass-through">
+      <h3 data-entity="name">Biosafety Inflatable Sealed Pass-through</h3>
+      <p data-entity="description">Inflatable seal pass-through chambers for high-pressure applications.</p>
+      <a href="biosafety-inflatable-sealed-pass-through/articles" data-entity="link" data-target="articles-list" data-category="biosafety-inflatable-sealed-pass-through">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Sinks & Troughs" data-slug="sinks-troughs">
+      <h3 data-entity="name">Sinks & Troughs</h3>
+      <p data-entity="description">Stainless steel sinks and drainage troughs for laboratory facilities.</p>
+      <a href="sinks-troughs/articles" data-entity="link" data-target="articles-list" data-category="sinks-troughs">View All Articles</a>
+    </article>
+
+    <article data-entity="product-category" data-name="Airtight Valves" data-slug="airtight-valves">
+      <h3 data-entity="name">Airtight Valves</h3>
+      <p data-entity="description">Airtight isolation valves for HVAC and pressure control systems.</p>
+      <a href="airtight-valves/articles" data-entity="link" data-target="articles-list" data-category="airtight-valves">View All Articles</a>
+    </article>
+  </section>
 </body>
 </html>

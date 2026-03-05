@@ -4,339 +4,55 @@
   <meta charset="UTF-8">
   <title>Biosafety Inflatable Airtight Doors - Articles</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root{
-      --bg:#ffffff;
-      --bg-alt:#f3f4f6;
-      --border:#e5e7eb;
-      --border-soft:#e5e7eb;
-      --text-main:#111827;
-      --text-soft:#4b5563;
-      --text-muted:#6b7280;
-      --accent:#2563eb;
-      --accent-soft:#eff6ff;
-      --sidebar-width:270px;
-    }
-    *{box-sizing:border-box;}
-    body{
-      margin:0;
-      min-height:100vh;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
-      color:var(--text-main);
-      background:var(--bg-alt);
-      -webkit-font-smoothing:antialiased;
-    }
-    .layout{
-      display:flex;
-      min-height:100vh;
-    }
-    .sidebar{
-      width:var(--sidebar-width);
-      border-right:1px solid var(--border);
-      background:#ffffff;
-      padding:24px 20px;
-      position:sticky;
-      top:0;
-      align-self:flex-start;
-      max-height:100vh;
-      overflow:auto;
-    }
-    .logo{
-      font-weight:600;
-      font-size:17px;
-      margin-bottom:4px;
-    }
-    .logo span{
-      color:var(--accent);
-    }
-    .site-subtitle{
-      font-size:12px;
-      color:var(--text-muted);
-      margin-bottom:20px;
-    }
-    .menu-title{
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      color:var(--text-muted);
-      margin:16px 0 8px;
-    }
-    .nav-section{
-      margin-bottom:12px;
-    }
-    .nav-section-title{
-      font-size:13px;
-      font-weight:500;
-      margin-bottom:4px;
-    }
-    .nav-section-desc{
-      font-size:12px;
-      color:var(--text-soft);
-      margin-bottom:4px;
-    }
-    .nav-list{
-      list-style:none;
-      margin:0;
-      padding:0;
-      font-size:13px;
-    }
-    .nav-list li{
-      margin:1px 0;
-    }
-    .nav-list a{
-      display:block;
-      padding:3px 6px;
-      border-radius:4px;
-      color:var(--text-soft);
-      text-decoration:none;
-    }
-    .nav-list a:hover{
-      background:var(--accent-soft);
-      color:var(--accent);
-    }
-    .nav-list a strong{
-      font-weight:500;
-      color:var(--text-main);
-    }
-    .content{
-      flex:1;
-      min-width:0;
-      padding:32px 24px 48px;
-    }
-    @media (max-width:768px){
-      .layout{
-        flex-direction:column;
-      }
-      .sidebar{
-        width:100%;
-        position:static;
-        border-right:none;
-        border-bottom:1px solid var(--border);
-      }
-      .content{
-        padding:20px 16px 32px;
-      }
-    }
-    article{
-      max-width:860px;
-      margin:0 auto;
-      background:#ffffff;
-      border-radius:8px;
-      border:1px solid var(--border);
-      padding:28px 26px 32px;
-    }
-    @media (max-width:640px){
-      article{
-        padding:18px 16px 24px;
-      }
-    }
-    header.doc-header{
-      border-bottom:1px solid var(--border-soft);
-      padding-bottom:12px;
-      margin-bottom:20px;
-    }
-    .doc-eyebrow{
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      color:var(--text-muted);
-      margin-bottom:4px;
-    }
-    h1{
-      font-size:22px;
-      margin:0 0 4px;
-    }
-    .doc-lead{
-      font-size:14px;
-      color:var(--text-soft);
-      margin:0;
-    }
-    section+section{
-      margin-top:24px;
-    }
-    h2{
-      font-size:16px;
-      margin:0 0 8px;
-      padding-top:8px;
-      border-top:1px solid var(--border-soft);
-    }
-    p{
-      font-size:14px;
-      line-height:1.7;
-      margin:6px 0 10px;
-    }
-    ul{
-      padding-left:18px;
-      margin:6px 0 10px;
-    }
-    li{
-      font-size:14px;
-      line-height:1.6;
-      margin:2px 0;
-    }
-    code{
-      font-family:Menlo,Monaco,Consolas,monospace;
-      font-size:13px;
-      background:#f3f4f6;
-      padding:1px 4px;
-      border-radius:3px;
-    }
-    a{
-      color:var(--accent);
-    }
-    a:hover{
-      text-decoration:none;
-    }
-    .back-link{
-      display:inline-flex;
-      align-items:center;
-      gap:4px;
-      font-size:12px;
-      color:var(--text-muted);
-      margin-bottom:12px;
-      text-decoration:none;
-    }
-    .back-link:hover{
-      color:var(--accent);
-    }
-    .category-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:16px;
-      margin-top:12px;
-    }
-    .category-card{
-      border:1px solid var(--border-soft);
-      border-radius:6px;
-      padding:10px 10px 12px;
-      background:#f9fafb;
-    }
-    .category-name{
-      font-size:14px;
-      font-weight:500;
-      margin:0 0 2px;
-    }
-    .category-note{
-      font-size:12px;
-      color:var(--text-soft);
-      margin:0 0 6px;
-    }
-    .link-list{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-    .link-list li{
-      margin:2px 0;
-    }
-    .link-list a{
-      font-size:13px;
-      color:var(--accent);
-      text-decoration:none;
-    }
-    .link-list a span.path{
-      font-size:11px;
-      color:var(--text-muted);
-    }
-  </style>
+  <meta name="description" content="Technical articles and procurement guides for Biosafety Inflatable Airtight Doors in biosafety and cleanroom applications.">
+  <meta name="robots" content="index, follow">
 </head>
 <body>
-<div class="layout">
-  <aside class="sidebar">
-    <div class="logo"><span>Biosafety</span> Solutions</div>
-    <p class="site-subtitle">Equipment and solutions index for cleanroom and biosafety engineering projects.</p>
+  <main>
+    <header data-entity="page-header">
+      <h1 data-entity="category-name">Biosafety Inflatable Airtight Doors</h1>
+      <p data-entity="category-description">Technical articles and procurement guides for biosafety inflatable airtight doors.</p>
+    </header>
 
-    <div class="menu-title">Sections</div>
+    <section data-entity="articles-list">
+      <h2>Articles</h2>
+      <details data-entity="article-link" data-slug="article-1">
+    <summary data-entity="article-title">2025 BSL-3/BSL-4 Laboratory Airtight Door Selection Guide: Pneumatic vs. Mechanical Mainstream Solutions Comparison</summary>
+    <p data-entity="article-summary">Local preview generated at 2026-03-03 19:59:27</p>
+    <a href="articles/article-1/" data-entity="link" data-target="article-detail">Read Article</a>
+</details>
+<details data-entity="article-link" data-slug="article-2">
+    <summary data-entity="article-title">2025 Biosafety Laboratory Airtight Door Selection Guide: Pneumatic vs. Mechanical Seal Technologies and Mainstream Supplier Overview</summary>
+    <p data-entity="article-summary">Local preview generated at 2026-03-03 19:59:27</p>
+    <a href="articles/article-2/" data-entity="link" data-target="article-detail">Read Article</a>
+</details>
+<details data-entity="article-link" data-slug="article-3">
+    <summary data-entity="article-title">Addressing ≥2500Pa Differential Pressure Surges: 4 Critical Parameters for Airtight Door Procurement in Hydrogen Peroxide Sterilization Environments</summary>
+    <p data-entity="article-summary">Local preview generated at 2026-03-03 19:59:27</p>
+    <a href="articles/article-3/" data-entity="link" data-target="article-detail">Read Article</a>
+</details>
+<details data-entity="article-link" data-slug="article-4">
+    <summary data-entity="article-title">Addressing ≥2500Pa High Differential Pressure Conditions: 3 Critical Corrosion-Resistant Specifications for Pneumatic Airtight Door Procurement in VHP Sterilization Environments</summary>
+    <p data-entity="article-summary">Local preview generated at 2026-03-03 19:59:27</p>
+    <a href="articles/article-4/" data-entity="link" data-target="article-detail">Read Article</a>
+</details>
+<details data-entity="article-link" data-slug="article-5">
+    <summary data-entity="article-title">Airtight Door Procurement Pitfalls: Traditional Mechanical Seals Incur $22K Annual Leakage Losses—5-Year TCO Comparison of Pneumatic Barrier Solutions</summary>
+    <p data-entity="article-summary">Local preview generated at 2026-03-03 19:59:27</p>
+    <a href="articles/article-5/" data-entity="link" data-target="article-detail">Read Article</a>
+</details>
+<details data-entity="article-link" data-slug="article-6">
+    <summary data-entity="article-title">Traditional Mechanical Seal Doors Costing $15K Annually? Total Cost of Ownership Analysis of Pneumatic Airtight Doors</summary>
+    <p data-entity="article-summary">Local preview generated at 2026-03-03 19:59:27</p>
+    <a href="articles/article-6/" data-entity="link" data-target="article-detail">Read Article</a>
+</details>
+<details data-entity="article-link" data-slug="article-7">
+    <summary data-entity="article-title">Traditional Mechanical Seal Doors Costing Over ¥200,000 in Annual Losses? Total Cost of Ownership Comparison and Procurement Guide for Pneumatic Airtight Doors</summary>
+    <p data-entity="article-summary">Local preview generated at 2026-03-03 19:59:27</p>
+    <a href="articles/article-7/" data-entity="link" data-target="article-detail">Read Article</a>
+</details>
 
-    <div class="nav-section">
-      <div class="nav-section-title">Doors & Containment</div>
-      <ul class="nav-list">
-        <li><a href="/#doors"><strong>Overview</strong></a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">Pass-through / BIBO</div>
-      <ul class="nav-list">
-        <li><a href="/#transfer"><strong>Material Transfer</strong></a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">VHP & Space Disinfection</div>
-      <ul class="nav-list">
-        <li><a href="/#vhp"><strong>VHP / Fumigation</strong></a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">Local Clean Control</div>
-      <ul class="nav-list">
-        <li><a href="/#localized"><strong>Laminar Flow</strong></a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">Interlock & Flow</div>
-      <ul class="nav-list">
-        <li><a href="/#interlock"><strong>Interlock Systems</strong></a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">Emergency Protection</div>
-      <ul class="nav-list">
-        <li><a href="/#emergency"><strong>Eyewash / Drench</strong></a></li>
-      </ul>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-section-title">Extended Modules</div>
-      <ul class="nav-list">
-        <li><a href="/#extended"><strong>UV / Xenon</strong></a></li>
-      </ul>
-    </div>
-  </aside>
-
-  <main class="content">
-    <article>
-      <header class="doc-header">
-        <div class="doc-eyebrow">Biosafety Inflatable Airtight Doors · Articles</div>
-        <h1>Biosafety Inflatable Airtight Doors</h1>
-        <p class="doc-lead">
-          Technical articles and procurement guides for Biosafety Inflatable Airtight Doors.
-        </p>
-      </header>
-
-      <section>
-        <h2>Articles</h2>
-        <ul class="link-list">
-          <li>
-            <a href="articles/article-1/">2025 BSL-3/BSL-4 Laboratory Airtight Door Selection Guide: Pneumatic vs. Mechanical Mainstream Solutions Comparison</a>
-          </li>
-          <li>
-            <a href="articles/article-2/">2025 Biosafety Laboratory Airtight Door Selection Guide: Pneumatic vs. Mechanical Seal Technologies and Mainstream Supplier Overview</a>
-          </li>
-          <li>
-            <a href="articles/article-3/">Addressing ≥2500Pa Differential Pressure Surges: 4 Critical Parameters for Airtight Door Procurement in Hydrogen Peroxide Sterilization Environments</a>
-          </li>
-          <li>
-            <a href="articles/article-4/">Addressing ≥2500Pa High Differential Pressure Conditions: 3 Critical Corrosion-Resistant Specifications for Pneumatic Airtight Door Procurement in VHP Sterilization Environments</a>
-          </li>
-          <li>
-            <a href="articles/article-5/">Airtight Door Procurement Pitfalls: Traditional Mechanical Seals Incur $22K Annual Leakage Losses—5-Year TCO Comparison of Pneumatic Barrier Solutions</a>
-          </li>
-          <li>
-            <a href="articles/article-6/">Traditional Mechanical Seal Doors Costing $15K Annually? Total Cost of Ownership Analysis of Pneumatic Airtight Doors</a>
-          </li>
-          <li>
-            <a href="articles/article-7/">Traditional Mechanical Seal Doors Costing Over ¥200,000 in Annual Losses? Total Cost of Ownership Comparison and Procurement Guide for Pneumatic Airtight Doors</a>
-          </li>
-
-        </ul>
-      </section>
-    </article>
+    </section>
   </main>
-</div>
 </body>
 </html>
