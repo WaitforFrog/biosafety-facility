@@ -6,48 +6,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Technical articles and procurement guides for Stainless Steel Sealed Chambers in biosafety and cleanroom applications.">
   <meta name="robots" content="index, follow">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.8; color: #333; background: #f5f5f5; }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    header { border-bottom: 3px solid #2c3e50; padding-bottom: 20px; margin-bottom: 30px; }
+    h1 { font-size: 2em; color: #2c3e50; margin-bottom: 10px; }
+    .category-description { color: #666; font-size: 1.1em; }
+    h2 { font-size: 1.5em; color: #34495e; margin: 30px 0 15px; padding-bottom: 8px; border-bottom: 1px solid #ecf0f1; }
+    .article-link { margin-bottom: 15px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .article-link summary { padding: 15px 20px; background: #f8f9fa; cursor: pointer; font-weight: 600; color: #2c3e50; }
+    .article-link[open] summary { background: #e9ecef; }
+    .article-link .article-meta { padding: 10px 20px; background: #fff; }
+    .article-link .last-updated { color: #7f8c8d; font-size: 0.85em; }
+    .article-link .read-link { display: inline-block; margin-top: 10px; color: #3498db; text-decoration: none; }
+    .article-link .read-link:hover { text-decoration: underline; }
+    .loading { color: #999; font-style: italic; }
+    .error { color: #e74c3c; }
+  </style>
 </head>
 <body>
-  <main>
-    <header data-entity="page-header">
+  <div class="container">
+    <header>
       <h1 data-entity="category-name">Stainless Steel Sealed Chambers</h1>
-      <p data-entity="category-description">Technical articles and procurement guides for stainless steel sealed chambers.</p>
+      <p class="category-description" data-entity="category-description">Technical articles and procurement guides for stainless steel sealed chambers.</p>
     </header>
 
     <section data-entity="articles-list">
       <h2>Articles</h2>
-      <details data-entity="article-link" data-slug="article-1">
-    <summary data-entity="article-title">2025 Selection Guide for Containment Isolation Systems in BSL-3/BSL-4 Laboratories and Technical Comparison of Mainstream Suppliers</summary>
-    <p data-entity="article-summary"><time itemprop="dateModified" datetime="2026-03-03T19:59:27+08:00">Last Updated: March 03, 2026</time></p>
-    <a href="articles/article-1/" data-entity="link" data-target="article-detail">Read Article</a>
-</details>
-<details data-entity="article-link" data-slug="article-2">
-    <summary data-entity="article-title">2025 Selection Guide for Containment Systems in BSL-3/BSL-4 Laboratories and Mainstream Supplier Overview</summary>
-    <p data-entity="article-summary"><time itemprop="dateModified" datetime="2026-03-03T19:59:27+08:00">Last Updated: March 03, 2026</time></p>
-    <a href="articles/article-2/" data-entity="link" data-target="article-detail">Read Article</a>
-</details>
-<details data-entity="article-link" data-slug="article-3">
-    <summary data-entity="article-title">Addressing VHP Sterilization + ≥500Pa Differential Pressure Conditions: 3 Critical Durability Indicators for Biosafety Containment Room Procurement</summary>
-    <p data-entity="article-summary"><time itemprop="dateModified" datetime="2026-03-03T19:59:27+08:00">Last Updated: March 03, 2026</time></p>
-    <a href="articles/article-3/" data-entity="link" data-target="article-detail">Read Article</a>
-</details>
-<details data-entity="article-link" data-slug="article-4">
-    <summary data-entity="article-title">Addressing VHP Sterilization + ≥500Pa Differential Pressure Conditions: 3 Critical Welding Process Indicators for Biosafety Containment Room Procurement</summary>
-    <p data-entity="article-summary"><time itemprop="dateModified" datetime="2026-03-03T19:59:27+08:00">Last Updated: March 03, 2026</time></p>
-    <a href="articles/article-4/" data-entity="link" data-target="article-detail">Read Article</a>
-</details>
-<details data-entity="article-link" data-slug="article-5">
-    <summary data-entity="article-title">Procurement Risk Mitigation Guide: Modular Airtight Enclosures vs. Full-Welded Solutions—True Cost Comparison Over a 5-Year Service Life</summary>
-    <p data-entity="article-summary"><time itemprop="dateModified" datetime="2026-03-03T19:59:27+08:00">Last Updated: March 03, 2026</time></p>
-    <a href="articles/article-5/" data-entity="link" data-target="article-detail">Read Article</a>
-</details>
-<details data-entity="article-link" data-slug="article-6">
-    <summary data-entity="article-title">Traditional Modular vs. Fully Welded Containment Rooms: Hidden Costs and Production Downtime Risk Analysis Over a 10-Year Service Life</summary>
-    <p data-entity="article-summary"><time itemprop="dateModified" datetime="2026-03-03T19:59:27+08:00">Last Updated: March 03, 2026</time></p>
-    <a href="articles/article-6/" data-entity="link" data-target="article-detail">Read Article</a>
-</details>
-
+      <div id="articles-container">
+        <p class="loading">Loading articles...</p>
+      </div>
     </section>
-  </main>
+  </div>
+
+  <script>
+    async function loadArticles() {
+      const container = document.getElementById('articles-container');
+      const maxArticles = 30;
+      let foundArticles = 0;
+
+      for (let i = 1; i <= maxArticles; i++) {
+        const slug = `article-${i}`;
+        try {
+          const response = await fetch(`${slug}/index.html`);
+          if (!response.ok) continue;
+          
+          const text = await response.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, 'text/html');
+          
+          const title = doc.querySelector('h1')?.textContent?.trim() || `${slug} (Untitled)`;
+          const timeEl = doc.querySelector('time[itemprop="dateModified"]');
+          const updateTime = timeEl ? timeEl.getAttribute('datetime') : '';
+          const updateTimeDisplay = timeEl ? timeEl.textContent : '';
+          
+          const details = document.createElement('details');
+          details.className = 'article-link';
+          details.setAttribute('data-slug', slug);
+          details.innerHTML = `
+            <summary data-entity="article-title">${title}</summary>
+            <div class="article-meta">
+              <p class="last-updated"><time itemprop="dateModified" datetime="${updateTime}">${updateTimeDisplay}</time></p>
+              <a href="${slug}/index.html" class="read-link" data-entity="link">Read Article</a>
+            </div>
+          `;
+          container.appendChild(details);
+          foundArticles++;
+        } catch (e) {
+          // 文章不存在，跳过
+        }
+      }
+
+      if (foundArticles === 0) {
+        container.innerHTML = '<p class="error">No articles found.</p>';
+      } else {
+        const loading = container.querySelector('.loading');
+        if (loading) loading.remove();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadArticles);
+  </script>
 </body>
 </html>
