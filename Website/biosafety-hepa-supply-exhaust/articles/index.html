@@ -49,7 +49,8 @@
       for (let i = 1; i <= maxArticles; i++) {
         const slug = `article-${i}`;
         try {
-          const response = await fetch(`${slug}/index.html`);
+          const basePath = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname + '/';
+          const response = await fetch(basePath + slug + '/index.html');
           if (!response.ok) continue;
           
           const text = await response.text();
