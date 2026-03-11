@@ -350,8 +350,15 @@ def load_product_parameters():
     return products_data
 
 
-def call_api(system_prompt, user_prompt, temperature=0.4):
-    """调用 OpenAI API"""
+def call_api(system_prompt, user_prompt, temperature=0.4, max_tokens=32000):
+    """调用 OpenAI API
+    
+    Args:
+        system_prompt: 系统提示词
+        user_prompt: 用户提示词
+        temperature: 温度参数
+        max_tokens: 最大输出token数（默认32000，对应约27000字符）
+    """
     try:
         response = client.chat.completions.create(
             model="claude-opus-4-6",
@@ -359,7 +366,8 @@ def call_api(system_prompt, user_prompt, temperature=0.4):
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
             ],
-            temperature=temperature
+            temperature=temperature,
+            max_tokens=max_tokens  # 强制限制输出长度
         )
         return response.choices[0].message.content.strip()
     except Exception as e:
@@ -451,14 +459,20 @@ for product_name, product_info in products.items():
 3. Output in pure Markdown format
 4. Make sure the title is unique and different from any previous articles
 5. Use tables extensively for technical specifications and comparisons
-6. IMPORTANT: Your output will be truncated at approximately 27,000 characters. Please ensure your article is complete and well-structured within this limit. Write a comprehensive but focused article that covers the essential aspects without excessive length.
+6. STRICT OUTPUT LENGTH REQUIREMENT: Your article MUST be between 20,000 and 27,000 characters (inclusive). 
+   - Target approximately 24,000-26,000 characters for optimal length
+   - If you write less than 20,000 characters, the article will be incomplete
+   - If you exceed 27,000 characters, it will be forcibly truncated at a bad position
+   - Plan your content structure to fit within this range
+   - Count your characters as you write and adjust accordingly
 
 Request timestamp: {current_time} (For reference only, do not mention in article.)"""
 
     print(f"  🎯 选取主题: {topics_str}")
     print(f"  ⏳ 正在请求 AI 生成中立科普文章...")
     print(f"  📝 提示词已准备好 (长度: {len(system_prompt) + len(user_prompt)} 字符)")
-    result_text = call_api(system_prompt, user_prompt, 0.3)
+    # max_tokens=12000 给予足够空间（对应约32000字符），让AI能写到24000-27000
+    result_text = call_api(system_prompt, user_prompt, 0.3, max_tokens=12000)
     
     if not result_text:
         print(f"  ❌ API 调用失败，跳过产品: {product_name}")
