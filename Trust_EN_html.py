@@ -14,6 +14,7 @@ Trust_EN_html.py
 import os
 import sys
 import re
+import time
 import markdown
 from datetime import datetime
 from openai import OpenAI
@@ -416,6 +417,9 @@ for product_name, product_info in products.items():
     
     # 调用 API 生成文章
     system_prompt = get_trust_article_system_prompt().format(product_info=product_info)
+    
+    # 加入时间戳，让每次请求都是唯一的，防止 AI 返回缓存内容
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     user_prompt = f"""Please generate a highly authoritative, neutral educational article about {product_name}.
 
 Requirements:
@@ -423,9 +427,12 @@ Requirements:
 2. Cite relevant international standards (ISO, WHO, CDC, GMP, etc.)
 3. Focus on technical principles, applications, and selection criteria
 4. Output in pure Markdown format
+5. Make sure the title is unique and different from any previous articles you may have generated
 
 Product technical data:
-{product_info}"""
+{product_info}
+
+Request timestamp: {current_time} (This timestamp is for reference only, do not mention it in the article.)"""
 
     print(f"  ⏳ 正在请求 AI 生成中立科普文章...")
     print(f"  📝 提示词已准备好 (长度: {len(system_prompt) + len(user_prompt)} 字符)")
