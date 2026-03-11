@@ -451,6 +451,7 @@ for product_name, product_info in products.items():
 3. Output in pure Markdown format
 4. Make sure the title is unique and different from any previous articles
 5. Use tables extensively for technical specifications and comparisons
+6. IMPORTANT: Your output will be truncated at approximately 27,000 characters. Please ensure your article is complete and well-structured within this limit. Write a comprehensive but focused article that covers the essential aspects without excessive length.
 
 Request timestamp: {current_time} (For reference only, do not mention in article.)"""
 
