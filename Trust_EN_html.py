@@ -19,7 +19,8 @@ from datetime import datetime
 from openai import OpenAI
 
 # ================= 配置区 =================
-PARAMETERS_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/参数"
+#PARAMETERS_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/参数"
+PARAMETERS_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Check"
 OUTPUT_BASE_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Website"
 ARTICLE_BASE_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/文章"
 
@@ -517,8 +518,23 @@ print(f"📂 备份: 文章/{{产品英文名}}/Trust/article-{{N}}/index.html")
 def git_commit_and_push(commit_message):
     """自动提交并推送到远程仓库"""
     import subprocess
+    import os
     
     try:
+        # 先更新所有产品的文章索引页
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        build_script = os.path.join(script_dir, "build_articles_index.py")
+        
+        print(f"\n🔄 正在更新所有产品的文章索引页...")
+        result = subprocess.run(
+            ["python3", build_script],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0:
+            print(f"  ✅ 文章索引更新完成")
+        else:
+            print(f"  ⚠️ 文章索引更新失败: {result.stderr}")
+        
         # git add
         print(f"\n🔄 正在 git add...")
         subprocess.run(["git", "add", "-A"], check=True, capture_output=True)
