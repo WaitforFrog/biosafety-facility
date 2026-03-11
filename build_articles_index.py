@@ -108,11 +108,13 @@ def build_articles_index(articles_dir: Path) -> bool:
     else:
         lines = []
         for it in items:
+            # 使用绝对路径，避免 .../articles（无末尾斜杠）时相对链接解析错误导致 404
+            article_url = f"/{product_slug}/articles/{it['slug']}/index.html"
             lines.append(f'''        <details class="article-link" data-slug="{it["slug"]}">
           <summary data-entity="article-title">{it["title"]}</summary>
           <div class="article-meta">
             <p class="last-updated"><time itemprop="dateModified" datetime="{it["datetime"]}">{it["time_display"]}</time></p>
-            <a href="{it["slug"]}/index.html" class="read-link" data-entity="link">Read Article</a>
+            <a href="{article_url}" class="read-link" data-entity="link">Read Article</a>
           </div>
         </details>''')
         article_items = "\n".join(lines)
