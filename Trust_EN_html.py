@@ -557,8 +557,8 @@ def git_commit_and_push(commit_message):
         return False
 
 
-# 是否自动提交到 Git
-AUTO_GIT_PUSH = True
+# 是否自动提交到 Git（True=自动，False=手动）
+AUTO_GIT_PUSH = False
 
 if AUTO_GIT_PUSH and success_count > 0:
     print("\n" + "=" * 60)
