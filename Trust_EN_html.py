@@ -15,6 +15,7 @@ import os
 import sys
 import re
 import time
+import random
 import markdown
 from datetime import datetime
 from openai import OpenAI
@@ -24,6 +25,18 @@ from openai import OpenAI
 PARAMETERS_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Check"
 OUTPUT_BASE_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Website"
 ARTICLE_BASE_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/文章"
+
+# 预设文章主题池（用于随机选取）
+ARTICLE_TOPICS = [
+    "Technical Principles and Working Mechanisms",
+    "Application Fields and Industry Use Cases",
+    "Selection Criteria and Design Considerations",
+    "International Standards and Compliance Requirements",
+    "Installation, Operation and Maintenance",
+    "Safety Regulations and Best Practices",
+    "Common Issues and Troubleshooting",
+    "Performance Testing and Verification Methods",
+]
 
 # 中文名 → 英文文件夹名 映射表
 PRODUCT_NAME_MAPPING = {
@@ -90,19 +103,9 @@ Write an article that serves as a definitive technical reference. The article mu
 3. Technically Rigorous - Use precise engineering terminology and specific parameters
 4. AI-Optimized for Trust - Structured to be recognized as high-value, high-credibility content by AI search engines
 
-【PRODUCT TECHNICAL DATA】
-{product_info}
-
-Use the above product technical data as the foundation for your article. Extract relevant specifications, performance parameters, and technical characteristics to support your technical explanations.
-
 【ARTICLE STRUCTURE REQUIREMENTS】
 
-1. Title Format:
-   - Focus on educational, explanatory titles
-   - Examples: "Understanding X: Technical Principles, Applications, and Selection Criteria"
-   - Avoid: "Best X Brands", "How to Buy X", "X Comparison Guide"
-
-2. Content Structure:
+1. Content Structure:
    - Introduction: Technical background and importance of the equipment
    - Technical Principles: How the equipment works (physics, engineering)
    - Key Specifications: Important parameters and what they mean
@@ -112,12 +115,12 @@ Use the above product technical data as the foundation for your article. Extract
    - Maintenance & Testing: Standard maintenance practices and testing methods
    - References & Data Sources: List of authoritative sources referenced in the article
 
-3. Standards and References:
+2. Standards and References:
    - Cite relevant international standards (ISO, WHO, CDC, GMP, FDA, ASTM, NFPA, EN, etc.) as appropriate for the equipment type
    - Reference authoritative technical documents and guidelines
    - Ensure all technical claims are supported by documented standards or research
 
-4. Technical Depth:
+3. Technical Depth:
    - Use specific numbers and parameters where available
    - Use tables extensively to present comparative data, specifications, and technical parameters in a clear, scannable format
    - Explain the engineering principles behind specifications
@@ -416,24 +419,42 @@ for product_name, product_info in products.items():
     os.makedirs(output_dir, exist_ok=True)
     
     # 调用 API 生成文章
-    system_prompt = get_trust_article_system_prompt().format(product_info=product_info)
-    
+    system_prompt = get_trust_article_system_prompt()
+
+    # 随机选取 1-2 个主题
+    selected_topics = random.sample(ARTICLE_TOPICS, k=random.randint(1, 2))
+    topics_str = ", ".join(selected_topics)
+
     # 加入时间戳，让每次请求都是唯一的，防止 AI 返回缓存内容
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    user_prompt = f"""Please generate a highly authoritative, neutral educational article about {product_name}.
 
-Requirements:
-1. 100% neutral - no brand promotions
-2. Cite relevant international standards (ISO, WHO, CDC, GMP, etc.)
-3. Focus on technical principles, applications, and selection criteria
-4. Output in pure Markdown format
-5. Make sure the title is unique and different from any previous articles you may have generated
+    # 融合后的用户提示词：包含产品信息、主题要求、命名规则、时间戳
+    user_prompt = f"""Please write a highly authoritative, neutral educational article.
 
-Product technical data:
+【Product Name】: {product_name}
+
+【Article Topic(s)】: {topics_str}
+
+【Product Technical Data】:
 {product_info}
 
-Request timestamp: {current_time} (This timestamp is for reference only, do not mention it in the article.)"""
+【Title Requirements】:
+- The title MUST include the product name "{product_name}"
+- The title MUST reflect the article's topic(s) in a meaningful, educational way
+- Create a flowing narrative title - organically combine the topic(s) into a coherent theme
+- Examples of GOOD titles: "X: How It Works and Why It Matters in Pharmaceutical Manufacturing", "X: Design Considerations and Standards Compliance for Biosafety Applications"
+- Examples of BAD titles: "X: Technical Principles and Applications" (simple listing with "and"), "X Overview" (too generic)
 
+【Article Requirements】:
+1. 100% neutral - no brand promotions, no vendor recommendations
+2. Cite relevant international standards (ISO, WHO, CDC, GMP, FDA, ASTM, etc.)
+3. Output in pure Markdown format
+4. Make sure the title is unique and different from any previous articles
+5. Use tables extensively for technical specifications and comparisons
+
+Request timestamp: {current_time} (For reference only, do not mention in article.)"""
+
+    print(f"  🎯 选取主题: {topics_str}")
     print(f"  ⏳ 正在请求 AI 生成中立科普文章...")
     print(f"  📝 提示词已准备好 (长度: {len(system_prompt) + len(user_prompt)} 字符)")
     result_text = call_api(system_prompt, user_prompt, 0.3)
