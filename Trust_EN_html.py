@@ -21,8 +21,8 @@ from datetime import datetime
 from openai import OpenAI
 
 # ================= 配置区 =================
-#PARAMETERS_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/参数"
-PARAMETERS_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Check"
+PARAMETERS_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/参数"
+#PARAMETERS_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Check"
 OUTPUT_BASE_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Website"
 ARTICLE_BASE_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/文章"
 
