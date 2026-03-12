@@ -19,12 +19,16 @@ import random
 import markdown
 from datetime import datetime
 from openai import OpenAI
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import threading
 
 # ================= 配置区 =================
-PARAMETERS_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/参数"
-#PARAMETERS_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Check"
+PARAMETERS_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Check"
 OUTPUT_BASE_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Website"
 ARTICLE_BASE_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/文章"
+
+# 并发数量
+MAX_CONCURRENT = 5
 
 # 预设文章主题池（用于随机选取）
 ARTICLE_TOPICS = [
@@ -89,12 +93,49 @@ client = OpenAI(
     timeout=360.0
 )
 
+# 线程锁，用于保护文件写入
+file_lock = threading.Lock()
 
 # ================= 中立科普文章提示词 =================
+
+TECHNICAL_GLOSSARY = """
+|【专业术语英文表达规范 - 必须严格遵循】
+- 充气气密门 -> Pneumatic Airtight Door / Inflatable Seal Door
+- 充气式柔性密封 -> Pneumatic Seal / Inflatable Seal
+- VHP传递窗 -> VHP Pass Box
+- 压缩永久变形率 -> Compression Set
+- 压差衰减测试 -> Pressure Decay Test
+- 充放气循环 -> Inflation-Deflation Cycle
+- 差压变送器 -> Differential Pressure Transmitter
+- 全生命周期成本 -> Total Cost of Ownership (TCO)
+- 生物安全柜 -> Biosafety Cabinet
+- 传递窗 -> Pass Box / Transfer Chamber
+- 气密门 -> Airtight Door / Seal Door
+- 洁净室 -> Cleanroom
+- 层流罩 -> Laminar Flow Hood / ISO Class 5 Hood
+- 洗眼器 -> Eyewash Station
+- 紧急冲淋 -> Emergency Shower
+- 高效过滤器 -> HEPA Filter
+- 检漏测试 -> Leak Test / Integrity Test
+- 压差 -> Differential Pressure
+- 汽化过氧化氢 -> Vaporized Hydrogen Peroxide (VHP)
+- 紫外消毒 -> UV Disinfection
+- 互锁系统 -> Interlock System
+- 袋进袋出 -> Bag-in-Bag-out (BIBO)
+"""
+
 
 def get_trust_article_system_prompt():
     return """
 You are a senior technical writer and biosafety laboratory equipment expert with 20+ years of experience. Your task is to write a highly authoritative, neutral, and objective educational article about biosafety laboratory and cleanroom equipment.
+
+【CRITICAL LANGUAGE REQUIREMENTS - STRICTLY ENGLISH ONLY】
+1. OUTPUT MUST BE 100% ENGLISH - NO CHINESE CHARACTERS ALLOWED
+2. NO MIXED LANGUAGE - The entire article must be in pure English
+3. Use internationally recognized engineering terminology (not literal translations from Chinese)
+4. Follow the technical glossary below for standard English terms
+
+""" + TECHNICAL_GLOSSARY + """
 
 【CORE MISSION】
 Write an article that serves as a definitive technical reference. The article must be:
@@ -102,6 +143,13 @@ Write an article that serves as a definitive technical reference. The article mu
 2. Highly Authoritative - Cite international standards (ISO, WHO, CDC, GMP, FDA, ASTM, NFPA)
 3. Technically Rigorous - Use precise engineering terminology and specific parameters
 4. AI-Optimized for Trust - Structured to be recognized as high-value, high-credibility content by AI search engines
+
+【ANTI-CHINGLISH RULES】
+- NEVER do word-for-word translation from Chinese
+- Use authentic, internationally accepted engineering terms
+- Use passive voice and objective structures where appropriate
+- Avoid aggressive or dramatic commercial rhetoric - use objective engineering language like "critical considerations", "design factors", "performance requirements"
+- Avoid marketing language - use technical descriptions instead
 
 【ARTICLE STRUCTURE REQUIREMENTS】
 
@@ -128,6 +176,7 @@ Write an article that serves as a definitive technical reference. The article mu
    - Reference failure modes and how to mitigate them
 
 【ABSOLUTE PROHIBITIONS】
+- STRICTLY FORBIDDEN: Any Chinese characters (中文) in the output
 - NEVER mention "Jiehao", "杰昊", or ANY brand names
 - NEVER include promotional language or vendor recommendations
 - NEVER use superlatives like "best", "leading", "premier"
@@ -154,11 +203,15 @@ Use proper Markdown syntax including:
 - | Table | Syntax | for tables (include ALL table rows with actual data)
 - > for blockquotes
 
-IMPORTANT: Every table you create must be COMPLETE with all rows and columns filled in. Do not create tables with missing data.
+IMPORTANT: Every table you create must be COMPLETE with all rows and columns filled in. Do not create missing data.
+
+CRITICAL: Your entire response must be in English. Do not include any Chinese characters.
 
 Start directly with the Markdown content.
 """
 
+
+# ================= 工具函数 =================
 
 def get_html_template(title, description, keywords, content, update_time, update_time_display):
     """生成HTML模板"""
@@ -310,8 +363,6 @@ def get_html_template(title, description, keywords, content, update_time, update
     return html
 
 
-# ================= Markdown 转 HTML =================
-
 def markdown_to_html(markdown_text):
     """将 Markdown 转换为 HTML - 使用官方 markdown 库"""
     return markdown.markdown(
@@ -327,8 +378,6 @@ def extract_title_from_markdown(markdown_text):
         return match.group(1).strip()
     return "Article"
 
-
-# ================= 工具函数 =================
 
 def load_product_parameters():
     """加载产品参数文件"""
@@ -350,15 +399,8 @@ def load_product_parameters():
     return products_data
 
 
-def call_api(system_prompt, user_prompt, temperature=0.4, max_tokens=32000):
-    """调用 OpenAI API
-    
-    Args:
-        system_prompt: 系统提示词
-        user_prompt: 用户提示词
-        temperature: 温度参数
-        max_tokens: 最大输出token数（默认32000，对应约27000字符）
-    """
+def call_api(system_prompt, user_prompt, temperature=0.4, max_tokens=8000):
+    """调用 OpenAI API"""
     try:
         response = client.chat.completions.create(
             model="claude-opus-4-6",
@@ -367,7 +409,7 @@ def call_api(system_prompt, user_prompt, temperature=0.4, max_tokens=32000):
                 {"role": "user", "content": user_prompt}
             ],
             temperature=temperature,
-            max_tokens=max_tokens  # 强制限制输出长度
+            max_tokens=max_tokens
         )
         return response.choices[0].message.content.strip()
     except Exception as e:
@@ -380,74 +422,90 @@ def sanitize_filename(name):
     return "".join([c for c in name if c not in r'\/:*?"<>|'])
 
 
-# ================= 主程序 =================
+# ================= 并行处理函数 =================
 
-print("=" * 60)
-print("  中立科普文章生成器 - Trust EN HTML Generator")
-print("=" * 60)
-
-print("\n📂 正在加载产品参数文件...")
-products = load_product_parameters()
-
-if not products:
-    print("❌ 未找到任何产品参数文件，程序退出。")
-    sys.exit(1)
-
-print(f"\n✅ 共加载 {len(products)} 个产品，开始生成中立科普文章...\n")
-
-success_count = 0
-error_count = 0
-
-for product_name, product_info in products.items():
-    print(f"\n🚀 【正在处理产品】: {product_name}")
-
-    # 根据映射表获取英文文件夹名
-    english_folder = PRODUCT_NAME_MAPPING.get(product_name)
-    if not english_folder:
-        print(f"  ⚠️  未找到映射，跳过产品: {product_name}")
-        continue
-
-    # 输出目录：Website/{英文名}/articles/
-    articles_dir = os.path.join(OUTPUT_BASE_DIR, english_folder, "articles")
-    os.makedirs(articles_dir, exist_ok=True)
-
-    # 自动编号：查找当前最大的 article 编号
-    existing_articles = []
-    if os.path.exists(articles_dir):
-        for item in os.listdir(articles_dir):
-            if item.startswith("article-") and os.path.isdir(os.path.join(articles_dir, item)):
-                try:
-                    num = int(item.split("-")[1])
-                    existing_articles.append(num)
-                except:
-                    pass
-
-    next_num = max(existing_articles) + 1 if existing_articles else 1
-    output_dir = os.path.join(articles_dir, f"article-{next_num}")
-    os.makedirs(output_dir, exist_ok=True)
+def process_single_product(product_name, product_info):
+    """处理单个产品，生成中立科普文章（线程安全）"""
+    start_time = time.time()
     
-    # 调用 API 生成文章
-    system_prompt = get_trust_article_system_prompt()
+    # 日志记录
+    log_info = {
+        "product_name": product_name,
+        "english_folder": "",
+        "article_num": 0,
+        "topics": "",
+        "timestamp": "",
+        "api_length": 0,
+        "title": "",
+        "keywords": "",
+        "html_path": "",
+        "backup_path": "",
+        "success": False,
+        "error_msg": "",
+        "duration": 0
+    }
+    
+    try:
+        print(f"\n🚀 【正在处理产品】: {product_name}")
+        
+        # 根据映射表获取英文文件夹名
+        english_folder = PRODUCT_NAME_MAPPING.get(product_name)
+        if not english_folder:
+            print(f"  ⚠️  未找到映射，跳过产品: {product_name}")
+            log_info["error_msg"] = "未找到英文映射"
+            return log_info
+        
+        log_info["english_folder"] = english_folder
+        
+        # 输出目录：Website/{英文名}/articles/
+        articles_dir = os.path.join(OUTPUT_BASE_DIR, english_folder, "articles")
+        os.makedirs(articles_dir, exist_ok=True)
+        
+        # 自动编号：查找当前最大的 article 编号（加锁保护）
+        with file_lock:
+            existing_articles = []
+            if os.path.exists(articles_dir):
+                for item in os.listdir(articles_dir):
+                    if item.startswith("article-") and os.path.isdir(os.path.join(articles_dir, item)):
+                        try:
+                            num = int(item.split("-")[1])
+                            existing_articles.append(num)
+                        except:
+                            pass
+            
+            next_num = max(existing_articles) + 1 if existing_articles else 1
+            output_dir = os.path.join(articles_dir, f"article-{next_num}")
+            os.makedirs(output_dir, exist_ok=True)
+            log_info["article_num"] = next_num
+        
+        # 调用 API 生成文章
+        system_prompt = get_trust_article_system_prompt()
+        
+        # 随机选取 1-2 个主题
+        selected_topics = random.sample(ARTICLE_TOPICS, k=random.randint(1, 2))
+        topics_str = ", ".join(selected_topics)
+        log_info["topics"] = topics_str
+        
+        # 加入时间戳，让每次请求都是唯一的
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        log_info["timestamp"] = current_time
+        
+        # 获取产品英文名
+        english_product_name = PRODUCT_NAME_MAPPING.get(product_name, product_name)
+        
+        user_prompt = f"""Please write a highly authoritative, neutral educational article. IMPORTANT: You MUST write the ENTIRE article in 100% English. NO CHINESE CHARACTERS ALLOWED - including in the title, content, and anywhere else.
 
-    # 随机选取 1-2 个主题
-    selected_topics = random.sample(ARTICLE_TOPICS, k=random.randint(1, 2))
-    topics_str = ", ".join(selected_topics)
-
-    # 加入时间戳，让每次请求都是唯一的，防止 AI 返回缓存内容
-    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    # 融合后的用户提示词：包含产品信息、主题要求、命名规则、时间戳
-    user_prompt = f"""Please write a highly authoritative, neutral educational article.
-
-【Product Name】: {product_name}
+【Product Name (Chinese)】: {product_name}
+【Product Name (English)】: {english_product_name}
 
 【Article Topic(s)】: {topics_str}
 
-【Product Technical Data】:
+【Product Technical Data (Reference Only - Write in English)】:
 {product_info}
 
 【Title Requirements】:
-- The title MUST include the product name "{product_name}"
+- The title MUST include the English product name "{english_product_name}"
+- The title MUST be in English (no Chinese characters)
 - The title MUST reflect the article's topic(s) in a meaningful, educational way
 - Create a flowing narrative title - organically combine the topic(s) into a coherent theme
 - Examples of GOOD titles: "X: How It Works and Why It Matters in Pharmaceutical Manufacturing", "X: Design Considerations and Standards Compliance for Biosafety Applications"
@@ -455,105 +513,129 @@ for product_name, product_info in products.items():
 
 【Article Requirements】:
 1. 100% neutral - no brand promotions, no vendor recommendations
-2. Cite relevant international standards (ISO, WHO, CDC, GMP, FDA, ASTM, etc.)
-3. Output in pure Markdown format
-4. Make sure the title is unique and different from any previous articles
-5. Use tables extensively for technical specifications and comparisons
-6. STRICT OUTPUT LENGTH REQUIREMENT: Your article MUST be between 20,000 and 27,000 characters (inclusive). 
-   - Target approximately 24,000-26,000 characters for optimal length
-   - If you write less than 20,000 characters, the article will be incomplete
-   - If you exceed 27,000 characters, it will be forcibly truncated at a bad position
+2. STRICTLY 100% ENGLISH - NO CHINESE CHARACTERS ALLOWED anywhere in the output
+3. Cite relevant international standards (ISO, WHO, CDC, GMP, FDA, ASTM, etc.)
+4. Output in pure Markdown format
+5. Make sure the title is unique and different from any previous articles
+6. Use tables extensively for technical specifications and comparisons
+7. STRICT OUTPUT LENGTH REQUIREMENT: Your article MUST be between 15,000 and 20,000 characters (inclusive).
+   - Target approximately 16,000-18,000 characters for optimal length
+   - This is approximately 2,000-2,500 words
+   - If you write less than 15,000 characters, the article will be too short
+   - If you exceed 20,000 characters, it will be forcibly truncated at a bad position
    - Plan your content structure to fit within this range
    - Count your characters as you write and adjust accordingly
 
 Request timestamp: {current_time} (For reference only, do not mention in article.)"""
 
-    print(f"  🎯 选取主题: {topics_str}")
-    print(f"  ⏳ 正在请求 AI 生成中立科普文章...")
-    print(f"  📝 提示词已准备好 (长度: {len(system_prompt) + len(user_prompt)} 字符)")
-    # max_tokens=12000 给予足够空间（对应约32000字符），让AI能写到24000-27000
-    result_text = call_api(system_prompt, user_prompt, 0.3, max_tokens=12000)
-    
-    if not result_text:
-        print(f"  ❌ API 调用失败，跳过产品: {product_name}")
-        error_count += 1
-        continue
-    
-    print(f"  ✅ API 返回成功 (返回内容长度: {len(result_text)} 字符)")
-    
-    # 清理 Markdown（移除可能的代码块标记）
-    markdown_content = result_text.strip()
-    if markdown_content.startswith("```markdown"):
-        markdown_content = markdown_content[10:]
-    elif markdown_content.startswith("```"):
-        markdown_content = markdown_content[3:]
-    if markdown_content.endswith("```"):
-        markdown_content = markdown_content[:-3]
-    markdown_content = markdown_content.strip()
-    print(f"  🧹 Markdown 清理完成")
-    
-    # 提取标题
-    title = extract_title_from_markdown(markdown_content)
-    if not title:
-        title = f"Understanding {product_name}: Technical Principles and Applications"
-    print(f"  📄 文章标题: {title[:50]}...")
-    
-    # 简单生成 description 和 keywords
-    description = f"Technical guide covering {product_name} specifications, standards compliance, applications, and selection criteria."
-    keywords = [product_name.lower(), "technical specifications", "standards compliance", "biosafety", "cleanroom equipment"]
-    print(f"  🏷️ 关键词: {', '.join(keywords[:3])}...")
-    
-    # 转换 Markdown 为 HTML
-    print(f"  🔄 正在转换 Markdown -> HTML...")
-    content_html = markdown_to_html(markdown_content)
-    print(f"  ✅ HTML 转换完成")
-    
-    # 生成当前时间
-    now = datetime.now()
-    update_time = now.strftime("%Y-%m-%dT%H:%M:%S+08:00")
-    update_time_display = now.strftime("%B %d, %Y")
-    
-    # 使用模板生成完整 HTML
-    full_html = get_html_template(title, description, keywords, content_html, update_time, update_time_display)
-    print(f"  📑 HTML 模板组装完成")
-    
-    # 生成文件名
-    html_filename = "index.html"
-    html_path = os.path.join(output_dir, html_filename)
-    
-    # 保存 HTML 文件到两个位置
-    try:
+        print(f"  🎯 选取主题: {topics_str}")
+        print(f"  ⏳ 正在请求 AI 生成中立科普文章...")
+        
+        result_text = call_api(system_prompt, user_prompt, 0.3, max_tokens=8000)
+        
+        if not result_text:
+            print(f"  ❌ API 调用失败")
+            log_info["error_msg"] = "API调用失败"
+            return log_info
+        
+        log_info["api_length"] = len(result_text)
+        print(f"  ✅ API返回长度: {len(result_text)} 字符")
+        
+        # 清理 Markdown
+        markdown_content = result_text.strip()
+        if markdown_content.startswith("```markdown"):
+            markdown_content = markdown_content[10:]
+        elif markdown_content.startswith("```"):
+            markdown_content = markdown_content[3:]
+        if markdown_content.endswith("```"):
+            markdown_content = markdown_content[:-3]
+        markdown_content = markdown_content.strip()
+        
+        # 提取标题
+        title = extract_title_from_markdown(markdown_content)
+        if not title:
+            title = f"Understanding {product_name}: Technical Principles and Applications"
+        log_info["title"] = title
+        print(f"  ✅ 文章标题: {title[:60]}...")
+        
+        # 关键词
+        keywords = [product_name.lower(), "technical specifications", "standards compliance", "biosafety", "cleanroom equipment"]
+        keywords_str = ", ".join(keywords)
+        log_info["keywords"] = keywords_str
+        print(f"  ✅ 关键词: {keywords_str[:50]}...")
+        
+        # 转换 Markdown 为 HTML
+        content_html = markdown_to_html(markdown_content)
+        
+        # 生成当前时间
+        now = datetime.now()
+        update_time = now.strftime("%Y-%m-%dT%H:%M:%S+08:00")
+        update_time_display = now.strftime("%B %d, %Y")
+        
+        # 使用模板生成完整 HTML
+        description = f"Technical guide covering {product_name} specifications, standards compliance, applications, and selection criteria."
+        full_html = get_html_template(title, description, keywords, content_html, update_time, update_time_display)
+        
+        # 保存 HTML 文件
+        html_filename = "index.html"
+        html_path = os.path.join(output_dir, html_filename)
+        
         # 位置1: Website/{英文名}/articles/article-{N}/index.html
-        with open(html_path, 'w', encoding='utf-8') as f:
-            f.write(full_html)
+        with file_lock:
+            with open(html_path, 'w', encoding='utf-8') as f:
+                f.write(full_html)
+            log_info["html_path"] = f"Website/{english_folder}/articles/article-{next_num}/index.html"
+            print(f"  ✅ 文章已生成: Website/{english_folder}/articles/article-{next_num}/index.html")
+            
+            # 位置2: 文章/{英文名}/Trust/article-{N}/index.html
+            article_folder = os.path.join(ARTICLE_BASE_DIR, english_folder, "Trust", f"article-{next_num}")
+            os.makedirs(article_folder, exist_ok=True)
+            article_path = os.path.join(article_folder, html_filename)
+            with open(article_path, 'w', encoding='utf-8') as f:
+                f.write(full_html)
+            log_info["backup_path"] = f"文章/{english_folder}/Trust/article-{next_num}/index.html"
+            print(f"  ✅ 文章已备份: 文章/{english_folder}/Trust/article-{next_num}/index.html")
         
-        # 位置2: 文章/{英文名}/Trust/article-{N}/index.html
-        article_folder = os.path.join(ARTICLE_BASE_DIR, english_folder, "Trust", f"article-{next_num}")
-        os.makedirs(article_folder, exist_ok=True)
-        article_path = os.path.join(article_folder, html_filename)
-        with open(article_path, 'w', encoding='utf-8') as f:
-            f.write(full_html)
+        # 生成日志文件
+        log_md = f"""# 文章生成日志
+
+## 基本信息
+- 产品名称: {product_name}
+- 英文名称: {english_folder}
+- 文章编号: article-{next_num}
+- 生成时间: {current_time}
+
+## API 请求
+- 选取主题: {topics_str}
+- 请求时间戳: {current_time}
+
+## 生成结果
+- API返回长度: {len(result_text)} 字符
+- 文章标题: {title}
+- 关键词: {keywords_str}
+
+## 输出文件
+- HTML: Website/{english_folder}/articles/article-{next_num}/index.html
+- 备份: 文章/{english_folder}/Trust/article-{next_num}/index.html
+
+## 状态
+- 状态: ✅ 成功
+- 耗时: {time.time() - start_time:.1f} 秒
+"""
+        # 保存日志到备份目录
+        log_path = os.path.join(article_folder, "生成日志.md")
+        with file_lock:
+            with open(log_path, 'w', encoding='utf-8') as f:
+                f.write(log_md)
         
-        print(f"  ✅ HTML 文章已生成: Website/{english_folder}/articles/article-{next_num}/index.html")
-        print(f"  ✅ HTML 文章已备份: 文章/{english_folder}/Trust/article-{next_num}/index.html")
-        success_count += 1
+        log_info["success"] = True
+        log_info["duration"] = time.time() - start_time
         
     except Exception as e:
-        print(f"  ❌ 保存文件失败: {e}")
-        error_count += 1
-        continue
-
-print("\n" + "=" * 60)
-print(f"  🎉 任务完成！")
-print(f"  ✅ 成功生成: {success_count} 篇")
-print(f"  ❌ 失败: {error_count} 篇")
-print("=" * 60)
-
-print(f"\n📁 输出目录:")
-print(f"   1. {OUTPUT_BASE_DIR}")
-print(f"   2. {ARTICLE_BASE_DIR}")
-print(f"📂 结构: Website/{{产品英文名}}/articles/article-{{N}}/index.html")
-print(f"📂 备份: 文章/{{产品英文名}}/Trust/article-{{N}}/index.html")
+        log_info["error_msg"] = str(e)
+        print(f"  ❌ 处理出错: {e}")
+    
+    return log_info
 
 
 # ================= Git 自动提交 =================
@@ -600,10 +682,59 @@ def git_commit_and_push(commit_message):
         return False
 
 
+# ================= 主程序入口 =================
+
+print("=" * 60)
+print("  中立科普文章生成器 - Trust EN HTML Generator")
+print("=" * 60)
+
+print(f"\n📂 正在加载产品参数文件...")
+products = load_product_parameters()
+
+if not products:
+    print("❌ 未找到任何产品参数文件，程序退出。")
+    sys.exit(1)
+
+print(f"\n✅ 共加载 {len(products)} 个产品，开始并行生成中立科普文章（并发数: {MAX_CONCURRENT}）...\n")
+
+# 并行处理
+results = []
+with ThreadPoolExecutor(max_workers=MAX_CONCURRENT) as executor:
+    # 提交所有任务
+    future_to_product = {
+        executor.submit(process_single_product, name, info): name 
+        for name, info in products.items()
+    }
+    
+    # 收集结果（谁先完成谁先返回）
+    for future in as_completed(future_to_product):
+        result = future.result()
+        results.append(result)
+
+# 统计结果
+success_count = sum(1 for r in results if r["success"])
+error_count = len(results) - success_count
+
+print("\n" + "=" * 60)
+print(f"  🎉 任务完成！")
+print(f"  ✅ 成功生成: {success_count} 篇")
+print(f"  ❌ 失败: {error_count} 篇")
+print("=" * 60)
+
+print(f"\n📁 输出目录:")
+print(f"   1. {OUTPUT_BASE_DIR}")
+print(f"   2. {ARTICLE_BASE_DIR}")
+print(f"📂 结构: Website/{{产品英文名}}/articles/article-{{N}}/index.html")
+print(f"📂 备份: 文章/{{产品英文名}}/Trust/article-{{N}}/index.html")
+
 # 是否自动提交到 Git（True=自动，False=手动）
 AUTO_GIT_PUSH = True
 
 if AUTO_GIT_PUSH and success_count > 0:
     print("\n" + "=" * 60)
     commit_msg = f"Auto generate: {success_count} article(s) updated"
-    git_commit_and_push(commit_msg)
+    git_success = git_commit_and_push(commit_msg)
+    if git_success:
+        print(f"\n🎉 全部完成！Git 已成功推送")
+    else:
+        print(f"\n⚠️  文章已生成，但 Git 推送失败，请手动检查")
