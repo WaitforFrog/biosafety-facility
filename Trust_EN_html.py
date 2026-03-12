@@ -668,12 +668,41 @@ def git_commit_and_push(commit_message):
         print(f"📝 正在 git commit...")
         subprocess.run(["git", "commit", "-m", commit_message], check=True, capture_output=True)
         
-        # git push
+        # git push with retry
         print(f"🚀 正在推送到远程仓库...")
-        subprocess.run(["git", "push"], check=True, capture_output=True)
+        max_retries = 3
+        retry_delay = 5  # seconds
         
-        print(f"✅ Git 提交并推送成功!")
-        return True
+        for attempt in range(max_retries):
+            try:
+                result = subprocess.run(
+                    ["git", "push"], 
+                    check=True, 
+                    capture_output=True,
+                    timeout=120  # 2 minutes timeout
+                )
+                print(f"✅ Git 提交并推送成功!")
+                return True
+            except subprocess.CalledProcessError as e:
+                error_msg = e.stderr.decode() if e.stderr else str(e)
+                if attempt < max_retries - 1:
+                    print(f"⚠️  Push 尝试 {attempt + 1} 失败，{retry_delay}秒后重试... ({error_msg[:100]})")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2  # exponential backoff
+                else:
+                    print(f"❌ Git 操作失败: {error_msg}")
+                    return False
+            except subprocess.TimeoutExpired:
+                if attempt < max_retries - 1:
+                    print(f"⚠️  Push 超时，{retry_delay}秒后重试...")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2
+                else:
+                    print(f"❌ Git 操作失败: 超时")
+                    return False
+            except Exception as e:
+                print(f"❌ Git 操作异常: {e}")
+                return False
     except subprocess.CalledProcessError as e:
         print(f"❌ Git 操作失败: {e.stderr.decode() if e.stderr else str(e)}")
         return False
