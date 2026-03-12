@@ -404,7 +404,7 @@ def load_product_parameters():
     return products_data
 
 
-def call_api(system_prompt, user_prompt, temperature=0.4, max_tokens=25000):
+def call_api(system_prompt, user_prompt, temperature=0.4, max_tokens=30000):
     """调用 OpenAI API"""
     try:
         response = client.chat.completions.create(
