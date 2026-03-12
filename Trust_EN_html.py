@@ -189,6 +189,11 @@ Write an article that serves as a definitive technical reference. The article mu
 3. NEVER use placeholder text like "various sizes available" or "contact manufacturer for details" - provide actual specifications
 4. Every section that mentions data MUST have complete tables with real values
 5. Include specific numerical values for all technical parameters mentioned
+6. MUST include a dedicated "References and Data Sources" section at the END of the article that clearly states:
+   - Which authoritative sources the article data comes from (ISO, WHO, CDC, GMP, FDA, ASTM, NFPA, EN, etc.)
+   - Specific standard numbers and documents referenced
+   - All data sources and references used in the article
+   - This section is MANDATORY and must not be omitted
 
 【OUTPUT FORMAT】
 Output your article in pure Markdown format. Do NOT output JSON, do NOT output HTML.
