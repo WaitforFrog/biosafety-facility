@@ -404,7 +404,7 @@ def load_product_parameters():
     return products_data
 
 
-def call_api(system_prompt, user_prompt, temperature=0.4, max_tokens=8000):
+def call_api(system_prompt, user_prompt, temperature=0.4, max_tokens=25000):
     """调用 OpenAI API"""
     try:
         response = client.chat.completions.create(
@@ -536,7 +536,7 @@ Request timestamp: {current_time} (For reference only, do not mention in article
         print(f"  🎯 选取主题: {topics_str}")
         print(f"  ⏳ 正在请求 AI 生成中立科普文章...")
         
-        result_text = call_api(system_prompt, user_prompt, 0.3, max_tokens=8000)
+        result_text = call_api(system_prompt, user_prompt, 0.3, max_tokens=15000)
         
         if not result_text:
             print(f"  ❌ API 调用失败")
