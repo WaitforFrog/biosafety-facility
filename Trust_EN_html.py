@@ -195,6 +195,13 @@ Write an article that serves as a definitive technical reference. The article mu
    - All data sources and references used in the article
    - This section is MANDATORY and must not be omitted
 
+【TABLE COUNT REQUIREMENT - STRICT LIMIT】
+- EACH article MUST include AT LEAST 1 data table but NO MORE THAN 2 data tables total
+- This is a HARD LIMIT: 1 ≤ number of tables ≤ 2
+- Data tables are defined as tables containing technical specifications, parameters, comparison data, or numerical information
+- Do not exceed 2 tables under any circumstances
+- If you need to present more information, use lists or descriptive text instead of additional tables
+
 【OUTPUT FORMAT】
 Output your article in pure Markdown format. Do NOT output JSON, do NOT output HTML.
 Use proper Markdown syntax including:
@@ -523,7 +530,8 @@ def process_single_product(product_name, product_info):
 4. Output in pure Markdown format
 5. Make sure the title is unique and different from any previous articles
 6. Use tables extensively for technical specifications and comparisons
-7. STRICT OUTPUT LENGTH REQUIREMENT: Your article MUST be between 15,000 and 20,000 characters (inclusive).
+7. TABLE COUNT REQUIREMENT (HARD LIMIT): Each article MUST include AT LEAST 1 data table but NO MORE THAN 2 data tables total. This is STRICT: 1 ≤ number of tables ≤ 2. If you need more space, use lists or descriptive text instead.
+8. STRICT OUTPUT LENGTH REQUIREMENT: Your article MUST be between 15,000 and 20,000 characters (inclusive).
    - Target approximately 16,000-18,000 characters for optimal length
    - This is approximately 2,000-2,500 words
    - If you write less than 15,000 characters, the article will be too short
