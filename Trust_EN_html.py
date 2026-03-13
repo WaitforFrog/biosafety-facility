@@ -761,6 +761,51 @@ print(f"   2. {ARTICLE_BASE_DIR}")
 print(f"📂 结构: Website/{{产品英文名}}/articles/article-{{N}}/index.html")
 print(f"📂 备份: 文章/{{产品英文名}}/Trust/article-{{N}}/index.html")
 
+# ================= 保存汇总日志 =================
+
+import json
+from datetime import datetime
+
+def save_run_summary(results, success_count, error_count):
+    """保存运行汇总到 JSON 文件"""
+    # 创建汇总日志目录
+    summary_dir = os.path.join(ARTICLE_BASE_DIR, "汇总日志")
+    os.makedirs(summary_dir, exist_ok=True)
+    
+    # 生成时间戳文件名
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    filename = f"{timestamp}.json"
+    filepath = os.path.join(summary_dir, filename)
+    
+    # 准备汇总数据（简化版）
+    simplified_results = []
+    for r in results:
+        item = {
+            "product_name": r["product_name"],
+            "success": r["success"]
+        }
+        if r["success"]:
+            item["backup_path"] = r["backup_path"]
+        simplified_results.append(item)
+    
+    summary = {
+        "run_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "total_products": len(results),
+        "success_count": success_count,
+        "error_count": error_count,
+        "results": simplified_results
+    }
+    
+    # 写入 JSON 文件
+    with open(filepath, 'w', encoding='utf-8') as f:
+        json.dump(summary, f, ensure_ascii=False, indent=2)
+    
+    print(f"\n📋 汇总日志已保存: {filepath}")
+    return filepath
+
+# 保存运行汇总
+save_run_summary(results, success_count, error_count)
+
 # 是否自动提交到 Git（True=自动，False=手动）
 AUTO_GIT_PUSH = True
 
