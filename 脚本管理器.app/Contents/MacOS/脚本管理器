@@ -1,0 +1,14 @@
+#!/bin/bash
+# 启动脚本管理器应用
+
+cd "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code"
+
+# 设置 PATH
+export PATH="/opt/homebrew/bin:/usr/bin:/bin:/usr/local/bin"
+
+# 使用 Homebrew Python（如果可用），否则使用系统 Python
+if [ -x "/opt/homebrew/bin/python3" ]; then
+    exec "/opt/homebrew/bin/python3" script_manager_app.py
+else
+    exec /usr/bin/python3 script_manager_app.py
+fi
