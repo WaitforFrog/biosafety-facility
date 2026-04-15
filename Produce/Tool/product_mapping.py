@@ -1,0 +1,43 @@
+"""
+产品名称映射表 - 中文名 → 英文文件夹名
+用于将中文产品名称映射为英文 URL 路径
+"""
+
+PRODUCT_NAME_MAPPING = {
+    "传递窗": "pass-through-chambers",
+    "VHP 发生器": "vhp-generators",
+    "VHP传递窗": "vhp-pass-through",
+    "UV传递窗": "uv-pass-through",
+    "氙光传递窗": "xenon-pass-through",
+    "自净传递窗": "self-cleaning-pass-through",
+    "防爆传递窗": "explosion-proof-pass-through",
+    "生物安全充气密闭传递窗": "biosafety-inflatable-sealed-pass-through",
+    "生物安全机械压紧传递窗": "biosafety-mechanical-compression-pass-through",
+    "不锈钢密闭房": "stainless-steel-sealed-chambers",
+    "不锈钢密闭门": "stainless-steel-airtight-doors",
+    "不锈钢洁净门": "stainless-steel-cleanroom-doors",
+    "单气囊充气式气密门": "single-inflatable-airtight-doors",
+    "双气囊充气式气密门": "double-inflatable-airtight-doors",
+    "机械压紧式气密门": "mechanical-compression-sealed-doors",
+    "生物安全充气气密门": "biosafety-inflatable-airtight-doors",
+    "生物安全压紧气密门": "biosafety-compression-sealed-doors",
+    "复合式洗眼器": "combination-eyewashers",
+    "立式洗眼器": "pedestal-eyewashers",
+    "挂壁式洗眼器": "wall-mounted-eyewashers",
+    "紧急冲淋房": "emergency-drench-showers",
+    "化学淋浴": "chemical-showers",
+    "强制淋浴": "forced-showers",
+    "雾淋室": "misting-showers",
+    "层流罩": "laminar-flow-hoods",
+    "层流转运车": "laminar-flow-transfer-carts",
+    "称量罩": "weighing-booths",
+    "无菌检查隔离器": "sterile-inspection-isolators",
+    "头套熏蒸舱": "hood-fumigation-chambers",
+    "汽化过氧化氢头套熏蒸消毒舱": "vhp-hood-disinfection-chambers",
+    "移动式雾化消毒机": "mobile-fogging-disinfectors",
+    "生物安全型高效进排风口": "biosafety-hepa-supply-exhaust",
+    "密闭阀": "airtight-valves",
+    "互锁系统": "interlock-systems",
+    "BIBO（袋进袋出）": "bibo-bag-in-bag-out",
+    "渡槽": "sinks-troughs",
+}
