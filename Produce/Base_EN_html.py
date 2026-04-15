@@ -130,10 +130,10 @@ def load_content_pool(audience_type):
 
 
 def draw_cards(content_pool, k=5):
-    """从内容池中随机抽取 k 个模块（可重复抽取）"""
+    """从内容池中随机抽取 k 个模块（不放回抽取）"""
     if not content_pool:
         return []
-    selected = random.choices(content_pool, k=k)
+    selected = random.sample(content_pool, k=k)
     return selected
 
 
