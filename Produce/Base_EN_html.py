@@ -323,6 +323,9 @@ def generate_article_for_audience(
         # ===== 测试模式：仅输出 prompt，不调用 API =====
         _TEST_MODE = os.environ.get("BASE_TEST_MODE", "").strip().lower() in ("1", "true", "yes")
         if _TEST_MODE:
+            if product_name != "不锈钢密闭房" or audience_type != "CEO":
+                # 测试模式仅保留"不锈钢密闭房 + CEO"
+                return log_info
             test_path = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Test.md"
             with open(test_path, 'w', encoding='utf-8') as f:
                 f.write("# API 请求 Prompt 预览\n\n")
@@ -489,6 +492,10 @@ def process_single_product(product_name, product_info):
     """处理单个产品，为每种受众并发生成文章"""
     results = []
 
+    _TEST_MODE = os.environ.get("BASE_TEST_MODE", "").strip().lower() in ("1", "true", "yes")
+    if _TEST_MODE and product_name != "不锈钢密闭房":
+        return results
+
     print(f"\n🚀 【正在处理产品】: {product_name}")
 
     english_folder = PRODUCT_NAME_MAPPING.get(product_name)
@@ -516,6 +523,9 @@ def process_single_product(product_name, product_info):
     audience_tasks = []
 
     for audience_type, audience_config in AUDIENCE_CONFIG.items():
+        _TEST_MODE = os.environ.get("BASE_TEST_MODE", "").strip().lower() in ("1", "true", "yes")
+        if _TEST_MODE and (product_name != "不锈钢密闭房" or audience_type != "CEO"):
+            continue
         print(f"\n  📋 【处理受众】: {audience_type}")
 
         content_pool = load_content_pool(audience_type)
