@@ -36,6 +36,15 @@ CARD_DRAW_COUNT = 5
 # 每受众生成文章数量
 ARTICLES_PER_AUDIENCE = 1
 
+# ================= API 配置 =================
+#API_KEY = "sk-j4kGaMBeZYyma78n"
+#BASE_URL = "https://acloudvip.top/v1"
+#MODEL_NAME = "claude-opus-4-6"
+
+API_KEY = "sk-AIe2pFC4tO8Ay97SGkBsXqu34uffQmNqLlohrLEKPvAlFLUy"
+BASE_URL = "https://api.xstx.info/v1"
+MODEL_NAME = "claude-opus-4-6-20260205-thinking"
+
 # ================= 受众配置 =================
 # 受众配置表：目录名 -> (中文名, 视角描述)
 AUDIENCE_CONFIG = {
@@ -93,9 +102,9 @@ from Tool import (
 from Prompt.Base_User_Prompt import USER_PROMPT_TEMPLATE
 from Prompt.Base_System_Prompt import get_base_article_system_prompt
 
-# ================= API 配置 =================
-API_KEY = "sk-j4kGaMBeZYyma78n"
-BASE_URL = "https://acloudvip.top/v1"
+
+
+
 
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -354,7 +363,7 @@ def generate_article_for_audience(
 
         result_text = call_api(
             client, system_prompt, user_prompt,
-            temperature=0.3, max_tokens=15000
+            temperature=0.3, max_tokens=15000, model=MODEL_NAME
         )
 
         if not result_text:
