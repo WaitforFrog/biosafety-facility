@@ -522,6 +522,22 @@ def process_single_product(product_name, product_info):
     # 准备每个受众的抽卡结果和文章编号
     audience_tasks = []
 
+    # 预先计算文章编号范围（在并发执行之前）
+    articles_dir = os.path.join(OUTPUT_BASE_DIR, english_folder, "articles")
+    existing_articles = []
+    if os.path.exists(articles_dir):
+        for item in os.listdir(articles_dir):
+            if item.startswith("article-") and os.path.isdir(os.path.join(articles_dir, item)):
+                try:
+                    num = int(item.split("-")[1])
+                    existing_articles.append(num)
+                except:
+                    pass
+    max_existing = max(existing_articles) if existing_articles else 0
+    print(f"  📊 现有文章编号: {sorted(existing_articles) if existing_articles else '无'}")
+
+    # 先收集所有受众任务（抽卡结果）
+    raw_tasks = []
     for audience_type, audience_config in AUDIENCE_CONFIG.items():
         _TEST_MODE = os.environ.get("BASE_TEST_MODE", "").strip().lower() in ("1", "true", "yes")
         if _TEST_MODE and (product_name != "不锈钢密闭房" or audience_type != "CEO"):
@@ -554,25 +570,16 @@ def process_single_product(product_name, product_info):
         selected_contents = draw_cards(content_pool, k=CARD_DRAW_COUNT)
         print(f"  🎲 抽卡结果: 已抽取 {len(selected_contents)} 个模块")
 
-        # 计算文章编号
-        articles_dir = os.path.join(OUTPUT_BASE_DIR, english_folder, "articles")
-        existing_articles = []
-        if os.path.exists(articles_dir):
-            for item in os.listdir(articles_dir):
-                if item.startswith("article-") and os.path.isdir(os.path.join(articles_dir, item)):
-                    try:
-                        num = int(item.split("-")[1])
-                        existing_articles.append(num)
-                    except:
-                        pass
-        next_num = max(existing_articles) + 1 if existing_articles else 1
-
-        audience_tasks.append({
+        raw_tasks.append({
             "audience_type": audience_type,
             "audience_config": audience_config,
             "selected_contents": selected_contents,
-            "article_num": next_num
         })
+
+    # 再为每个任务分配唯一的文章编号
+    for i, task in enumerate(raw_tasks):
+        task["article_num"] = max_existing + i + 1
+        audience_tasks.append(task)
 
     if not audience_tasks:
         return results
