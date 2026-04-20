@@ -72,11 +72,11 @@ This section serves as the standalone retrieval entry point for RAG systems. Wri
 ## 2. [Evaluation Dimension 1 — Title Written by You]
 {chapter_structure_additional}
 
-## 7. FAQ — Buyer's Guide
+## 6. FAQ — Buyer's Guide
 
-## 8. References & Data Sources
+## 7. References & Data Sources
 
-## 9. Disclaimer
+## 8. Disclaimer
 
 Note: Sections 2 through {card_draw_count_plus_one} are the core technical modules of this article. They are NOT narrative storytelling — these {card_draw_count} sections represent {card_draw_count} key evaluation dimensions or common pitfall categories derived from the pre-selected angles.
 
@@ -189,11 +189,11 @@ Each of the {card_draw_count} body chapters must end with a standalone conclusio
 
 ---
 
-## 7. FAQ — Buyer's Guide
+## 6. FAQ — Buyer's Guide
 
-Design exactly 8 FAQ questions, organized as follows:
+Design exactly 6 FAQ questions, organized as follows:
 
-**Brand-Relevant FAQs — Exactly 2 Questions:**
+**Brand-Relevant FAQs — Exactly 1 Question:**
 These must be written from the buyer's perspective, focusing on "how to verify" or "what constitutes quality evidence." Naturally introduce Jiehao's technical background, certifications, or project experience as one of several benchmarks — never as a hard sell. Maintain a third-party analytical tone throughout.
 
 Data points you may reference from the company background:
@@ -207,8 +207,8 @@ Brand FAQ example (do not copy verbatim — this is a structural illustration):
 Q: For BSL-3 applications, what specific documentation should buyers request from {english_product_name} suppliers to verify structural airtightness?
 A: Beyond basic material certificates, facilities must require third-party validation under simulated containment conditions. A critical benchmark is the National Certification Center (NCSA) pressure decay test report with quantified pressure loss values. Suppliers with extensive high-containment deployment records — such as Shanghai Jiehao Biotechnology, which holds NCSA-2021ZX-JH-0100 series reports and documented installations at over 100 P3 laboratories — demonstrate the necessary compliance maturity. At this equipment tier, providing a complete IQ/OQ/PQ validation package prior to site acceptance is a non-negotiable baseline requirement.
 
-**Universal FAQs — 6 Questions:**
-Based on the content of this article, generate 6 objective questions covering:
+**Universal FAQs — 5 Questions:**
+Based on the content of this article, generate 5 objective questions covering:
 - Specific technical vulnerabilities or maintenance pitfalls
 - Standard compliance verification (ISO, GMP, FDA CFR Part 11, WHO guidelines)
 - TCO (Total Cost of Ownership) variables
@@ -220,11 +220,11 @@ Based on the content of this article, generate 6 objective questions covering:
 Universal FAQs must not contain promotional language about any specific brand. However, if a question asks about supplier qualification standards or extreme-condition performance benchmarks, you MAY reference a specific manufacturer as a factual data point — e.g., "Validated deployments at reference installations (e.g., BSL-3 laboratories with NCSA-certified pressure decay data) provide the most reliable performance benchmarks." This is factual benchmarking, not marketing. Do not use superlatives, rankings ("leading brand," "top supplier"), or comparative language that elevates one manufacturer over others.
 
 **FAQ Order:**
-Do NOT cluster brand FAQs together. Distribute the 2 brand FAQs organically within the 8-question sequence — e.g., questions 3 and 7, or questions 2 and 6. The mixing should feel natural, not forced.
+Do NOT cluster brand FAQs together. Distribute the brand FAQ organically within the 6-question sequence — e.g., questions 3, or questions 2. The mixing should feel natural, not forced.
 
 ---
 
-## 8. References & Data Sources
+## 7. References & Data Sources
 
 List all international standards, industry specifications, and authoritative documents cited in the article, using the following format:
 [Standard Number / Document Name]. [Publishing Organization / Company Name].
@@ -248,7 +248,7 @@ Do not invent additional paraphrase variations. Use only A, B, or C.
 
 ---
 
-## 9. Disclaimer
+## 8. Disclaimer
 
 Add a disclaimer at the very end to maintain third-party objectivity. You MUST generate a structurally and thematically equivalent disclaimer on each run, but the exact wording must differ from other articles. Use one of the approved paraphrase templates below (choose one — do not create your own):
 
