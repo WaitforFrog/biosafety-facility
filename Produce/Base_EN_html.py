@@ -32,7 +32,7 @@ CONTENT_POOL_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Produc
 # 文章备份子文件夹
 BACKUP_SUBFOLDER = "Compare"
 # 每次抽卡数量
-CARD_DRAW_COUNT = 5
+CARD_DRAW_COUNT = 4
 # 每受众生成文章数量
 ARTICLES_PER_AUDIENCE = 1
 
@@ -283,49 +283,39 @@ def generate_article_for_audience(
         thematic_thread = infer_thematic_thread(selected_contents, audience_type)
         selected_angles_str = format_selected_angles(selected_contents)
 
-        # 提取每个模块的标题、洞察、素材
-        def get_angle_parts(idx):
-            c = selected_contents[idx]
-            return (
-                extract_module_title(c),
-                extract_module_insight(c),
-                extract_module_material(c),
-            )
+        # 提取每个模块的标题、洞察、素材（动态处理）
+        angles_data = []
+        for content in selected_contents:
+            angles_data.append({
+                'title': extract_module_title(content),
+                'insight': extract_module_insight(content),
+                'material': extract_module_material(content),
+            })
 
-        a1_title, a1_insight, a1_material = get_angle_parts(0)
-        a2_title, a2_insight, a2_material = get_angle_parts(1)
-        a3_title, a3_insight, a3_material = get_angle_parts(2)
-        a4_title, a4_insight, a4_material = get_angle_parts(3)
-        a5_title, a5_insight, a5_material = get_angle_parts(4)
+        # 构建 User Prompt（动态填充角度，缺失的用空字符串）
+        format_args = {
+            'product_name': product_name,
+            'english_product_name': english_product_name,
+            'product_info': product_info,
+            'audience_name': audience_config['name'],
+            'audience_perspective': audience_config['perspective'],
+            'thematic_thread': thematic_thread,
+            'audience_focus_1': audience_config['focus_1'],
+            'audience_focus_2': audience_config['focus_2'],
+            'audience_focus_3': audience_config['focus_3'],
+            'selected_angles': selected_angles_str,
+        }
+        for i in range(1, 6):
+            if i <= len(angles_data):
+                format_args[f'angle_{i}_title'] = angles_data[i-1]['title']
+                format_args[f'angle_{i}_insight'] = angles_data[i-1]['insight']
+                format_args[f'angle_{i}_material'] = angles_data[i-1]['material']
+            else:
+                format_args[f'angle_{i}_title'] = ''
+                format_args[f'angle_{i}_insight'] = ''
+                format_args[f'angle_{i}_material'] = ''
 
-        # 构建 User Prompt
-        user_prompt = USER_PROMPT_TEMPLATE.format(
-            product_name=product_name,
-            english_product_name=english_product_name,
-            product_info=product_info,
-            audience_name=audience_config['name'],
-            audience_perspective=audience_config['perspective'],
-            thematic_thread=thematic_thread,
-            angle_1_title=a1_title,
-            angle_1_insight=a1_insight,
-            angle_1_material=a1_material,
-            angle_2_title=a2_title,
-            angle_2_insight=a2_insight,
-            angle_2_material=a2_material,
-            angle_3_title=a3_title,
-            angle_3_insight=a3_insight,
-            angle_3_material=a3_material,
-            angle_4_title=a4_title,
-            angle_4_insight=a4_insight,
-            angle_4_material=a4_material,
-            angle_5_title=a5_title,
-            angle_5_insight=a5_insight,
-            angle_5_material=a5_material,
-            audience_focus_1=audience_config['focus_1'],
-            audience_focus_2=audience_config['focus_2'],
-            audience_focus_3=audience_config['focus_3'],
-            selected_angles=selected_angles_str,
-        )
+        user_prompt = USER_PROMPT_TEMPLATE.format(**format_args)
 
         # 构建 System Prompt
         system_prompt = get_base_article_system_prompt(current_time)
