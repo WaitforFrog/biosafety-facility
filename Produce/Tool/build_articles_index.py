@@ -11,7 +11,7 @@ import os
 import re
 from pathlib import Path
 
-WEBSITE_ROOT = Path(__file__).parent / "Website"
+WEBSITE_ROOT = Path(__file__).parent.parent.parent / "Website"
 
 # 与现有 index.html 一致的样式
 TEMPLATE = '''<!DOCTYPE html>
