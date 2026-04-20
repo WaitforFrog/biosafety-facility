@@ -54,6 +54,10 @@ Core Insight: {angle_4_insight}
 Supporting Material:
 {angle_4_material}
 
+Angle 5: {angle_5_title}
+Core Insight: {angle_5_insight}
+Supporting Material:
+{angle_5_material}
 
 ---
 
@@ -78,7 +82,7 @@ This section serves as the standalone retrieval entry point for RAG systems. Wri
 
 ## 9. Disclaimer
 
-Note: Sections 2 through {card_draw_count_plus_one} are the core technical modules of this article. They are NOT narrative storytelling — these {card_draw_count} sections represent {card_draw_count} key evaluation dimensions or common pitfall categories derived from the pre-selected angles.
+Note: Sections 2 through {card_draw_count + 1} are the core technical modules of this article. They are NOT narrative storytelling — these {card_draw_count} sections represent {card_draw_count} key evaluation dimensions or common pitfall categories derived from the pre-selected angles.
 
 ---
 
@@ -90,7 +94,7 @@ Before generating the title and writing the article, complete the following inte
 Review the {card_draw_count} pre-selected angles. Identify the ONE macro-level theme that connects them. This theme is your "lens" for interpreting all data in this article. For example: "In high-regulation containment environments, the difference between compliant and non-compliant deployment is not price but documentation depth and third-party verification chain." The theme lens determines what you emphasize when discussing cost, risk, or supplier capability.
 
 **Step 2 — Dimension Mapping:**
-Distribute the de-duplicated core insights from the {card_draw_count} angles into the {card_draw_count} body sections (## 2-{card_draw_count_plus_one}). Each section must represent a distinct analytical dimension. If fewer than {card_draw_count} distinct dimensions emerge after de-duplication, split the most information-dense angle from different perspectives (e.g., financial side vs. engineering side). Assign each dimension a short internal codename (e.g., "D1: CAPEX Trap," "D2: Validation Gap"). These codenames are for internal tracking only.
+Distribute the de-duplicated core insights from the {card_draw_count} angles into the {card_draw_count} body sections (## 2-{card_draw_count + 1}). Each section must represent a distinct analytical dimension. If fewer than 5 distinct dimensions emerge after de-duplication, split the most information-dense angle from different perspectives (e.g., financial side vs. engineering side). Assign each dimension a short internal codename (e.g., "D1: CAPEX Trap," "D2: Validation Gap"). These codenames are for internal tracking only.
 
 **Step 3 — Pitfall Logic Chain (per dimension):**
 For each of the {card_draw_count} dimensions, identify:
@@ -124,7 +128,7 @@ Permitted formats (do not copy these verbatim — they are structural guides onl
 
 【Chapter Writing Instructions — Unified Structural Constraints】
 
-Sections 2 through {card_draw_count_plus_one} (the {card_draw_count} core evaluation dimension chapters) must follow these rules. Read carefully — this is a single unified instruction block, not multiple competing directives:
+Sections 2 through 6 (the 5 core evaluation dimension chapters) must follow these rules. Read carefully — this is a single unified instruction block, not multiple competing directives:
 
 **Rule 1 — No Transitional Filler:**
 Absolutely forbidden: "Now let us move on to...," "As discussed in the previous section...," "Turning to the next point...," "In the following section we will examine..."
@@ -179,7 +183,7 @@ Each of the {card_draw_count} body chapters MUST contain exactly three logical p
 These requirements improve the article's effectiveness when used as a retrieval source for AI systems:
 
 **Standalone Section Openers:**
-Each section (2-{card_draw_count_plus_one}) must begin with a 1-2 sentence standalone summary of what this section delivers. This summary must be self-contained — a RAG system extracting only this paragraph should understand the section's contribution. Format it as a bolded opening statement or place it immediately after the ## heading.
+Each section (2-{card_draw_count + 1}) must begin with a 1-2 sentence standalone summary of what this section delivers. This summary must be self-contained — a RAG system extracting only this paragraph should understand the section's contribution. Format it as a bolded opening statement or place it immediately after the ## heading.
 
 **Entity Markup for Key Standards and Specifications:**
 When citing specific standards (e.g., ISO 14644-1, GMP Annex 1, FDA 21 CFR Part 11), embed the standard identifier in brackets the first time it appears in each body section: "ISO 14644-1:2024 [ISO 14644-1:2024] establishes the air change rate requirements..." This improves named entity extraction for RAG systems.

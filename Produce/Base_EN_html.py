@@ -6,7 +6,7 @@ Base_EN_html.py
 功能：
 - 读取 Check/ 文件夹下的产品参数
 - 从 Produce/Compare_Content/{受众}/ 文件夹读取内容池
-- 使用 Python 代码层进行分层随机抽卡（每次抽取5个模块）
+- 使用 Python 代码层进行分层随机抽卡（每次抽取 {CARD_DRAW_COUNT} 个模块）
 - 为每种受众类型生成对应文章
 - 输出到 Website/{产品}/articles/ 目录
 - 备份到 文章/{产品}/Base/{受众}/article-{N}/
@@ -32,7 +32,7 @@ CONTENT_POOL_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Produc
 # 文章备份子文件夹
 BACKUP_SUBFOLDER = "Compare"
 # 每次抽卡数量
-CARD_DRAW_COUNT = 3
+CARD_DRAW_COUNT = 4
 # 每受众生成文章数量
 ARTICLES_PER_AUDIENCE = 1
 
@@ -228,7 +228,7 @@ def format_selected_angles(selected_contents):
 
 
 def infer_thematic_thread(selected_contents, audience_type):
-    """从5个模块的洞察中推断一个共同主题线索"""
+    """从{len(selected_contents)}个模块的洞察中推断一个共同主题线索"""
     insights = [extract_module_insight(c) for c in selected_contents]
     insights = [i for i in insights if i]
 
@@ -304,8 +304,11 @@ def generate_article_for_audience(
             'audience_focus_2': audience_config['focus_2'],
             'audience_focus_3': audience_config['focus_3'],
             'selected_angles': selected_angles_str,
+            'card_draw_count': CARD_DRAW_COUNT,
+            'card_draw_count_plus_one': CARD_DRAW_COUNT + 1,
+            'chapter_structure_additional': '\n'.join([f'## {i+2}. [Evaluation Dimension {i+1} — Title Written by You]' for i in range(1, CARD_DRAW_COUNT)]),
         }
-        for i in range(1, 6):
+        for i in range(1, CARD_DRAW_COUNT + 1):
             if i <= len(angles_data):
                 format_args[f'angle_{i}_title'] = angles_data[i-1]['title']
                 format_args[f'angle_{i}_insight'] = angles_data[i-1]['insight']
