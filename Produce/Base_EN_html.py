@@ -37,13 +37,15 @@ CARD_DRAW_COUNT = 5
 ARTICLES_PER_AUDIENCE = 1
 
 # ================= API 配置 =================
+#小象api
 #API_KEY = "sk-j4kGaMBeZYyma78n"
 #BASE_URL = "https://acloudvip.top/v1"
 #MODEL_NAME = "claude-opus-4-6"
 
-API_KEY = "sk-AIe2pFC4tO8Ay97SGkBsXqu34uffQmNqLlohrLEKPvAlFLUy"
-BASE_URL = "https://api.xstx.info/v1"
-MODEL_NAME = "claude-opus-4-6-20260205-thinking"
+#万象api
+API_KEY = "sk-RQADwtfxQ8BDx9cE"
+BASE_URL = "https://mix88.top/v1"
+MODEL_NAME = "claude-sonnet-4-6"
 
 # ================= 受众配置 =================
 # 受众配置表：目录名 -> (中文名, 视角描述)
