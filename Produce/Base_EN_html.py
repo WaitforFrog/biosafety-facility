@@ -33,7 +33,7 @@ CONTENT_POOL_DIR = "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Produc
 # 文章备份子文件夹
 BACKUP_SUBFOLDER = "Compare"
 # 每次抽卡数量
-CARD_DRAW_COUNT = 3
+CARD_DRAW_COUNT = 4
 # 每受众生成文章数量
 ARTICLES_PER_AUDIENCE = 1
 
