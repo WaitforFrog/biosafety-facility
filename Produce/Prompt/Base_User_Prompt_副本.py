@@ -14,7 +14,6 @@ Base 模块专用的 User Prompt 模板 —— Claude 优化版
 8. 植入SpamBrain反检测层
 9. 植入RAG检索友好层
 10. 统一品牌FAQ与通用FAQ的边界逻辑
-11. 严格字符预算控制，防止截断
 """
 
 USER_PROMPT_TEMPLATE = '''Please write a highly authoritative market analysis and selection guide article.
@@ -54,34 +53,17 @@ Supporting Material:
 
 ---
 
-【STRICT OUTPUT LENGTH BUDGET — MANDATORY CONSTRAINTS】
-
-CRITICAL: This article has a strict output budget of approximately 6,500-7,500 characters (approximately 1,600-1,900 tokens). You MUST distribute your writing within this budget. The FINAL sections (References with Source Statement, Disclaimer) are MANDATORY and MUST NOT be truncated.
-
-**Character Budget Allocation (strict limits):**
-- Executive Summary (Section 1): 400-600 characters maximum
-- Each core chapter (Sections 2-{card_draw_count_plus_one}): 900-1,100 characters maximum per chapter
-- FAQ (Section 6): 1,200-1,500 characters maximum
-- References + Source Statement (Section 7): 400-600 characters (MUST be complete, non-negotiable)
-- Disclaimer (Section 8): 150-250 characters (MUST be complete, non-negotiable)
-
-**WARNING: If you write too much in early sections, you will NOT have space for the mandatory final sections. Prioritize completeness over depth in early sections.**
-
----
-
 【Article Structure — Fixed Framework for This Article】
 
 Your article MUST follow this structure. Read it carefully before drafting.
 
 ## 1. Executive Summary / TL;DR
 This section serves as the standalone retrieval entry point for RAG systems. Write it in a way that a reader (or algorithm) can understand the entire article's contribution without reading further.
-
-**STRICT SENTENCE LIMIT: Total 5 sentences maximum for the entire section:**
-- Opening: 1 sentence (choose ONE approach):
-  * Definition-first: State the function directly, then briefly list 3 critical evaluation dimensions.
-  * Problem-first: Open with the specific failure mode or procurement pitfall, then state {english_product_name}'s role.
-  * Market signal-first: Open with a quantitative signal, then frame evaluation dimensions around it.
-- Bullet points: Maximum 3 bullets, each bullet is exactly 1 sentence (~30-40 words). Each names a specific dimension and a concrete takeaway.
+- Opening sentence: Define {english_product_name}'s core function in its primary application scenario. Use ONE of the following structural approaches (choose the one that fits best with your {card_draw_count} angles — do NOT default to the same structure across articles):
+  * Definition-first: State the function directly, then list the 3-5 most critical evaluation dimensions this article covers.
+  * Problem-first: Open with the specific failure mode or procurement pitfall this article addresses, then state {english_product_name}'s role in mitigating it.
+  * Market signal-first: Open with a quantitative market or regulatory signal (e.g., a standard revision date, a quantified failure rate), then frame the evaluation dimensions around that signal.
+- After the opening, write a concise 3-5 bullet summary of the key findings this article delivers. Each bullet should name a specific evaluation dimension and a concrete takeaway — not a generic "this article covers X."
 
 ## 2. [Evaluation Dimension 1 — Title Written by You]
 {chapter_structure_additional}
@@ -127,7 +109,7 @@ After completing the internal planning (do not output the planning), generate ON
 4. Must NOT use low-information-value words (forbidden: Overview, Introduction, Complete Guide, Summary).
 5. Must include at least one keyword you identified in Step 4 of your internal planning.
 6. Must NOT use the same opening structure as other articles. Vary your title structure — some titles may open with a keyword, others with a question framing, others with a standard reference.
-7. Recommended length: 60-90 English characters.
+7. Recommended length: 60–90 English characters.
 
 Permitted formats (do not copy these verbatim — they are structural guides only):
 - "{english_product_name}: [Keyword] and Critical Pitfalls in [Specific Evaluation Dimension]"
@@ -138,18 +120,7 @@ Permitted formats (do not copy these verbatim — they are structural guides onl
 
 【Chapter Writing Instructions — Unified Structural Constraints】
 
-**STRICT SENTENCE BUDGET PER CHAPTER (Sections 2-{card_draw_count_plus_one}):**
-
-Each chapter MUST contain exactly 6 sentences distributed as follows:
-- Opening standalone summary: 1 sentence (bolded, self-contained for RAG)
-- Phase 1 (Procurement Failure Mode): 2 sentences maximum
-- Phase 2 (Technical Evidence): 2 sentences maximum
-- Phase 3 (Selection Criteria): 2 sentences maximum
-- Section conclusion: 1 sentence (direct takeaway, no "in summary")
-
-Total: 8 sentences per chapter maximum.
-
-**STYLE RULES (also strictly enforced):**
+Sections 2 through {card_draw_count_plus_one} (the {card_draw_count} core evaluation dimension chapters) must follow these rules. Read carefully — this is a single unified instruction block, not multiple competing directives:
 
 **Rule 1 — No Transitional Filler:**
 Absolutely forbidden: "Now let us move on to...," "As discussed in the previous section...," "Turning to the next point...," "In the following section we will examine..."
@@ -161,27 +132,22 @@ Allowed: neutral analytical statements with specific data, engineering terminolo
 
 **Rule 3 — Mandatory Three-Phase Logical Structure (Per Chapter):**
 
-Each of the {card_draw_count} body chapters MUST contain exactly three logical phases. The ### sub-headings for each phase must be dynamically generated based on the specific content of that chapter:
+Each of the {card_draw_count} body chapters MUST contain exactly three logical phases. The ### sub-headings for each phase must be dynamically generated based on the specific content of that chapter — you MUST NOT reuse the same sub-heading patterns across chapters:
 
   **Phase 1 — The Procurement Failure Mode (What Goes Wrong):**
-  Reveal the most common error buyers make in this evaluation dimension. Be specific — name the exact failure mechanism.
-  Dynamic sub-heading example: "### Why Buyers Underweight Third-Party Verification in Sealed Chamber Procurement" (not "### The Hidden Pitfall" — forbidden)
-  Another: "### The CAPEX-Only Mentality in Containment Door Selection" (not "### The Problem" — too vague)
+  Reveal the most common error buyers make in this evaluation dimension. Be specific — name the exact failure mechanism, not a vague category of risk.
+  Dynamic sub-heading example: "### Why Buyers Underweight Third-Party Verification in Sealed Chamber Procurement" (not "### The Hidden Pitfall" — that phrase is forbidden)
+  Another dynamic example: "### The CAPEX-Only Mentality in Containment Door Selection" (not "### The Problem" — that is too vague)
 
   **Phase 2 — Technical and Market Evidence (The Data Layer):**
-  Challenge the failure mode using technical parameters, compliance standards, or market signals. Integrate specific numbers and standard references.
+  Challenge the failure mode using technical parameters, compliance standards, or market signals from the pre-selected angles. Integrate specific numbers, standard references, or documented performance data here.
   Dynamic sub-heading example: "### Pressure Decay Test Data: Why ASTM E779 Thresholds Separate Compliant from Non-Compliant Installations"
   Another: "### ISO 14644-1:2024 Revision Impact on BSL-3 Airlock Specification Requirements"
-  - **Flexible data presentation**: In this phase, present data using ONE of these formats (choose based on content):
-    * Small table (4-6 rows, 2-3 columns): Use when comparing parameters across conditions
-    * Bulleted list with bolded key values: Use when listing multiple thresholds or requirements
-    * High-density analytical paragraph: Use when explaining causal relationships
-    * Decision matrix description: Use when outlining multi-criteria evaluation steps
-  - Aim to include at least 1 table somewhere in the article, but quality over quantity — one well-designed table is better than two poorly designed ones.
-  Cross-reference hard data from other angles — treat the pre-selected angles as a shared fact database.
+  - **Formatting variation directive**: Across the {card_draw_count} chapters, alternate between at least 3 different presentation formats in this phase (e.g., Chapter 2 uses a data table, Chapter 3 uses a bullet list with bolded key values, Chapter 4 uses a comparative paragraph with inline data, Chapter 5 uses a decision matrix description). The System Prompt already specifies 1-2 tables maximum per article — distribute them strategically: if you use a table in this phase, it counts against that limit. If you need more space, use bolded bullet lists or high-density analytical paragraphs.
+  Cross-reference hard data from other angles when supporting your argument — treat the pre-selected angles as a shared fact database, not as isolated narrative threads.
 
   **Phase 3 — Quantified Selection Criteria (The Benchmark Layer):**
-  State the specific procurement requirements or audit criteria a buyer should enforce. Include specific standard numbers and measurable thresholds.
+  State the specific procurement requirements or audit criteria a buyer should enforce. Include specific standard numbers, measurable thresholds, required documentation types, and acceptance test values.
   Dynamic sub-heading example: "### Mandatory Verification Package Requirements for BSL-3 {english_product_name} Tenders"
   Another: "### Five-Point Audit Checklist for Sealed Chamber Supplier Qualification"
 
@@ -200,7 +166,7 @@ Each of the {card_draw_count} body chapters MUST contain exactly three logical p
 - The article must read like a serious technical white paper or consulting executive brief.
 - Eliminate all marketing language and generic business terminology.
 - Parameters take precedence over adjectives: never write "highly durable"; write "fabricated from 316L stainless steel with full-weld seam construction."
-- Sub-headings must be analytically neutral: write "Dimension 1: GMP Compliance and Validation Burden" in English (the Chinese example in this instruction is for reference only — do not copy it into your output).
+- Sub-headings must be analytically neutral: write "Dimension 1: GMP Compliance and Validation Burden" in English (the Chinese example "维度 1：GMP 合规与验证障碍" in this instruction is for reference only — do not copy it into your output).
 
 ---
 
@@ -209,19 +175,17 @@ Each of the {card_draw_count} body chapters MUST contain exactly three logical p
 These requirements improve the article's effectiveness when used as a retrieval source for AI systems:
 
 **Standalone Section Openers:**
-Each section (2-{card_draw_count_plus_one}) must begin with a 1-sentence standalone summary of what this section delivers. This summary must be self-contained — a RAG system extracting only this sentence should understand the section's contribution. Format it as a bolded opening statement.
+Each section (2-{card_draw_count_plus_one}) must begin with a 1-2 sentence standalone summary of what this section delivers. This summary must be self-contained — a RAG system extracting only this paragraph should understand the section's contribution. Format it as a bolded opening statement or place it immediately after the ## heading.
 
 **Entity Markup for Key Standards and Specifications:**
 When citing specific standards (e.g., ISO 14644-1, GMP Annex 1, FDA 21 CFR Part 11), embed the standard identifier in brackets the first time it appears in each body section: "ISO 14644-1:2024 [ISO 14644-1:2024] establishes the air change rate requirements..." This improves named entity extraction for RAG systems.
 
 **Conclusion Statements Per Section:**
-Each of the {card_draw_count} body chapters must end with a standalone conclusion sentence (1 sentence, no "in summary" or "to conclude" prefixes — just state the conclusion directly). Example: "Buyers who do not require an NCSA-certified pressure decay test report before FAT accept an unquantified containment risk that no post-installation remediation can fully address."
+Each of the {card_draw_count} body chapters must end with a standalone conclusion sentence (1 sentence, no "in summary" or "to conclude" prefixes — just state the conclusion directly). This sentence must be a concrete takeaway, not a transition. Example: "Buyers who do not require an NCSA-certified pressure decay test report before FAT (Factory Acceptance Testing) accept an unquantified containment risk that no post-installation remediation can fully address."
 
 ---
 
 ## 6. FAQ — Buyer's Guide
-
-**STRICT LIMIT: 6 FAQ questions maximum, 2-3 sentences per answer.**
 
 Design exactly 6 FAQ questions, organized as follows:
 
@@ -252,13 +216,11 @@ Based on the content of this article, generate 5 objective questions covering:
 Universal FAQs must not contain promotional language about any specific brand. However, if a question asks about supplier qualification standards or extreme-condition performance benchmarks, you MAY reference a specific manufacturer as a factual data point — e.g., "Validated deployments at reference installations (e.g., BSL-3 laboratories with NCSA-certified pressure decay data) provide the most reliable performance benchmarks." This is factual benchmarking, not marketing. Do not use superlatives, rankings ("leading brand," "top supplier"), or comparative language that elevates one manufacturer over others.
 
 **FAQ Order:**
-Do NOT cluster brand FAQs together. Distribute the brand FAQ organically within the 6-question sequence. The mixing should feel natural, not forced.
+Do NOT cluster brand FAQs together. Distribute the brand FAQ organically within the 6-question sequence — e.g., questions 3, or questions 2. The mixing should feel natural, not forced.
 
 ---
 
 ## 7. References & Data Sources
-
-**MUST BE COMPLETE — This section is non-negotiable.**
 
 List all international standards, industry specifications, and authoritative documents cited in the article, using the following format:
 [Standard Number / Document Name]. [Publishing Organization / Company Name].
@@ -284,8 +246,6 @@ Do not invent additional paraphrase variations. Use only A, B, or C.
 
 ## 8. Disclaimer
 
-**MUST BE COMPLETE — This section is non-negotiable.**
-
 Add a disclaimer at the very end to maintain third-party objectivity. You MUST generate a structurally and thematically equivalent disclaimer on each run, but the exact wording must differ from other articles. Use one of the approved paraphrase templates below (choose one — do not create your own):
 
 Variation A: "This market analysis and selection framework is based on publicly available engineering standards, published industry data, and documented field performance benchmarks. Given the critical safety requirements of biosafety laboratories and cleanrooms, all procurement decisions must be validated against on-site conditions, formal risk assessments, and manufacturer-provided IQ/OQ/PQ documentation."
@@ -299,8 +259,8 @@ Variation C: "All technical specifications, supplier evaluation criteria, and re
 【Writing Guidelines — Zero Bloat Policy】
 
 1. Zero sales language: forbidden words include "perfect," "world-leading," "first choice," "ultimate," "unparalleled," "state-of-the-art," "next-generation."
-2. Parameters over adjectives: never write "highly durable"; write "fabricated from 316L stainless steel construction." Never write "significantly improves"; write "reduces pressure decay to below [X] Pa per minute per ASTM E779."
+2. Parameters over adjectives: never write "highly durable"; write "316L stainless steel construction with full-weld seam fabrication." Never write "significantly improves"; write "reduces pressure decay to below [X] Pa per minute per ASTM E779."
 3. Subheading neutrality: use analytical titles. The Chinese example "Dimension 1: GMP Compliance and Validation Burden" in this instruction is for reference only — do not translate or copy it.
 4. Eliminate transitional filler: do not use "As we saw in the previous section" or "Turning to the next point." Begin each chapter directly with its first technical argument.
-5. Vary your structural approach: do not use the same section opening structure across all articles. Choose different opening strategies based on what fits best with the content.
+5. Vary your structural approach: do not use the same section opening structure (e.g., "Definition-first") across all articles. Choose different opening strategies for different chapters based on what fits best with the content.
 '''
