@@ -150,7 +150,7 @@ def get_html_template(title, description, keywords, content, update_time, update
     <div class="container">
         <header>
             <h1>{title}</h1>
-            <p class="last-updated"><time itemprop="dateModified" datetime="{update_time}">Last Updated: {update_time_display}</time></p>
+            <p class="last-updated"><time itemprop="datePublished" datetime="{update_time}">Published: {update_time_display}</time></p>
         </header>
 
         {content}

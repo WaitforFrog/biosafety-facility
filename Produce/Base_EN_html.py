@@ -18,7 +18,7 @@ import re
 import time
 import random
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 from openai import OpenAI
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
@@ -404,12 +404,15 @@ def generate_article_for_audience(
         content_html = markdown_to_html(markdown_content)
 
         now = datetime.now()
-        update_time = now.strftime("%Y-%m-%dT%H:%M:%S+08:00")
-        update_time_display = now.strftime("%B %d, %Y")
+        # 随机生成 0-30 天之间的秒数，让发布日期分散在一个月内
+        random_seconds = random.randint(0, 30 * 24 * 60 * 60)
+        publish_date = now - timedelta(seconds=random_seconds)
+        update_time = publish_date.strftime("%Y-%m-%dT%H:%M:%S+08:00")
+        update_time_display = publish_date.strftime("%B %d, %Y")
 
         description = f"Comprehensive market analysis and selection guide for {product_name}. Compare suppliers, specifications, and compliance requirements."
 
-        # 生成 JSON-LD 结构化数据
+        # 生成 JSON-LD 结构化数据（只保留 publisher，删除 author）
         json_ld_data = {
             "@context": "https://schema.org",
             "@type": "Article",
@@ -417,15 +420,10 @@ def generate_article_for_audience(
             "description": description,
             "keywords": keywords,
             "datePublished": update_time,
-            "dateModified": update_time,
-            "author": {
-                "@type": "Organization",
-                "name": "Jiehao Biosafety Technology"
-            },
             "publisher": {
                 "@type": "Organization",
-                "name": "Jiehao Biosafety Technology",
-                "url": "https://biosafety-facility.com"
+                "name": "biosafety-facility.com",
+                "url": "https://www.biosafety-facility.com"
             }
         }
         json_ld_str = json.dumps(json_ld_data, ensure_ascii=False, indent=4)
