@@ -360,7 +360,7 @@ def generate_article_for_audience(
 
         result_text = call_api(
             client, system_prompt, user_prompt,
-            temperature=0.3, max_tokens=15000, model=MODEL_NAME
+            temperature=0.3, max_tokens=8000, model=MODEL_NAME
         )
 
         if not result_text:
