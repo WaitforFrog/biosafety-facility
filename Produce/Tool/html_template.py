@@ -5,9 +5,18 @@ import markdown
 import re
 
 
-def get_html_template(title, description, keywords, content, update_time, update_time_display):
-    """HTML 模板生成器"""
+def get_html_template(title, description, keywords, content, update_time, update_time_display, json_ld=None):
+    """HTML 模板生成器
+
+    Args:
+        json_ld: JSON-LD 结构化数据字符串，默认为 None（不插入）
+    """
     keywords_str = ", ".join(keywords)
+
+    # JSON-LD 注入（如果提供了 json_ld 参数）
+    json_ld_block = ""
+    if json_ld:
+        json_ld_block = f'\n    <script type="application/ld+json">\n{json_ld}\n    </script>'
 
     html = f'''<!DOCTYPE html>
 <html lang="en">
@@ -17,7 +26,7 @@ def get_html_template(title, description, keywords, content, update_time, update
     <meta name="description" content="{description}">
     <meta name="keywords" content="{keywords_str}">
     <meta name="robots" content="index, follow">
-    <title>{title}</title>
+    <title>{title}</title>{json_ld_block}
     <style>
         * {{
             margin: 0;

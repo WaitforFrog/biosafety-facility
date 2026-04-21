@@ -17,6 +17,7 @@ import sys
 import re
 import time
 import random
+import json
 from datetime import datetime
 from openai import OpenAI
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -407,9 +408,32 @@ def generate_article_for_audience(
         update_time_display = now.strftime("%B %d, %Y")
 
         description = f"Comprehensive market analysis and selection guide for {product_name}. Compare suppliers, specifications, and compliance requirements."
+
+        # 生成 JSON-LD 结构化数据
+        json_ld_data = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": title,
+            "description": description,
+            "keywords": keywords,
+            "datePublished": update_time,
+            "dateModified": update_time,
+            "author": {
+                "@type": "Organization",
+                "name": "Jiehao Biosafety Technology"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Jiehao Biosafety Technology",
+                "url": "https://biosafety-facility.com"
+            }
+        }
+        json_ld_str = json.dumps(json_ld_data, ensure_ascii=False, indent=4)
+
         full_html = get_html_template(
             title, description, keywords, content_html,
-            update_time, update_time_display
+            update_time, update_time_display,
+            json_ld=json_ld_str
         )
 
         # 输出目录
