@@ -49,10 +49,6 @@ Core Insight: {angle_3_insight}
 Supporting Material:
 {angle_3_material}
 
-Angle 4: {angle_4_title}
-Core Insight: {angle_4_insight}
-Supporting Material:
-{angle_4_material}
 
 
 ---
