@@ -56,14 +56,14 @@ Supporting Material:
 
 【STRICT OUTPUT LENGTH BUDGET — MANDATORY CONSTRAINTS】
 
-CRITICAL: This article has a strict output budget of approximately 6,500-7,500 characters (approximately 1,600-1,900 tokens). You MUST distribute your writing within this budget. The FINAL sections (References with Source Statement, Disclaimer) are MANDATORY and MUST NOT be truncated.
+CRITICAL: This article has a strict output budget of approximately 21,000-23,000 characters (approximately 5,200-5,800 tokens). You MUST distribute your writing within this budget. The FINAL sections (References with Source Statement, Disclaimer) are MANDATORY and MUST NOT be truncated.
 
 **Character Budget Allocation (strict limits):**
-- Executive Summary (Section 1): 400-600 characters maximum
-- Each core chapter (Sections 2-{card_draw_count_plus_one}): 900-1,100 characters maximum per chapter
-- FAQ (Section 6): 1,200-1,500 characters maximum
-- References + Source Statement (Section 7): 400-600 characters (MUST be complete, non-negotiable)
-- Disclaimer (Section 8): 150-250 characters (MUST be complete, non-negotiable)
+- Executive Summary (Section 1): 600-800 characters maximum
+- Each core chapter (Sections 2-{card_draw_count_plus_one}): 2,200-2,600 characters maximum per chapter
+- FAQ (Section 6): 2,000-2,400 characters maximum
+- References + Source Statement (Section 7): 500-700 characters (MUST be complete, non-negotiable)
+- Disclaimer (Section 8): 200-300 characters (MUST be complete, non-negotiable)
 
 **WARNING: If you write too much in early sections, you will NOT have space for the mandatory final sections. Prioritize completeness over depth in early sections.**
 
@@ -140,14 +140,14 @@ Permitted formats (do not copy these verbatim — they are structural guides onl
 
 **STRICT SENTENCE BUDGET PER CHAPTER (Sections 2-{card_draw_count_plus_one}):**
 
-Each chapter MUST contain exactly 6 sentences distributed as follows:
-- Opening standalone summary: 1 sentence (bolded, self-contained for RAG)
-- Phase 1 (Procurement Failure Mode): 2 sentences maximum
+Each chapter MUST contain exactly 10 sentences distributed as follows:
+- Opening standalone summary: 2 sentences (both bolded, self-contained for RAG)
+- Phase 1 (Probing the Trap): 2 sentences maximum
 - Phase 2 (Technical Evidence): 2 sentences maximum
 - Phase 3 (Selection Criteria): 2 sentences maximum
-- Section conclusion: 1 sentence (direct takeaway, no "in summary")
+- Section conclusion: 2 sentences (direct takeaway, no "in summary")
 
-Total: 8 sentences per chapter maximum.
+Total: 10 sentences per chapter maximum.
 
 **STYLE RULES (also strictly enforced):**
 
@@ -172,12 +172,7 @@ Each of the {card_draw_count} body chapters MUST contain exactly three logical p
   Challenge the failure mode using technical parameters, compliance standards, or market signals. Integrate specific numbers and standard references.
   Dynamic sub-heading example: "### Pressure Decay Test Data: Why ASTM E779 Thresholds Separate Compliant from Non-Compliant Installations"
   Another: "### ISO 14644-1:2024 Revision Impact on BSL-3 Airlock Specification Requirements"
-  - **Flexible data presentation**: In this phase, present data using ONE of these formats (choose based on content):
-    * Small table (4-6 rows, 2-3 columns): Use when comparing parameters across conditions
-    * Bulleted list with bolded key values: Use when listing multiple thresholds or requirements
-    * High-density analytical paragraph: Use when explaining causal relationships
-    * Decision matrix description: Use when outlining multi-criteria evaluation steps
-  - Aim to include at least 1 table somewhere in the article, but quality over quantity — one well-designed table is better than two poorly designed ones.
+  - **MANDATORY TABLE — One table per chapter**: In this phase, you MUST include exactly one table. The table should present comparative data, specifications, or quantified thresholds relevant to this evaluation dimension. Keep the table concise: 4-6 rows and 2-3 columns maximum. Tables should be self-explanatory with clear headers.
   Cross-reference hard data from other angles — treat the pre-selected angles as a shared fact database.
 
   **Phase 3 — Quantified Selection Criteria (The Benchmark Layer):**
