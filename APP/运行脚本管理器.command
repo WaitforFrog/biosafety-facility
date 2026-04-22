@@ -1,5 +1,5 @@
 #!/bin/bash
-# 运行脚本管理器
+# 运行脚本管理器 (tkinter GUI版本，支持界面内终端输出)
 
 # 获取脚本所在目录（APP 文件夹）
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -8,9 +8,10 @@ CODE_DIR="$( dirname "$SCRIPT_DIR" )"
 
 cd "$CODE_DIR"
 
-# 优先使用系统 Python，避免 Homebrew Python 与 macOS 版本不兼容导致的崩溃
-# （如 "macOS 15 (1507) or later required, have instead 15 (1506)" 错误）
-if [ -x "/usr/bin/python3" ]; then
+# 优先使用虚拟环境中的 Python
+if [ -f ".venv/bin/python3" ]; then
+    PYTHON=".venv/bin/python3"
+elif [ -x "/usr/bin/python3" ]; then
     PYTHON="/usr/bin/python3"
 elif [ -x "/opt/homebrew/bin/python3" ]; then
     PYTHON="/opt/homebrew/bin/python3"
@@ -18,9 +19,5 @@ else
     PYTHON="python3"
 fi
 
-# 运行脚本
-"$PYTHON" APP/script_manager_app.py
-
-echo ""
-echo "完成！按回车键关闭窗口..."
-read
+# 运行脚本（使用 tkinter 版本，支持界面内终端输出）
+"$PYTHON" APP/run_app.py
