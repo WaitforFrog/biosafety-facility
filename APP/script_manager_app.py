@@ -22,13 +22,8 @@ PYTHON_BIN = VENV_PYTHON if VENV_PYTHON.exists() else (Path("/usr/bin/python3") 
 
 # 可管理的脚本（相对于 SCRIPTS_DIR）
 AVAILABLE_SCRIPTS = {
-    "Produce/Trust_EN_html.py": "翻译并生成英文HTML（中立科普）",
-    "Produce/Compare_EN_html.py": "市场分析类文章生成器",
-    "Translate.py": "翻译脚本",
-    "Produce/Tool/build_preview_site.py": "构建预览站点",
-    "Produce/Tool/build_category_indexes.py": "构建分类索引",
-    "Produce/Tool/build_articles_index.py": "构建文章索引",
-    "delete_chinese_articles.py": "删除中文文章"
+    "Produce/Introduction_EN_html.py": "介绍类英文HTML生成器",
+    "Produce/Compare_JIEHAO.py": "JIEHAO对比分析生成器",
 }
 
 
@@ -44,8 +39,22 @@ def show_dialog(title, message, dialog_type="informational"):
     subprocess.run(["osascript", "-e", script], capture_output=True)
 
 
+def show_action_dialog(title, message, choices, default_button=1):
+    """显示带多个按钮的对话框，返回用户点击的按钮名称"""
+    buttons_str = ", ".join([f'"{c}"' for c in choices])
+    script = f'display dialog "{message}" with title "{title}" buttons {{{buttons_str}}} default button {default_button}'
+    result = subprocess.run(["osascript", "-e", script], capture_output=True, text=True)
+    if result.returncode != 0:
+        return None
+    if "button returned:" in result.stdout:
+        for choice in choices:
+            if choice in result.stdout:
+                return choice
+    return None
+
+
 def show_choice_dialog(title, message, choices):
-    """显示选择对话框，返回用户选择的索引（0-based）"""
+    """显示选择对话框，返回用户选择的项"""
     choices_str = ", ".join([f'"{c}"' for c in choices])
     script = f'''
     set theAnswer to choose from list {{{choices_str}}} with title "{title}" with prompt "{message}" OK button name "选择" cancel button name "取消"
@@ -193,43 +202,50 @@ def run_script_interactive(script_name, description):
 
 def main():
     """主函数 - 显示脚本选择菜单"""
-    # 显示欢迎信息
-    subprocess.run([
-        "osascript", "-e",
-        'display dialog "欢迎使用脚本管理器！\n\n请选择一个操作：" with title "域名推广脚本管理器" buttons {"运行脚本", "查看日志", "退出"} default button 1'
-    ], capture_output=True)
-    
     while True:
-        # 显示脚本选择
-        choices = list(AVAILABLE_SCRIPTS.keys()) + ["返回主菜单", "退出"]
-        
-        selected = show_choice_dialog(
-            "脚本选择",
-            "选择要运行的脚本：",
-            choices
+        # 显示欢迎/主菜单
+        main_action = show_action_dialog(
+            "脚本管理器",
+            "欢迎使用脚本管理器！\n\n请选择一个操作：",
+            ["运行脚本", "查看日志", "退出"],
+            default_button=1
         )
         
-        if selected == "CANCEL" or selected == "退出":
+        if main_action is None or main_action == "退出":
             break
         
-        if selected == "返回主菜单":
+        if main_action == "查看日志":
+            show_log_calendar(None)
             continue
         
-        if selected in AVAILABLE_SCRIPTS:
-            description = AVAILABLE_SCRIPTS[selected]
-            
-            # 询问操作
-            action = show_choice_dialog(
-                "选择操作",
-                f"选择对 {selected} 的操作：",
-                ["运行脚本", "查看日志", "返回"]
-            )
-            
-            if action == "运行脚本":
-                run_script_interactive(selected, description)
-            elif action == "查看日志":
-                show_log_calendar(selected)
-            # 返回则继续循环
+        if main_action == "运行脚本":
+            while True:
+                # 显示脚本选择列表
+                choices = list(AVAILABLE_SCRIPTS.keys())
+                script_selected = show_choice_dialog(
+                    "脚本选择",
+                    "选择要运行的脚本：",
+                    choices
+                )
+                
+                if script_selected == "CANCEL":
+                    break  # 返回主菜单
+                
+                if script_selected in AVAILABLE_SCRIPTS:
+                    description = AVAILABLE_SCRIPTS[script_selected]
+                    
+                    # 询问操作 - 使用按钮对话框
+                    action = show_action_dialog(
+                        "选择操作",
+                        f"选择对 {script_selected} 的操作：",
+                        ["运行脚本", "返回"],
+                        default_button=2
+                    )
+                    
+                    if action == "运行脚本":
+                        run_script_interactive(script_selected, description)
+                    elif action == "返回" or action is None:
+                        continue  # 继续选择脚本
 
 
 if __name__ == "__main__":

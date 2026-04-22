@@ -6,9 +6,11 @@ cd "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code"
 # 设置 PATH
 export PATH="/opt/homebrew/bin:/usr/bin:/bin:/usr/local/bin"
 
-# 使用 Homebrew Python（如果可用），否则使用系统 Python
-if [ -x "/opt/homebrew/bin/python3" ]; then
-    exec "/opt/homebrew/bin/python3" script_manager_app.py
+# 使用虚拟环境 Python（优先），否则使用 Homebrew Python
+if [ -x "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/.venv/bin/python3" ]; then
+    exec "/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/.venv/bin/python3" APP/script_manager_app.py
+elif [ -x "/opt/homebrew/bin/python3" ]; then
+    exec "/opt/homebrew/bin/python3" APP/script_manager_app.py
 else
-    exec /usr/bin/python3 script_manager_app.py
+    exec /usr/bin/python3 APP/script_manager_app.py
 fi
