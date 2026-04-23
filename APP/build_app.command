@@ -1,18 +1,23 @@
 #!/bin/bash
-# 启动脚本运行器应用（使用动态路径）
+# 打包杰昊脚本管理器.app
+# 使用 PyInstaller --onedir 模式（更可靠）
 
-# 获取脚本所在目录（APP 文件夹）
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$(dirname "$0")"
 
-# 检查是否已安装 pyinstaller
-if ! command -v pyinstaller &> /dev/null; then
-    echo "正在安装 pyinstaller..."
-    pip install pyinstaller
-fi
+echo "正在清理旧构建..."
+rm -rf dist build *.spec
 
-# 打包成 macOS 应用
-cd "$SCRIPT_DIR"
-pyinstaller --name="脚本运行器" --windowed --onefile run_app.py
+echo ""
+echo "正在打包（--onedir 模式）..."
+pyinstaller \
+    --name="杰昊脚本管理器" \
+    --onedir \
+    --windowed \
+    --icon="/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/JIEHAO_LOGO.icns" \
+    run_app.py
 
-echo "打包完成！应用在 dist 目录下"
-open dist
+echo ""
+echo "打包完成！"
+echo "APP 文件位于: dist/杰昊脚本管理器.app"
+echo ""
+echo "你可以按住 Cmd 并拖动将它移到应用程序文件夹。"

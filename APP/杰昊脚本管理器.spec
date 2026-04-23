@@ -1,0 +1,51 @@
+# -*- mode: python ; coding: utf-8 -*-
+
+
+a = Analysis(
+    ['run_app.py'],
+    pathex=[],
+    binaries=[],
+    datas=[],
+    hiddenimports=[],
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=[],
+    noarchive=False,
+    optimize=0,
+)
+pyz = PYZ(a.pure)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    [],
+    exclude_binaries=True,
+    name='杰昊脚本管理器',
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=True,
+    console=False,
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+    icon=['/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/JIEHAO_LOGO.icns'],
+)
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.datas,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    name='杰昊脚本管理器',
+)
+app = BUNDLE(
+    coll,
+    name='杰昊脚本管理器.app',
+    icon='/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/JIEHAO_LOGO.icns',
+    bundle_identifier=None,
+)
