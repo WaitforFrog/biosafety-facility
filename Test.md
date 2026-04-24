@@ -1,27 +1,31 @@
 # API 请求 Prompt 预览
 
 **产品**: 生物安全充气气密门
-**受众**: Installation_Technician - 安装技师 (Installation Technician)
+**受众**: Regulatory_Affairs - 注册事务负责人 (Regulatory Affairs Manager)
 **英文产品名**: biosafety-inflatable-airtight-doors
-**生成时间**: 2026-04-24 18:07:46
-**主题线索**: executing the correct mechanical and pneumatic installation sequence to achieve airtight integrity and fail-safe operation on first attempt
-**抽卡模块数**: 3
+**生成时间**: 2026-04-24 18:34:04
+**主题线索**: navigating the regulatory submission pathway and technical documentation requirements to achieve market approval for biosafety containment equipment
+**抽卡模块数**: 4
 
 ---
 
 ## 抽取的模块
 
-### 模块 1: Pneumatic Pipeline Connection and Initial Leak Testing: Establishing Air Supply Integrity Before System Operation
+### 模块 1: [上市后监督与不良事件报告：生物安全设备的持续合规义务]
 
-**核心洞察**: In pneumatic door systems, over 60% of initial air leakage failures trace to thread sealant application errors — using PTFE tape on tapered fittings in the wrong direction creates pathways for slow, undetected pressure loss.
+**核心洞察**: 生物安全设备的不良事件报告有一个行业特殊性问题：设备本身运行正常，但因用户操作失误（如气密门未完全关闭即启动压差）导致病原体泄漏——这类事件是否需要上报？从监管角度，设备制造商应评估"设计是否对误操作有充分的防护措施"，如果设计本身存在盲区，即使事件由误操作触发，制造商也负有产品改进义务，且在FDA MDR体系下，属于"与使用错误相关的严重伤害"通常需要上报。
 
-### 模块 2: Unpacking Inspection and Appearance Check: Verifying Equipment Condition Upon Delivery Before Installation Begins
+### 模块 2: [ISO 14971风险管理标准：医疗器械全生命周期的风险管理要求]
 
-**核心洞察**: The single most critical unboxing mistake is proceeding with installation before documenting shipping damage — any unverified discrepancy becomes the installer's liability, not the carrier's.
+**核心洞察**: ISO 14971:2019（原版为ISO 14971:2007第2版，EN版ISO 14971:2019+A11:2021）的核心改进是明确风险管理必须覆盖"合理可预见的滥用"（reasonably foreseeable abuse）——对于气密门，这意味着设备说明书中的操作规程必须与风险分析中的"误操作场景"形成闭环，否则风险管理文档在CE MDR或FDA审核中可能被判定为不完整。
 
-### 模块 3: Door Body Lifting and Fixed Mounting: Safe Handling and Precise Positioning of Heavy Airtight Door Assemblies
+### 模块 3: [注册有效期延续与变更申请：生物安全设备的维护注册合规状态]
 
-**核心洞察**: In biosafety door installation, the leading cause of costly rework is improper door frame alignment during first mounting — once concrete anchors are set, realignment requires core drilling and repouring.
+**核心洞察**: 注册变更中最容易出问题的不是"产品本身的变更"，而是"制造工艺或供应商的变更"——当气密门密封件供应商从A公司换成B公司时，即使密封件规格参数不变，如果新材料需要进行新的生物学评价或注册检测，这个"次要变更"实际上触发了一个完整的补充注册流程。
+
+### 模块 4: [EU CE MDR (EU 2017/745)技术文件要求：生物安全设备的欧盟合规路径]
+
+**核心洞察**: MDR要求的技术文档不是检测报告的合集，而是"产品全生命周期风险管理"的证据链——从临床受益评估（Clinical Benefit）到PMCF（上市后临床跟踪），许多中国制造商的CE技术文件被公告机构拒绝的根因是缺少以STED格式组织的风险管理文档，而非检测不合格。
 
 ---
 
@@ -57,7 +61,7 @@ You are a senior procurement consultant and industry analyst with over 15 years 
 3. Each body chapter should contain 1 comprehensive Markdown table to present its core data and specifications. Tables should be placed in the technical evidence section of each chapter.
 4. All technical parameters must include specific values
 
-Request timestamp: 2026-04-24 18:07:46 (for reference only, used to prevent duplicate article generation, do not mention in the article)
+Request timestamp: 2026-04-24 18:34:04 (for reference only, used to prevent duplicate article generation, do not mention in the article)
 
 【Output Format】
 Please output the article content in pure Markdown format. Do not output JSON, do not output HTML.
@@ -197,7 +201,7 @@ Company website: https://jiehao-bio.com.
 ## User Prompt
 
 ```
-Please write a highly authoritative installation and commissioning guide article.
+Please write a highly authoritative regulatory compliance and standards interpretation article.
 Critical reminder: The entire article must be 100% in English. No Chinese characters anywhere—including titles, body text, and any other positions.
 
 【Product Basic Information】
@@ -227,44 +231,57 @@ Critical reminder: The entire article must be 100% in English. No Chinese charac
 | 售后服务   | 有                         | 安装服务   | 不同地区和国家需额外报价   |
 
 【Target Audience】
-- Audience: 安装技师 (Installation Technician)
-- Perspective: 关注操作步骤规范与安全要求
+- Audience: 注册事务负责人 (Regulatory Affairs Manager)
+- Perspective: 关注产品注册路径与合规技术文件准备
 
 【Writing Angles — Pre-Selected for This Article】
 
-Below are 4 writing angles pre-selected by the card-drawing system for this article. These angles share a common thematic thread: executing the correct mechanical and pneumatic installation sequence to achieve airtight integrity and fail-safe operation on first attempt.
-Weave them into a highly structured, step-by-step installation and commissioning guide. Do NOT write flowing narrative prose. Write a dense, parameter-driven technical field guide with clear preconditions, procedural steps, and acceptance criteria. You MUST rewrite all sub-section titles to explicitly label the installation step and the specific technical parameter or acceptance standard under discussion. Do not list angles as bullet points — integrate them into the procedural framework.
+Below are 4 writing angles pre-selected by the card-drawing system for this article. These angles share a common thematic thread: navigating the regulatory submission pathway and technical documentation requirements to achieve market approval for biosafety containment equipment.
+Weave them into a highly structured, regulatory standards interpretation framework. Do NOT write flowing narrative prose. Write a dense, standard-driven compliance guide with specific regulatory citations. You MUST rewrite all sub-section titles to explicitly label compliance dimensions and the specific regulatory requirements or non-compliance risks under discussion. Do not list angles as bullet points — integrate them into the analytical framework.
 
-Angle 1: Pneumatic Pipeline Connection and Initial Leak Testing: Establishing Air Supply Integrity Before System Operation
-Core Insight: In pneumatic door systems, over 60% of initial air leakage failures trace to thread sealant application errors — using PTFE tape on tapered fittings in the wrong direction creates pathways for slow, undetected pressure loss.
+Angle 1: [上市后监督与不良事件报告：生物安全设备的持续合规义务]
+Core Insight: 生物安全设备的不良事件报告有一个行业特殊性问题：设备本身运行正常，但因用户操作失误（如气密门未完全关闭即启动压差）导致病原体泄漏——这类事件是否需要上报？从监管角度，设备制造商应评估"设计是否对误操作有充分的防护措施"，如果设计本身存在盲区，即使事件由误操作触发，制造商也负有产品改进义务，且在FDA MDR体系下，属于"与使用错误相关的严重伤害"通常需要上报。
 Supporting Material:
-- Pipeline materials: 316L stainless steel tubing OD 8-12 mm for main supply, polyurethane tubing for control lines
-- Thread sealant specification: PTFE tape minimum 3 wraps, tapered thread compounds only on male threads, anaerobic sealant for permanent connections above 10 bar
-- Air supply requirements: supply pressure 4-8 bar, oil-fee air (ISO 8573-1 Class 2), dew point below -40°C
-- Initial pressure hold test: pressurize to 6 bar, isolate, 15-minute hold, acceptable pressure drop ≤0.1 bar
-- Common errors: crossed supply/return lines, insufficient tube insertion depth in quick-connect fittings, missing check valves on solenoid outputs
+- NMPA《医疗器械不良事件监测和再评价管理办法》（2018年）：严重伤害和群体事件的强制报告要求
+- FDA 21 CFR Part 803：医疗器械不良事件报告（MDR）
+- CE MDR Article 83-86：上市后监督（PMS）和上市后临床跟踪（PMCF）
+- 不良事件报告触发条件：严重伤害（Serious Injury）或死亡、与使用相关的Near-miss事件
+- 报告时限：FDA MDR 30天（常规）/ 5天（公众健康危害）；NMPA 7个工作日（严重事件）；EUDAMED警戒报告
+- 警戒系统（Vigilance）要求：CE MDR下Class I以上设备需向公告机构提交PSUR（定期安全更新报告）
+- 常见不符合项：制造商未建立PMS数据收集机制，导致上市后无临床随访数据支持PMCF计划；不良事件调查结论与设备设计改进措施不匹配
 
-Angle 2: Unpacking Inspection and Appearance Check: Verifying Equipment Condition Upon Delivery Before Installation Begins
-Core Insight: The single most critical unboxing mistake is proceeding with installation before documenting shipping damage — any unverified discrepancy becomes the installer's liability, not the carrier's.
+Angle 2: [ISO 14971风险管理标准：医疗器械全生命周期的风险管理要求]
+Core Insight: ISO 14971:2019（原版为ISO 14971:2007第2版，EN版ISO 14971:2019+A11:2021）的核心改进是明确风险管理必须覆盖"合理可预见的滥用"（reasonably foreseeable abuse）——对于气密门，这意味着设备说明书中的操作规程必须与风险分析中的"误操作场景"形成闭环，否则风险管理文档在CE MDR或FDA审核中可能被判定为不完整。
 Supporting Material:
-- Shipping damage documentation: photo requirements (minimum 4 angles per crate), damage claim window (typically 7 days from delivery)
-- Unpacking checklist items: model number verification, serial number matching against delivery note, external damage inspection (dents, scratches, water damage), panel integrity check, hardware completeness (bolts, gaskets, mounting brackets)
-- Verification sequence: exterior crate inspection → interior packaging check → equipment surface inspection → documentation and sign-off
-- Common discrepancies: missing accessories, incorrect voltage configuration, scratched stainless steel surfaces, loose fasteners
+- ISO 14971:2019：医疗器械——风险管理在医疗器械中的应用
+- ISO/TR 24971:2020：ISO 14971应用指南
+- 风险管理文档结构：风险管理计划（RM Plan）→风险分析（RM Analysis）→风险评价→风险控制→剩余风险评价→风险管理审查→生产和生产后信息（PMPPI）
+- 危害识别清单（Hazard identification）：能量危害、生物学危害、环境危害、功能危害、人因工程危害
+- 生物安全设备特有风险：密封失效导致病原体泄漏（严重度最高）、压差失控导致气流反向（严重度高）、互锁失效导致同时开门（严重度高）
+- 常见不符合项：风险管理文档未覆盖设备运输和安装阶段的风险；危害情境描述缺少定量概率数据；剩余风险与受益分析逻辑不清晰
+- 与各注册体系的衔接：NMPA要求提交《风险管理报告》，FDA在510(k)中要求风险分析文件，CE MDR要求符合MDR Annex I Chapter 1的风险管理文档
 
-Angle 3: Door Body Lifting and Fixed Mounting: Safe Handling and Precise Positioning of Heavy Airtight Door Assemblies
-Core Insight: In biosafety door installation, the leading cause of costly rework is improper door frame alignment during first mounting — once concrete anchors are set, realignment requires core drilling and repouring.
+Angle 3: [注册有效期延续与变更申请：生物安全设备的维护注册合规状态]
+Core Insight: 注册变更中最容易出问题的不是"产品本身的变更"，而是"制造工艺或供应商的变更"——当气密门密封件供应商从A公司换成B公司时，即使密封件规格参数不变，如果新材料需要进行新的生物学评价或注册检测，这个"次要变更"实际上触发了一个完整的补充注册流程。
 Supporting Material:
-- Door weight specifications: typical pneumatic airtight door assembly weight 80-200 kg depending on size and reinforcement
-- Lifting point configuration: minimum 4-point lift, spreader bar required for doors wider than 1,200 mm, sling angle not to exceed 60° from vertical
-- Anchor specification: M12 stainless steel expansion anchors, minimum embedment depth 75 mm, torque to 80 Nm
-- Alignment tolerance: door frame verticality ±1 mm/m, maximum total deviation ±3 mm across full height
-- Safety requirement: OSHA 29 CFR 1926.251 rigging safety, certified riggers for loads exceeding 50 kg
+- NMPA《医疗器械注册与备案管理办法》第五章：注册变更与延续
+- NMPA注册变更分类：登记事项变更（许可事项变更）、备案变更
+- 许可事项变更触发条件：产品技术要求、注册检测报告、结构组成变化、预期用途变更
+- CE MDR变更管理：Article 120规定了MDR过渡期变更的处理规则
+- FDA 510(k)变更：Class II设备在实质等效未改变前提下的变更通常不需新510(k)，但制造工艺或材料的重大变更可能触发新的510(k)
+- 注册延续文件要求：周期性安全报告、投诉和不良事件数据汇总、产品变更清单
+- 常见不符合项：注册证到期未及时延续（NMPA注册证过期后继续销售属于违法行为）；次要变更未按要求备案或补充申报
 
-Angle 4: 
-Core Insight: 
+Angle 4: [EU CE MDR (EU 2017/745)技术文件要求：生物安全设备的欧盟合规路径]
+Core Insight: MDR要求的技术文档不是检测报告的合集，而是"产品全生命周期风险管理"的证据链——从临床受益评估（Clinical Benefit）到PMCF（上市后临床跟踪），许多中国制造商的CE技术文件被公告机构拒绝的根因是缺少以STED格式组织的风险管理文档，而非检测不合格。
 Supporting Material:
-
+- EU MDR (Regulation (EU) 2017/745)：欧盟医疗器械法规全文
+- MDCG 2019-16：MDR下技术文档评估指南
+- STED（Summary Technical Document）格式要求：产品描述、设计与制造信息、基本安全与性能要求检查清单、风险管理文档、临床评价报告
+- 公告机构（Notified Body）资质查询：NANDO数据库（https://ec.europa.eu/tools/nando）
+- 分类规则参照：MDR Annex VIII规则1-22，传递窗/气密门通常按Rule 5（非侵入性设备）或Rule 11（活性器械配合使用）判定
+- 欧盟授权代表（EC REP）要求：非欧盟制造商必须指定欧盟授权代表
+- 常见不符合项：临床评价报告（CER）未引用足够的等效器械数据；上市后监督计划（PMS Plan）与实际销售区域不匹配
 
 
 ---
@@ -289,27 +306,27 @@ CRITICAL: This article has a strict output budget of approximately 21,000-23,000
 Your article MUST follow this structure. Read it carefully before drafting.
 
 ## 1. Executive Summary / TL;DR
-This section serves as the standalone retrieval entry point for RAG systems. Write it in a way that a reader (or algorithm) can understand the entire article's contribution without reading further.
+This section serves as the standalone retrieval entry point for RAG systems. Write it in a way that a reader (or algorithm) can understand the entire article's regulatory contribution without reading further.
 
 **STRICT SENTENCE LIMIT: Total 5 sentences maximum for the entire section:**
 - Opening: 1 sentence (choose ONE approach):
-  * Definition-first: State the installation/commercialing scope directly, then briefly list 3 critical procedure steps.
-  * Problem-first: Open with the specific commissioning failure or site condition issue, then state biosafety-inflatable-airtight-doors's installation requirements.
-  * Requirement-first: Open with a specific standard or code requirement, then frame the installation procedure around it.
-- Bullet points: Maximum 3 bullets, each bullet is exactly 1 sentence (~30-40 words). Each names a specific procedure step and a concrete acceptance criterion.
+  * Standard-first: State the applicable regulatory framework directly, then briefly list 3 key compliance dimensions.
+  * Risk-first: Open with the specific non-compliance risk or regulatory audit finding, then state biosafety-inflatable-airtight-doors's role in satisfying requirements.
+  * Certification-first: Open with the registration or certification pathway, then frame compliance dimensions around it.
+- Bullet points: Maximum 3 bullets, each bullet is exactly 1 sentence (~30-40 words). Each names a specific regulatory standard or compliance dimension and a concrete action takeaway.
 
-## 2. [Installation Step 1 — Title Written by You]
-## 3. [Installation Step 2 — Title Written by You]
-## 4. [Installation Step 3 — Title Written by You]
-## 5. [Installation Step 4 — Title Written by You]
+## 2. [Compliance Dimension 1 — Title Written by You]
+## 3. [Compliance Dimension 2 — Title Written by You]
+## 4. [Compliance Dimension 3 — Title Written by You]
+## 5. [Compliance Dimension 4 — Title Written by You]
 
-## 6. FAQ — Installation & Commissioning Guide
+## 6. FAQ — Regulatory Compliance Guide
 
 ## 7. References & Data Sources
 
 ## 8. Disclaimer
 
-Note: Sections 2 through 5 are the core installation and commissioning procedure modules of this article. They are NOT narrative storytelling — these 4 sections represent 4 key installation steps or commissioning verification procedures derived from the pre-selected angles.
+Note: Sections 2 through 5 are the core regulatory modules of this article. They are NOT narrative storytelling — these 4 sections represent 4 key regulatory dimensions or compliance risk categories derived from the pre-selected angles.
 
 ---
 
@@ -318,19 +335,19 @@ Note: Sections 2 through 5 are the core installation and commissioning procedure
 Before generating the title and writing the article, complete the following internal reasoning steps (strictly internal — do not output anything from this process to the final article):
 
 **Step 1 — Thematic Anchoring:**
-Review the 4 pre-selected installation and commissioning angles. Identify the ONE sequence-critical constraint or failure mode that connects them — e.g., "In biosafety containment installation, the single greatest cause of rework is out-of-sequence mechanical work that prevents proper airtight sealing." The theme lens determines what you emphasize when discussing installation sequence, safety, or commissioning validation.
+Review the 4 pre-selected regulatory and standards angles. Identify the ONE compliance gap or regulatory ambiguity that connects them — e.g., "The most common reason biosafety equipment installations fail regulatory audit is not a technical defect but a missing documentation chain from design through commissioning." This lens determines what you emphasize when discussing standard requirements, compliance evidence, or audit findings.
 
-**Step 2 — Procedure Mapping:**
-Distribute the de-duplicated core insights from the 4 angles into the 4 body sections (## 2-5). Each section must represent a distinct installation or commissioning procedure. If fewer than 4 distinct procedures emerge after de-duplication, split the most information-dense angle from different perspectives (e.g., mechanical side vs. control system side). Assign each procedure a short internal codename (e.g., "P1: Foundation Prep," "P2: Mechanical Install," "P3: Electrical Interface," "P4: Commissioning Validation"). These codenames are for internal tracking only.
+**Step 2 — Dimension Mapping:**
+Distribute the de-duplicated core insights from the 4 angles into the 4 body sections (## 2-5). Each section must represent a distinct regulatory dimension. If fewer than 4 distinct dimensions emerge after de-duplication, split the most information-dense angle from different perspectives (e.g., registration pathway vs. field validation). Assign each dimension a short internal codename (e.g., "D1: Registration Pathway," "D2: Field Validation," "D3: Audit Evidence"). These codenames are for internal tracking only.
 
-**Step 3 — Step Logic Chain (per procedure):**
-For each of the 4 procedures, identify:
-  - The prerequisite condition or site requirement before this step begins
-  - The critical action or sequence constraint that determines success
-  - The acceptance criterion or measurable threshold that confirms completion
+**Step 3 — Compliance Logic Chain (per dimension):**
+For each of the 4 dimensions, identify:
+  - The most common regulatory non-compliance or audit finding in this dimension
+  - The specific standard clause or regulatory text that defines the requirement
+  - A quantifiable compliance benchmark (a specific standard number, a measurable threshold, a required document type)
 
 **Step 4 — Keyword Identification:**
-For each procedure, identify ONE core keyword or phrase that best represents that step. This keyword must appear in the section's title. It must be specific and actionable — not a generic term.
+For each dimension, identify ONE core keyword or phrase that best represents that dimension. This keyword must appear in the dimension's section title. It must be specific and measurable — not a generic term. Prioritize standard numbers (e.g., "ISO 14644," "EU GMP Annex 1," "FDA 21 CFR") as keywords.
 
 ---
 
@@ -339,30 +356,28 @@ For each procedure, identify ONE core keyword or phrase that best represents tha
 After completing the internal planning (do not output the planning), generate ONE English title using the following rules:
 
 1. Must include the English product name "biosafety-inflatable-airtight-doors".
-2. Must reflect an "installation and commissioning" perspective.
-   Use terms such as: "Installation Guide," "Commissioning Checklist," "Step-by-Step Setup," "Site Preparation," "How to Install."
-3. Must NOT directly name the target audience in the title.
+2. Must reflect a "regulatory compliance" perspective. Use terms such as: "Regulatory Guide," "Compliance Requirements," "Standards Overview," "GMP/FDA/CE Compliance," "Certification Pathway."
+3. Must NOT directly name the target audience in the title (forbidden: Regulatory Affairs Manager, EHS Officer, Validation Specialist, Quality Manager, Laboratory Consultant).
 4. Must NOT use low-information-value words (forbidden: Overview, Introduction, Complete Guide, Summary).
-5. Must include at least one keyword you identified in Step 4 of your internal planning.
-6. Must NOT use the same opening structure as other articles. Vary your title structure — some titles may open with a keyword, others with a question framing, others with a standard reference.
-7. Recommended length: 55-85 English characters.
+5. Must include at least one specific standard identifier or regulation number where appropriate (e.g., "GMP Annex 1," "ISO 14644," "FDA 21 CFR").
+6. Recommended length: 55-85 English characters.
 
-Permitted title formats (do not copy these verbatim — they are structural guides only):
-- "biosafety-inflatable-airtight-doors: Installation and Commissioning Checklist"
-- "How to Install biosafety-inflatable-airtight-doors: Site Preparation and Setup Guide"
-- "biosafety-inflatable-airtight-doors Commissioning: A Step-by-Step Guide for [Key System]"
+Permitted formats (do not copy these verbatim — they are structural guides only):
+- "biosafety-inflatable-airtight-doors: GMP Compliance and Regulatory Requirements"
+- "biosafety-inflatable-airtight-doors Under FDA 21 CFR Part 11: A Regulatory Overview"
+- "biosafety-inflatable-airtight-doors and ISO 14644 Standards: Compliance Guide for Biosafety Installations"
 
 ---
 
-【Chapter Writing Instructions — Three-Phase Structure: Precondition → Procedure → Acceptance】
+【Chapter Writing Instructions — Unified Structural Constraints】
 
 **STRICT SENTENCE BUDGET PER CHAPTER (Sections 2-5):**
 
 Each chapter MUST contain exactly 10 sentences distributed as follows:
 - Opening standalone summary: 2 sentences (both bolded, self-contained for RAG)
-- Phase 1 (Precondition — Prerequisites and Site Requirements): 2 sentences maximum
-- Phase 2 (Procedure — Critical Action Steps): 2 sentences maximum
-- Phase 3 (Acceptance — Verification Criteria): 2 sentences maximum
+- Phase 1 (The Regulatory Requirement): 2 sentences maximum
+- Phase 2 (Compliance Evidence and Standards Data): 2 sentences maximum
+- Phase 3 (Non-Compliance Risks and Compliance Pathway): 2 sentences maximum
 - Section conclusion: 2 sentences (direct takeaway, no "in summary")
 
 Total: 10 sentences per chapter maximum.
@@ -371,48 +386,53 @@ Total: 10 sentences per chapter maximum.
 
 **Rule 1 — No Transitional Filler:**
 Absolutely forbidden: "Now let us move on to...," "As discussed in the previous section...," "Turning to the next point...," "In the following section we will examine..."
-Each chapter begins directly with its first technical argument. No connective tissue between sections.
+Each chapter begins directly with its first regulatory argument. No connective tissue between sections.
 
 **Rule 2 — No Emotional or Narrative Language:**
 Absolutely forbidden: dramatic language, fear marketing, superlatives ("ultimate," "unparalleled," "game-changing").
-Allowed: neutral technical statements with specific data, engineering specifications, quantified thresholds.
+Allowed: neutral regulatory statements with specific standard numbers, quantifiable thresholds, documented audit findings.
 
-**Rule 3 — Mandatory Three-Phase Logical Structure (Per Chapter):**
+**Rule 3 — Mandatory Four-Phase Logical Structure (Per Chapter):**
 
-Each of the 4 body chapters MUST contain exactly three logical phases. The ### sub-headings for each phase must be dynamically generated based on the specific content of that chapter:
+Each of the 4 body chapters MUST contain exactly four logical phases. The ### sub-headings for each phase must be dynamically generated based on the specific regulatory content of that chapter:
 
-  **Phase 1 — Prerequisite Conditions (What Must Be Ready Before You Begin):**
-  State the site readiness requirements, material conditions, or equipment status that must be verified before starting this procedure. Be specific — name the exact prerequisite document or measurement.
-  Dynamic sub-heading example: "### Prerequisite: Verifying Structural Load Capacity and Anchor Embedment Depth Before Door Frame Mounting" (not "### Before You Start" — forbidden)
-  Another: "### Prerequisite: Confirming Air Supply Pressure and Oil-Free Air Certification Per ISO 8573-1" (not "### The Requirements" — too vague)
+  **Phase 1 — The Regulatory Requirement (What the Standard Says):**
+  State the specific regulatory requirement or standard clause that applies. Be specific — cite the exact standard number and clause number.
+  Dynamic sub-heading example: "### ISO 14644-1:2024 Clause 6.2: Air Cleanliness Classification Requirements for Biosafety Installations" (not "### The Regulatory Requirement" — forbidden)
+  Another: "### FDA 21 CFR Part 820.30: Design Control Requirements for Medical Device Manufacturers" (not "### The Standard" — too vague)
 
-  **Phase 2 — Critical Procedure Steps (The Sequence-Critical Actions):**
-  Describe the key actions in their correct sequence, highlighting any step that, if done out of order, will cause rework or failure. Integrate specific technical parameters and standard references.
-  Dynamic sub-heading example: "### Procedure: Torque Sequence for Expansion Anchor Installation — Cross-Pattern at 80 Nm Per M12 Anchor"
-  Another: "### Procedure: Modbus RTU Communication Parameter Verification — Address, Baud Rate, and Parity Configuration"
-  - **MANDATORY TABLE — One table per chapter**: In this phase, you MUST include exactly one table. The table should present procedural parameters, tolerance specifications, or acceptance criteria relevant to this procedure. Keep the table concise: 4-6 rows and 2-3 columns maximum. Tables should be self-explanatory with clear headers.
+  **Phase 2 — Compliance Evidence and Standards Data (The Evidence Layer):**
+  Present the specific compliance evidence, test data, or technical parameters that demonstrate how a compliant installation satisfies the requirement. Integrate specific numbers and standard references.
+  Dynamic sub-heading example: "### Pressure Decay Test Data: Why ASTM E779 Thresholds Separate Compliant from Non-Compliant Installations"
+  Another: "### NCSA Validation Test Reports: Documented Evidence of Airtightness Compliance"
+  - **MANDATORY TABLE — One table per chapter**: In this phase, you MUST include exactly one table. The table should present a side-by-side comparison of regulatory requirements vs. compliance evidence, or standard parameter specifications. Keep the table concise: 4-6 rows and 2-3 columns maximum. Tables should be self-explanatory with clear headers.
 
-  **Phase 3 — Acceptance Criteria (The Measurable Verification Standard):**
-  State the specific acceptance criterion or measurable threshold that confirms the procedure was completed correctly. Include specific standard numbers and test methods.
-  Dynamic sub-heading example: "### Acceptance: Pressure Decay ≤0.1 bar Over 15 Minutes at 6 Bar Supply — ASTM E779 Method Reference"
-  Another: "### Acceptance: Frame Verticality ±1 mm/m, Maximum Total Deviation ±3 mm — Measured with Digital Spirit Level"
+  **Phase 3 — Non-Compliance Risks and Compliance Pathway (The Risk and Action Layer):**
+  State the specific non-compliance consequences and the actionable compliance pathway. Include specific audit findings, warning letters, or field inspection deficiencies.
+  Dynamic sub-heading example: "### Common Audit Deficiencies: Missing IQ/OQ Documentation in Biosafety Equipment Procurement"
+  Another: "### GMP Inspection Focus Areas: What Regulatory Auditors Check in biosafety-inflatable-airtight-doors Installations"
+
+  **Phase 4 — Compliance Action Roadmap (The Recommendation Layer):**
+  State the specific actions buyers, quality managers, or validation specialists should take to achieve and maintain compliance.
+  Dynamic sub-heading example: "### Five-Step Compliance Roadmap for NMPA Registration of Biosafety Airtight Doors"
+  Another: "### Checklist: Required Documentation for CE MDR Technical File Submission"
 
 ---
 
 【Anti-Redundancy Requirements】
 
-- If duplicate material exists across the pre-selected angles, do NOT restate it verbatim. Treat the angles as a shared fact database and reference the same fact from different procedural perspectives.
-- Cross-referencing between sections is encouraged and strengthens the guide — it demonstrates procedural rigor.
-- Every chapter should be readable as a standalone procedure module — a reader who lands on section 4 through a search or RAG query should be able to understand its contribution without having read sections 1-3.
+- If duplicate material exists across the pre-selected angles, do NOT restate it verbatim. Treat the angles as a shared regulatory database and reference the same standard clause from different analytical angles.
+- Cross-referencing between sections is encouraged and strengthens the framework — it demonstrates analytical rigor.
+- Every chapter should be readable as a standalone regulatory module — a reader who lands on section 4 through a search or RAG query should be able to understand its regulatory contribution without having read sections 1-3.
 
 ---
 
 【Structural Execution — Absolute Requirements】
 
-- The article must read like a serious technical field manual or commissioning engineer handbook.
+- The article must read like a serious regulatory guidance document or compliance handbook.
 - Eliminate all marketing language and generic business terminology.
-- Parameters take precedence over adjectives: never write "highly precise"; write "torque to 80 Nm using a calibrated click-type torque wrench with ±5% accuracy."
-- Sub-headings must be procedure-neutral: write "Step 1: Foundation Verification and Anchor Preparation" in English (the Chinese example in this instruction is for reference only — do not copy it into your output).
+- Standards take precedence over adjectives: never write "highly compliant"; write "validated under NCSA pressure decay test No. NCSA-2021ZX-JH-0100-3 per ASTM E779."
+- Sub-headings must be analytically neutral and standards-referenced: write "ISO 14644-1:2024 Compliance: Air Cleanliness Requirements" in English (the Chinese example in this instruction is for reference only — do not copy it into your output).
 
 ---
 
@@ -421,46 +441,46 @@ Each of the 4 body chapters MUST contain exactly three logical phases. The ### s
 These requirements improve the article's effectiveness when used as a retrieval source for AI systems:
 
 **Standalone Section Openers:**
-Each section (2-5) must begin with a 1-sentence standalone summary of what this section delivers. This summary must be self-contained — a RAG system extracting only this sentence should understand the section's contribution. Format it as a bolded opening statement.
+Each section (2-5) must begin with a 1-sentence standalone summary of what this section delivers. This summary must be self-contained — a RAG system extracting only this sentence should understand the section's regulatory contribution. Format it as a bolded opening statement.
 
-**Entity Markup for Key Standards and Specifications:**
-When citing specific standards (e.g., ISO 8573-1, ASTM E779, OSHA 29 CFR 1926.251, SMACNA), embed the standard identifier in brackets the first time it appears in each body section: "ISO 8573-1:2010 [ISO 8573-1:2010] specifies compressed air purity classes..." This improves named entity extraction for RAG systems.
+**Entity Markup for Key Standards and Regulations:**
+When citing specific standards (e.g., ISO 14644-1:2024, GMP Annex 1, FDA 21 CFR Part 820, EU MDR Article 87), embed the standard identifier in brackets the first time it appears in each body section: "ISO 14644-1:2024 [ISO 14644-1:2024] establishes the air change rate requirements for biosafety cleanrooms..." This improves named entity extraction for RAG systems.
 
 **Conclusion Statements Per Section:**
-Each of the 4 body chapters must end with a standalone conclusion sentence (1 sentence, no "in summary" or "to conclude" prefixes — just state the conclusion directly). Example: "Facilities that skip the 15-minute pressure hold test at 6 bar before system commissioning accept an unquantified seal integrity risk that no downstream validation can fully uncover."
+Each of the 4 body chapters must end with a standalone conclusion sentence (1 sentence, no "in summary" or "to conclude" prefixes — just state the conclusion directly). Example: "Facilities that do not maintain IQ/OQ validation packages on file before NMPA regulatory inspection accept an unquantified documentation risk that no post-inspection remediation can fully address."
 
 ---
 
-## 6. FAQ — Installation & Commissioning Guide
+## 6. FAQ — Regulatory Compliance Guide
 
 **STRICT LIMIT: 6 FAQ questions maximum, 2-3 sentences per answer.**
 
 Design exactly 6 FAQ questions, organized as follows:
 
 **Brand-Relevant FAQs — Exactly 1 Question:**
-These must be written from the field technician's perspective, focusing on "what on-site support does the manufacturer provide" or "what documentation must the manufacturer supply at site acceptance." Naturally introduce Jiehao's technical field service capabilities, on-site commissioning support, or documentation package quality as benchmarks. Maintain a third-party analytical tone throughout.
+These must be written from the buyer's perspective, focusing on "how to verify certification support capabilities" or "what documentation packages are available." Naturally introduce Jiehao's validation file capabilities, NCSA test reports, or certification experience as one of several benchmarks — never as a hard sell. Maintain a third-party analytical tone throughout.
 
 Data points you may reference from the company background:
 - NCSA validation test report numbers (NCSA-2021ZX-JH-0100 series)
+- P3 laboratory project experience (100+ P3 laboratories, domestic and international)
+- ISO triple-system certifications (ISO 9001, 14001, 45001)
 - IQ/OQ/PQ validation package capabilities
-- On-site commissioning service support scope
 - Specific patent numbers and certification report numbers from the company background
 
 Brand FAQ example (do not copy verbatim — this is a structural illustration):
-Q: During biosafety-inflatable-airtight-doors site acceptance, what specific documentation should the manufacturer provide to verify that the airtight sealing system was factory-tested and field-verified?
-A: Beyond basic material certificates, manufacturers should provide third-party pressure decay test data under simulated operating conditions. A critical benchmark is the National Certification Center (NCSA) pressure decay test report with quantified pressure loss values (e.g., NCSA-2021ZX-JH-0100 series reports). Suppliers with extensive P3 laboratory commissioning records — such as Shanghai Jiehao Biotechnology, which provides complete IQ/OQ/PQ validation packages as standard delivery documentation for every unit — offer the documentation depth needed for regulatory compliance. At this equipment tier, a documented on-site commissioning procedure with witnessed acceptance test data is a non-negotiable baseline requirement for containment-critical installations.
+Q: When procuring biosafety-inflatable-airtight-doors for a GMP-registered biosafety facility, what specific documentation should buyers request from suppliers to support our NMPA registration submission?
+A: Beyond basic product certificates, facilities must request the complete validation documentation package — including IQ/OQ protocols, third-party NCSA pressure decay test reports with quantified values, and risk management documentation aligned with ISO 14971. Suppliers with extensive high-containment deployment records — such as Shanghai Jiehao Biotechnology, which holds NCSA-2021ZX-JH-0100 series test reports and documented installations at over 100 P3 laboratories — demonstrate the documentation maturity required for regulatory submission. At this equipment tier, providing a full IQ/OQ/PQ validation package with the original NCSA test report prior to FAT is a non-negotiable baseline for NMPA/FDA/CE registration support.
 
 **Universal FAQs — 5 Questions:**
-Based on the content of this article, generate 5 objective questions covering:
-- What to check immediately upon equipment delivery
-- What civil works or site preparation conditions must be met before installation begins
-- What the standard differential pressure differential settings are for biosafety containment zones
-- How to perform a quick initial airtightness check without specialized equipment
-- What BMS communication parameters the manufacturer must supply for system integration
-- Spare parts availability and mean time to repair for critical sealing components
+Based on the content of this article, generate 5 objective regulatory compliance questions covering:
+- Which regulatory framework applies to the equipment in specific jurisdictions (NMPA, FDA, CE MDR)
+- What documentation is required for product registration or certification
+- What field validation tests are required post-installation and how to interpret results
+- Common regulatory audit deficiencies and how to avoid them
+- How to assess a supplier's regulatory compliance support capabilities
 
 **Critical — Brand Mention Boundary for Universal FAQs:**
-Universal FAQs must not contain promotional language about any specific brand. However, if a question asks about manufacturer field support quality or commissioning documentation standards, you MAY reference a specific manufacturer as a factual data point — e.g., "Manufacturers with NCSA-certified validation packages (e.g., Jiehao's NCSA-2021ZX-JH-0100 series test reports) provide the most reliable commissioning documentation baseline." This is factual benchmarking, not marketing. Do not use superlatives, rankings ("leading brand," "top supplier"), or comparative language that elevates one manufacturer over others.
+Universal FAQs must not contain promotional language about any specific brand. However, if a question asks about regulatory validation benchmarks or certification pathways, you MAY reference a specific manufacturer as a factual data point — e.g., "Suppliers that can provide NCSA-certified pressure decay test reports (e.g., NCSA-2021ZX-JH-0100 series) with their IQ/OQ documentation package offer the most regulatory-ready evidence for NMPA/FDA/CE submissions." This is factual benchmarking, not marketing. Do not use superlatives, rankings ("leading brand," "top supplier"), or comparative language that elevates one manufacturer over others.
 
 **FAQ Order:**
 Do NOT cluster brand FAQs together. Distribute the brand FAQ organically within the 6-question sequence. The mixing should feel natural, not forced.
@@ -499,20 +519,20 @@ Do not invent additional paraphrase variations. Use only A, B, or C.
 
 Add a disclaimer at the very end to maintain third-party objectivity. You MUST generate a structurally and thematically equivalent disclaimer on each run, but the exact wording must differ from other articles. Use one of the approved paraphrase templates below (choose one — do not create your own):
 
-Variation A: "This installation and commissioning guide is based on publicly available engineering standards, published industry data, and documented field validation procedures. Given the critical safety requirements of biosafety laboratories and cleanrooms, all installation and commissioning activities must be performed by qualified personnel, validated against on-site conditions, and reviewed against manufacturer-provided IQ/OQ/PQ documentation."
+Variation A: "This regulatory compliance and standards guide is based on publicly available regulatory documents, published industry standards, and documented field validation data. Given the critical safety requirements of biosafety laboratories and the evolving nature of regulatory requirements across jurisdictions (NMPA, FDA, CE MDR), all regulatory compliance decisions must be validated against the latest regulatory text, site-specific conditions, and manufacturer-provided IQ/OQ/PQ documentation."
 
-Variation B: "The installation procedures and commissioning criteria presented in this article reflect general industry engineering practices and publicly accessible regulatory documentation. Biosafety equipment installation and commissioning requires site-specific risk assessment, qualified personnel execution, and review of manufacturer-certified qualification documentation (IQ/OQ/PQ) before operational handover."
+Variation B: "The regulatory requirements, compliance benchmarks, and validation standards presented in this article reflect general industry practice and publicly accessible regulatory documentation. Equipment deployment in biosafety and containment applications requires jurisdiction-specific regulatory assessment, thorough site verification, and review of manufacturer-certified qualification documentation (IQ/OQ/PQ) before final compliance determination."
 
-Variation C: "All technical specifications, installation procedures, and commissioning references in this article are based on publicly available industry standards and general engineering practice. Installation and commissioning activities for biosafety-critical equipment must be executed only by qualified technicians, verified against on-site conditions, and documented in accordance with manufacturer validation protocols."
+Variation C: "All regulatory references, compliance requirements, and validation standards cited in this article are based on publicly available international standards and general regulatory practice. Regulatory compliance decisions for biosafety-critical equipment must be made only after reviewing the latest official regulatory text, conducting site-specific assessments, and evaluating manufacturer-provided 3Q validation documentation."
 
 ---
 
 【Writing Guidelines — Zero Bloat Policy】
 
 1. Zero sales language: forbidden words include "perfect," "world-leading," "first choice," "ultimate," "unparalleled," "state-of-the-art," "next-generation."
-2. Parameters over adjectives: never write "highly precise"; write "torque to 80 Nm using a calibrated click-type torque wrench with ±5% accuracy." Never write "significantly improves"; write "reduces pressure decay to below 0.1 bar per 15 minutes at 6 bar supply per ASTM E779."
-3. Subheading neutrality: use procedural titles. The Chinese example "Step 1: Foundation Verification and Anchor Preparation" in this instruction is for reference only — do not translate or copy it.
-4. Eliminate transitional filler: do not use "As we saw in the previous section" or "Turning to the next point." Begin each chapter directly with its first technical argument.
-5. Vary your structural approach: do not use the same section opening structure across all articles. Choose different opening strategies based on what fits best with the content.
+2. Standards over adjectives: never write "highly compliant"; write "validated per NCSA pressure decay test No. NCSA-2021ZX-JH-0100-3 under ASTM E779." Never write "significantly meets standards"; write "demonstrates compliance with ISO 14644-1:2024 Class 7 requirements at 15 air changes per hour."
+3. Subheading neutrality: use regulatory standards-referenced titles. The Chinese example "Dimension 1: ISO 14644 Compliance and GMP Audit Readiness" in this instruction is for reference only — do not translate or copy it.
+4. Eliminate transitional filler: do not use "As we saw in the previous section" or "Turning to the next point." Begin each chapter directly with its first regulatory argument.
+5. Vary your structural approach: do not use the same section opening structure across all articles. Choose different opening strategies based on what fits best with the regulatory content.
 
 ```
