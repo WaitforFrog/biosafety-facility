@@ -19,15 +19,18 @@ import tkinter as tk
 from pathlib import Path
 
 # ─── 配置常量 ───────────────────────────────────────────────────────────────
-SCRIPTS_DIR = Path("/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Produce")
+from APP.paths import PRODUCE_DIR
+
+SCRIPTS_DIR = PRODUCE_DIR
 LOG_DIR     = Path.home() / "Library" / "Logs" / "杰昊脚本管理器"
-PYTHON_BIN  = "/opt/homebrew/bin/python3"   # Homebrew Python 3.13（含 tkinter）
+PYTHON_BIN  = sys.executable   # 使用 APP 自带的 Python（PyInstaller 打包后指向内置 Python）
 APP_NAME    = "杰昊脚本管理器"
 
-SCRIPTS = [
-    "Compare_JIEHAO.py",
-    "Introduction_EN_html.py",
-]
+# 从 PRODUCE_DIR 自动扫描可执行脚本（排除 __init__ 和非脚本文件）
+SCRIPTS = sorted([
+    f.name for f in PRODUCE_DIR.iterdir()
+    if f.is_file() and f.suffix == ".py" and not f.name.startswith("_")
+])
 
 # ─── 初始化全局目录 ───────────────────────────────────────────────────────────
 LOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -42,7 +45,7 @@ class ScriptManagerApp:
     def __init__(self, root: tk.Tk):
         self.root = root
         self.root.title(APP_NAME)
-        self.root.geometry("800x600")
+        self.root.geometry("800x800")
         self.root.minsize(700, 500)
         self.root.configure(bg="white")
 

@@ -1,0 +1,82 @@
+# APP/paths.py
+# Backward-compatibility wrapper — re-exports everything from Setting
+import sys as _sys
+from pathlib import Path as _Path
+
+_CODE_ROOT = _Path(__file__).resolve().parent.parent
+
+# Ensure Code/ is on sys.path so 'from Setting import ...' works
+if str(_CODE_ROOT) not in _sys.path:
+    _sys.path.insert(0, str(_CODE_ROOT))
+
+from Setting import (
+    PROJECT_ROOT,
+    CODE_ROOT,
+    PRODUCE_DIR,
+    APP_DIR,
+    WEBSITE_DIR,
+    SOURCE_ROOT,
+    CONTENT_POOL_DIR,
+    ARTICLES_DIR_STR,
+    PARAMETERS_DIR_STR,
+    TITLE_DIR,
+    CARD_DRAW_COUNT,
+    ARTICLES_PER_AUDIENCE,
+    PUBLISH_DATE_RANGE_DAYS,
+    INTER_PRODUCT_DELAY,
+    API_TEMPERATURE,
+    API_MAX_TOKENS,
+    API_TIMEOUT,
+    AUTO_GIT_PUSH,
+    TRUST_MAX_CONCURRENT,
+    TRUST_TEMPERATURE,
+    TRUST_MAX_TOKENS,
+    TRUST_MODEL,
+    OPENAI_API_KEY,
+    API_BASE_URL,
+    MODEL_NAME,
+    BACKUP_COMPARE_JIEHAO,
+    BACKUP_COMPARE_NEUTRAL,
+    BACKUP_QUESTION_JIEHAO,
+    BACKUP_QUESTION_NEUTRAL,
+    BACKUP_INSTALL_JIEHAO,
+    BACKUP_INSTALL_NEUTRAL,
+    BACKUP_REGULATORY_JIEHAO,
+    BACKUP_REGULATORY_NEUTRAL,
+)
+
+__all__ = [
+    "PROJECT_ROOT",
+    "CODE_ROOT",
+    "PRODUCE_DIR",
+    "APP_DIR",
+    "WEBSITE_DIR",
+    "SOURCE_ROOT",
+    "CONTENT_POOL_DIR",
+    "ARTICLES_DIR_STR",
+    "PARAMETERS_DIR_STR",
+    "TITLE_DIR",
+    "CARD_DRAW_COUNT",
+    "ARTICLES_PER_AUDIENCE",
+    "PUBLISH_DATE_RANGE_DAYS",
+    "INTER_PRODUCT_DELAY",
+    "API_TEMPERATURE",
+    "API_MAX_TOKENS",
+    "API_TIMEOUT",
+    "AUTO_GIT_PUSH",
+    "TRUST_MAX_CONCURRENT",
+    "TRUST_TEMPERATURE",
+    "TRUST_MAX_TOKENS",
+    "TRUST_MODEL",
+    "OPENAI_API_KEY",
+    "API_BASE_URL",
+    "MODEL_NAME",
+    "BACKUP_COMPARE_JIEHAO",
+    "BACKUP_COMPARE_NEUTRAL",
+    "BACKUP_QUESTION_JIEHAO",
+    "BACKUP_QUESTION_NEUTRAL",
+    "BACKUP_INSTALL_JIEHAO",
+    "BACKUP_INSTALL_NEUTRAL",
+    "BACKUP_REGULATORY_JIEHAO",
+    "BACKUP_REGULATORY_NEUTRAL",
+]
