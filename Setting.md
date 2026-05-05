@@ -37,9 +37,9 @@ API_TEMPERATURE = 1.0
 API_MAX_TOKENS = 8192
 API_TIMEOUT = 120
 # 当前：小象API
-OPENAI_API_KEY = "sk-j4kGaMBeZYyma78n"
-API_BASE_URL   = "https://acloudvip.top/v1"
-MODEL_NAME     = "claude-opus-4-6-a"
+OPENAI_API_KEY = "sk-gFw3hYvuuF3Sf2Sx"
+API_BASE_URL   = "https://ck67.top/v1"
+MODEL_NAME     = "claude-sonnet-4-6"
 
 ## 工作流配置
 # 是否自动 git push（True / False）
