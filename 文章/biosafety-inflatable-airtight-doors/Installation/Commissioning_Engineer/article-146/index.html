@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 生物安全充气气密门. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="biosafety-inflatable-airtight-doors, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>Biosafety-Inflatable-Airtight-Doors: IQ/OQ Commissioning Sequence and HVAC Interlock Validation Checklist</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Biosafety-Inflatable-Airtight-Doors: IQ/OQ Commissioning Sequence and HVAC Interlock Validation Checklist",
+    "description": "Complete installation and commissioning guide for 生物安全充气气密门. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "biosafety-inflatable-airtight-doors",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-04-23T19:57:16+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Biosafety-Inflatable-Airtight-Doors: IQ/OQ Commissioning Sequence and HVAC Interlock Validation Checklist</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-04-23T19:57:16+08:00">Published: April 23, 2026</time></p>
+        </header>
+
+        <h1>Biosafety-Inflatable-Airtight-Doors: IQ/OQ Commissioning Sequence and HVAC Interlock Validation Checklist</h1>
+<h2>1. Executive Summary / TL;DR</h2>
+<p>Commissioning biosafety-inflatable-airtight-doors requires a strict five-phase sequence — IQ documentation, mechanical installation verification, HVAC interlock logic validation, OQ performance testing, and final report compilation — where executing any phase before its predecessor is complete creates regulatory non-compliance that no downstream correction can fully resolve.</p>
+<ul>
+<li>IQ execution must cross-reference the manufacturer design specification (Model BS-01-IAD-1) against the validation master plan, verifying utilities at 220V/50Hz and compressed air supply at 0.25 MPa minimum before any operational testing begins.</li>
+<li>HVAC interlock commissioning validates the exhaust-first/supply-second fan sequence with Modbus RTU communication at 9600 baud and differential pressure PID response within 30 seconds to setpoint.</li>
+<li>The final commissioning deliverable package requires every test instrument serial number cross-referenced to a valid calibration certificate, with deviation reports closed and signed before client handover.</li>
+</ul>
+<h2>2. IQ Protocol Execution — Equipment Identification and Utilities Verification Against Manufacturer Design Specification</h2>
+<p><strong>This section delivers the complete Installation Qualification procedure for verifying that the biosafety-inflatable-airtight-door unit (Model BS-01-IAD-1) is installed per manufacturer specifications and that all utility connections meet documented acceptance criteria.</strong> <strong>Failure to reference the manufacturer design specification during IQ execution — relying instead on generic templates — produces documentation gaps that auditors identify when cross-checking against the validation master plan.</strong></p>
+<h3>Prerequisite: Confirming Validation Master Plan Approval and FAT Record Availability Before IQ Protocol Initiation</h3>
+<p>The IQ protocol cannot commence until the site validation master plan (VMP) has received quality assurance approval and the Factory Acceptance Test (FAT) records from JIEHAO are available on-site for cross-reference. Per FDA 21 CFR Part 211 [FDA 21 CFR Part 211] and EU GMP Annex 15, the IQ protocol introduction must explicitly reference the VMP document number, the manufacturer design specification revision, and the FAT completion date.</p>
+<h3>Procedure: Sequential IQ Item Verification — Equipment Identity, Installation Environment, and Utility Supply Parameters</h3>
+<p>Execute IQ items in the protocol-defined sequence: first verify equipment identification (model BS-01-IAD-1, serial number, manufacturer Shanghai Jiehao Biotechnology, year of manufacture), then confirm installation environment conditions (ambient temperature within -30°C to +50°C operating range, cleanroom classification per ISO 14644-1), and finally verify utility connections against the parameters in the table below.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">IQ Verification Item</th>
+<th style="text-align: left;">Acceptance Criterion</th>
+<th style="text-align: left;">Reference Document</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Power supply voltage and frequency</td>
+<td style="text-align: left;">220V ±10%, 50Hz ±1Hz</td>
+<td style="text-align: left;">Manufacturer Design Spec Rev. A</td>
+</tr>
+<tr>
+<td style="text-align: left;">Compressed air supply pressure</td>
+<td style="text-align: left;">≥0.25 MPa, oil-free per ISO 8573-1 Class 1</td>
+<td style="text-align: left;">ISO 8573-1:2010</td>
+</tr>
+<tr>
+<td style="text-align: left;">Door frame material certification</td>
+<td style="text-align: left;">304 or 316 stainless steel mill certificate</td>
+<td style="text-align: left;">ASTM A240</td>
+</tr>
+<tr>
+<td style="text-align: left;">Seal gasket material</td>
+<td style="text-align: left;">Silicone rubber, compression set ≤15%</td>
+<td style="text-align: left;">Manufacturer material datasheet</td>
+</tr>
+<tr>
+<td style="text-align: left;">Software/firmware version</td>
+<td style="text-align: left;">Siemens PLC firmware version documented</td>
+<td style="text-align: left;">IQ Protocol Section 4.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">Installation orientation</td>
+<td style="text-align: left;">Flush-mounted with wall panel, verticality ±1 mm/m</td>
+<td style="text-align: left;">Architectural drawing reference</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: All IQ Items Documented with Objective Evidence and Deviation Reports Closed Before OQ Initiation</h3>
+<p>Each IQ item requires at least one objective evidence document (photograph, test data printout, material certificate, or screenshot) linked by item number in the IQ protocol appendix. Any IQ item not meeting acceptance criteria triggers a formal deviation report per GMP Annex 15 [EU GMP Annex 15] requirements, with impact assessment, corrective action, re-test, and closure signature before the OQ phase may begin.</p>
+<p>Initiating OQ testing without closed IQ deviations creates a validation sequence break that regulatory auditors classify as a critical finding under both FDA and EU GMP inspection frameworks.</p>
+<h2>3. Mechanical Installation Verification — Frame Alignment, Anchor Torque, and Pneumatic Seal Integrity Pre-Check</h2>
+<p><strong>This section establishes the mechanical installation verification procedure that confirms the door frame is correctly anchored, aligned within tolerance, and that the inflatable silicone rubber seal achieves initial inflation integrity before any control system commissioning begins.</strong> <strong>Mechanical installation defects discovered after HVAC interlock commissioning require full system re-validation — making this verification step the single highest-leverage quality gate in the entire commissioning sequence.</strong></p>
+<h3>Prerequisite: Verifying Structural Opening Dimensions and Wall Panel Flatness Before Frame Insertion</h3>
+<p>The structural opening must be verified against the manufacturer's installation drawing with tolerances of ±2 mm on width and height, and wall panel surface flatness within ±1.5 mm across the frame contact area measured with a 2-meter straightedge. The door unit net weight of 120 kg requires that lifting equipment rated per OSHA 29 CFR 1926.251 [OSHA 29 CFR 1926.251] is available, and that the floor slab load capacity at the installation point has been confirmed by the structural engineer.</p>
+<h3>Procedure: Frame Mounting Sequence — Anchor Installation, Torque Application, and Initial Pneumatic Seal Inflation Test</h3>
+<p>Install expansion anchors in a cross-pattern sequence to prevent frame distortion, torquing M12 anchors to 80 Nm using a calibrated click-type torque wrench (±5% accuracy, calibration certificate valid). After frame securing, connect the compressed air supply line (RC1/8 fitting) and perform an initial pneumatic seal inflation test: supply 0.25 MPa to the silicone rubber seal gasket via the solenoid valve, confirm full inflation within 5 seconds, then isolate the supply and monitor pressure decay.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Installation Parameter</th>
+<th style="text-align: left;">Specified Value</th>
+<th style="text-align: left;">Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Frame verticality</td>
+<td style="text-align: left;">±1 mm/m, max total deviation ±3 mm</td>
+<td style="text-align: left;">Digital spirit level, calibrated</td>
+</tr>
+<tr>
+<td style="text-align: left;">Anchor torque (M12)</td>
+<td style="text-align: left;">80 Nm, cross-pattern sequence</td>
+<td style="text-align: left;">Click-type torque wrench, ±5%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Seal inflation time</td>
+<td style="text-align: left;">≤5 seconds to 0.25 MPa</td>
+<td style="text-align: left;">Stopwatch + calibrated pressure gauge</td>
+</tr>
+<tr>
+<td style="text-align: left;">Seal deflation time</td>
+<td style="text-align: left;">≤5 seconds from 0.25 MPa to 0</td>
+<td style="text-align: left;">Stopwatch + calibrated pressure gauge</td>
+</tr>
+<tr>
+<td style="text-align: left;">Door closer force rating</td>
+<td style="text-align: left;">80 kg</td>
+<td style="text-align: left;">Manufacturer specification</td>
+</tr>
+<tr>
+<td style="text-align: left;">Viewing window</td>
+<td style="text-align: left;">Circular tempered glass, intact, no chips</td>
+<td style="text-align: left;">Visual inspection</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Pressure Decay ≤0.01 MPa Over 5 Minutes at 0.25 MPa Supply — Confirming Seal Integrity Before Control System Energization</h3>
+<p>The initial pneumatic seal integrity test acceptance criterion is pressure decay no greater than 0.01 MPa over a 5-minute hold period at 0.25 MPa supply pressure, measured with a calibrated differential pressure transmitter (accuracy ±0.25% FS). Frame alignment is accepted when digital spirit level readings confirm verticality within ±1 mm/m and total deviation across the full frame height does not exceed ±3 mm per SMACNA [SMACNA] duct construction standards adapted for biosafety door installations.</p>
+<p>Control system energization (Siemens PLC power-on) is prohibited until the mechanical installation verification record is signed by the commissioning engineer and the client technical representative, confirming all mechanical acceptance criteria are met.</p>
+<h2>4. HVAC Interlock Logic Commissioning — Fan Sequence, Damper Control, and Differential Pressure PID Validation</h2>
+<p><strong>This section defines the HVAC interlock logic commissioning procedure that validates the correct startup sequence (exhaust-first, supply-second), damper position control, and differential pressure PID tuning for the biosafety containment zone served by the inflatable airtight door.</strong> <strong>The most frequent commissioning failure in biosafety containment systems is incorrect HVAC interlock sequencing — fans starting before dampers open creates transient positive or negative pressure excursions that compromise containment integrity and invalidate the pressure cascade.</strong></p>
+<h3>Prerequisite: Confirming BMS Communication Link Establishment and PLC Program Upload Before Interlock Testing</h3>
+<p>The Siemens PLC must have the approved control program uploaded (version documented in IQ records), and BMS communication must be verified operational via Modbus RTU (RS-485, 9600 baud, even parity) or Modbus TCP (Ethernet) with polling interval confirmed at ≤500 ms. The door's RS232/RS485/TCP-IP communication interfaces (as specified for Model BS-01-IAD-1) must be connected and responding to BMS polling before any interlock sequence testing begins.</p>
+<h3>Procedure: Sequential Interlock Verification — Exhaust Fan Start, Damper Open, Supply Fan Start, Pressure Setpoint Achievement</h3>
+<p>Execute the interlock sequence verification in the following mandatory order: exhaust fan start command issued → return air damper opens (0-10V analog signal, 3-second delay confirmed) → supply fan start command issued → supply air damper opens → differential pressure setpoint achieved (target 10-15 Pa negative pressure relative to adjacent zone). For each transition, record the actual time delay and compare against the programmed setpoint. Then test the emergency shutdown sequence: door open signal from the electromagnetic lock → 5-second delay → supply fan reduces to minimum speed → exhaust damper closes to 20% position → alarm activation on BMS.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Interlock Test Parameter</th>
+<th style="text-align: left;">Setpoint / Criterion</th>
+<th style="text-align: left;">As-Found Result (Record)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Exhaust fan start to damper open delay</td>
+<td style="text-align: left;">3 seconds ±0.5s</td>
+<td style="text-align: left;">_____ seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">Differential pressure setpoint</td>
+<td style="text-align: left;">-10 to -15 Pa (negative to corridor)</td>
+<td style="text-align: left;">_____ Pa</td>
+</tr>
+<tr>
+<td style="text-align: left;">PID response time to setpoint</td>
+<td style="text-align: left;">&lt;30 seconds</td>
+<td style="text-align: left;">_____ seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">PID tuning parameters</td>
+<td style="text-align: left;">P=0.5, I=10s, D=0s (typical starting values)</td>
+<td style="text-align: left;">P=<strong><em> I=</em></strong> D=___</td>
+</tr>
+<tr>
+<td style="text-align: left;">Emergency shutdown delay (door open to fan reduction)</td>
+<td style="text-align: left;">5 seconds ±1s</td>
+<td style="text-align: left;">_____ seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">Low pressure alarm threshold</td>
+<td style="text-align: left;">&lt;0.15 MPa (compressed air supply)</td>
+<td style="text-align: left;">Triggered: Y/N</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: All Interlock Conditions Verified Under Simulated Fault Conditions with Witnessed Test Documentation</h3>
+<p>Each interlock condition must be tested under simulated fault conditions (forced door open signal, simulated BMS communication loss, simulated low air pressure below 0.15 MPa) with results witnessed and signed by both the commissioning engineer and the client representative. PID tuning is accepted when the differential pressure controller achieves setpoint within 30 seconds of a step disturbance and maintains steady-state accuracy within ±2 Pa, documented per ASHRAE Guideline 16 [ASHRAE Guideline 16] commissioning procedures.</p>
+<p>Facilities that proceed to OQ performance testing without completed and signed interlock verification records accept regulatory risk that the OQ test sequence cannot demonstrate prerequisite completion — a finding classified as major under GMP inspection frameworks.</p>
+<h2>5. OQ Performance Testing — Cycle Time Measurement, Alarm Response Verification, and BMS Communication Validation</h2>
+<p><strong>This section specifies the Operational Qualification test execution protocol for the biosafety-inflatable-airtight-door, covering control system operation in manual and automatic modes, safety interlock response testing, and BMS communication performance validation.</strong> <strong>Executing OQ tests in arbitrary sequence rather than following the protocol-defined order means the test log cannot demonstrate that prerequisite tests were completed before dependent tests, creating a regulatory non-compliance finding that requires protocol amendment and re-execution.</strong></p>
+<h3>Prerequisite: Confirming All IQ Items Closed and HVAC Interlock Commissioning Records Signed Before OQ Test Initiation</h3>
+<p>The OQ protocol first page must reference completed IQ protocol number, IQ completion date, and confirmation that all IQ deviations are closed. The HVAC interlock commissioning record (Section 4 of this guide) must be signed and attached as a prerequisite document per the OQ protocol structure defined in EU GMP Annex 15 [EU GMP Annex 15] and FDA Process Validation Guidance.</p>
+<h3>Procedure: Protocol-Defined OQ Test Sequence — Manual Mode, Automatic Mode, Alarm Response, and Communication Integrity</h3>
+<p>Execute OQ tests in the protocol-defined sequence without deviation: (1) manual mode operation — verify door open/close via physical button, infrared sensor, and password lock; (2) automatic mode operation — verify Siemens PLC-controlled inflation/deflation cycle completes within specified times (inflation ≤5s, deflation ≤5s); (3) safety interlock tests — electromagnetic lock engagement, escape device function, visual indicator operation (red = closed, green = passage permitted); (4) alarm response tests — low pressure alarm activation below 0.15 MPa, BMS communication loss alarm; (5) BMS communication performance — confirm data exchange via RS232/RS485/TCP-IP with no packet loss over 1-hour continuous monitoring.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">OQ Test Category</th>
+<th style="text-align: left;">Test Method</th>
+<th style="text-align: left;">Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Inflation cycle time</td>
+<td style="text-align: left;">Stopwatch, 10 consecutive cycles</td>
+<td style="text-align: left;">≤5 seconds, all 10 cycles</td>
+</tr>
+<tr>
+<td style="text-align: left;">Deflation cycle time</td>
+<td style="text-align: left;">Stopwatch, 10 consecutive cycles</td>
+<td style="text-align: left;">≤5 seconds, all 10 cycles</td>
+</tr>
+<tr>
+<td style="text-align: left;">Electromagnetic lock engagement</td>
+<td style="text-align: left;">Physical force test, 2500 Pa applied</td>
+<td style="text-align: left;">Lock holds, no breach</td>
+</tr>
+<tr>
+<td style="text-align: left;">Visual indicator function</td>
+<td style="text-align: left;">Visual verification at 3m distance</td>
+<td style="text-align: left;">Red/green clearly distinguishable</td>
+</tr>
+<tr>
+<td style="text-align: left;">Low pressure alarm response</td>
+<td style="text-align: left;">Reduce supply below 0.15 MPa</td>
+<td style="text-align: left;">Alarm activates within 3 seconds</td>
+</tr>
+<tr>
+<td style="text-align: left;">BMS communication integrity</td>
+<td style="text-align: left;">1-hour continuous polling at ≤500 ms</td>
+<td style="text-align: left;">Zero packet loss, zero timeout</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: All OQ Tests Pass on First Execution or Deviation Reports Issued with Corrective Action and Re-Test Documentation</h3>
+<p>Any OQ test failure requires immediate documentation in a formal deviation report including: test identification number, as-found result, impact assessment, root cause analysis, corrective action, and re-test results. Protocol amendments (changes to test sequence, acceptance criteria, or test methods discovered during execution) must be documented and approved by the quality unit before proceeding — post-execution amendments create regulatory non-compliance findings per FDA 21 CFR Part 211 [FDA 21 CFR Part 211].</p>
+<p>The OQ phase is complete only when all test results meet acceptance criteria (original or after approved deviation closure), all test equipment calibration certificates are valid on the date of testing, and the OQ summary is signed by the commissioning engineer and client quality representative.</p>
+<h2>6. Commissioning Report Compilation — Calibration Traceability, Deviation Closure, and Client Handover Package Structure</h2>
+<p><strong>This section defines the structure and content requirements for the final commissioning deliverable package, ensuring every test instrument is traceable to a specific calibration certificate and all deviations are resolved before client handover.</strong> <strong>Delivering commissioning reports without equipment serial numbers cross-referenced to calibration certificates is the single most common documentation deficiency identified during regulatory inspections of biosafety facility validation records.</strong></p>
+<h3>Prerequisite: Confirming All IQ/OQ Test Records Complete and All Deviation Reports Closed Before Report Compilation</h3>
+<p>Report compilation cannot begin until: (1) all IQ items are verified and signed, (2) all OQ tests are completed with pass determinations or closed deviation reports, (3) all test equipment calibration certificates have been collected and verified as valid on the dates testing was performed. The commissioning engineer must verify that no open deviations remain in the project deviation log before initiating the report assembly process.</p>
+<h3>Procedure: Report Assembly Sequence — Executive Summary, Test Results with Instrument Traceability, Deviation Appendix, and Sign-Off</h3>
+<p>Assemble the commissioning report in the following structure: executive summary → commissioning scope and objectives → system description (Model BS-01-IAD-1, serial number, installation location) → commissioning procedures and results (each test showing purpose, method, as-found data, as-left data, acceptance criteria, pass/fail, test equipment serial number and calibration certificate reference) → deviation appendix (all deviation reports with impact assessment and resolution sign-off) → calibration certificate appendix (organized by instrument serial number) → photographs → conclusions and recommendations.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Report Section</th>
+<th style="text-align: left;">Required Content</th>
+<th style="text-align: left;">Completeness Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Equipment identification</td>
+<td style="text-align: left;">Model, serial number, manufacturer, year</td>
+<td style="text-align: left;">Cross-reference to IQ record</td>
+</tr>
+<tr>
+<td style="text-align: left;">Test result entries</td>
+<td style="text-align: left;">As-found data, acceptance criteria, pass/fail</td>
+<td style="text-align: left;">Each entry references instrument S/N</td>
+</tr>
+<tr>
+<td style="text-align: left;">Calibration certificates</td>
+<td style="text-align: left;">Valid date covers all testing dates</td>
+<td style="text-align: left;">Certificate number linked to test record</td>
+</tr>
+<tr>
+<td style="text-align: left;">Deviation reports</td>
+<td style="text-align: left;">Impact assessment, corrective action, closure</td>
+<td style="text-align: left;">All deviations closed, signed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Report sign-off</td>
+<td style="text-align: left;">CE signature, client signature, date, revision</td>
+<td style="text-align: left;">Rev 0 minimum, version controlled</td>
+</tr>
+<tr>
+<td style="text-align: left;">Electronic archive</td>
+<td style="text-align: left;">PDF with bookmarks + native Excel/Word files</td>
+<td style="text-align: left;">Named: [Project]<em>[System]_Commissioning_Report</em>[Rev]_[Date]</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Client Technical Representative Signs Report Acceptance with No Outstanding Deviations and All Calibration Certificates Valid</h3>
+<p>The commissioning report is accepted when the client technical representative signs the report acceptance page confirming: all test results meet acceptance criteria, all deviations are closed, all calibration certificates are valid, and the electronic archive has been delivered in both PDF (with section bookmarks) and native format (Excel data logs, Word documents). Report delivery constitutes formal system handover from commissioning to operational status per WHO Laboratory Biosafety Manual [WHO Laboratory Biosafety Manual, 4th Edition] facility commissioning requirements.</p>
+<p>A commissioning report delivered without complete calibration traceability — where even one test instrument serial number cannot be linked to a valid calibration certificate — fails the fundamental documentation integrity requirement that underpins the entire IQ/OQ validation framework.</p>
+<h2>6. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What should be checked immediately upon delivery of a biosafety inflatable airtight door before accepting the shipment?</strong></p>
+<p>Verify the packing list against the purchase order, confirming model number (BS-01-IAD-1), serial number, and accessory count. Inspect the door panel, frame, viewing window, and silicone rubber seal gasket for transit damage, and confirm that the 3Q documentation package (IQ/OQ/PQ protocols) and manufacturer design specification are included in the shipment.</p>
+<p><strong>Q2: What civil works and site preparation must be completed before installation begins?</strong></p>
+<p>The structural opening must be finished to ±2 mm tolerance on width and height, with wall panel surface flatness within ±1.5 mm measured by straightedge. Compressed air supply piping (oil-free, ISO 8573-1 Class 1) must be terminated at the installation point with an RC1/8 fitting, and 220V/50Hz power supply must be available within 2 meters of the door controller location.</p>
+<p><strong>Q3: What differential pressure settings are standard for biosafety containment zones served by inflatable airtight doors?</strong></p>
+<p>The standard differential pressure cascade is -10 to -15 Pa (negative relative to the adjacent corridor or lower-containment zone) per WHO Laboratory Biosafety Manual and CDC BMBL recommendations. The PLC-controlled pressure monitoring system should alarm if differential pressure deviates beyond ±2 Pa from setpoint for more than 30 seconds continuously.</p>
+<p><strong>Q4: How can airtightness be verified in the field without specialized leak detection equipment?</strong></p>
+<p>Perform a pressure decay test by inflating the door seal to 0.25 MPa, isolating the air supply, and monitoring pressure with a calibrated gauge over 5 minutes. Acceptance criterion is pressure decay ≤0.01 MPa over the 5-minute hold period — this provides a field-expedient integrity check consistent with ASTM E779 principles without requiring tracer gas equipment.</p>
+<p><strong>Q5: What BMS communication parameters must be configured for system integration?</strong></p>
+<p>The door controller supports RS232, RS485, and TCP/IP interfaces. For Modbus RTU integration, configure: RS-485 physical layer, 9600 baud rate, even parity, 8 data bits, 1 stop bit, with BMS polling interval set to ≤500 ms. For Modbus TCP, assign a static IP address on the building automation network subnet with port 502.</p>
+<p><strong>Q6: What is the recommended maintenance interval for the inflatable seal gasket, and what spare parts should be stocked?</strong></p>
+<p>Silicone rubber seal gaskets should be inspected every 6 months for compression set (replace if compression set exceeds 15%) and replaced preventively every 24 months regardless of condition. Stock a minimum of 2 complete seal gasket sets, 1 solenoid valve assembly, and 1 electromagnetic lock unit on-site to maintain a mean time to repair (MTTR) below 4 hours for critical seal component failures.</p>
+<h2>7. References &amp; Data Sources</h2>
+<ul>
+<li>ISO 14644-1:2015 Cleanrooms and associated controlled environments — Part 1: Classification of air cleanliness by particle concentration. International Organization for Standardization.</li>
+<li>ISO 8573-1:2010 Compressed air — Part 1: Contaminants and purity classes. International Organization for Standardization.</li>
+<li>WHO Laboratory Biosafety Manual, 4th Edition (2020). World Health Organization.</li>
+<li>CDC/NIH Biosafety in Microbiological and Biomedical Laboratories (BMBL), 6th Edition (2020). U.S. Centers for Disease Control and Prevention.</li>
+<li>ASTM E779-19 Standard Test Method for Determining Air Leakage Rate by Fan Pressurization. ASTM International.</li>
+<li>EU GMP Annex 15: Qualification and Validation (2015). European Commission.</li>
+<li>FDA 21 CFR Part 211 Current Good Manufacturing Practice for Finished Pharmaceuticals. U.S. Food and Drug Administration.</li>
+<li>ASHRAE Guideline 16-2024 Selecting Outdoor Air Ventilation Rates and Commissioning. ASHRAE.</li>
+<li>SMACNA HVAC Duct Construction Standards — Metal and Flexible, 4th Edition. Sheet Metal and Air Conditioning Contractors National Association.</li>
+<li>OSHA 29 CFR 1926.251 Rigging Equipment for Material Handling. U.S. Occupational Safety and Health Administration.</li>
+</ul>
+<p><strong>Source Statement:</strong> Technical specifications for Model BS-01-IAD-1 are derived from publicly available product documentation published by Shanghai Jiehao Biotechnology Co., Ltd (https://jiehao-bio.com). All other data references publicly accessible international standards and regulatory guidance documents.</p>
+<h2>8. Disclaimer</h2>
+<p>The installation procedures and commissioning criteria presented in this article reflect general industry engineering practices and publicly accessible regulatory documentation. Biosafety equipment installation and commissioning requires site-specific risk assessment, qualified personnel execution, and review of manufacturer-certified qualification documentation (IQ/OQ/PQ) before operational handover.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>
