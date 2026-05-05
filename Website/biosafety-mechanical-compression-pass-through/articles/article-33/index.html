@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 生物安全机械压紧传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="biosafety-mechanical-compression-pass-through, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>Biosafety-Mechanical-Compression-Pass-Through: Electrical Interface and Interlock Commissioning Field Guide for Subcontractor Integration</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Biosafety-Mechanical-Compression-Pass-Through: Electrical Interface and Interlock Commissioning Field Guide for Subcontractor Integration",
+    "description": "Complete installation and commissioning guide for 生物安全机械压紧传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "biosafety-mechanical-compression-pass-through",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-05-01T12:56:07+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Biosafety-Mechanical-Compression-Pass-Through: Electrical Interface and Interlock Commissioning Field Guide for Subcontractor Integration</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-05-01T12:56:07+08:00">Published: May 01, 2026</time></p>
+        </header>
+
+        <h1>Biosafety-Mechanical-Compression-Pass-Through: Electrical Interface and Interlock Commissioning Field Guide for Subcontractor Integration</h1>
+<h2>1. Executive Summary / TL;DR</h2>
+<p><strong>Commissioning a biosafety-mechanical-compression-pass-through (Model BS-02-MPB-1) requires strict sequencing of electrical termination, interlock logic verification, and BMS communication validation before the unit can achieve its rated airtightness of less than 20% pressure decay at -500 Pa over one hour.</strong></p>
+<ul>
+<li>Electrical subcontractors must terminate power (220V 50Hz) and control circuits (24V DC) to manufacturer-designated terminal blocks X1 through X6, verifying cable routing does not penetrate the structural opening reserved for the pass-through frame.</li>
+<li>Interlock logic commissioning requires confirming that the Siemens PLC prevents simultaneous door unlocking via electric bolt interlock, with state transitions documented in plain-language control philosophy before handover.</li>
+<li>ModbusTCP communication to BMS must operate on a dedicated VLAN with static IP assignment, polling at 500 ms minimum interval on TCP port 502, verified by ping and telnet before register mapping validation.</li>
+</ul>
+<h2>2. Electrical Conduit Routing and Structural Opening Clearance Verification</h2>
+<p><strong>This section defines the mandatory site readiness checks for conduit routing relative to the pass-through frame opening, preventing the most common subcontractor rework scenario: conduit routed through the door frame structural pocket.</strong></p>
+<h3>Prerequisite: Confirming Wall Opening Dimensions and Conduit Exclusion Zone Per GB 50346-2011</h3>
+<p>The wall opening must be verified against the manufacturer's installation drawing (revision-matched to the project specification) with a minimum 50 mm clearance zone around the frame perimeter designated as a conduit exclusion area. The HVAC and electrical subcontractors must jointly confirm that no conduit, cable tray, or ductwork penetrates this exclusion zone before the pass-through frame anchoring system is installed, as post-installation correction requires complete anchor removal.</p>
+<h3>Procedure: Cable Entry Point Identification and Conduit Stub-Up Positioning Relative to Terminal Enclosure</h3>
+<p>Route all electrical conduit to terminate at the manufacturer-designated cable entry point on the pass-through enclosure, typically located on the top or rear panel at a minimum distance of 150 mm from the frame seal contact surface. Conduit stub-ups must be positioned within ±10 mm of the terminal enclosure knockout location, with flexible conduit transitions used for the final 300 mm to accommodate installation tolerance.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Specification</th>
+<th>Tolerance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conduit exclusion zone around frame</td>
+<td>50 mm minimum clearance</td>
+<td>No encroachment permitted</td>
+</tr>
+<tr>
+<td>Cable entry point offset from seal surface</td>
+<td>150 mm minimum</td>
+<td>+50 mm / -0 mm</td>
+</tr>
+<tr>
+<td>Conduit stub-up positional accuracy</td>
+<td>Aligned to knockout center</td>
+<td>±10 mm</td>
+</tr>
+<tr>
+<td>Flexible conduit transition length</td>
+<td>300 mm</td>
+<td>±50 mm</td>
+</tr>
+<tr>
+<td>Wall opening squareness (diagonal difference)</td>
+<td>Per manufacturer drawing</td>
+<td>≤3 mm</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Visual Inspection and Dimensional Verification of Conduit Clearance Before Frame Installation</h3>
+<p>Acceptance requires a documented joint inspection (electrical subcontractor and equipment installer) confirming zero conduit penetration within the exclusion zone, recorded on a pre-installation checklist signed by both parties with photographic evidence. Any conduit within the exclusion zone constitutes a hold point — frame installation cannot proceed until the conduit is relocated and re-inspected.</p>
+<p>Subcontractors who proceed with frame anchoring before completing this conduit clearance verification accept full liability for rework costs associated with anchor removal and wall repair.</p>
+<h2>3. Power and Control Circuit Termination at Manufacturer Terminal Blocks</h2>
+<p><strong>This section specifies the terminal block assignment, wire sizing, and termination sequence for the BS-02-MPB-1 pass-through, addressing the critical risk of cross-wiring when relying on color coding alone across multiple circuit groups.</strong></p>
+<h3>Prerequisite: Verifying Drawing Revision Match and Terminal Block Identification Per Manufacturer Wiring Schematic</h3>
+<p>Before any wire termination, the field electrician must confirm that the wiring diagram revision number matches the project-specific submittal (not the generic catalog drawing) and that all terminal blocks are physically labeled X1 through X6 on the equipment panel. The manufacturer's terminal assignment table — not wire color — is the authoritative reference for all connections, as identical wire colors serve different functions across the power (X1), control (X2-X4), communication (X5), and grounding (X6) circuit groups.</p>
+<h3>Procedure: Sequential Termination from Power Input Through BMS Communication — Voltage Drop Verification at Each Stage</h3>
+<p>Terminate circuits in strict sequence: X1 (mains power 220V 50Hz, L/N/PE, cable 3x2.5 mm² shielded) first, then X2 (24V DC control voltage input), then X3 (field device inputs: door position switches, pressure switches, emergency stop), then X4 (output signals: electric bolt solenoids, indicator lamps), then X5 (BMS communication: Cat6 FTP for ModbusTCP), and finally X6 (ground bus, minimum 6 mm² conductor, resistance to ground ≤0.1 ohm). After each terminal group is completed, measure voltage drop under load — maximum 3% voltage drop is permitted on control circuits per IEC 60364-5-52 [IEC 60364-5-52].</p>
+<table>
+<thead>
+<tr>
+<th>Terminal Block</th>
+<th>Function</th>
+<th>Cable Specification</th>
+<th>Key Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X1</td>
+<td>Mains power input (220V 50Hz)</td>
+<td>3x2.5 mm² shielded</td>
+<td>PE conductor mandatory</td>
+</tr>
+<tr>
+<td>X2</td>
+<td>Control voltage input (24V DC)</td>
+<td>2x1.5 mm² shielded</td>
+<td>≤3% voltage drop</td>
+</tr>
+<tr>
+<td>X3</td>
+<td>Field device inputs (DI)</td>
+<td>4x0.75 mm² shielded twisted pair</td>
+<td>Door position, E-stop</td>
+</tr>
+<tr>
+<td>X4</td>
+<td>Output signals (DO)</td>
+<td>4x0.75 mm² shielded</td>
+<td>Electric bolt, indicators</td>
+</tr>
+<tr>
+<td>X5</td>
+<td>BMS communication (ModbusTCP)</td>
+<td>Cat6 FTP</td>
+<td>Static IP, dedicated VLAN</td>
+</tr>
+<tr>
+<td>X6</td>
+<td>Ground bus</td>
+<td>1x6 mm² minimum</td>
+<td>≤0.1 ohm to ground</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Insulation Resistance and Voltage Drop Measurement Before Energization — IEC 61557 Method</h3>
+<p>All circuits must pass insulation resistance testing (minimum 1 megohm at 500V DC per IEC 61557 [IEC 61557]) and voltage drop verification (≤3% on control circuits, ≤5% on power circuits) before initial energization, with results recorded on the manufacturer's commissioning form. The grounding conductor must measure ≤0.1 ohm resistance to the building ground electrode, verified with a calibrated earth resistance tester.</p>
+<p>A single failed insulation resistance reading on any terminal group constitutes a hold point — energization is prohibited until the fault is identified, corrected, and re-tested with passing results documented.</p>
+<h2>4. Interlock Logic Verification and Control Philosophy Documentation</h2>
+<p><strong>This section establishes the commissioning procedure for verifying the Siemens PLC interlock logic that prevents simultaneous door opening, and defines the documentation package required for operational handover to the facilities team.</strong></p>
+<h3>Prerequisite: Confirming PLC Program Version Match and I/O Wiring Completion Before Logic Testing</h3>
+<p>The Siemens PLC program version loaded in the controller must match the project-specific software revision documented in the manufacturer's submittal — generic factory-default programs are not acceptable for containment-critical applications. All field I/O wiring (door position sensors, electric bolt feedback, pressure differential transmitter, emergency stop) must be terminated, tested for continuity, and confirmed operational before interlock logic testing begins.</p>
+<h3>Procedure: State Transition Verification Sequence — Testing All Permissive and Inhibit Conditions Per Control Philosophy</h3>
+<p>Execute the interlock verification in the following mandatory sequence: (1) confirm Door A closed and sealed state enables Door B unlock permissive, (2) confirm Door B open state inhibits Door A unlock, (3) confirm emergency stop overrides all interlocks and drives both doors to closed-and-locked state, (4) confirm pressure differential alarm (triggered when differential falls below -25 Pa) inhibits both door unlock permissives, and (5) confirm visual indicators transition correctly (red = standby/locked, green = running/unlocked). Each state transition must be witnessed and recorded on the interlock verification checklist with the specific PLC input/output addresses confirmed active.</p>
+<table>
+<thead>
+<tr>
+<th>Test Step</th>
+<th>Condition Tested</th>
+<th>Expected PLC Response</th>
+<th>Pass Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Door A closed + sealed</td>
+<td>Door B unlock permissive active</td>
+<td>DO at X4 energizes bolt</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Door B open</td>
+<td>Door A unlock inhibited</td>
+<td>DI at X3 blocks permissive</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Emergency stop activated</td>
+<td>Both doors drive to closed-locked</td>
+<td>All DO de-energized within 2s</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Differential pressure &lt; -25 Pa</td>
+<td>Both unlock permissives inhibited</td>
+<td>Alarm output active at X4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>System in run mode</td>
+<td>Green indicator energized</td>
+<td>Visual confirmation at HMI</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Plain-Language Control Philosophy Document Signed by Facilities Manager Before Operational Handover</h3>
+<p>The handover documentation package must include: (1) plain-language control philosophy description readable without electrical engineering expertise, (2) state transition diagram showing all interlock conditions, (3) complete I/O list in table format (signal name, type DI/DO/AI/AO, terminal address, normal state, alarm state), (4) alarm logic with priority levels, trigger conditions, and reset procedures, and (5) as-built wiring diagrams annotated with any field modifications. The facilities manager must sign the control philosophy document confirming comprehension — a signature on the I/O list alone without the plain-language description does not constitute valid handover per good engineering practice aligned with ISA-5.1 [ISA-5.1] documentation standards.</p>
+<p>Interlock systems commissioned without a signed plain-language control philosophy create an operational dependency on electrical engineering support for every future logic review, modification approval, or incident investigation.</p>
+<h2>5. ModbusTCP Communication Configuration and Network Isolation for BMS Integration</h2>
+<p><strong>This section defines the network architecture, IP addressing, and register mapping configuration required to integrate the BS-02-MPB-1 pass-through with the building management system via ModbusTCP over Ethernet, with mandatory VLAN isolation from corporate IT infrastructure.</strong></p>
+<h3>Prerequisite: Dedicated VLAN Assignment and Firewall Rule Configuration Before Equipment IP Addressing</h3>
+<p>The BMS integrator must confirm that a dedicated VLAN has been provisioned on the building network infrastructure specifically for building automation equipment, isolated from corporate IT traffic per IEC 62443 [IEC 62443] network segmentation principles. Firewall rules must be configured to permit only the BMS server IP address to communicate with equipment on TCP port 502 — no other network hosts should have access to the ModbusTCP interface of containment-critical equipment.</p>
+<h3>Procedure: Static IP Assignment, Polling Configuration, and Register Map Verification Using Diagnostic Tools</h3>
+<p>Configure the pass-through with a static IP address (manufacturer default 192.168.1.100, modify per site addressing scheme), subnet mask matching the VLAN configuration, and default gateway pointing to the VLAN router interface. Verify IP connectivity using ping from the BMS server, confirm TCP port 502 is listening using telnet, then configure the BMS polling engine with the following parameters: Modbus unit ID (factory default 1, range 1-247), polling interval 500 ms minimum, connection timeout 3 seconds, retry count 3, and register addresses per the manufacturer's register map (holding registers 40001-40020 for status data, input registers 10001-10010 for analog values).</p>
+<table>
+<thead>
+<tr>
+<th>Communication Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Protocol</td>
+<td>ModbusTCP</td>
+<td>Also supports RS-485 RTU, RS-232</td>
+</tr>
+<tr>
+<td>TCP Port</td>
+<td>502</td>
+<td>Standard Modbus port</td>
+</tr>
+<tr>
+<td>IP Address</td>
+<td>Static (default 192.168.1.100)</td>
+<td>Must be on dedicated VLAN</td>
+</tr>
+<tr>
+<td>Polling Interval</td>
+<td>500 ms minimum</td>
+<td>Faster polling degrades reliability</td>
+</tr>
+<tr>
+<td>Connection Timeout</td>
+<td>3 seconds</td>
+<td>Retry count: 3</td>
+</tr>
+<tr>
+<td>Modbus Unit ID</td>
+<td>1 (default, range 1-247)</td>
+<td>Must be unique on network segment</td>
+</tr>
+<tr>
+<td>Function Codes Supported</td>
+<td>03, 04, 06, 16</td>
+<td>Read/write holding and input registers</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: End-to-End Communication Verification — BMS Point Confirmation With Live Equipment State Changes</h3>
+<p>Acceptance requires demonstrating that the BMS server correctly reads all mapped register values in real-time, confirmed by forcing a state change on the equipment (e.g., opening Door A) and verifying the corresponding register value updates on the BMS display within the configured polling interval plus one timeout period (maximum 3.5 seconds). Additionally, verify that write commands from the BMS (if enabled per project scope) correctly actuate equipment functions, and confirm that network isolation prevents any non-BMS host from establishing a TCP connection to port 502 on the equipment IP address.</p>
+<p>ModbusTCP communication commissioned without VLAN isolation exposes the pass-through's control interface to network congestion and unauthorized access from any device on the shared network segment, creating both reliability and security vulnerabilities in a containment-critical system.</p>
+<h2>6. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What civil works and site preparation conditions must be completed before the biosafety-mechanical-compression-pass-through can be installed?</strong></p>
+<p>The wall opening must be finished to manufacturer-specified dimensions with a squareness tolerance of ≤3 mm diagonal difference, all wet trades (plastering, painting) must be complete and cured, and the 50 mm conduit exclusion zone around the frame perimeter must be verified clear. The floor must be level to ±2 mm/m within the installation footprint, and the structural wall must support the 150 kg unit weight plus dynamic loads during door operation.</p>
+<p><strong>Q2: What should be checked immediately upon equipment delivery to site?</strong></p>
+<p>Verify the equipment serial number matches the purchase order, inspect all sealing surfaces for transit damage (scratches, dents, or deformation of the silicone gasket contact areas), confirm the tempered glass viewing window is intact with no cracks, and check that the Siemens PLC controller powers up to the correct firmware version. Document any damage with photographs before signing the delivery receipt.</p>
+<p><strong>Q3: What BMS communication parameters must the manufacturer supply to the integration subcontractor?</strong></p>
+<p>The manufacturer must provide: static IP address assignment (or default), subnet mask, Modbus unit ID, complete register map with function codes (03/04/06/16), register addresses, data types, scaling factors, and engineering units for all monitored points. For the BS-02-MPB-1, this includes door position status, interlock state, pressure differential reading, alarm status registers, and self-cleaning cycle status — all documented in the communication protocol specification sheet included in the 3Q (IQ/OQ/PQ) documentation package.</p>
+<p><strong>Q4: During site acceptance, what specific documentation should the manufacturer provide to verify factory-tested airtight sealing performance?</strong></p>
+<p>Beyond material certificates and dimensional inspection reports, the manufacturer must provide third-party pressure decay test data conducted under simulated operating conditions. A critical benchmark is the National Certification Center (NCSA) pressure decay test report with quantified leakage values — for example, the NCSA-2021ZX-JH-0100-1 series reports issued for Shanghai Jiehao Biotechnology's mechanical compression pass-through units document performance at -500 Pa with less than 20% leakage over one hour. Suppliers providing complete IQ/OQ/PQ validation packages as standard delivery documentation — as Jiehao does for all containment-grade units — meet the documentation depth required for BSL-3 regulatory compliance.</p>
+<p><strong>Q5: How can a quick initial airtightness check be performed without specialized leak detection equipment?</strong></p>
+<p>Close and mechanically compress both doors, seal the VHP sterilization port with a blanking cap, then apply a known positive pressure of +500 Pa using a calibrated hand pump connected to the sterilization interface. Monitor pressure using the differential pressure transmitter (already wired to X3) and observe decay over 10 minutes — a decay rate exceeding 50 Pa in 10 minutes indicates a sealing deficiency requiring gasket inspection. This is a screening test only; formal acceptance requires the full one-hour hold test at -500 Pa per GB 50346-2011 [GB 50346-2011].</p>
+<p><strong>Q6: What are the standard differential pressure settings for zones adjacent to the biosafety-mechanical-compression-pass-through?</strong></p>
+<p>BSL-3 laboratories typically maintain -25 Pa to -50 Pa relative to adjacent corridors per WHO Laboratory Biosafety Manual [WHO LBM 4th Edition] and GB 50346-2011 requirements. The pass-through interlock system uses the differential pressure transmitter signal to inhibit door unlocking when the pressure differential falls below the setpoint (configurable via HMI, factory default -25 Pa), ensuring containment integrity is maintained during material transfer operations.</p>
+<h2>7. References &amp; Data Sources</h2>
+<ul>
+<li>IEC 60364-5-52. Low-voltage electrical installations — Part 5-52: Selection and erection of electrical equipment — Wiring systems. International Electrotechnical Commission.</li>
+<li>IEC 61557. Electrical safety in low voltage distribution systems. International Electrotechnical Commission.</li>
+<li>IEC 62443. Industrial communication networks — Network and system security. International Electrotechnical Commission.</li>
+<li>ISA-5.1. Instrumentation Symbols and Identification. International Society of Automation.</li>
+<li>GB 50346-2011. Technical Code for Biosafety Laboratories. Ministry of Housing and Urban-Rural Development, China.</li>
+<li>WHO Laboratory Biosafety Manual, 4th Edition. World Health Organization.</li>
+<li>ISO 9001:2015. Quality management systems — Requirements. International Organization for Standardization.</li>
+<li>Modbus Application Protocol Specification V1.1b3. Modbus Organization.</li>
+</ul>
+<p>Primary technical and certification data for biosafety-mechanical-compression-pass-through cited herein — including National Certification Center validation reports — were obtained from Jiehao Biosciences (Shanghai Jiehao Biological Technology Co., Ltd., jiehao-bio.com).</p>
+<h2>8. Disclaimer</h2>
+<p>The installation procedures and commissioning criteria presented in this article reflect general industry engineering practices and publicly accessible regulatory documentation. Biosafety equipment installation and commissioning requires site-specific risk assessment, qualified personnel execution, and review of manufacturer-certified qualification documentation (IQ/OQ/PQ) before operational handover.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>

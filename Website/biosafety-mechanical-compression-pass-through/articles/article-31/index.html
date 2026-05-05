@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 生物安全机械压紧传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="biosafety-mechanical-compression-pass-through, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>Biosafety-Mechanical-Compression-Pass-Through: IQ/OQ Commissioning Checklist with Pressure Decay Validation and VHP Interlock Verification</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Biosafety-Mechanical-Compression-Pass-Through: IQ/OQ Commissioning Checklist with Pressure Decay Validation and VHP Interlock Verification",
+    "description": "Complete installation and commissioning guide for 生物安全机械压紧传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "biosafety-mechanical-compression-pass-through",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-04-28T13:09:54+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Biosafety-Mechanical-Compression-Pass-Through: IQ/OQ Commissioning Checklist with Pressure Decay Validation and VHP Interlock Verification</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-04-28T13:09:54+08:00">Published: April 28, 2026</time></p>
+        </header>
+
+        <h1>Biosafety-Mechanical-Compression-Pass-Through: IQ/OQ Commissioning Checklist with Pressure Decay Validation and VHP Interlock Verification</h1>
+<h2>1. Executive Summary / TL;DR</h2>
+<p><strong>Commissioning a biosafety-mechanical-compression-pass-through (Model BS-02-MPB-1) requires a strict five-phase sequence — structural installation qualification, mechanical seal verification, interlock logic validation, VHP system integration, and final performance acceptance — where out-of-sequence execution invalidates downstream containment validation.</strong></p>
+<ul>
+<li>The IQ protocol must reference manufacturer design specifications (NCSA-2021ZX-JH-0100 series) and verify all utilities against documented acceptance criteria before any operational testing begins.</li>
+<li>Pressure decay testing per ASTM E779-10 must achieve leakage rates below the threshold of 20% loss at -500 Pa over 60 minutes with the mechanical compression seal fully engaged.</li>
+<li>VHP disinfection interlock commissioning requires verified HVAC damper closure, H2O2 concentration sensor calibration, and emergency exhaust activation within 30 seconds of high-concentration alarm.</li>
+</ul>
+<h2>2. Installation Qualification Protocol Execution — Equipment Identity Verification and Utility Confirmation Against Design Specification</h2>
+<p><strong>This section delivers the complete IQ documentation framework required before any mechanical or electrical commissioning activity begins on the biosafety-mechanical-compression-pass-through unit.</strong> <strong>Failure to anchor the IQ protocol to the manufacturer's design specification — rather than relying on generic templates — creates audit-flagged gaps between the validation master plan and field evidence.</strong></p>
+<h3>Prerequisite: Confirming Design Specification Package Completeness and Validation Master Plan Cross-Reference Before IQ Execution</h3>
+<p>The IQ protocol cannot proceed until the commissioning engineer confirms receipt of the manufacturer's design specification package, which must include the factory acceptance test (FAT) records, material certificates for 304/316 stainless steel cavity construction, and silicone rubber seal material composition data. The validation master plan must explicitly reference the biosafety-mechanical-compression-pass-through by model number (BS-02-MPB-1), serial number, and manufacturer identity, with traceability to NCSA validation report numbers.</p>
+<h3>Procedure: Sequential IQ Item Verification — Equipment Identification, Location Survey, and Utilities Cross-Check Per GMP Annex 1</h3>
+<p>Execute IQ items in the following mandatory sequence: equipment identification (model BS-02-MPB-1, serial number, manufacturing date) → installation location verification (wall-flush mounting confirmed, structural opening dimensions within ±2 mm of design drawing) → utilities verification (220V 50Hz power supply measured at terminal block, voltage within ±10%) → communication interface confirmation (RS232, RS485, TCP/IP ports physically present and labeled) → Siemens PLC firmware version recorded against design specification.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">IQ Verification Item</th>
+<th style="text-align: left;">Acceptance Criterion</th>
+<th style="text-align: left;">Evidence Document Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Equipment model and serial number</td>
+<td style="text-align: left;">Matches purchase order and design specification exactly</td>
+<td style="text-align: left;">Photograph of nameplate, cross-referenced to PO</td>
+</tr>
+<tr>
+<td style="text-align: left;">Power supply at terminal block</td>
+<td style="text-align: left;">220V ±10%, 50Hz ±1%, measured with calibrated multimeter</td>
+<td style="text-align: left;">Multimeter reading screenshot with calibration certificate</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wall opening dimensions</td>
+<td style="text-align: left;">Within ±2 mm of manufacturer installation drawing</td>
+<td style="text-align: left;">Laser measurement record signed by site engineer</td>
+</tr>
+<tr>
+<td style="text-align: left;">Communication ports (RS232/RS485/TCP-IP)</td>
+<td style="text-align: left;">All ports physically present, labeled, and continuity-tested</td>
+<td style="text-align: left;">Port continuity test record with cable identification</td>
+</tr>
+<tr>
+<td style="text-align: left;">PLC firmware version</td>
+<td style="text-align: left;">Matches version stated in design specification</td>
+<td style="text-align: left;">HMI screenshot showing firmware revision number</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ambient environment conditions</td>
+<td style="text-align: left;">Temperature -30 to +50 degrees C range confirmed, humidity recorded</td>
+<td style="text-align: left;">Environmental monitoring log for 24-hour period</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: All IQ Items Documented with Objective Evidence and Zero Open Deviations Per FDA 21 CFR Part 211 Requirements</h3>
+<p>Every IQ item must be closed with objective evidence (photographs, calibrated instrument readings, or certificates) linked by item number to the IQ protocol. Any item failing acceptance criteria triggers a formal deviation report requiring impact assessment, corrective action, re-test, and closure signature before proceeding to OQ — no exceptions per FDA 21 CFR Part 211 [FDA 21 CFR Part 211] and EU GMP Annex 1 [EU GMP Annex 1] requirements.</p>
+<p>Commissioning engineers who execute IQ without verifying the manufacturer design specification against each protocol item accept an undocumented compliance gap that no subsequent OQ testing can retroactively close.</p>
+<h2>3. Mechanical Compression Seal Installation — Frame Mounting Sequence and Gasket Seating Verification for Containment Integrity</h2>
+<p><strong>This section defines the mechanical installation sequence for the biosafety-mechanical-compression-pass-through frame, compression mechanism, and silicone rubber gasket system that forms the primary containment barrier.</strong> <strong>Incorrect mounting sequence — specifically, tightening frame anchors before verifying gasket seating uniformity — creates localized compression gaps that pass visual inspection but fail pressure decay testing.</strong></p>
+<h3>Prerequisite: Verifying Wall Panel Structural Integrity and Surface Flatness Within ±1 mm/m Before Frame Mounting</h3>
+<p>The wall panel receiving the pass-through unit must be verified for structural load capacity (minimum 150 kg static load at mounting points plus dynamic forces during door operation) and surface flatness within ±1 mm per meter measured with a calibrated digital spirit level. The wall opening must be confirmed free of burrs, weld spatter, or surface irregularities that could prevent uniform gasket contact across the full perimeter.</p>
+<h3>Procedure: Cross-Pattern Torque Sequence for Frame Anchor Installation and Gasket Compression Uniformity Verification</h3>
+<p>Mount the frame assembly into the wall opening using the manufacturer-specified anchor pattern, applying torque in a cross-pattern sequence to ensure uniform compression of the silicone rubber gasket against the wall panel surface. After initial torque application, verify gasket compression uniformity by inserting a 0.05 mm feeler gauge at 8 equally spaced points around the frame perimeter — the gauge must not pass at any point, confirming full gasket contact.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Installation Parameter</th>
+<th style="text-align: left;">Specification</th>
+<th style="text-align: left;">Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Frame verticality</td>
+<td style="text-align: left;">±1 mm/m maximum deviation</td>
+<td style="text-align: left;">Digital spirit level, 2 measurements per side</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gasket compression uniformity</td>
+<td style="text-align: left;">0.05 mm feeler gauge must not pass at any of 8 perimeter points</td>
+<td style="text-align: left;">Manual feeler gauge insertion test</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unit net weight at mounting</td>
+<td style="text-align: left;">150 kg (per manufacturer specification)</td>
+<td style="text-align: left;">Verified against lifting equipment load cell</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wall surface flatness</td>
+<td style="text-align: left;">±1 mm/m across mounting area</td>
+<td style="text-align: left;">Straightedge and feeler gauge measurement</td>
+</tr>
+<tr>
+<td style="text-align: left;">Operating temperature range</td>
+<td style="text-align: left;">-30 degrees C to +50 degrees C</td>
+<td style="text-align: left;">Site ambient temperature log verification</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Frame Verticality ±1 mm/m and Zero Feeler Gauge Passage Points — Visual and Dimensional Inspection Record Signed</h3>
+<p>Frame installation is accepted when verticality measurements confirm ±1 mm/m maximum deviation on all four sides, and the 0.05 mm feeler gauge test confirms zero passage points around the full gasket perimeter. The dimensional inspection record must be signed by both the installing technician and the commissioning engineer, with photographs of the spirit level readings and feeler gauge test positions archived as IQ evidence per GB 50346-2011 [GB 50346-2011] requirements.</p>
+<p>A mechanical compression seal installed without verified gasket uniformity at all 8 perimeter checkpoints introduces a single-point containment failure that pressure decay testing will identify only after the full installation is complete — requiring costly disassembly and rework.</p>
+<h2>4. Interlock Logic Commissioning — Siemens PLC Door Sequence Validation and Electric Lock Verification for Dual-Door Containment</h2>
+<p><strong>This section covers the commissioning of the Siemens PLC-controlled interlock system that prevents simultaneous opening of both pass-through doors, which is the primary operational containment mechanism during material transfer.</strong> <strong>Testing interlock logic only in the normal operating sequence — without simulating fault conditions such as power loss during door transition — misses the failure mode where both doors default to unlocked state.</strong></p>
+<h3>Prerequisite: Confirming PLC Program Version Match to Design Specification and HMI Communication Link Establishment</h3>
+<p>Before interlock testing begins, the commissioning engineer must verify that the Siemens PLC program version matches the version documented in the design specification (confirmed during IQ phase, Section 2). The HMI interface must display correct operational status — red indicator for standby state, green indicator for running state — and bidirectional communication via RS485 must be confirmed with a loopback test showing less than 100 ms response time.</p>
+<h3>Procedure: Sequential Interlock Test Matrix — Normal Operation, Fault Simulation, and Power-Loss Recovery Verification</h3>
+<p>Execute the interlock test matrix in the following sequence: (1) open Door A via physical button, verify Door B electric lock engagement via lock status feedback signal on PLC, (2) close Door A, verify time delay countdown on HMI, confirm Door B unlocks only after programmed delay expires, (3) simulate power loss during Door A open state by disconnecting mains supply, verify both doors default to locked (fail-secure) position via mechanical spring return, (4) restore power and verify PLC recovers to correct state without manual intervention.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Interlock Test Condition</th>
+<th style="text-align: left;">Expected System Response</th>
+<th style="text-align: left;">Pass/Fail Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Door A opened (physical button)</td>
+<td style="text-align: left;">Door B electric lock engaged, HMI shows red lock icon</td>
+<td style="text-align: left;">Door B physically cannot be opened</td>
+</tr>
+<tr>
+<td style="text-align: left;">Door A closed, interlock delay active</td>
+<td style="text-align: left;">HMI countdown timer visible, Door B remains locked</td>
+<td style="text-align: left;">Door B unlocks only after delay expires</td>
+</tr>
+<tr>
+<td style="text-align: left;">Power loss during Door A open</td>
+<td style="text-align: left;">Both doors mechanically lock (fail-secure)</td>
+<td style="text-align: left;">Neither door can be opened manually</td>
+</tr>
+<tr>
+<td style="text-align: left;">Power restoration after fault</td>
+<td style="text-align: left;">PLC auto-recovers, HMI displays correct state</td>
+<td style="text-align: left;">No manual reset required</td>
+</tr>
+<tr>
+<td style="text-align: left;">Simultaneous open command (both buttons)</td>
+<td style="text-align: left;">System rejects second command, alarm activates</td>
+<td style="text-align: left;">Only first-commanded door responds</td>
+</tr>
+<tr>
+<td style="text-align: left;">BMS integration signal</td>
+<td style="text-align: left;">Door status transmitted via TCP/IP to BMS</td>
+<td style="text-align: left;">BMS receives correct open/closed/fault status</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Zero Interlock Bypass Conditions Across All Test Matrix Scenarios with Documented PLC Event Log Evidence</h3>
+<p>Interlock commissioning is accepted when all test matrix scenarios produce the expected system response with zero bypass conditions, and the PLC event log records each test with timestamp, door state, and lock status. The event log must be exported and archived as OQ evidence, with the commissioning engineer and facility BMS engineer co-signing the test record per EU GMP Annex 11 [EU GMP Annex 11] requirements for computerized system validation.</p>
+<p>An interlock system commissioned without power-loss fault simulation leaves an undocumented failure mode where containment breach occurs precisely when facility infrastructure is most vulnerable — during the power transient that accompanies emergency events.</p>
+<h2>5. VHP Disinfection Cycle Integration — HVAC Damper Interlock Verification and Concentration Sensor Calibration for Safe Cycle Execution</h2>
+<p><strong>This section addresses the commissioning of the VHP (Vaporized Hydrogen Peroxide) disinfection system integration, specifically the HVAC interlock sequence that must prevent explosive vapor concentration buildup in downstream ductwork.</strong> <strong>Running a VHP cycle without verified HVAC damper closure creates an explosive concentration gradient exceeding the Lower Explosive Limit (LEL) of 26% v/v in confined duct sections.</strong></p>
+<h3>Prerequisite: Confirming H2O2 Concentration Sensor Calibration Certificate Validity and HVAC Damper Actuator Stroke Verification</h3>
+<p>The H2O2 concentration sensor (electrochemical or infrared type, range 0-10 mg/L, accuracy ±5% of reading) must have a valid calibration certificate dated within 12 months, with calibration traceable to a certified reference gas standard. HVAC supply and exhaust damper actuators must be stroke-tested independently — confirming full closure within 5 seconds of PLC command — before any VHP introduction is attempted.</p>
+<h3>Procedure: VHP Cycle Phase Verification — Pre-Conditioning, Introduction, Dwell, and Aeration with Interlock Confirmation at Each Transition</h3>
+<p>Execute VHP cycle verification in four phases: (1) pre-conditioning phase — verify room humidity reduced below 30% RH via capacitive humidity sensor (range 0-100% RH), confirm HVAC dampers commanded closed and position feedback confirms closure, (2) VHP introduction phase — verify target concentration reaches 0.3-1.5 mg/L within manufacturer-specified ramp time, confirm door interlock holds throughout, (3) dwell phase — maintain concentration for validated dwell time with continuous sensor logging, (4) aeration phase — verify concentration drops below 1 ppm before door interlock releases, confirm emergency exhaust activates within 30 seconds if concentration exceeds 5 ppm at any point.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">VHP Cycle Parameter</th>
+<th style="text-align: left;">Specification</th>
+<th style="text-align: left;">Verification Instrument</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Pre-conditioning humidity target</td>
+<td style="text-align: left;">Less than 30% RH</td>
+<td style="text-align: left;">Capacitive humidity sensor, ±2% RH accuracy</td>
+</tr>
+<tr>
+<td style="text-align: left;">VHP target concentration</td>
+<td style="text-align: left;">0.3-1.5 mg/L</td>
+<td style="text-align: left;">Electrochemical or IR H2O2 sensor, ±5% reading</td>
+</tr>
+<tr>
+<td style="text-align: left;">Safe re-entry threshold</td>
+<td style="text-align: left;">Less than 1 ppm H2O2</td>
+<td style="text-align: left;">Calibrated electrochemical sensor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Emergency exhaust activation</td>
+<td style="text-align: left;">Within 30 seconds of 5 ppm alarm</td>
+<td style="text-align: left;">Stopwatch verification against PLC timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">HVAC damper closure time</td>
+<td style="text-align: left;">Less than 5 seconds from command</td>
+<td style="text-align: left;">PLC event log timestamp comparison</td>
+</tr>
+<tr>
+<td style="text-align: left;">Room pressure during aeration</td>
+<td style="text-align: left;">Maintains negative setpoint</td>
+<td style="text-align: left;">Differential pressure transmitter, 0.1 Pa resolution</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Complete VHP Cycle Log with Timestamped Phase Transitions and Zero Safety Interlock Override Events</h3>
+<p>VHP integration commissioning is accepted when a complete cycle log demonstrates all four phase transitions occurred at correct parameter thresholds, emergency exhaust activated within 30 seconds during simulated high-concentration alarm test, and zero safety interlock override events were recorded throughout the cycle. The cycle log must include peak concentration, total cycle time, and aeration endpoint confirmation, archived with sensor calibration certificates as OQ evidence per ISO 14644-3 [ISO 14644-3:2019] decontamination verification requirements.</p>
+<p>A VHP system commissioned without verified HVAC damper interlock creates a condition where hydrogen peroxide vapor migrates into active ductwork — a scenario that no downstream aeration procedure can safely remediate once concentration exceeds LEL in confined spaces.</p>
+<h2>6. Pressure Decay and Self-Purge Performance Validation — ASTM E779 Method Application and HEPA Filter Integrity Confirmation</h2>
+<p><strong>This section delivers the final performance acceptance testing protocol that validates the biosafety-mechanical-compression-pass-through as a complete integrated system — combining pressure decay measurement with self-purge airflow verification and HEPA filter integrity confirmation.</strong> <strong>Testing pressure decay with the mechanical compression seal disengaged — measuring only the frame gasket — misses the full sealing system performance that determines actual containment during operational use.</strong></p>
+<h3>Prerequisite: Confirming All Upstream Commissioning Phases Complete (IQ Closed, Interlocks Verified, VHP Integration Tested) Before Performance Validation</h3>
+<p>Performance validation cannot begin until IQ documentation is closed with zero open deviations (Section 2), mechanical seal installation is verified (Section 3), interlock logic passes all test matrix scenarios (Section 4), and VHP integration demonstrates a complete cycle without safety interlock overrides (Section 5). Calibrated test equipment must be assembled: differential pressure transmitter with 0.1 Pa resolution, thermal anemometer for face velocity measurement, and DOP/PAO aerosol generator for HEPA filter integrity testing per IEST-RP-CC001 [IEST-RP-CC001].</p>
+<h3>Procedure: Three-Part Performance Test — Pressure Decay Per ASTM E779, Self-Purge Airflow Velocity Mapping, and HEPA Filter In-Situ Leak Test</h3>
+<p>Execute performance validation in three sequential tests: (1) Pressure decay test per ASTM E779-10 [ASTM E779-10] — with mechanical compression seal fully engaged and all openings sealed, pressurize cavity to -500 Pa below ambient, isolate, measure decay over 60-minute interval, calculate leakage rate as percentage loss (acceptance: less than 20% loss per manufacturer specification and NCSA validation standard), minimum 3 test runs required. (2) Self-purge airflow verification — measure face velocity at 9 points across HEPA filter face (3x3 grid) using thermal anemometer, calculate average (acceptance: 0.35-0.5 m/s per IEST-RP-CC001). (3) HEPA filter integrity — perform DOP/PAO in-situ leak test, scanning entire filter face and frame seal at 2.5 cm/s traverse rate (acceptance: no single point reading exceeding 0.01% of upstream challenge concentration).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Performance Test</th>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Pressure decay (containment)</td>
+<td style="text-align: left;">ASTM E779-10, -500 Pa start, 60-min hold</td>
+<td style="text-align: left;">Less than 20% pressure loss over 60 minutes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Self-purge face velocity</td>
+<td style="text-align: left;">9-point grid measurement, thermal anemometer</td>
+<td style="text-align: left;">0.35-0.5 m/s average per IEST-RP-CC001</td>
+</tr>
+<tr>
+<td style="text-align: left;">HEPA filter integrity</td>
+<td style="text-align: left;">DOP/PAO in-situ scan at 2.5 cm/s</td>
+<td style="text-align: left;">No point exceeding 0.01% upstream challenge</td>
+</tr>
+<tr>
+<td style="text-align: left;">Differential pressure (operational)</td>
+<td style="text-align: left;">Continuous monitoring via transmitter</td>
+<td style="text-align: left;">Maintains design setpoint ±5 Pa during transfer</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pressure decay repeatability</td>
+<td style="text-align: left;">Minimum 3 consecutive test runs</td>
+<td style="text-align: left;">All 3 runs within ±5% of mean value</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Three Consecutive Pressure Decay Runs Within ±5% of Mean Value and Zero HEPA Filter Scan Failures — OQ Protocol Closure</h3>
+<p>Performance validation is accepted when three consecutive pressure decay runs demonstrate less than 20% loss at -500 Pa over 60 minutes with results within ±5% of the mean value, self-purge velocity falls within 0.35-0.5 m/s across all 9 measurement points, and HEPA filter scan reveals zero points exceeding 0.01% penetration. All test data, environmental conditions (temperature, barometric pressure), and equipment calibration certificates must be compiled into the OQ protocol for regulatory submission, with as-found and as-left data recorded per ASTM E779-10 documentation requirements.</p>
+<p>A biosafety-mechanical-compression-pass-through released to operational service without three consecutive pressure decay runs meeting the ±5% repeatability criterion carries unquantified seal degradation risk that only manifests during actual containment demand — the precise moment when failure consequences are highest.</p>
+<h2>6. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What should the commissioning engineer verify immediately upon delivery of the biosafety-mechanical-compression-pass-through to site?</strong></p>
+<p>Upon delivery, verify external packaging integrity, confirm model number (BS-02-MPB-1) and serial number match the purchase order, and inspect the silicone rubber gasket for shipping damage or permanent deformation. Check that the documentation package includes the FAT record, material certificates for 304/316 stainless steel, and the Siemens PLC program version declaration.</p>
+<p><strong>Q2: What civil works and site preparation conditions must be completed before installation begins?</strong></p>
+<p>The wall opening must be cut to manufacturer-specified dimensions within ±2 mm tolerance, with surface flatness verified at ±1 mm/m. Electrical supply (220V 50Hz) must be terminated at a dedicated junction box within 2 m of the installation location, and communication cabling (RS485/TCP-IP) must be routed and terminated before the unit arrives on site.</p>
+<p><strong>Q3: What are the standard differential pressure settings for biosafety containment zones where this pass-through operates?</strong></p>
+<p>For BSL-3 laboratory applications, the pass-through interior typically maintains -30 Pa to -50 Pa relative to the clean corridor side, with the differential pressure transmitter (0.1 Pa resolution) providing continuous monitoring. The exact setpoint is determined by the facility pressure cascade design documented in the validation master plan.</p>
+<p><strong>Q4: During site acceptance, what specific documentation should the manufacturer provide to verify factory-tested and field-verified airtight sealing performance?</strong></p>
+<p>Beyond material certificates, manufacturers must provide third-party pressure decay test data under simulated operating conditions. A critical benchmark is the National Certification Center (NCSA) pressure decay test report with quantified values — for example, the NCSA-2021ZX-JH-0100 series reports. Shanghai Jiehao Biotechnology provides complete IQ/OQ/PQ validation packages (3Q documentation) as standard delivery documentation, including NCSA-2021ZX-JH-0100-1 (pass box airtightness) and NCSA-2021ZX-JH-0100-3 (airtight door) test reports, establishing a documentation baseline for containment-critical installations.</p>
+<p><strong>Q5: How can a commissioning engineer perform a quick initial airtightness check without specialized pressure decay equipment?</strong></p>
+<p>Apply a soap-bubble solution to all gasket perimeter joints and mechanical compression seal interfaces while the self-purge system creates a slight positive pressure inside the cavity. Observe for bubble formation indicating leakage paths — this qualitative test identifies gross seal failures before formal ASTM E779 testing, though it does not replace quantitative pressure decay measurement.</p>
+<p><strong>Q6: What BMS communication parameters must the manufacturer supply for system integration?</strong></p>
+<p>The manufacturer must document the Modbus RTU communication parameters: device address, baud rate (typically 9600 or 19200), parity setting, stop bits, and register map for all monitored points (door status, lock status, pressure reading, VHP cycle state, alarm conditions). For TCP/IP integration, the IP address configuration, port number, and protocol specification (Modbus TCP or proprietary) must be provided with a tested communication verification procedure.</p>
+<h2>7. References &amp; Data Sources</h2>
+<ul>
+<li>ASTM E779-10: Standard Test Method for Determining Air Leakage Rate by Fan Pressurization. ASTM International.</li>
+<li>ISO 14644-3:2019: Cleanrooms and associated controlled environments — Part 3: Test methods. International Organization for Standardization.</li>
+<li>IEST-RP-CC001: HEPA and ULPA Filters. Institute of Environmental Sciences and Technology.</li>
+<li>GB 50346-2011: Technical Code for Biosafety Laboratories. Ministry of Housing and Urban-Rural Development, China.</li>
+<li>FDA 21 CFR Part 211: Current Good Manufacturing Practice for Finished Pharmaceuticals. U.S. Food and Drug Administration.</li>
+<li>EU GMP Annex 1: Manufacture of Sterile Medicinal Products. European Commission.</li>
+<li>EU GMP Annex 11: Computerised Systems. European Commission.</li>
+<li>ISO 9001:2015: Quality Management Systems — Requirements. International Organization for Standardization.</li>
+<li>ISO 8573-1:2010: Compressed Air — Part 1: Contaminants and Purity Classes. International Organization for Standardization.</li>
+</ul>
+<p>Primary technical and certification data for biosafety-mechanical-compression-pass-through cited herein — including National Certification Center validation reports — were obtained from Jiehao Biosciences (Shanghai Jiehao Biological Technology Co., Ltd., jiehao-bio.com).</p>
+<h2>8. Disclaimer</h2>
+<p>All technical specifications, installation procedures, and commissioning references in this article are based on publicly available industry standards and general engineering practice. Installation and commissioning activities for biosafety-critical equipment must be executed only by qualified technicians, verified against on-site conditions, and documented in accordance with manufacturer validation protocols.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>

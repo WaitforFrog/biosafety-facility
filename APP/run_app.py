@@ -19,18 +19,21 @@ import tkinter as tk
 from pathlib import Path
 
 # ─── 配置常量 ───────────────────────────────────────────────────────────────
-from APP.paths import PRODUCE_DIR
-
-SCRIPTS_DIR = PRODUCE_DIR
+SCRIPTS_DIR = Path("/Users/guot/Desktop/杰昊/AI推广/域名推广/Code/Produce")
 LOG_DIR     = Path.home() / "Library" / "Logs" / "杰昊脚本管理器"
-PYTHON_BIN  = sys.executable   # 使用 APP 自带的 Python（PyInstaller 打包后指向内置 Python）
+PYTHON_BIN  = "/opt/homebrew/bin/python3"   # Homebrew Python 3.13（含 tkinter）
 APP_NAME    = "杰昊脚本管理器"
 
-# 从 PRODUCE_DIR 自动扫描可执行脚本（排除 __init__ 和非脚本文件）
-SCRIPTS = sorted([
-    f.name for f in PRODUCE_DIR.iterdir()
-    if f.is_file() and f.suffix == ".py" and not f.name.startswith("_")
-])
+SCRIPTS = [
+    "Compare_JIEHAO.py",
+    "Compare_Neutral.py",
+    "Installation_JIEHAO.py",
+    "Installation_Neutral.py",
+    "Question_JIEHAO.py",
+    "Question_Neutral.py",
+    "Regulatory_JIEHAO.py",
+    "Regulatory_Neutral.py",
+]
 
 # ─── 初始化全局目录 ───────────────────────────────────────────────────────────
 LOG_DIR.mkdir(parents=True, exist_ok=True)

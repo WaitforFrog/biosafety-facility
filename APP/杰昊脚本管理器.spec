@@ -2,20 +2,25 @@
 
 import os
 
-APP_NAME = "杰昊脚本管理器"
-SCRIPT_PATH = os.path.join(os.getcwd(), "run_app.py")
+APP_NAME  = "杰昊脚本管理器"
+# 从 spec 文件所在目录推导路径（pyinstaller 从当前工作目录执行 spec）
+# spec 在 APP/ 下，所以 CWD 就是 APP/
+APP_DIR   = os.getcwd()
+CODE_DIR  = os.path.dirname(APP_DIR)   # Code/
+SCRIPT_PATH = "run_app.py"             # 与 spec 同目录
 
 a = Analysis(
     [SCRIPT_PATH],
-    pathex=[os.getcwd()],
+    pathex=[APP_DIR],
     binaries=[],
     datas=[
         ("./LOGO", "LOGO"),
-        ("../Produce", "Produce"),
-        ("../Check", "Check"),
-        ("../Title", "Title"),
-        ("../参数", "参数"),
-        ("../Setting.md", "."),
+        (os.path.join(CODE_DIR, "Produce"), "Produce"),
+        (os.path.join(CODE_DIR, "Check"), "Check"),
+        (os.path.join(CODE_DIR, "Title"), "Title"),
+        (os.path.join(CODE_DIR, "参数"), "参数"),
+        (os.path.join(CODE_DIR, "Setting.md"), "."),
+        (os.path.join(CODE_DIR, "Setting.py"), "."),
     ],
     hiddenimports=[
         "tkinter",
@@ -40,6 +45,8 @@ a = Analysis(
         "PyQt6",
         "PySide2",
         "PySide6",
+        "dist",
+        "build",
     ],
     cipher=None,
     noarchive=False,

@@ -1,82 +1,37 @@
 # APP/paths.py
-# Backward-compatibility wrapper — re-exports everything from Setting
-import sys as _sys
-from pathlib import Path as _Path
+# Provides path constants for the app.
+# Reads Setting.md directly to avoid circular import with Setting.py.
 
-_CODE_ROOT = _Path(__file__).resolve().parent.parent
+import sys
+import re
+from pathlib import Path
 
-# Ensure Code/ is on sys.path so 'from Setting import ...' works
-if str(_CODE_ROOT) not in _sys.path:
-    _sys.path.insert(0, str(_CODE_ROOT))
+_CODE_ROOT = Path(__file__).resolve().parent.parent
 
-from Setting import (
-    PROJECT_ROOT,
-    CODE_ROOT,
-    PRODUCE_DIR,
-    APP_DIR,
-    WEBSITE_DIR,
-    SOURCE_ROOT,
-    CONTENT_POOL_DIR,
-    ARTICLES_DIR_STR,
-    PARAMETERS_DIR_STR,
-    TITLE_DIR,
-    CARD_DRAW_COUNT,
-    ARTICLES_PER_AUDIENCE,
-    PUBLISH_DATE_RANGE_DAYS,
-    INTER_PRODUCT_DELAY,
-    API_TEMPERATURE,
-    API_MAX_TOKENS,
-    API_TIMEOUT,
-    AUTO_GIT_PUSH,
-    TRUST_MAX_CONCURRENT,
-    TRUST_TEMPERATURE,
-    TRUST_MAX_TOKENS,
-    TRUST_MODEL,
-    OPENAI_API_KEY,
-    API_BASE_URL,
-    MODEL_NAME,
-    BACKUP_COMPARE_JIEHAO,
-    BACKUP_COMPARE_NEUTRAL,
-    BACKUP_QUESTION_JIEHAO,
-    BACKUP_QUESTION_NEUTRAL,
-    BACKUP_INSTALL_JIEHAO,
-    BACKUP_INSTALL_NEUTRAL,
-    BACKUP_REGULATORY_JIEHAO,
-    BACKUP_REGULATORY_NEUTRAL,
-)
+_md_path = _CODE_ROOT / "Setting.md"
+_pattern = re.compile(r'^(\w+)\s*=\s*(.+)$', re.MULTILINE)
+_g = {"Path": Path}
 
-__all__ = [
-    "PROJECT_ROOT",
-    "CODE_ROOT",
-    "PRODUCE_DIR",
-    "APP_DIR",
-    "WEBSITE_DIR",
-    "SOURCE_ROOT",
-    "CONTENT_POOL_DIR",
-    "ARTICLES_DIR_STR",
-    "PARAMETERS_DIR_STR",
-    "TITLE_DIR",
-    "CARD_DRAW_COUNT",
-    "ARTICLES_PER_AUDIENCE",
-    "PUBLISH_DATE_RANGE_DAYS",
-    "INTER_PRODUCT_DELAY",
-    "API_TEMPERATURE",
-    "API_MAX_TOKENS",
-    "API_TIMEOUT",
-    "AUTO_GIT_PUSH",
-    "TRUST_MAX_CONCURRENT",
-    "TRUST_TEMPERATURE",
-    "TRUST_MAX_TOKENS",
-    "TRUST_MODEL",
-    "OPENAI_API_KEY",
-    "API_BASE_URL",
-    "MODEL_NAME",
-    "BACKUP_COMPARE_JIEHAO",
-    "BACKUP_COMPARE_NEUTRAL",
-    "BACKUP_QUESTION_JIEHAO",
-    "BACKUP_QUESTION_NEUTRAL",
-    "BACKUP_INSTALL_JIEHAO",
-    "BACKUP_INSTALL_NEUTRAL",
-    "BACKUP_REGULATORY_JIEHAO",
-    "BACKUP_REGULATORY_NEUTRAL",
-]
+for match in _pattern.finditer(_md_path.read_text(encoding="utf-8")):
+    key, raw_value = match.group(1), match.group(2).strip()
+    if key.startswith("#") or key in (
+        "Source", "root", "How", "Note", "active", "currently",
+    ):
+        continue
+    try:
+        value = eval(raw_value, {}, _g)
+    except Exception:
+        continue
+    _g[key] = value
+
+PRODUCE_DIR = _g.get("PRODUCE_DIR", _CODE_ROOT / "Produce")
+
+# Make sure Code/ is on sys.path so 'from Setting import ...' works in child scripts
+if str(_CODE_ROOT) not in sys.path:
+    sys.path.insert(0, str(_CODE_ROOT))
+
+CODE_ROOT = _CODE_ROOT
+APP_DIR   = _CODE_ROOT / "APP"
+
+__all__ = ["CODE_ROOT", "APP_DIR", "PRODUCE_DIR"]
+

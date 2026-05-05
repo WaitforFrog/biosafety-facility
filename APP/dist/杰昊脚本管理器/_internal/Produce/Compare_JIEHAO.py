@@ -671,6 +671,7 @@ def process_single_product(product_name, product_info):
 # ================= 主程序入口 =================
 
 def main():
+    sys.stdout.reconfigure(line_buffering=True)
     print("=" * 60)
     print("  Base 文章生成器 - Content Pool Card-Drawing Generator")
     print("=" * 60)
