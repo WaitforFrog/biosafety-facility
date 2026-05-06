@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 双气囊充气式气密门. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="double-inflatable-airtight-doors, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>Installation and Commissioning Guide for Double-Inflatable-Airtight-Doors: Pressure Decay Verification and BMS Integration Protocol</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Installation and Commissioning Guide for Double-Inflatable-Airtight-Doors: Pressure Decay Verification and BMS Integration Protocol",
+    "description": "Complete installation and commissioning guide for 双气囊充气式气密门. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "double-inflatable-airtight-doors",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-04-14T04:07:28+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Installation and Commissioning Guide for Double-Inflatable-Airtight-Doors: Pressure Decay Verification and BMS Integration Protocol</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-04-14T04:07:28+08:00">Published: April 14, 2026</time></p>
+        </header>
+
+        <h1>Installation and Commissioning Guide for Double-Inflatable-Airtight-Doors: Pressure Decay Verification and BMS Integration Protocol</h1>
+<h2>1. Executive Summary</h2>
+<p><strong>This guide establishes the installation and commissioning procedures for double-inflatable-airtight-doors in biosafety laboratory containment applications, with emphasis on pressure integrity validation and building management system integration under GB 50346-2011 and GB 19489-2008 standards.</strong> The installation process requires sequential execution of five critical procedures: structural foundation verification, pneumatic seal system assembly, electrical control interface configuration, interlock logic validation, and pressure decay performance testing. Acceptance criteria include pressure decay not exceeding 250 Pa over 20 minutes at -500 Pa room differential, verified through calibrated differential pressure transmitters with ±2% accuracy. Building management system communication must be validated through Modbus RTU polling at each register address with documented response times and alarm threshold verification. All commissioning activities must be documented in Installation Qualification (IQ) and Operational Qualification (OQ) protocols with objective evidence linking each test result to the manufacturer design specification and applicable regulatory standards.</p>
+<h2>2. Structural Foundation Verification and Anchor Installation — Prerequisite Conditions for Load-Bearing Integrity</h2>
+<p><strong>This procedure establishes the site readiness requirements and structural verification steps that must be completed before door frame installation begins, ensuring the building envelope can support the 2500 Pa pressure differential load specified in the design.</strong></p>
+<h3>Prerequisite: Verifying Concrete Strength, Anchor Embedment Depth, and Load-Bearing Capacity Before Frame Mounting</h3>
+<p>The installation site must meet three non-negotiable prerequisites before any door frame assembly work begins. First, the concrete substrate must achieve minimum compressive strength of 25 MPa (verified through core sampling or original structural drawings) and must be free of cracks exceeding 0.3 mm width within the anchor installation zone. Second, the structural opening dimensions must be verified against the door frame design specification: frame width tolerance ±5 mm, opening depth tolerance ±10 mm, and verticality of opening edges ±3 mm per 2 meters of height, measured using a calibrated digital level with ±0.5 mm/m accuracy. Third, the anchor installation location must be confirmed to be minimum 50 mm from any concrete edge, minimum 100 mm from any existing penetration (electrical conduit, plumbing), and minimum 150 mm from any structural joint or control joint in the concrete.</p>
+<h3>Procedure: Torque Sequence for Expansion Anchor Installation — Cross-Pattern Execution at 80 Nm Per M12 Anchor</h3>
+<p>The door frame design specifies M12 stainless steel expansion anchors (minimum 8 anchors per frame, positioned at 400 mm spacing) installed to 80 Nm torque using a calibrated click-type torque wrench with ±5% accuracy. Installation must follow a cross-pattern sequence to ensure uniform load distribution: install anchor 1 (top-left) to 80 Nm, then anchor 3 (bottom-right) to 80 Nm, then anchor 2 (top-right) to 80 Nm, then anchor 4 (bottom-left) to 80 Nm, then repeat for any additional anchors. After all anchors reach 80 Nm, perform a second pass verification: re-torque each anchor to 80 Nm in the same cross-pattern sequence. If any anchor requires more than 5 Nm additional torque during the second pass, the anchor must be removed, the hole inspected for debris or damage, and the anchor re-installed with fresh epoxy adhesive (if epoxy-set anchors are used per design specification).</p>
+<table>
+<thead>
+<tr>
+<th>Anchor Installation Parameter</th>
+<th>Specification</th>
+<th>Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anchor Type</td>
+<td>M12 Stainless Steel Expansion</td>
+<td>Visual inspection + material certificate</td>
+</tr>
+<tr>
+<td>Torque Value</td>
+<td>80 Nm ±5%</td>
+<td>Calibrated click-type torque wrench</td>
+</tr>
+<tr>
+<td>Installation Pattern</td>
+<td>Cross-pattern, 2 passes</td>
+<td>Torque log with sequence documentation</td>
+</tr>
+<tr>
+<td>Concrete Strength Minimum</td>
+<td>25 MPa</td>
+<td>Core sample test or structural drawings</td>
+</tr>
+<tr>
+<td>Anchor Spacing</td>
+<td>400 mm maximum</td>
+<td>Tape measure, ±10 mm tolerance</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Frame Verticality ±1 mm/m, Maximum Total Deviation ±3 mm — Measured with Digital Spirit Level and Documented in IQ Protocol</h3>
+<p>After all anchors are torqued and verified, the installed frame must be measured for verticality using a calibrated digital spirit level (accuracy ±0.5 mm/m) at four locations: top-left, top-right, bottom-left, bottom-right. Each measurement must record the deviation in mm/m. The maximum acceptable deviation is ±1 mm/m at any single location, and the maximum total deviation across all four measurements must not exceed ±3 mm. If any measurement exceeds ±1 mm/m, the frame must be shimmed using stainless steel shim plates (0.5 mm thickness, installed under anchor bolts) and re-torqued to 80 Nm. After shimming and re-torque, all four verticality measurements must be repeated and documented. The frame is accepted for the next installation phase only when all four measurements are within ±1 mm/m and total deviation is ≤±3 mm. This acceptance criterion must be documented in the IQ protocol with photographs showing the digital level display at each measurement location and the recorded deviation values.</p>
+<p>The structural foundation verification procedure is complete when the frame is anchored, torqued to specification, verified for verticality, and documented in the IQ protocol with objective evidence (torque log, level measurements, photographs, material certificates).</p>
+<h2>3. Pneumatic Seal System Assembly and Inflation-Deflation Cycle Validation — Prerequisite Conditions for Airtight Door Operation</h2>
+<p><strong>This procedure validates the assembly of the dual pneumatic seal strips (19 mm × 13 mm Dow Corning silicone rubber) and confirms that inflation and deflation cycles operate within the specified 5-second time window, establishing the baseline performance before pressure decay testing.</strong></p>
+<h3>Prerequisite: Confirming Air Supply Pressure, Oil-Free Air Certification, and Dual-Channel Regulator Configuration Per ISO 8573-1:2010</h3>
+<p>Before any pneumatic seal assembly work begins, the compressed air supply must be verified to meet three critical requirements. First, the incoming air supply pressure must be measured at the facility connection point using a calibrated pressure gauge (±2% accuracy) and must read 0.6 MPa ±0.05 MPa. Second, the compressed air must be certified as oil-free per ISO 8573-1:2010 Class 2 (maximum 0.1 mg/m³ oil content) — this certification must be obtained from the facility maintenance department or verified through air quality testing using a portable oil content analyzer. Third, the dual-channel pressure reduction system (two independent regulators, each set to 0.2–0.3 MPa output) must be installed, and each regulator outlet pressure must be measured and documented: regulator 1 outlet = 0.25 MPa ±0.02 MPa, regulator 2 outlet = 0.25 MPa ±0.02 MPa. If either regulator outlet pressure deviates beyond ±0.02 MPa, the regulator must be adjusted using the adjustment screw and re-measured until within specification.</p>
+<h3>Procedure: Seal Strip Installation and Inflation-Deflation Cycle Timing Verification — Sequential Activation of Both Channels at 0.25 MPa Supply Pressure</h3>
+<p>The dual pneumatic seal strips are installed into the door frame perimeter grooves (one strip on the top edge, one strip on the bottom edge of the door frame) using stainless steel retaining clips spaced at 150 mm intervals. After installation, the pneumatic supply lines are connected: channel 1 supply line to the top seal strip, channel 2 supply line to the bottom seal strip. With the door in the open position and both regulators set to 0.25 MPa output, activate channel 1 inflation by opening the solenoid valve (manual override or electrical activation) and measure the time from valve opening to full seal inflation using a stopwatch. Record the inflation time. Then activate channel 1 deflation by closing the solenoid valve and opening the manual bleed valve, measuring the time from bleed valve opening to complete seal deflation. Record the deflation time. Repeat this cycle for channel 2. Both inflation and deflation times must be less than 5 seconds per the design specification. If either inflation or deflation time exceeds 5 seconds, inspect the supply line for kinks or blockages, verify regulator outlet pressure is 0.25 MPa, and repeat the timing measurement. If timing remains out of specification after line inspection, the solenoid valve or regulator may require replacement.</p>
+<table>
+<thead>
+<tr>
+<th>Pneumatic System Parameter</th>
+<th>Specification</th>
+<th>Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Incoming Air Supply Pressure</td>
+<td>0.6 MPa ±0.05 MPa</td>
+<td>Calibrated pressure gauge at facility connection</td>
+</tr>
+<tr>
+<td>Air Quality Standard</td>
+<td>ISO 8573-1:2010 Class 2</td>
+<td>Oil content analyzer or facility certification</td>
+</tr>
+<tr>
+<td>Regulator 1 Outlet Pressure</td>
+<td>0.25 MPa ±0.02 MPa</td>
+<td>Pressure gauge at regulator outlet</td>
+</tr>
+<tr>
+<td>Regulator 2 Outlet Pressure</td>
+<td>0.25 MPa ±0.02 MPa</td>
+<td>Pressure gauge at regulator outlet</td>
+</tr>
+<tr>
+<td>Seal Strip Inflation Time</td>
+<td>&lt;5 seconds</td>
+<td>Stopwatch measurement, documented in OQ log</td>
+</tr>
+<tr>
+<td>Seal Strip Deflation Time</td>
+<td>&lt;5 seconds</td>
+<td>Stopwatch measurement, documented in OQ log</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Inflation and Deflation Times ≤5 Seconds for Both Channels, Verified Through Three Consecutive Cycles Without Timing Variation Exceeding ±0.5 Seconds</h3>
+<p>After the initial inflation-deflation cycle timing measurements are recorded, perform three additional consecutive cycles on each channel (total of 4 cycles per channel) and record the inflation and deflation times for each cycle. All eight measurements (4 cycles × 2 channels) must be ≤5 seconds. Additionally, the variation between the fastest and slowest cycle for each channel must not exceed ±0.5 seconds — this confirms consistent seal performance and rules out intermittent supply line blockages or regulator drift. If any single measurement exceeds 5 seconds or if the variation between cycles exceeds ±0.5 seconds, the procedure must be repeated after troubleshooting (line inspection, regulator adjustment, solenoid valve inspection). The pneumatic seal system is accepted for pressure decay testing only when all eight cycle measurements are ≤5 seconds and variation is ≤±0.5 seconds. Document all eight measurements in the OQ protocol with timestamps and the name of the technician performing the measurement.</p>
+<p>The pneumatic seal assembly procedure is complete when both channels inflate and deflate within specification, three consecutive cycles confirm consistent timing, and all measurements are documented in the OQ protocol with objective evidence (pressure gauge readings, stopwatch measurements, solenoid valve inspection notes).</p>
+<h2>4. Electrical Control Interface Configuration and Interlock Logic Validation — Prerequisite Conditions for Safe Door Operation Under All Fault Modes</h2>
+<p><strong>This procedure establishes the electrical control system configuration, validates the interlock logic that prevents simultaneous opening of both doors, and confirms that all fault modes (power loss, BMS communication failure, sensor open circuit) result in safe-state door behavior (unlocked for emergency egress).</strong></p>
+<h3>Prerequisite: Verifying 220V 50Hz Power Supply Stability, Control System Firmware Version, and Sensor Calibration Certificates Before Interlock Testing</h3>
+<p>Before any interlock logic testing begins, three electrical prerequisites must be verified. First, the 220V 50Hz power supply at the control panel location must be measured using a calibrated multimeter (±2% accuracy) and must read 220V ±10V (198–242V acceptable range per IEC 60038). The power supply must be measured at three different times over a 24-hour period to confirm stability — all three measurements must remain within the acceptable range. Second, the control system firmware version must be verified against the manufacturer design specification document: the installed firmware version must match the version specified in the design specification, and the firmware must be documented with its release date and any known limitations or bugs. Third, all pressure sensors (differential pressure transmitter for room pressure monitoring, supply pressure sensor for pneumatic system monitoring) must have valid calibration certificates dated within the past 12 months, with calibration accuracy ±2% of full scale. If any sensor calibration certificate is missing or expired, the sensor must be removed and sent to a certified calibration laboratory before interlock testing proceeds.</p>
+<h3>Procedure: Interlock Logic Sequence Verification Under Normal Operation and Simulated Fault Conditions — Door-to-Door Blocking and HVAC Coordination Testing</h3>
+<p>The interlock logic validation procedure consists of four sequential tests, each documented in the OQ protocol. Test 1 (Normal Sequence): Open door A by pressing the open button; verify that door A seal deflates within 2 seconds, door A lock releases within 3 seconds, and door B lock remains engaged (verified by attempting to open door B — it must not open). Then close door A; verify that door A seal inflates within 2 seconds, door A lock engages within 3 seconds, and the green indicator light illuminates. Repeat this sequence for door B. Test 2 (Simultaneous Open Prevention): While door A is open, press the open button for door B; verify that door B lock remains engaged and does not release (confirmed by attempting to push door B open — it must not move). Record the time delay before the control system displays an alarm message on the operator interface. Test 3 (HVAC Coordination): Open door A; verify that the exhaust fan speed increases to high-speed setpoint (measured using a tachometer or BMS fan speed readout) within 5 seconds. Close door A; verify that the exhaust fan returns to normal-speed setpoint within 30 seconds after door A closes. Test 4 (Fault Mode — Power Loss): With the control system powered on and both doors closed, disconnect the 220V power supply to the control panel; verify that both door locks de-energize and both doors unlock (confirmed by manually pushing each door open without resistance). Reconnect power; verify that the control system restarts and both doors re-lock within 10 seconds.</p>
+<table>
+<thead>
+<tr>
+<th>Interlock Logic Test Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Door A Seal Deflation Time</td>
+<td>&lt;2 seconds</td>
+<td>Measured from button press to seal fully deflated</td>
+</tr>
+<tr>
+<td>Door A Lock Release Time</td>
+<td>&lt;3 seconds</td>
+<td>Measured from seal deflation to lock disengagement</td>
+</tr>
+<tr>
+<td>Door B Lock Engagement During Door A Open</td>
+<td>Locked (no release)</td>
+<td>Attempted door B open must fail</td>
+</tr>
+<tr>
+<td>Simultaneous Open Prevention Alarm</td>
+<td>Displayed on operator interface</td>
+<td>Alarm message must appear within 5 seconds</td>
+</tr>
+<tr>
+<td>HVAC Fan Speed Increase</td>
+<td>High-speed setpoint within 5 seconds</td>
+<td>Tachometer or BMS readout verification</td>
+</tr>
+<tr>
+<td>HVAC Fan Speed Return to Normal</td>
+<td>Within 30 seconds after door close</td>
+<td>Tachometer or BMS readout verification</td>
+</tr>
+<tr>
+<td>Power Loss Safe State</td>
+<td>Both doors unlock</td>
+<td>Manual push test confirms unlock</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: All Four Interlock Tests Pass Without Deviation, Fault Mode Safe State Confirmed, and Interlock Response Times Documented Within ±0.5 Second Tolerance</h3>
+<p>After completing all four interlock logic tests, review the OQ protocol to confirm that all four tests are marked "PASS" with no deviations. If any test is marked "FAIL" or shows a deviation (e.g., door B lock released when it should have remained locked, HVAC fan speed increase exceeded 5 seconds), the control system firmware or interlock relay configuration must be reviewed and corrected before re-testing. Once all four tests pass, perform a repeat test of the Simultaneous Open Prevention test (Test 2) three additional times to confirm consistent interlock behavior. All three repeat tests must also prevent door B from opening while door A is open. The interlock logic validation is accepted only when all four initial tests pass, all three repeat tests pass, and all response times are documented within ±0.5 second tolerance. This acceptance criterion must be documented in the OQ protocol with timestamps, technician name, and a statement confirming that the interlock logic meets the design specification and provides safe containment under all tested conditions.</p>
+<p>The electrical control interface configuration procedure is complete when power supply stability is verified, sensor calibration certificates are current, all four interlock logic tests pass, fault mode safe state is confirmed, and all measurements are documented in the OQ protocol with objective evidence (multimeter readings, firmware version screenshot, calibration certificates, interlock test log with timestamps).</p>
+<h2>5. Building Management System Communication Protocol and Alarm Setpoint Validation — Prerequisite Conditions for Remote Monitoring and Regulatory Compliance</h2>
+<p><strong>This procedure establishes the BMS communication interface, validates Modbus RTU data exchange at each register address, confirms that alarm setpoints are derived from calibrated sensor certificates (not nameplate values), and verifies that BMS alarm logs capture all door and pressure events.</strong></p>
+<h3>Prerequisite: Obtaining Calibration Certificates for All Sensors, Defining BMS Control Point Mapping, and Confirming Modbus RTU Communication Parameters Before Polling Tests</h3>
+<p>Before any BMS communication testing begins, three prerequisites must be completed. First, calibration certificates for the differential pressure transmitter (room pressure monitoring) and supply pressure sensor (pneumatic system monitoring) must be obtained from the sensor manufacturer or a certified calibration laboratory. Each certificate must document the sensor's calibration date, calibration accuracy (±2% of full scale is the minimum acceptable accuracy), and the calibration setpoints used. The calibration certificate must also document the sensor's output range (e.g., 4–20 mA for analog sensors, or digital output format for digital sensors). Second, the BMS control point mapping document must be created, listing all input points (digital and analog) and output points with engineering units, range, update frequency, and alarm threshold. Example: "Differential Pressure Transmitter (Input Point DP-001): Engineering Units = Pa, Range = -1000 to +1000 Pa, Update Frequency = 1 second, Alarm Threshold Low = -600 Pa (alarm triggers if room pressure drops below -600 Pa), Alarm Threshold High = +100 Pa (alarm triggers if room pressure rises above +100 Pa)." Third, the Modbus RTU communication parameters must be verified: Modbus slave address (typically 01 for the door control system), baud rate (typically 9600 or 19200 bps), data bits (8), stop bits (1), parity (even or odd, as specified in the control system manual), and the register addresses for each input and output point (e.g., holding register 100 = room differential pressure, holding register 101 = supply pressure, coil 200 = door A open command).</p>
+<h3>Procedure: Modbus RTU Polling Sequence and Data Type Verification — Sequential Register Reading with Response Time Documentation and Scaling Factor Validation</h3>
+<p>The BMS communication validation procedure uses Modbus Poll software (or equivalent Modbus master software) running on a laptop connected to the control system via an RS-485 serial interface. The procedure consists of three sequential steps. Step 1 (Register Mapping Verification): Using Modbus Poll, read each holding register address listed in the control point mapping document (e.g., register 100, 101, 102, etc.) and verify that the software receives a response without communication errors. Record the response time for each register read (typically 50–200 milliseconds). If any register read fails or times out, verify the Modbus slave address, baud rate, and parity settings in Modbus Poll match the control system configuration. Step 2 (Data Type and Scaling Verification): For each analog input register (e.g., differential pressure transmitter), read the raw register value and verify that it converts to the correct engineering units using the scaling factor documented in the control point mapping. Example: if the differential pressure transmitter has a range of -1000 to +1000 Pa and outputs a 4–20 mA signal, the Modbus register value should be 0–4095 (for a 12-bit ADC) or 0–65535 (for a 16-bit ADC). Verify that a known pressure input (e.g., 0 Pa room differential) produces the expected register value. If the register value does not match the expected value, the scaling factor in the BMS configuration must be corrected. Step 3 (Alarm Setpoint Verification): Set the differential pressure transmitter to a known pressure value (using a calibrated pressure source or by opening/closing the door to create a known pressure differential), then read the room pressure value from the BMS. Verify that the BMS displays the correct pressure value (within ±2% of the known pressure). Then verify that the BMS alarm triggers when the room pressure crosses the alarm threshold setpoint (e.g., if the low alarm threshold is set to -600 Pa, verify that the alarm triggers when room pressure drops below -600 Pa).</p>
+<table>
+<thead>
+<tr>
+<th>BMS Communication Parameter</th>
+<th>Specification</th>
+<th>Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modbus Slave Address</td>
+<td>01 (or as specified in control system manual)</td>
+<td>Modbus Poll configuration verification</td>
+</tr>
+<tr>
+<td>Baud Rate</td>
+<td>9600 or 19200 bps (as specified)</td>
+<td>Modbus Poll configuration verification</td>
+</tr>
+<tr>
+<td>Data Bits</td>
+<td>8</td>
+<td>Modbus Poll configuration verification</td>
+</tr>
+<tr>
+<td>Stop Bits</td>
+<td>1</td>
+<td>Modbus Poll configuration verification</td>
+</tr>
+<tr>
+<td>Parity</td>
+<td>Even or Odd (as specified)</td>
+<td>Modbus Poll configuration verification</td>
+</tr>
+<tr>
+<td>Register Response Time</td>
+<td>&lt;200 milliseconds</td>
+<td>Modbus Poll response time log</td>
+</tr>
+<tr>
+<td>Pressure Sensor Accuracy</td>
+<td>±2% of full scale</td>
+<td>Calibration certificate verification</td>
+</tr>
+<tr>
+<td>Alarm Setpoint Source</td>
+<td>Calibration certificate (not nameplate)</td>
+<td>Control point mapping document review</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: All Modbus Registers Respond Without Communication Errors, Alarm Setpoints Match Calibration Certificate Values, and BMS Alarm Log Captures All Door and Pressure Events Over 30-Minute Stress Test</h3>
+<p>After completing the three-step Modbus RTU polling procedure, perform a 30-minute stress test: configure Modbus Poll to read all registers sequentially at 1-second polling intervals (i.e., read register 100, then 101, then 102, etc., then repeat). Monitor the Modbus Poll software for any communication errors, dropped polls, or data corruption over the 30-minute period. At the end of 30 minutes, verify that the total number of polls attempted equals the expected number (1800 polls for 30 minutes at 1-second intervals), and verify that the number of successful polls equals or exceeds 99% of the total (i.e., no more than 18 dropped polls). If any communication errors occur, investigate the RS-485 cable for damage, verify the Modbus slave address and baud rate settings, and repeat the stress test. Additionally, during the 30-minute stress test, manually open and close the door 5 times and verify that each door open/close event is captured in the BMS alarm log with a timestamp. Verify that the BMS alarm log displays the correct door state (open or closed) and the correct room pressure value at the time of each event. The BMS communication validation is accepted only when all Modbus registers respond without communication errors, the 30-minute stress test shows ≥99% successful polls, and the BMS alarm log captures all 5 door events with correct timestamps and pressure values. Document all results in the OQ protocol with screenshots of the Modbus Poll software showing successful register reads, response times, and the final stress test summary.</p>
+<p>The BMS communication procedure is complete when all Modbus registers are mapped and verified, alarm setpoints are derived from calibration certificates, the 30-minute stress test confirms ≥99% successful polling, and all measurements are documented in the OQ protocol with objective evidence (Modbus Poll screenshots, calibration certificates, BMS alarm log printout, control point mapping document).</p>
+<h2>6. Pressure Decay Testing and Final System Acceptance — Prerequisite Conditions for Validating Airtight Integrity Under Design Pressure Differential</h2>
+<p><strong>This procedure validates the complete door system's airtightness by measuring pressure decay over 20 minutes at the design pressure differential (-500 Pa room pressure), confirming that decay does not exceed 250 Pa, and documenting the result as the final acceptance criterion for system commissioning.</strong></p>
+<h3>Prerequisite: Calibrating Differential Pressure Transmitter Against Reference Standard, Sealing All Non-Door Penetrations, and Establishing Baseline Room Pressure Before Decay Test</h3>
+<p>Before the pressure decay test begins, three critical prerequisites must be completed. First, the differential pressure transmitter (the sensor that measures room pressure relative to outside pressure) must be calibrated against a reference pressure standard using a calibrated pressure source (e.g., a precision pressure pump or a certified pressure calibrator). The transmitter must be exposed to known pressure values (e.g., 0 Pa, -250 Pa, -500 Pa, -750 Pa) and the transmitter output must be recorded at each pressure point. The transmitter is accepted for testing only if the measured output matches the expected output within ±2% of full scale at each calibration point. Second, all non-door penetrations in the room (electrical conduits, plumbing, HVAC ducts, cable trays) must be sealed using temporary sealant (e.g., foam sealant, duct tape, or removable caulk) to ensure that pressure decay is measured only through the door system, not through other room penetrations. Third, the room must be brought to baseline atmospheric pressure (0 Pa differential) and held at that pressure for 5 minutes to confirm that the room is stable and that the differential pressure transmitter is reading 0 Pa ±10 Pa. If the transmitter reading drifts during the 5-minute baseline period, the transmitter must be re-calibrated before proceeding.</p>
+<h3>Procedure: Pressure Decay Test Execution — Room Pressurization to -500 Pa, 20-Minute Hold Period, and Pressure Decay Measurement at 5-Minute Intervals</h3>
+<p>The pressure decay test is performed using the room's exhaust fan system to create negative pressure. The procedure consists of four steps. Step 1 (Pressurization): Start the exhaust fan and gradually increase the fan speed until the room pressure reaches -500 Pa ±25 Pa (i.e., -475 to -525 Pa is acceptable). Record the time when the room pressure first reaches -500 Pa. This is the start time for the 20-minute hold period. Step 2 (Pressure Stabilization): Maintain the exhaust fan at constant speed for 2 minutes to allow the room pressure to stabilize. At the end of 2 minutes, record the room pressure reading. If the room pressure has drifted more than ±50 Pa from -500 Pa, adjust the exhaust fan speed to bring the room pressure back to -500 Pa ±25 Pa. Step 3 (Pressure Decay Measurement): Starting from the 2-minute mark (after stabilization), record the room pressure reading at 5-minute intervals: at 5 minutes, 10 minutes, 15 minutes, and 20 minutes from the start time. At each interval, record the pressure reading and calculate the pressure decay from the previous interval. Step 4 (Test Completion): At the 20-minute mark, stop the exhaust fan and record the final room pressure reading. Calculate the total pressure decay from the initial -500 Pa to the final pressure reading. The total pressure decay must not exceed 250 Pa (i.e., the final pressure must be no higher than -250 Pa, or equivalently, the pressure must not have risen more than 250 Pa from the initial -500 Pa).</p>
+<table>
+<thead>
+<tr>
+<th>Pressure Decay Test Parameter</th>
+<th>Specification</th>
+<th>Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial Room Pressure</td>
+<td>-500 Pa ±25 Pa</td>
+<td>Differential pressure transmitter reading</td>
+</tr>
+<tr>
+<td>Pressure Stabilization Time</td>
+<td>2 minutes at constant fan speed</td>
+<td>Pressure reading stability check</td>
+</tr>
+<tr>
+<td>Measurement Interval</td>
+<td>Every 5 minutes for 20 minutes total</td>
+<td>Stopwatch and pressure transmitter log</td>
+</tr>
+<tr>
+<td>Maximum Acceptable Decay</td>
+<td>≤250 Pa over 20 minutes</td>
+<td>Final pressure reading minus initial pressure</td>
+</tr>
+<tr>
+<td>Transmitter Calibration Accuracy</td>
+<td>±2% of full scale</td>
+<td>Calibration certificate verification</td>
+</tr>
+<tr>
+<td>Baseline Pressure Stability</td>
+<td>0 Pa ±10 Pa for 5 minutes before test</td>
+<td>Pre-test pressure reading log</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Pressure Decay ≤250 Pa Over 20 Minutes at -500 Pa Initial Pressure, Verified Through Calibrated Differential Pressure Transmitter with ±2% Accuracy and Documented in OQ Protocol with Pressure Readings at Each 5-Minute Interval</h3>
+<p>After the 20-minute pressure decay test is complete, review the recorded pressure readings at each 5-minute interval and calculate the total pressure decay. The test is accepted only if the total pressure decay is ≤250 Pa. If the total pressure decay exceeds 250 Pa, the test must be repeated after investigating the cause of the excessive decay. Possible causes include: (1) door seal not fully inflated (verify seal inflation time is &lt;5 seconds and seal pressure is 0.25 MPa), (2) door not fully closed or latched (verify door is fully closed and lock is engaged), (3) non-door penetrations not fully sealed (verify all temporary sealants are intact), or (4) differential pressure transmitter calibration drift (re-calibrate transmitter against reference standard). After correcting the identified cause, repeat the pressure decay test. The pressure decay test is accepted for final system commissioning only when the total pressure decay is ≤250 Pa and all pressure readings at each 5-minute interval are documented in the OQ protocol with timestamps and the name of the technician performing the measurement. Additionally, document the calibration certificate for the differential pressure transmitter and a statement confirming that the transmitter was calibrated within ±2% of full scale before the test.</p>
+<p>The pressure decay testing procedure is complete when the room is pressurized to -500 Pa, held for 20 minutes, pressure readings are recorded at 5-minute intervals, total decay is ≤250 Pa, and all measurements are documented in the OQ protocol with objective evidence (pressure transmitter calibration certificate, pressure reading log with timestamps, photographs of the differential pressure transmitter display at each measurement interval).</p>
+<h2>6. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What is the immediate post-delivery inspection checklist for double-inflatable-airtight-doors, and what acceptance criteria must be met before installation begins?</strong></p>
+<p>Upon delivery, verify that the door frame and door panel are free of visible damage (dents, scratches, cracks in welds), that all fasteners and hardware are present and undamaged, and that the door operates smoothly through a manual open-close cycle without binding or excessive friction. Verify that the pneumatic seal strips are intact and not compressed or deformed, and that the control system electrical connectors are clean and undamaged. Document all findings with photographs and compare against the manufacturer's packing list and design drawings. If any damage is found, document it in a delivery inspection report and contact the manufacturer before proceeding with installation.</p>
+<p><strong>Q2: What are the civil works and site preparation prerequisites that must be completed before door frame installation begins?</strong></p>
+<p>The concrete substrate must achieve minimum 25 MPa compressive strength (verified through core sampling or structural drawings), and the structural opening must be verified for dimensions (±5 mm width tolerance, ±10 mm depth tolerance) and verticality (±3 mm per 2 meters of height). All anchor installation locations must be minimum 50 mm from concrete edges, 100 mm from existing penetrations, and 150 mm from structural joints. The site must be clean and free of dust, debris, and moisture that could interfere with anchor installation or seal performance.</p>
+<p><strong>Q3: What are the standard differential pressure settings for biosafety containment zones, and how are alarm setpoints derived from sensor calibration data?</strong></p>
+<p>Biosafety laboratory containment zones typically operate at -500 Pa room differential pressure (per GB 50346-2011), with alarm setpoints derived from the differential pressure transmitter's calibration certificate, not from nameplate values. The low alarm setpoint is typically set to -600 Pa (100 Pa below the design pressure) to provide early warning of pressure loss, and the high alarm setpoint is typically set to +100 Pa to detect positive pressure conditions that indicate seal failure or fan malfunction. Alarm setpoints must be documented in the BMS control point mapping document and verified through the Modbus RTU communication test.</p>
+<p><strong>Q4: What is a quick field-based airtightness verification method that does not require specialized pressure decay testing equipment?</strong></p>
+<p>A preliminary airtightness check can be performed by closing the door, inflating the pneumatic seals, and using a handheld smoke generator or incense stick to detect any visible air leakage around the door perimeter. If no smoke movement is observed around the door edges after 30 seconds, the seal is likely intact. However, this visual method is not a substitute for the calibrated pressure decay test (ASTM E779 method) required for regulatory compliance and commissioning acceptance.</p>
+<p><strong>Q5: What are the BMS integration communication protocol parameters and interoperability requirements for double-inflatable-airtight-doors?</strong></p>
+<p>The door control system communicates via Modbus RTU (RS-485 serial interface) with typical parameters: slave address 01, baud rate 9600 or 19200 bps, 8 data bits, 1 stop bit, even or odd parity (as specified in the control system manual). The BMS must support Modbus RTU master functionality and must be configured with the correct register addresses for each input and output point (e.g., holding register 100 for room differential pressure, coil 200 for door open command). All alarm setpoints must be derived from calibrated sensor certificates and verified through the Modbus RTU communication test before system acceptance.</p>
+<p><strong>Q6: What are the spare parts availability, mean time to repair (MTTR), and maintenance scheduling requirements for critical sealing components?</strong></p>
+<p>Critical spare parts include pneumatic seal strips (19 mm × 13 mm Dow Corning silicone rubber), solenoid valves, pressure regulators, and differential pressure transmitters. These components should be stocked on-site or available from the manufacturer within 48 hours. Mean time to repair (MTTR) for seal strip replacement is typically 2–4 hours (including depressurization, seal removal, installation of new seal, and pressure decay re-test). Maintenance scheduling should include quarterly inspection of seal strips for compression set (permanent deformation), annual calibration of pressure sensors, and annual functional testing of all interlock logic and alarm functions per the manufacturer's maintenance manual.</p>
+<h2>7. References &amp; Data Sources</h2>
+<p>GB 50346-2011. Code for Design of Biosafety Laboratory. Ministry of Housing and Urban-Rural Development of the People's Republic of China.</p>
+<p>GB 19489-2008. Biosafety in Microbiological and Biomedical Laboratories — General Requirements. Standardization Administration of the People's Republic of China.</p>
+<p>ISO 8573-1:2010. Compressed Air — Part 1: Contaminants and Purity Classes. International Organization for Standar</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>

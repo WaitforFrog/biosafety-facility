@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for VHP传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="vhp-pass-through, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>vhp-pass-through Installation and Commissioning: Pressure Decay Validation and System Integration Procedures</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "vhp-pass-through Installation and Commissioning: Pressure Decay Validation and System Integration Procedures",
+    "description": "Complete installation and commissioning guide for VHP传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "vhp-pass-through",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-04-27T01:55:05+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>vhp-pass-through Installation and Commissioning: Pressure Decay Validation and System Integration Procedures</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-04-27T01:55:05+08:00">Published: April 27, 2026</time></p>
+        </header>
+
+        <h1>vhp-pass-through Installation and Commissioning: Pressure Decay Validation and System Integration Procedures</h1>
+<h2>1. Executive Summary</h2>
+<p>This guide establishes the procedural framework for on-site installation, mechanical integration, and commissioning validation of vhp-pass-through equipment in biosafety laboratory environments, with emphasis on pressure decay testing, airflow verification, and interlock system performance confirmation. The installation sequence prioritizes airtightness validation before operational handover, requiring systematic verification at each stage against ASTM E779, IEST-RP-CC001, and facility-specific differential pressure setpoints.</p>
+<ul>
+<li><strong>Prerequisite verification</strong>: Confirm structural load capacity, anchor embedment depth, and compressed air supply certification to ISO 8573-1 Class 2 purity before mechanical installation begins; failure to validate these conditions results in rework of frame mounting and pneumatic system integration.</li>
+<li><strong>Pressure decay acceptance criterion</strong>: Achieve air leakage rate ≤0.05 L/s at 25 Pa differential pressure per ASTM E779-10 with door in operational (inflated) condition; this threshold validates the complete sealing system under actual use conditions, not frame-only testing.</li>
+<li><strong>Interlock and relief valve performance</strong>: Verify dual-door interlock response time ≤5 seconds, pressure relief valve actuation within ±10% of certified setpoint, and emergency exhaust activation at specified overpressure threshold; document all test data with equipment serial numbers cross-referenced to calibration certificates.</li>
+</ul>
+<hr />
+<h2>2. Site Preparation and Structural Load Verification Before Frame Installation</h2>
+<p><strong>This section validates that the installation site meets load-bearing, anchor embedment, and environmental prerequisites required for vhp-pass-through mechanical stability and airtightness performance.</strong></p>
+<h3>Prerequisite: Confirming Structural Load Capacity and Anchor Embedment Depth Before Door Frame Mounting</h3>
+<p>The vhp-pass-through frame assembly, including pneumatic seal system and internal transfer shelving, generates distributed loads ranging from 800 to 1,200 kg depending on configuration and internal component density. The installation site must provide concrete or structural steel substrate with minimum compressive strength of 25 MPa (concrete) or equivalent yield strength (steel), verified by structural engineer certification or material test report. Anchor embedment depth for M12 expansion anchors must be minimum 80 mm into concrete substrate with minimum 150 mm edge distance from any structural discontinuity; failure to achieve these embedment specifications results in anchor pull-out under pneumatic pressurization cycles and frame misalignment that prevents door seal engagement.</p>
+<p>Environmental conditions at the installation site must maintain ambient temperature between 15°C and 30°C and relative humidity between 30% and 70% during installation and initial commissioning; temperature and humidity outside these ranges affect pneumatic seal material properties and pressure measurement accuracy during validation testing. Verify that the installation location provides unobstructed access for equipment delivery, frame positioning, and future maintenance access to all pneumatic connections, electrical terminals, and filter cartridge replacement points.</p>
+<h3>Procedure: Structural Load Verification and Anchor Installation Using Calibrated Torque Wrench</h3>
+<p>Perform structural load verification by calculating total equipment weight (frame + internal components + maximum transfer load) and confirming that the installation substrate can support this load with safety factor minimum 2.0 per AISC 360 or equivalent structural code. Install M12 expansion anchors using a calibrated click-type torque wrench set to 80 Nm ±5%, applying torque in a cross-pattern (diagonal sequence) to ensure uniform load distribution across all anchor points; do not exceed 85 Nm as over-torquing causes anchor deformation and reduces clamping force consistency.</p>
+<table>
+<thead>
+<tr>
+<th>Anchor Installation Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anchor diameter and type</td>
+<td>M12 stainless steel expansion anchor</td>
+<td>Meets ISO 6931 mechanical properties</td>
+</tr>
+<tr>
+<td>Embedment depth</td>
+<td>Minimum 80 mm into concrete substrate</td>
+<td>Verified by depth gauge measurement ±2 mm</td>
+</tr>
+<tr>
+<td>Torque specification</td>
+<td>80 Nm ±5% using calibrated torque wrench</td>
+<td>All anchors within ±5% of target torque</td>
+</tr>
+<tr>
+<td>Edge distance</td>
+<td>Minimum 150 mm from structural discontinuity</td>
+<td>Measured with steel ruler or laser distance meter</td>
+</tr>
+<tr>
+<td>Anchor spacing</td>
+<td>Maximum 600 mm center-to-center</td>
+<td>Verified by measurement before torque application</td>
+</tr>
+</tbody>
+</table>
+<p>After anchor installation, verify anchor pull-out resistance by applying 500 kg vertical load to each anchor point using a calibrated load cell or hydraulic test jack; record load-displacement data and confirm that anchor movement does not exceed 0.5 mm at 500 kg load. Document all anchor installation data including torque values per anchor location, substrate material verification, and load test results in the site preparation log.</p>
+<h3>Acceptance: Frame Verticality ±1 mm/m and Anchor Torque Uniformity Within ±5%</h3>
+<p>Measure frame verticality using a digital spirit level or laser level at minimum four vertical edges of the frame assembly; acceptance criterion is maximum deviation of ±1 mm per meter of vertical height, with total frame deviation not exceeding ±3 mm across the full frame height. Verify that all anchor torque values fall within the range 76 Nm to 84 Nm (80 Nm ±5%); any anchor outside this range must be re-torqued and re-verified. Confirm that anchor pull-out test data shows zero permanent deformation (anchor movement &lt;0.5 mm at 500 kg load) and that substrate material test report confirms minimum 25 MPa compressive strength; if any acceptance criterion is not met, halt installation and perform corrective action before proceeding to frame assembly.</p>
+<p>Structural load verification and anchor installation establish the mechanical foundation for all subsequent pneumatic and electrical integration; inadequate anchor torque or substrate preparation directly causes frame misalignment that prevents door seal engagement and results in pressure decay test failure during commissioning.</p>
+<hr />
+<h2>3. Pneumatic System Integration and Compressed Air Supply Certification</h2>
+<p><strong>This section validates that the compressed air supply meets purity and pressure stability requirements specified in ISO 8573-1 and that all pneumatic connections are installed with proper filtration and pressure regulation.</strong></p>
+<h3>Prerequisite: Confirming Air Supply Pressure Stability and Oil-Free Air Certification Per ISO 8573-1:2010</h3>
+<p>The vhp-pass-through pneumatic seal system requires compressed air supply at 6 bar ±0.5 bar (absolute pressure) with maximum pressure ripple of ±0.2 bar during normal operation and maximum transient overpressure of 8 bar during emergency relief valve actuation. The compressed air supply must be certified to ISO 8573-1:2010 Class 2 purity, which specifies maximum particulate contamination of 4 microns (ISO 4406 code 16/14/11) and maximum oil content of 1 mg/m³; failure to meet these purity requirements results in pneumatic seal degradation, valve stiction, and pressure regulation instability that cannot be corrected by downstream commissioning adjustments.</p>
+<p>Verify that the facility compressed air system includes a dedicated air dryer (refrigerated or desiccant type) maintaining dew point at or below -10°C at system operating pressure; measure dew point using a calibrated dew point meter at the air supply inlet to the vhp-pass-through equipment. Confirm that the air supply line includes a 10-micron particulate filter and a 0.01 micron oil removal cartridge installed immediately upstream of the vhp-pass-through pneumatic inlet; these filters must be replaced at minimum annually or when differential pressure across the filter cartridge exceeds 0.5 bar.</p>
+<h3>Procedure: Air Supply Pressure Regulation and Filtration System Installation with Pressure Gauge Verification</h3>
+<p>Install a dedicated pressure regulator immediately downstream of the facility air supply line, set to 6.0 bar output pressure using a calibrated pressure gauge (resolution 0.1 bar, accuracy ±2% of full scale). Connect the regulator outlet to a 10-micron particulate filter cartridge rated for minimum 50 CFM (cubic feet per minute) flow capacity; install a differential pressure gauge across the filter cartridge to monitor filter loading condition. Downstream of the particulate filter, install a 0.01 micron oil removal cartridge with integral differential pressure indicator; connect the outlet of the oil removal cartridge to the vhp-pass-through pneumatic inlet using stainless steel tubing (minimum 6 mm outer diameter) with compression fittings rated for 10 bar working pressure.</p>
+<table>
+<thead>
+<tr>
+<th>Pneumatic Component</th>
+<th>Specification</th>
+<th>Installation Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supply pressure regulator</td>
+<td>6.0 bar ±0.5 bar output, 1/4" NPT inlet/outlet</td>
+<td>Calibrated pressure gauge verification before connection</td>
+</tr>
+<tr>
+<td>Particulate filter cartridge</td>
+<td>10 micron, 50 CFM minimum capacity</td>
+<td>Replace when differential pressure exceeds 0.5 bar</td>
+</tr>
+<tr>
+<td>Oil removal cartridge</td>
+<td>0.01 micron, integral differential pressure indicator</td>
+<td>Replace annually or when indicator shows saturation</td>
+</tr>
+<tr>
+<td>Supply tubing</td>
+<td>Stainless steel, 6 mm OD, 10 bar rated compression fittings</td>
+<td>Pressure test at 8 bar for 5 minutes before operation</td>
+</tr>
+<tr>
+<td>Pressure measurement points</td>
+<td>Inlet (upstream of regulator), outlet (downstream of filters)</td>
+<td>Install isolation ball valves at each measurement point</td>
+</tr>
+</tbody>
+</table>
+<p>After all pneumatic connections are installed, perform a pressure test by isolating the vhp-pass-through inlet and pressurizing the supply line to 8 bar for 5 minutes; verify that pressure does not decay more than 0.2 bar during the 5-minute hold period, confirming that all compression fittings are leak-free. Measure the actual output pressure at the vhp-pass-through inlet using a calibrated pressure gauge and record the value; if output pressure is not 6.0 bar ±0.5 bar, adjust the regulator setpoint and re-verify.</p>
+<h3>Acceptance: Air Supply Pressure Stability ±0.2 bar Over 15-Minute Operating Cycle and ISO 8573-1 Class 2 Certification</h3>
+<p>Operate the vhp-pass-through pneumatic system for 15 minutes at normal operating conditions (door inflation-deflation cycles at 2-minute intervals) and continuously record supply pressure using a data logger with 1-second sampling interval; acceptance criterion is that pressure remains within 5.5 bar to 6.5 bar throughout the 15-minute test period with maximum transient deviation of ±0.2 bar. Verify that the facility compressed air system has current ISO 8573-1 Class 2 certification from an accredited testing laboratory; if certification is not available, perform on-site air quality testing using a calibrated particle counter (ISO 4406 code verification) and oil content analyzer (gravimetric method per ISO 8573-2).</p>
+<p>Confirm that all filter cartridges are installed with correct orientation (flow direction marked on cartridge housing) and that differential pressure gauges show green zone indication (cartridge not saturated); document filter installation dates and cartridge part numbers in the maintenance log. Pneumatic system integration and air supply certification establish the pressure stability foundation for all subsequent door seal inflation testing and pressure decay validation; inadequate air supply purity or pressure regulation directly causes seal degradation and pressure decay test failure.</p>
+<hr />
+<h2>4. Door Seal Inflation Testing and Pressure Decay Validation Using ASTM E779 Method</h2>
+<p><strong>This section establishes the on-site pressure decay test procedure for validating complete door seal system airtightness under operational (inflated) conditions, using ASTM E779-10 methodology with door in sealed position.</strong></p>
+<h3>Prerequisite: Verifying Door Seal Material Condition and Pneumatic Inflation System Functionality Before Pressure Decay Testing</h3>
+<p>Inspect the door seal material (typically silicone rubber per manufacturer specification) for visible cracks, permanent deformation, or surface contamination; if seal material shows compression set greater than 25% (measured as permanent indentation depth after 24-hour recovery at room temperature), the seal must be replaced before pressure decay testing. Verify that the pneumatic inflation system (peristaltic pump, pressure regulator, and solenoid valve) operates correctly by performing a manual inflation-deflation cycle: pressurize the door seal to 6 bar, hold for 30 seconds, then vent to atmosphere; confirm that door seal inflates uniformly and deflates completely within 5 seconds of vent command.</p>
+<p>Confirm that all openings in the vhp-pass-through chamber (exhaust port, drain port, sample port) are sealed with blind plugs or isolation ball valves before pressure decay testing begins; any open port will cause artificial pressure decay that invalidates the test result. Verify that the differential pressure measurement system (pressure transducers, data logger, and reference gauge) is calibrated and functional: connect the reference gauge to atmospheric pressure and confirm that it reads 0 Pa differential; if reference gauge shows non-zero reading, recalibrate or replace before proceeding.</p>
+<h3>Procedure: Pressure Decay Test Execution at 250 Pa Above Ambient with 1-Minute Measurement Interval Per ASTM E779-10</h3>
+<p>Pressurize the vhp-pass-through chamber to 250 Pa above ambient atmospheric pressure (approximately 101,350 Pa absolute) using the facility compressed air supply regulated through the pressure regulator; allow 2 minutes for pressure stabilization before beginning the measurement interval. At time zero, isolate the chamber from the air supply by closing the isolation ball valve; simultaneously start the data logger to record differential pressure at 1-second intervals for a minimum 1-minute measurement period. Record the differential pressure reading at time zero (P₀) and at time 60 seconds (P₆₀); calculate the pressure decay rate using the formula: ΔP = P₀ - P₆₀.</p>
+<table>
+<thead>
+<tr>
+<th>Test Parameter</th>
+<th>Specification</th>
+<th>Measurement Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial pressure differential</td>
+<td>250 Pa above ambient atmospheric pressure</td>
+<td>Calibrated differential pressure transducer, resolution 0.1 Pa</td>
+</tr>
+<tr>
+<td>Measurement duration</td>
+<td>Minimum 60 seconds after chamber isolation</td>
+<td>Data logger with 1-second sampling interval</td>
+</tr>
+<tr>
+<td>Pressure decay calculation</td>
+<td>ΔP = P₀ - P₆₀ (Pa/minute)</td>
+<td>Convert to air leakage rate: L/s = (ΔP × V) / (60 × 101,325 × t)</td>
+</tr>
+<tr>
+<td>Chamber volume</td>
+<td>Manufacturer-specified internal volume (typically 0.5-2.0 m³)</td>
+<td>Verify from equipment nameplate or design drawing</td>
+</tr>
+<tr>
+<td>Test repetition</td>
+<td>Minimum 3 independent test runs</td>
+<td>Allow 5-minute stabilization between runs</td>
+</tr>
+</tbody>
+</table>
+<p>Repeat the pressure decay test minimum 3 times, allowing 5 minutes between test runs for pressure equalization and seal material recovery; record all three test results and calculate the average pressure decay rate. Convert the pressure decay rate to air leakage rate in liters per second using the formula: L/s = (ΔP × V) / (60 × 101,325 × t), where V is the chamber volume in liters, ΔP is pressure decay in Pa, and t is time in minutes.</p>
+<h3>Acceptance: Air Leakage Rate ≤0.05 L/s at 25 Pa Differential Pressure Per ASTM E779-10 for BSL-3 Containment</h3>
+<p>Calculate the equivalent air leakage rate at 25 Pa differential pressure using the relationship: L/s at 25 Pa = (measured L/s at 250 Pa) × (25/250)^0.65; acceptance criterion for biosafety level 3 containment is air leakage rate ≤0.05 L/s at 25 Pa differential pressure. If the measured air leakage rate exceeds 0.05 L/s at 25 Pa, the door seal system does not meet airtightness requirements; perform visual inspection of the seal material for damage, verify that all chamber openings are properly sealed, and repeat the pressure decay test after corrective action.</p>
+<p>Document all pressure decay test data including as-found pressure readings, as-left pressure readings, calculated air leakage rates, environmental conditions (ambient temperature, barometric pressure), test equipment serial numbers, and calibration certificate references; sign and date the test report by the commissioning engineer. Pressure decay validation under operational (inflated) door conditions confirms that the complete sealing system meets airtightness requirements; this test validates the actual failure mode that occurs during normal operation, not frame-only sealing that would be measured with door unseated.</p>
+<hr />
+<h2>5. Pass Box Airflow Verification and HEPA Filter Integrity Testing</h2>
+<p><strong>This section establishes the procedure for validating pass box airflow velocity, filter integrity, and interlock system performance using IEST-RP-CC001 methodology and functional verification protocols.</strong></p>
+<h3>Prerequisite: Confirming HEPA Filter Installation Orientation and Airflow Direction Before Velocity Measurement</h3>
+<p>Verify that the HEPA filter cartridge is installed with correct flow direction (typically marked by arrow on filter frame pointing toward exhaust); incorrect filter orientation results in bypass flow and invalid velocity measurements. Inspect the HEPA filter seal for visible gaps, cracks, or incomplete contact with the filter frame; if seal integrity is compromised, replace the filter cartridge before airflow testing. Confirm that the pass box exhaust fan is operational and that the facility exhaust system is functioning at design airflow rate; measure exhaust duct velocity at the pass box outlet using a thermal anemometer to verify that exhaust airflow is not restricted.</p>
+<p>Verify that the pass box interior is clean and free of obstructions that would block airflow measurement points; remove any transfer shelving or internal components that would interfere with the 3×3 grid of velocity measurement points across the HEPA filter face. Confirm that the thermal anemometer is calibrated and functional: perform a zero-flow calibration in still air and verify that the instrument reads 0 m/s ±0.05 m/s; if calibration is not within specification, recalibrate or replace the instrument before proceeding.</p>
+<h3>Procedure: Face Velocity Measurement at 9 Points Across HEPA Filter and DOP/PAO Leak Test Per IEST-RP-CC001</h3>
+<p>Measure face velocity at a minimum 9 points arranged in a 3×3 grid across the HEPA filter face, with measurement points positioned at equal intervals across the filter area; position the thermal anemometer probe perpendicular to the filter face at each measurement point and record the velocity reading in m/s. Calculate the average face velocity by summing all 9 velocity readings and dividing by 9; acceptance criterion per IEST-RP-CC001 is average face velocity between 0.35 m/s and 0.50 m/s. If average face velocity is outside this range, adjust the exhaust fan speed or verify that the exhaust duct is not restricted; re-measure after adjustment.</p>
+<table>
+<thead>
+<tr>
+<th>Airflow Verification Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Face velocity measurement points</td>
+<td>Minimum 9 points in 3×3 grid across filter face</td>
+<td>Average velocity 0.35-0.50 m/s per IEST-RP-CC001</td>
+</tr>
+<tr>
+<td>Thermal anemometer accuracy</td>
+<td>±0.05 m/s or ±3% of reading, whichever is greater</td>
+<td>Calibration certificate valid within 12 months</td>
+</tr>
+<tr>
+<td>HEPA filter integrity test</td>
+<td>DOP/PAO in-situ leak test per IEST-RP-CC001</td>
+<td>No single point reading &gt;0.01% of upstream challenge</td>
+</tr>
+<tr>
+<td>Interlock response time</td>
+<td>Door A open → Door B locked → UV lamp activates</td>
+<td>Response time ≤5 seconds from trigger signal</td>
+</tr>
+<tr>
+<td>Pressure differential</td>
+<td>Both doors closed, HVAC operating</td>
+<td>Positive or negative differential per design specification</td>
+</tr>
+</tbody>
+</table>
+<p>Perform DOP (dioctyl phthalate) or PAO (polyalphaolefin) in-situ leak test by introducing challenge aerosol upstream of the HEPA filter at concentration 10 mg/m³ and scanning the downstream side of the filter with a photometer probe; acceptance criterion is no single point reading exceeding 0.01% of the upstream challenge concentration. If any point exceeds 0.01%, the HEPA filter has failed integrity and must be replaced; do not proceed with pass box commissioning until filter integrity is confirmed.</p>
+<p>Verify interlock system functionality by opening door A and confirming that door B is locked (mechanical interlock or electronic lock signal); close door A and wait for the programmed interlock time delay (typically 30-60 seconds); then verify that door B unlocks. For UV-equipped pass boxes, verify that the UV lamp activates when both doors are closed and that the lamp operates for the programmed exposure time (typically 15-30 minutes) before automatically shutting off.</p>
+<h3>Acceptance: Average Face Velocity 0.35-0.50 m/s, HEPA Filter Integrity &gt;99.99%, and Interlock Response ≤5 Seconds</h3>
+<p>Confirm that the average face velocity calculated from the 9 measurement points falls within 0.35 m/s to 0.50 m/s; if outside this range, document the deviation and perform corrective action (exhaust fan adjustment or duct restriction removal) before re-testing. Verify that the DOP/PAO leak test shows no point exceeding 0.01% of upstream challenge; if any point exceeds this threshold, replace the HEPA filter and repeat the leak test. Confirm that the interlock system response time from trigger signal to lock/unlock actuation is ≤5 seconds; if response time exceeds 5 seconds, verify that the interlock control logic is functioning correctly and that all mechanical locks are operating smoothly.</p>
+<p>Document all airflow and filter integrity test data including velocity readings at each of the 9 measurement points, average face velocity, DOP/PAO leak test results, interlock response times, and test equipment serial numbers with calibration certificate references. Pass box airflow verification and HEPA filter integrity testing confirm that the pass box meets containment and filtration performance requirements; these tests validate that the pass box can maintain the required air changes per hour and that no unfiltered air bypasses the HEPA filter.</p>
+<hr />
+<h2>6. Pressure Relief Valve Certification and Emergency System Activation Testing</h2>
+<p><strong>This section establishes the procedure for validating pressure relief valve setpoint accuracy and emergency exhaust system activation at specified overpressure thresholds.</strong></p>
+<h3>Prerequisite: Obtaining Pressure Relief Valve Certified Setpoint Data and Emergency System Specification Documentation</h3>
+<p>Obtain the manufacturer-provided pressure relief valve (PRV) data sheet specifying the certified crack pressure (setpoint) and reseat pressure; typical setpoint for biosafety level 3 containment is 250-500 Pa above normal operating pressure. Verify that the PRV is installed at the correct location in the pneumatic system (typically at the door seal inflation line) and that the valve is accessible for testing without requiring system disassembly. Confirm that the facility has emergency exhaust system documentation specifying the overpressure threshold at which the emergency exhaust fan activates (typically 100-200 Pa above normal negative pressure setpoint) and the response time requirement (typically ≤10 seconds from trigger to full exhaust flow).</p>
+<p>Verify that the building management system (BMS) has alarm configuration for emergency exhaust activation and that the alarm signal is connected to the facility emergency notification system; confirm that facility personnel have been trained on emergency exhaust activation procedures and that the emergency exhaust system has been tested within the past 12 months per facility maintenance records.</p>
+<h3>Procedure: Pressure Relief Valve Setpoint Verification Using Calibrated Pressure Source and Slow Pressure Ramp</h3>
+<p>Connect a calibrated pressure source (nitrogen bottle with regulator and pressure gauge, or pneumatic test pump) to the PRV inlet; slowly increase pressure at a rate of approximately 10 Pa per second while continuously monitoring the pressure gauge. Record the pressure reading at which the PRV begins to lift (crack pressure); continue increasing pressure until the PRV is fully open and airflow is audible. Record the fully open pressure; then slowly decrease pressure and record the pressure at which the PRV reseats (reseat pressure).</p>
+<table>
+<thead>
+<tr>
+<th>Pressure Relief Valve Test Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Certified crack pressure (setpoint)</td>
+<td>Manufacturer data sheet specification</td>
+<td>Measured crack pressure within ±10% of certified setpoint</td>
+</tr>
+<tr>
+<td>Pressure ramp rate</td>
+<td>Approximately 10 Pa per second</td>
+<td>Slow ramp prevents dynamic overshoot and valve chatter</td>
+</tr>
+<tr>
+<td>Reseat pressure</td>
+<td>Typically 80-90% of crack pressure</td>
+<td>Reseat pressure &gt;80% of crack pressure confirms valve function</td>
+</tr>
+<tr>
+<td>Test repetition</td>
+<td>Minimum 3 independent pressure ramps</td>
+<td>All three measurements within ±10% of certified setpoint</td>
+</tr>
+<tr>
+<td>Weeping test</td>
+<td>After reseat, hold pressure at 90% of setpoint for 5 minutes</td>
+<td>No audible or visible leakage from PRV outlet</td>
+</tr>
+</tbody>
+</table>
+<p>Repeat the pressure ramp test minimum 3 times, allowing 2 minutes between tests for valve cooling and pressure stabilization; record all three crack pressure readings and calculate the average. Compare the average measured crack pressure to the manufacturer-certified setpoint; acceptance criterion is that the measured crack pressure is within ±10% of the certified setpoint (e.g., if certified setpoint is 300 Pa, measured crack pressure must be 270-330 Pa).</p>
+<p>After the third pressure ramp test, hold the system pressure at 90% of the certified setpoint for 5 minutes and verify that no audible or visible leakage occurs from the PRV outlet; if weeping is observed, the PRV requires replacement. Test the emergency exhaust system activation by blocking the pass box exhaust duct to simulate overpressure condition; verify that the emergency exhaust fan activates within 10 seconds of overpressure trigger and that the BMS alarm is triggered simultaneously.</p>
+<h3>Acceptance: Measured Crack Pressure Within ±10% of Certified Setpoint and Emergency Exhaust Response ≤10 Seconds</h3>
+<p>Confirm that all three measured crack pressure readings fall within ±10% of the manufacturer-certified setpoint; if any measurement deviates more than ±10%, the PRV does not meet specification and must be replaced. Verify that the reseat pressure is ≥80% of the crack pressure, confirming that the valve reseats properly and does not remain partially open. Confirm that the weeping test shows no leakage from the PRV outlet at 90% setpoint pressure; if leakage is observed, replace the PRV before system commissioning.</p>
+<p>Verify that the emergency exhaust system activates within 10 seconds of overpressure trigger and that the BMS alarm is triggered simultaneously; if response time exceeds 10 seconds, verify that the emergency exhaust fan is functioning correctly and that the control logic is properly configured. Document all PRV test data including measured crack pressure, reseat pressure, weeping test result, emergency exhaust response time, test equipment serial numbers, and calibration certificate references; sign and date the test report by the commissioning engineer. Pressure relief valve certification and emergency system activation testing confirm that the vhp-pass-through equipment has functional overpressure protection and that emergency containment breach scenarios are mitigated by automatic system response.</p>
+<hr />
+<h2>7. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What is the minimum site preparation timeline before vhp-pass-through installation can begin?</strong></p>
+<p>Site preparation typically requires 2-4 weeks to complete structural verification, anchor installation, compressed air system certification, and electrical infrastructure preparation. The critical path item is usually ISO 8573-1 Class 2 air supply certification, which may require facility air system upgrades (dryer installation, filter cartridge replacement) if not already in place. Parallel activities (structural load verification, anchor torque testing) can reduce total timeline if resources are available.</p>
+<p><strong>Q2: Can pressure decay testing be performed with the door in unseated (non-inflated) condition?</strong></p>
+<p>No. Testing with the door unseated measures only the frame seal performance and misses the complete sealing system failure mode that occurs during actual inflation-deflation operation. ASTM E779-10 requires the door to be in operational (inflated) condition; testing with door unseated produces artificially low leakage rates that do not reflect real-world performance and will result in rework during operational validation.</p>
+<p><strong>Q3: What is the typical differential pressure setpoint for biosafety level 3 containment zones?</strong></p>
+<p>Biosafety level 3 containment typically operates at negative pressure differential of 12-25 Pa relative to adjacent spaces, with pressure relief valve setpoint at 250-500 Pa above normal operating pressure to protect against overpressurization. Specific setpoint depends on facility design and regulatory requirements; verify setpoint with facility engineering documentation before commissioning.</p>
+<p><strong>Q4: How can airtightness be verified on-site without specialized pressure decay test equipment?</strong></p>
+<p>A simplified field verification uses a calibrated differential pressure gauge and manual pressure isolation: pressurize the chamber to 250 Pa, isolate from air supply, and observe pressure decay over 1 minute using the gauge. While this method lacks the precision of automated data logging, it provides a quick go/no-go verification that the sealing system is functional; if pressure decays more than 50 Pa in 1 minute, the system requires investigation.</p>
+<p><strong>Q5: What are the typical BMS integration parameters for vhp-pass-through equipment?</strong></p>
+<p>Standard BMS integration includes Modbus RTU communication (address 1-247, baud rate 9600 bps, parity even, 1 stop bit) for pressure monitoring, door lock status, and alarm signals; analog inputs for differential pressure transducers (4-20 mA signal range); and discrete outputs for solenoid valve control and emergency exhaust activation. Verify communication protocol and signal specifications with equipment documentation before BMS integration.</p>
+<p><strong>Q6: What is the recommended spare parts inventory and maintenance schedule for critical sealing components?</strong></p>
+<p>Maintain spare inventory of door seal cartridges (minimum 2 units), pneumatic filter cartridges (minimum 4 units), and pressure relief valve assembly (minimum 1 unit); these components typically have 12-24 month service life depending on usage frequency. Perform quarterly visual inspection of seal material for compression set and contamination; replace filter cartridges annually or when differential pressure exceeds 0.5 bar; perform annual pressure relief valve setpoint verification per manufacturer specification.</p>
+<hr />
+<h2>7. References &amp; Data Sources</h2>
+<p>ISO 14644-1:2024 Cleanrooms and associated controlled environments — Part 1: Classification of air cleanliness by particle concentration. International Organization for Standardization.</p>
+<p>ISO 8573-1:2010 Compressed air — Part 1: Contaminants and purity classes. International Organization for Standardization.</p>
+<p>ASTM E779-10 Standard Test Method for Determining Air Leakage Rate by Fan Pressurization. American Society for Testing and Materials.</p>
+<p>IEST-RP-CC001.7 HEPA and ULPA Filters. Institute of Environmental Sciences and Technology.</p>
+<p>ISO 14698-1:2003 Cleanrooms and associated controlled environments — Biocontamination control — Part 1: General principles and methods. International Organization for Standardization.</p>
+<p>WHO Laboratory Biosafety Manual, Third Edition. World Health Organization.</p>
+<p>CDC Biosafety in Microbiological and Biomedical Laboratories (BMBL), Fifth Edition. Centers for Disease Control and Prevention.</p>
+<p>AISC 360-22 Specification for Structural Steel Buildings. American Institute of Steel Construction.</p>
+<p>ISO 6931:2007 Fasteners — Mechanical and physical properties of fasteners made of carbon steel and alloy steel. International Organization for Standardization.</p>
+<hr />
+<h2>8. Disclaimer</h2>
+<p>This installation and commissioning guide is based on publicly available engineering standards, published industry data, and documented field validation procedures. Given the critical safety requirements of biosafety laboratories and cleanrooms, all installation and commissioning activities must be performed by qualified personnel, validated against on-site conditions, and reviewed against manufacturer-provided IQ/OQ/PQ documentation before operational handover. Site-specific risk assessment and regulatory compliance verification remain the responsibility of the facility owner and qualified engineering team.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>
