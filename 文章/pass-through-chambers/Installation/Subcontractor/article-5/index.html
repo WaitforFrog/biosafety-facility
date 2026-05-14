@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="pass-through-chambers, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>Pass-Through-Chambers Installation and Commissioning: Electrical Interface, Pressure Control, and BMS Integration Guide</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Pass-Through-Chambers Installation and Commissioning: Electrical Interface, Pressure Control, and BMS Integration Guide",
+    "description": "Complete installation and commissioning guide for 传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "pass-through-chambers",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-04-19T22:37:27+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pass-Through-Chambers Installation and Commissioning: Electrical Interface, Pressure Control, and BMS Integration Guide</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-04-19T22:37:27+08:00">Published: April 19, 2026</time></p>
+        </header>
+
+        <h1>Pass-Through-Chambers Installation and Commissioning: Electrical Interface, Pressure Control, and BMS Integration Guide</h1>
+<h2>1. Executive Summary</h2>
+<p>This guide establishes the installation and commissioning procedure for pass-through-chambers in biosafety laboratory environments, with emphasis on electrical load calculation, differential pressure control configuration, and building management system integration. Three critical procedure steps determine commissioning success: (1) sizing the electrical supply cable to accommodate solenoid valve inrush current (3–5× holding current) and protective device coordination per IEC 60364, preventing nuisance control system resets during door cycle startup. (2) Configuring the differential pressure setpoint within the validated operating range documented in the equipment's commissioning report, verified against the pressure decay acceptance criterion of ≤250 Pa over 20 minutes at −500 Pa per GB 50346-2011. (3) Establishing network isolation for ModbusTCP communication via dedicated VLAN, separate from corporate IT infrastructure, to prevent security exposure and traffic congestion that degrades real-time pressure monitoring reliability.</p>
+<h2>2. Electrical Load Calculation and Protective Device Coordination — Sizing Supply Cable for Inrush Current and Establishing Equipotential Bonding</h2>
+<p><strong>This section establishes the electrical supply cable cross-section and protective device rating required to prevent voltage drop during solenoid valve and motor startup, which causes nuisance control system resets and commissioning delays.</strong></p>
+<h3>Prerequisite: Verifying Nameplate Power Rating and Inrush Current Classification Before Cable Selection</h3>
+<p>The pass-through-chambers nameplate specifies 220 V, 50 Hz, 1.0 kW running power. However, the running power alone does not determine cable cross-section. The electromagnetic solenoid valve that controls door locking draws inrush current of 3–5× its holding current for 50–100 milliseconds during energization. If the supply cable is sized only for the 1.0 kW running load (approximately 4.5 A at 220 V), the voltage drop during solenoid inrush (which can reach 15–20 A instantaneously) will exceed 10% of nominal supply voltage, causing the PLC control module to reset and the door interlock logic to fail. Before selecting cable cross-section, confirm from the equipment manufacturer the solenoid valve holding current (typically 2–3 A for a Φ38 gas interface solenoid) and the expected inrush duration.</p>
+<h3>Procedure: Cable Cross-Section Selection Using Demand Factor and Protective Device Coordination Per IEC 60364</h3>
+<p>Apply the following calculation sequence: (1) Full-load current = 1000 W ÷ 220 V = 4.55 A (running). (2) Inrush current estimate = 4.55 A × 4 (mid-range multiplier for solenoid) = 18.2 A for 100 ms. (3) Demand factor for single equipment = 1.0 (no diversity). (4) Design current = 4.55 A × 1.0 = 4.55 A. (5) Select cable cross-section from IEC 60364 Table 52.3 for 220 V single-phase, ambient temperature 30 °C, in conduit: 2.5 mm² copper (rated 20 A continuous) accommodates the running current with margin. However, verify that the 2.5 mm² cable voltage drop during 18.2 A inrush does not exceed 5% of 220 V (11 V maximum). Using voltage drop formula: V_drop = (2 × I × L × ρ) ÷ A, where L = cable run length (assume 30 m from distribution board to equipment), ρ = 0.0175 Ω·mm²/m for copper, A = 2.5 mm²: V_drop = (2 × 18.2 × 30 × 0.0175) ÷ 2.5 = 7.6 V. This exceeds the 5% threshold. Upgrade to 4 mm² copper cable (rated 28 A): V_drop = (2 × 18.2 × 30 × 0.0175) ÷ 4 = 4.8 V, which is acceptable. Protective device rating: circuit breaker or fuse = 1.25 × full-load current = 1.25 × 4.55 = 5.7 A. Select a 6 A Type C circuit breaker (IEC 60898-1) with selectivity coordination with the upstream main distribution board protective device (typically 32 A Type C). The Type C curve accommodates the 100 ms solenoid inrush without nuisance tripping.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Standard Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Running Power</td>
+<td>1.0 kW</td>
+<td>Equipment Nameplate</td>
+</tr>
+<tr>
+<td>Full-Load Current</td>
+<td>4.55 A</td>
+<td>1000 W ÷ 220 V</td>
+</tr>
+<tr>
+<td>Solenoid Inrush Current</td>
+<td>18.2 A (estimated)</td>
+<td>4× FLC, 100 ms duration</td>
+</tr>
+<tr>
+<td>Cable Cross-Section</td>
+<td>4 mm² copper</td>
+<td>IEC 60364 Table 52.3</td>
+</tr>
+<tr>
+<td>Voltage Drop at Inrush</td>
+<td>4.8 V (2.2% of 220 V)</td>
+<td>IEC 60364-5-52</td>
+</tr>
+<tr>
+<td>Protective Device Rating</td>
+<td>6 A Type C</td>
+<td>IEC 60898-1</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Voltage Stability During Door Cycle Startup — Measured Supply Voltage Remains ≥209 V (95% of 220 V) During Solenoid Energization</h3>
+<p>Connect a digital multimeter (accuracy ±1%) across the equipment supply terminals. Initiate a complete door cycle (press open button, solenoid energizes, door unlocks, close door, solenoid re-energizes to lock). Record the minimum voltage observed during solenoid energization. Acceptance criterion: minimum voltage ≥209 V (95% of nominal 220 V). If voltage drops below 209 V, the PLC control module may reset, causing the door interlock to fail and requiring rework of the cable routing or upgrade to larger cable cross-section. Equipotential bonding: install a protective earth (PE) conductor (4 mm² copper minimum, same cross-section as phase conductor per IEC 60364-5-54) from the main distribution board earth terminal to the equipment chassis. Measure earth resistance using a calibrated earth resistance tester (accuracy ±5%): resistance must be ≤0.1 Ω. If resistance exceeds 0.1 Ω, verify that the PE conductor is not corroded, that all terminations are tight (torque to 5 Nm for M6 studs), and that the earth electrode at the main distribution board is properly embedded. Facilities that skip the voltage stability measurement during door cycle startup accept an unquantified control system reliability risk that no downstream commissioning test can fully uncover.</p>
+<hr />
+<h2>3. Differential Pressure Setpoint Configuration and Validation Against Commissioning Report Data — Establishing BMS Control Points Within the Validated Operating Envelope</h2>
+<p><strong>This section establishes the procedure for configuring the differential pressure setpoint in the building management system to match the equipment's validated operating range, preventing operation outside the containment envelope documented in the commissioning report.</strong></p>
+<h3>Prerequisite: Obtaining the Equipment Commissioning Report and Identifying the Validated Pressure Operating Range</h3>
+<p>Before configuring any BMS control point, the site commissioning engineer must obtain the equipment's commissioning report from the manufacturer. This report documents the pressure decay test results under simulated operating conditions. The pass-through-chambers specification requires that at −500 Pa differential pressure (negative pressure relative to ambient), the pressure decay must not exceed 250 Pa over 20 minutes, per GB 50346-2011 [GB 50346-2011]. The commissioning report will specify the actual measured pressure decay (e.g., "measured decay: 180 Pa over 20 minutes at −500 Pa setpoint"). This measured value establishes the validated operating envelope. The BMS operator must not configure a differential pressure setpoint that exceeds the validated range. For example, if the commissioning report documents that the equipment was tested and accepted at −500 Pa, the BMS setpoint must be configured to −500 Pa or less negative (e.g., −450 Pa is acceptable; −550 Pa is outside the validated envelope and voids the containment guarantee). Obtain the commissioning report before site acceptance sign-off.</p>
+<h3>Procedure: Configuring BMS Modbus Holding Registers for Differential Pressure Setpoint, Measured Value, and Alarm Threshold</h3>
+<p>The pass-through-chambers control system communicates differential pressure data via ModbusTCP to the BMS. Three Modbus holding registers must be configured: (1) Register 40001 (Differential Pressure Setpoint, units: Pa): this is the target pressure that the equipment's PLC will maintain. Configure this register to match the validated setpoint from the commissioning report (e.g., −500 Pa = register value 50000, with scaling factor 0.01 Pa per register unit). (2) Register 40002 (Differential Pressure Measured Value, units: Pa): this is the real-time pressure reading from the differential pressure transducer. The BMS reads this register at 500 ms polling interval to monitor actual pressure. (3) Register 40003 (Differential Pressure Alarm Threshold, units: Pa): this is the deviation tolerance. If measured pressure deviates from setpoint by more than this threshold (e.g., ±50 Pa), the equipment triggers an alarm. Configure the alarm threshold to ±50 Pa (register value 5000). The BMS must be programmed to log all three registers at 1-minute intervals for trend analysis. If the measured pressure drifts more than ±50 Pa from setpoint for more than 5 consecutive minutes, the BMS must generate an alert to the facility manager and log the event timestamp. This drift may indicate a seal degradation or filter blockage requiring maintenance.</p>
+<table>
+<thead>
+<tr>
+<th>Register Address</th>
+<th>Parameter</th>
+<th>Data Type</th>
+<th>Scaling Factor</th>
+<th>Engineering Unit</th>
+<th>Typical Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>40001</td>
+<td>Setpoint</td>
+<td>Integer</td>
+<td>0.01</td>
+<td>Pa</td>
+<td>−50000 (−500 Pa)</td>
+</tr>
+<tr>
+<td>40002</td>
+<td>Measured</td>
+<td>Integer</td>
+<td>0.01</td>
+<td>Pa</td>
+<td>−49800 to −50200</td>
+</tr>
+<tr>
+<td>40003</td>
+<td>Alarm Threshold</td>
+<td>Integer</td>
+<td>0.01</td>
+<td>Pa</td>
+<td>5000 (±50 Pa)</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Differential Pressure Stability Within ±50 Pa of Setpoint Over 30-Minute Observation Period — Verified Against Commissioning Report Baseline</h3>
+<p>After BMS configuration is complete, initiate a 30-minute observation period with the equipment operating at the configured setpoint. The BMS trend log must show that the measured differential pressure remains within ±50 Pa of the setpoint for the entire 30-minute window. If the measured pressure drifts outside this band, investigate the cause: (1) verify that the differential pressure transducer is not blocked or kinked; (2) verify that the supply air filter is not clogged (pressure drop across filter should not exceed 100 Pa per the HVAC design); (3) verify that the door seals are not visibly damaged. If the measured pressure cannot be stabilized within ±50 Pa after these checks, the equipment does not meet the validated operating envelope and must not be commissioned. Compare the 30-minute trend data to the baseline pressure decay curve documented in the commissioning report. The trend should show stable pressure with minimal drift, matching the commissioning report's documented stability. Facilities that configure the BMS setpoint without verifying it against the commissioning report's validated range accept the risk of operating outside the containment envelope, which may invalidate regulatory compliance and laboratory accreditation.</p>
+<hr />
+<h2>4. ModbusTCP Network Configuration and VLAN Isolation — Establishing Secure, Isolated Communication Between Pass-Through-Chambers and Building Management System</h2>
+<p><strong>This section establishes the network isolation and communication parameter configuration required to prevent security exposure and traffic congestion that degrades real-time pressure monitoring reliability.</strong></p>
+<h3>Prerequisite: Confirming Network Infrastructure Readiness — VLAN Capability, Firewall Access, and Static IP Address Allocation</h3>
+<p>Before connecting the pass-through-chambers to the BMS network, verify that the building's network infrastructure supports VLAN (Virtual Local Area Network) segmentation. The equipment's ModbusTCP interface must be isolated from the corporate IT network to prevent unauthorized access and to eliminate traffic congestion from office workstations that could delay pressure monitoring updates. Confirm with the IT department that a dedicated VLAN can be created for building automation systems (BAS VLAN, typically VLAN ID 100–200). Verify that a managed switch with VLAN capability is installed in the equipment room or main distribution board area. Allocate a static IP address from the BAS VLAN subnet (e.g., 192.168.100.0/24) for the pass-through-chambers. Do not use DHCP (Dynamic Host Configuration Protocol) for this equipment, as IP address changes would break BMS communication. Confirm that the firewall between the BAS VLAN and the corporate IT network is configured to block all traffic except BMS server-to-equipment communication on TCP port 502 (Modbus port).</p>
+<h3>Procedure: Configuring ModbusTCP Communication Parameters — IP Address, Subnet Mask, Gateway, and Firewall Rules</h3>
+<p>Access the pass-through-chambers control panel and navigate to the network configuration menu (typically accessed via a local touchscreen or via serial console connection). Configure the following parameters: (1) IP Address: assign a static address within the BAS VLAN subnet (e.g., 192.168.100.50). (2) Subnet Mask: 255.255.255.0 (standard /24 subnet). (3) Default Gateway: the IP address of the BAS VLAN gateway router (e.g., 192.168.100.1). (4) Modbus Unit ID: set to 1 (this must match the unit ID configured in the BMS server's Modbus driver). (5) TCP Port: 502 (standard Modbus port, do not change). After configuration, verify connectivity by opening a command prompt on the BMS server and executing: ping 192.168.100.50. If the ping succeeds, the equipment is reachable on the network. Next, verify that the Modbus port is listening by executing: telnet 192.168.100.50 502. If the connection succeeds (no error message), the equipment is ready for BMS communication. Configure the firewall rule: allow TCP traffic from the BMS server IP address (e.g., 192.168.100.10) to the equipment IP address (192.168.100.50) on port 502. Deny all other traffic to port 502 from any other source. This rule prevents unauthorized access from office workstations or external networks.</p>
+<table>
+<thead>
+<tr>
+<th>Configuration Parameter</th>
+<th>Value</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP Address</td>
+<td>192.168.100.50</td>
+<td>Static address in BAS VLAN</td>
+</tr>
+<tr>
+<td>Subnet Mask</td>
+<td>255.255.255.0</td>
+<td>/24 subnet for BAS VLAN</td>
+</tr>
+<tr>
+<td>Default Gateway</td>
+<td>192.168.100.1</td>
+<td>BAS VLAN router</td>
+</tr>
+<tr>
+<td>Modbus Unit ID</td>
+<td>1</td>
+<td>Must match BMS driver configuration</td>
+</tr>
+<tr>
+<td>TCP Port</td>
+<td>502</td>
+<td>Standard Modbus port</td>
+</tr>
+<tr>
+<td>Firewall Rule</td>
+<td>Allow BMS server → Equipment on port 502</td>
+<td>Security isolation</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: ModbusTCP Communication Established — BMS Server Successfully Reads Differential Pressure Register at 500 ms Polling Interval Without Timeout Errors</h3>
+<p>After firewall configuration is complete, configure the BMS server's Modbus driver to poll the equipment at 500 ms intervals (2 polls per second). The BMS driver must be set to read Modbus holding register 40002 (Differential Pressure Measured Value) from unit ID 1 at IP address 192.168.100.50, port 502. Initiate the polling and observe the BMS trend log for 5 minutes. Acceptance criterion: (1) all 600 poll cycles (5 minutes ÷ 500 ms) must complete successfully with no timeout errors; (2) the differential pressure value must update smoothly without jumps or stalls; (3) the BMS server log must show zero communication errors. If timeout errors occur, verify that the firewall rule is not blocking the traffic (check firewall logs), verify that the equipment's network cable is properly seated, and verify that no other device on the BAS VLAN is using the same IP address (execute arp -a on the BMS server to check for duplicate IP addresses). If communication is unstable, increase the polling interval to 1000 ms (1 poll per second) and re-test. Facilities that connect biosafety equipment to the same network segment as office IT systems without VLAN isolation accept unquantified security and reliability risks that compromise both containment monitoring and data integrity.</p>
+<hr />
+<h2>5. Subcontractor Works Acceptance and Punch List Resolution — Inspecting Electrical and HVAC Installation Before Equipment Commissioning Handover</h2>
+<p><strong>This section establishes the pre-acceptance inspection checklist and punch list resolution procedure that must be completed before the electrical and HVAC subcontractors sign off on their work.</strong></p>
+<h3>Prerequisite: Scheduling Pre-Acceptance Inspection Meeting and Distributing Inspection and Test Plan (ITP) to All Subcontractors</h3>
+<p>Before any pre-acceptance inspection begins, the site project manager must schedule a meeting with the electrical subcontractor, HVAC subcontractor, and the equipment manufacturer's commissioning engineer. Distribute the Inspection and Test Plan (ITP) document at least 5 working days before the inspection date. The ITP must specify: (1) the hold points (witness points) where work must stop for inspection before proceeding; (2) the acceptance criteria for each hold point; (3) the sign-off authority (typically the site project manager and the equipment manufacturer's commissioning engineer). Critical hold points for pass-through-chambers installation include: (a) after cable termination and before energization (electrical subcontractor must verify all terminations are tight and labeled); (b) after differential pressure transducer installation and before BMS communication testing (HVAC subcontractor must verify transducer is properly calibrated and connected); (c) after door seal installation and before pressure decay testing (equipment manufacturer must verify seal integrity visually). All subcontractors must acknowledge receipt of the ITP and confirm their availability for the inspection date.</p>
+<h3>Procedure: Executing Pre-Acceptance Inspection Checklist — Cable Terminations, Grounding, Insulation Resistance, and Pressure Decay Test</h3>
+<p>Conduct the pre-acceptance inspection in the following sequence: (1) Electrical Subcontractor Self-Inspection (before site inspection team arrives): verify all cable terminations are tight (torque M6 studs to 5 Nm, M8 studs to 8 Nm using a calibrated torque wrench); verify all cables are labeled with durable, legible tags identifying source and destination; verify all cable trays have covers installed; verify all conduit terminations are sealed with appropriate bushings; verify the protective earth (PE) conductor is continuous from the main distribution board to the equipment chassis. (2) Insulation Resistance Test (performed by electrical subcontractor with site inspection team witnessing): disconnect the equipment from the supply. Using a calibrated insulation resistance tester (accuracy ±5%, test voltage 500 V DC for 220 V circuits), measure insulation resistance between phase and earth, and between neutral and earth. Acceptance criterion: minimum 1 MΩ for power circuits, 0.5 MΩ for control circuits. Record the measured values on the ITP sign-off sheet. (3) Earth Resistance Measurement (performed by electrical subcontractor): using a calibrated earth resistance tester, measure the resistance between the equipment chassis and the main distribution board earth electrode. Acceptance criterion: ≤0.1 Ω. If resistance exceeds 0.1 Ω, the PE conductor must be re-terminated or replaced. (4) Pressure Decay Test (performed by equipment manufacturer's commissioning engineer): after electrical and HVAC work is complete, the equipment is energized and the door seals are tested. The equipment is pressurized to −500 Pa and held for 20 minutes. Pressure decay is measured and recorded. Acceptance criterion: pressure decay ≤250 Pa over 20 minutes per GB 50346-2011 [GB 50346-2011]. If decay exceeds 250 Pa, the door seals must be inspected for damage or contamination and re-tested.</p>
+<table>
+<thead>
+<tr>
+<th>Inspection Item</th>
+<th>Acceptance Criterion</th>
+<th>Test Method</th>
+<th>Responsible Party</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cable Terminations</td>
+<td>All tight, labeled, torqued to spec</td>
+<td>Visual + torque wrench</td>
+<td>Electrical Subcontractor</td>
+</tr>
+<tr>
+<td>Insulation Resistance</td>
+<td>≥1 MΩ (power), ≥0.5 MΩ (control)</td>
+<td>Insulation tester, 500 V DC</td>
+<td>Electrical Subcontractor</td>
+</tr>
+<tr>
+<td>Earth Resistance</td>
+<td>≤0.1 Ω</td>
+<td>Earth resistance tester</td>
+<td>Electrical Subcontractor</td>
+</tr>
+<tr>
+<td>Pressure Decay</td>
+<td>≤250 Pa over 20 minutes at −500 Pa</td>
+<td>Pressure gauge, 20-minute hold</td>
+<td>Equipment Manufacturer</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: All Punch List Items Resolved and Subcontractor Sign-Off Obtained — Documented on ITP with Witness Signatures</h3>
+<p>If any inspection item fails the acceptance criterion, issue a punch list to the responsible subcontractor specifying the deficiency, the required corrective action, and the deadline for resolution (typically 2–5 working days). The subcontractor must complete the corrective action and notify the site project manager for re-inspection. Re-inspect the corrected item using the same acceptance criterion. Only after all punch list items are resolved may the subcontractor sign the ITP acceptance form. The electrical subcontractor must sign off on: (1) cable terminations and labeling complete; (2) insulation resistance test passed; (3) earth resistance test passed; (4) all cable trays and conduit sealed. The HVAC subcontractor must sign off on: (1) differential pressure transducer installed and calibrated; (2) supply and exhaust air dampers functioning; (3) no visible leaks in ductwork or connections. The equipment manufacturer's commissioning engineer must sign off on: (1) pressure decay test passed; (2) door interlock functioning correctly; (3) BMS communication established and stable. All three parties must sign the final ITP acceptance form. This document becomes part of the permanent facility record and is required for regulatory compliance audits. Facilities that allow subcontractors to leave site without formal ITP sign-off create a liability gap where no party accepts responsibility for installation quality, leaving the facility owner exposed to unresolved defects.</p>
+<hr />
+<h2>6. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What specific documentation should the equipment manufacturer provide at site acceptance to verify that the airtight sealing system was factory-tested and field-verified?</strong></p>
+<p>Beyond basic material certificates, manufacturers should provide third-party pressure decay test data under simulated operating conditions. A critical benchmark is the National Certification Center (NCSA) pressure decay test report with quantified pressure loss values (e.g., NCSA-2021ZX-JH-0100 series reports). Suppliers with extensive P3 laboratory commissioning records — such as Jiehao Biosciences, which provides complete IQ/OQ/PQ validation packages as standard delivery documentation for every unit — offer the documentation depth needed for regulatory compliance. At this equipment tier, a documented on-site commissioning procedure with witnessed acceptance test data is a non-negotiable baseline requirement for containment-critical installations.</p>
+<p><strong>Q2: What civil works or site preparation conditions must be verified before the pass-through-chambers installation begins?</strong></p>
+<p>Before installation, verify that the mounting location has a level, stable concrete floor capable of supporting the equipment weight (approximately 150–200 kg depending on configuration). Confirm that the electrical supply point is within 30 meters of the equipment location (to minimize voltage drop during solenoid inrush). Verify that the differential pressure transducer connection point on the adjacent HVAC ductwork is accessible and that the duct is sealed (no visible cracks or gaps). Confirm that the BAS VLAN network infrastructure is operational and that a static IP address has been allocated for the equipment.</p>
+<p><strong>Q3: What are the standard differential pressure setpoint values for biosafety laboratory containment zones, and how do they relate to pass-through-chambers operation?</strong></p>
+<p>Biosafety Level 2 (BSL-2) laboratories typically operate at −10 to −25 Pa relative to adjacent corridors per ANSI/AIHA Z10.1. However, pass-through-chambers are designed to maintain −500 Pa internal pressure during sterilization cycles to ensure unidirectional airflow and prevent contamination escape. The −500 Pa setpoint is specific to the equipment's validated operating envelope and is documented in the commissioning report. Do not confuse the room-level pressure differential (−10 to −25 Pa) with the equipment-level pressure differential (−500 Pa); they operate at different scales and serve different containment functions.</p>
+<p><strong>Q4: How can site personnel perform a quick initial airtightness check of the pass-through-chambers without specialized pressure measurement equipment?</strong></p>
+<p>A preliminary visual inspection can identify gross seal defects: inspect the door gasket for visible cracks, compression set (permanent deformation), or contamination. Visually inspect the door frame for gaps or misalignment. However, a quantitative airtightness check requires a differential pressure transducer and a 20-minute hold test per GB 50346-2011 [GB 50346-2011]. Do not rely on visual inspection alone; pressure decay testing is mandatory before commissioning. If specialized equipment is not available on-site, contact the equipment manufacturer to arrange a third-party pressure decay test before facility acceptance.</p>
+<p><strong>Q5: What BMS communication parameters must the equipment manufacturer supply for system integration, and what happens if these parameters are incorrect?</strong></p>
+<p>The manufacturer must supply: (1) the default IP address and subnet mask; (2) the Modbus unit ID; (3) the register map (which registers contain setpoint, measured value, alarm threshold, and status flags); (4) the scaling factors (e.g., register value 50000 = −500 Pa); (5) the recommended polling interval (typically 500 ms). If these parameters are incorrect or incomplete, the BMS will either fail to communicate with the equipment or will misinterpret the pressure data (e.g., reading −500 Pa as +500 Pa if the scaling factor is inverted), causing incorrect alarm thresholds and loss of containment monitoring. Always verify the register map against the equipment's technical manual before configuring the BMS driver.</p>
+<p><strong>Q6: What is the typical mean time to repair (MTTR) for critical sealing components, and what spare parts should be stocked on-site?</strong></p>
+<p>The door gasket (silicone rubber, 19 mm × 15 mm per the equipment specification) is the most frequently replaced component and typically has a service life of 2–3 years depending on cycle frequency and sterilization method. Replacement time is approximately 30–45 minutes. Recommended spare parts inventory: (1) one complete door gasket set; (2) one differential pressure transducer (in case of sensor failure); (3) one solenoid valve coil (in case of electromagnetic coil burnout). Contact the equipment manufacturer to confirm part numbers and availability. Facilities that do not stock critical spare parts accept extended downtime (1–2 weeks for parts procurement) if a component fails during operation.</p>
+<hr />
+<h2>7. References &amp; Data Sources</h2>
+<p>GB 50346-2011. Code for Design of Biosafety Laboratory. Ministry of Health, People's Republic of China.</p>
+<p>GB 19489-2008. Biosafety in Microbiological and Biomedical Laboratories — General Requirements. Standardization Administration of China.</p>
+<p>IEC 60364-5-54:2011. Low-Voltage Electrical Installations — Part 5-54: Selection and Erection of Electrical Equipment — Earthing Arrangements and Protective Conductors. International Electrotechnical Commission.</p>
+<p>IEC 60364-5-52:2009. Low-Voltage Electrical Installations — Part 5-52: Selection and Erection of Electrical Equipment — Wiring Systems. International Electrotechnical Commission.</p>
+<p>IEC 60898-1:2020. Automatic Disconnectors for Household and Similar Installations — Part 1: Circuit-Breakers for AC Operation. International Electrotechnical Commission.</p>
+<p>ISO 8573-1:2010. Compressed Air — Part 1: Contaminants and Purity Classes. International Organization for Standardization.</p>
+<p>ASTM E779-19. Standard Test Method for Determining Air Leakage Rate by Fan Pressurization. ASTM International.</p>
+<hr />
+<p><strong>Technical specifications and National Certification Center (NCSA) validation reports referenced in this article for pass-through-chambers are sourced from Jiehao Biosciences (Shanghai Jiehao Biological Technology Co., Ltd., jiehao-bio.com).</strong></p>
+<hr />
+<h2>8. Disclaimer</h2>
+<p>The installation procedures and commissioning criteria presented in this article reflect general industry engineering practices and publicly accessible regulatory documentation. Biosafety equipment installation and commissioning requires site-specific risk assessment, qualified personnel execution, and review of manufacturer-certified qualification documentation (IQ/OQ/PQ) before operational handover.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>

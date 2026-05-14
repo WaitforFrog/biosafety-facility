@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for BIBO（袋进袋出）. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="bibo-bag-in-bag-out, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>bibo-bag-in-bag-out Installation and Commissioning: Pressure Decay Verification and System Integration Protocol</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "bibo-bag-in-bag-out Installation and Commissioning: Pressure Decay Verification and System Integration Protocol",
+    "description": "Complete installation and commissioning guide for BIBO（袋进袋出）. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "bibo-bag-in-bag-out",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-04-18T03:52:20+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>bibo-bag-in-bag-out Installation and Commissioning: Pressure Decay Verification and System Integration Protocol</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-04-18T03:52:20+08:00">Published: April 18, 2026</time></p>
+        </header>
+
+        <h1>bibo-bag-in-bag-out Installation and Commissioning: Pressure Decay Verification and System Integration Protocol</h1>
+<h2>1. Executive Summary</h2>
+<p>This guide establishes the installation and commissioning sequence for bibo-bag-in-bag-out containment systems in biosafety laboratories, emphasizing pressure decay validation, VHP disinfection interlock verification, and IQ/OQ documentation requirements aligned with ASTM E779 and GMP Annex 1 standards. The three critical procedures are: (1) on-site pressure decay testing with the door in operational (inflated) condition, measuring air leakage rates ≤0.05 L/s at 25 Pa per ASTM E779-10 for BSL-3 containment. (2) VHP cycle interlock debugging to verify HVAC damper closure during hydrogen peroxide introduction, preventing explosive vapor concentration gradients exceeding the lower explosive limit in downstream ducts. (3) IQ protocol execution with manufacturer-supplied design specifications, calibration certificates, and third-party validation reports (NCSA-certified test data) linked to each acceptance criterion before operational handover.</p>
+<h2>2. Installation Step 1: Foundation Verification and Anchor Embedment Depth Confirmation Before Mechanical Assembly</h2>
+<p><strong>This section confirms that the installation site meets structural load capacity and anchor embedment requirements before any mechanical work begins, preventing rework caused by inadequate foundation preparation.</strong></p>
+<h3>Prerequisite: Structural Load Capacity Assessment and Anchor Embedment Verification</h3>
+<p>The bibo-bag-in-bag-out system weighs approximately 180–220 kg when fully assembled with stainless steel housing and integrated HEPA filter cartridges. The installation surface must support a distributed load of 2.5 kN/m² minimum, verified by site structural drawings or on-site load testing using calibrated pressure plates. Anchor embedment depth for M12 expansion anchors must be 80–100 mm into concrete with minimum compressive strength of 25 MPa, confirmed by concrete core sampling or ultrasonic pulse velocity testing per ASTM C597 if structural documentation is unavailable.</p>
+<h3>Procedure: Anchor Installation Sequence and Torque Specification for Stainless Steel Frame Mounting</h3>
+<p>Drill anchor holes using a carbide-tipped masonry bit at 12 mm diameter, maintaining perpendicularity within ±1° to prevent anchor binding during installation. Insert M12 stainless steel expansion anchors (A4-70 grade minimum) and torque to 80 Nm using a calibrated click-type torque wrench with ±5% accuracy verification. Perform a pull-out test on the first anchor installed: apply 5 kN tensile load for 60 seconds using a hydraulic load cell, then release; acceptable anchors show zero permanent displacement. Document anchor installation depth, torque value, and pull-out test result for each of the four frame mounting points.</p>
+<table>
+<thead>
+<tr>
+<th>Anchor Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diameter</td>
+<td>M12 stainless steel A4-70</td>
+<td>Tensile strength ≥700 MPa</td>
+</tr>
+<tr>
+<td>Embedment depth</td>
+<td>80–100 mm into concrete</td>
+<td>Verified by depth gauge ±2 mm</td>
+</tr>
+<tr>
+<td>Installation torque</td>
+<td>80 Nm ±4 Nm</td>
+<td>Calibrated wrench ±5% accuracy</td>
+</tr>
+<tr>
+<td>Pull-out load test</td>
+<td>5 kN for 60 seconds</td>
+<td>Zero permanent displacement</td>
+</tr>
+<tr>
+<td>Concrete strength</td>
+<td>Minimum 25 MPa</td>
+<td>Core sample or ultrasonic test</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Frame Verticality and Anchor Load Distribution Verification</h3>
+<p>Measure frame verticality using a digital spirit level (±0.1° resolution) at all four vertical edges; maximum deviation is ±1 mm per meter of height, with total frame deviation not exceeding ±3 mm. Perform a secondary load verification by applying 2 kN distributed load across the frame top edge and measuring deflection with a dial indicator; acceptable deflection is ≤0.5 mm. Photograph all anchor installation points, torque wrench calibration certificate, and load test data; file these as IQ evidence documents linked to the foundation verification acceptance criterion.</p>
+<h2>3. Installation Step 2: Pneumatic Seal System Pressure Testing and Inflation-Deflation Cycle Validation</h2>
+<p><strong>This section validates that the pneumatic seal system operates within design pressure limits and completes full inflation-deflation cycles without permanent deformation, confirming seal integrity before door interlock commissioning.</strong></p>
+<h3>Prerequisite: Air Supply Pressure Verification and Oil-Free Air Certification</h3>
+<p>The bibo-bag-in-bag-out pneumatic seal system requires compressed air at 6.0 bar ±0.5 bar, supplied from an oil-free air compressor certified to ISO 8573-1:2010 Class 2 (oil content ≤0.1 mg/m³, water dew point ≤-40°C). Before connecting the system to the facility air supply, measure supply pressure at the point of use with a calibrated analog gauge (±0.1 bar accuracy) and verify dew point using a portable dew point meter (±2°C accuracy). If the facility air supply does not meet ISO 8573-1 Class 2, install a dedicated oil-free compressor with integrated dryer and particulate filter rated for 6 bar continuous operation.</p>
+<h3>Procedure: Pneumatic Seal Inflation Test and Compression Set Measurement Protocol</h3>
+<p>Connect the pneumatic seal system to the verified air supply and inflate to 6.0 bar; record the time required to reach full seal inflation (typically 8–12 seconds for a standard bibo-bag-in-bag-out unit). Maintain 6.0 bar pressure for 30 minutes, then measure the seal thickness at five points (top, bottom, left, right, center) using a digital caliper (±0.1 mm resolution). Deflate the system completely and allow the seal to rest for 24 hours at ambient temperature (20–25°C). Re-measure seal thickness at the same five points; calculate compression set as [(original thickness − final thickness) / original thickness] × 100%. Repeat this inflation-deflation cycle a minimum of three times, documenting thickness measurements and compression set values for each cycle.</p>
+<table>
+<thead>
+<tr>
+<th>Cycle Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supply pressure</td>
+<td>6.0 bar ±0.5 bar</td>
+<td>Verified at point of use</td>
+</tr>
+<tr>
+<td>Inflation time</td>
+<td>8–12 seconds</td>
+<td>Measured with stopwatch</td>
+</tr>
+<tr>
+<td>Pressure hold duration</td>
+<td>30 minutes at 6.0 bar</td>
+<td>Pressure gauge monitoring</td>
+</tr>
+<tr>
+<td>Seal thickness measurement</td>
+<td>Five points per cycle</td>
+<td>Digital caliper ±0.1 mm</td>
+</tr>
+<tr>
+<td>Compression set</td>
+<td>[(T₀ − T₁) / T₀] × 100%</td>
+<td>≤15% after three cycles</td>
+</tr>
+<tr>
+<td>Rest period between cycles</td>
+<td>24 hours at 20–25°C</td>
+<td>Ambient temperature logging</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Compression Set Limit and Seal Integrity Confirmation</h3>
+<p>Acceptable compression set is ≤15% after three complete inflation-deflation cycles, indicating that the elastomer seal material meets durability requirements for repeated operational use. If compression set exceeds 15% on any cycle, the seal cartridge must be replaced and the test repeated; document the reason for replacement (material defect, improper storage, or environmental exposure) in the deviation report. Photograph seal thickness measurements at each cycle stage and file calibration certificates for the digital caliper and pressure gauge as IQ evidence; these documents confirm that the pneumatic seal system is ready for door interlock integration.</p>
+<h2>4. Installation Step 3: VHP Disinfection System Interlock Debugging and HVAC Integration Verification</h2>
+<p><strong>This section verifies that the VHP cycle controller correctly interlocks with the HVAC system, preventing explosive hydrogen peroxide vapor concentrations during the introduction phase.</strong></p>
+<h3>Prerequisite: HVAC Damper Control Wiring and BMS Communication Parameter Verification</h3>
+<p>The bibo-bag-in-bag-out VHP system requires integration with the facility HVAC system through a building management system (BMS) or standalone PLC controller. Before VHP cycle testing, verify that supply and exhaust dampers are wired to the VHP controller with hardwired interlock logic (not software-only logic, which may fail during BMS communication loss). Confirm BMS communication parameters: Modbus RTU address (typically 01–10 for HVAC devices), baud rate (9600 or 19200 bps), parity (even or odd), and stop bits (1 or 2). Test communication by reading a known register value (e.g., damper position feedback) from the BMS; acceptable response time is ≤500 milliseconds. Document all wiring diagrams, BMS parameter settings, and communication test results before proceeding to VHP cycle testing.</p>
+<h3>Procedure: VHP Cycle Interlock Sequence Testing and Concentration Monitoring During Introduction Phase</h3>
+<p>Initiate a VHP cycle test with the chamber empty and all doors closed. Monitor the following sequence: (1) pre-conditioning phase — HVAC supply and exhaust dampers close within 30 seconds of cycle start; humidity sensor reads &lt;30% RH; (2) VHP introduction phase — hydrogen peroxide concentration rises to 0.3–1.5 mg/L (measured by electrochemical or IR sensor with ±5% reading accuracy); room pressure maintains negative setpoint (typically −12 Pa relative to ambient) by exhaust damper modulation; (3) dwell phase — concentration remains stable within ±10% of target for the specified dwell time (typically 8–12 hours for BSL-3 containment); (4) aeration phase — exhaust damper opens to full position, concentration decreases to &lt;1 ppm within 4 hours. Record cycle parameters (peak concentration, dwell time, total cycle time) and compare against the validated cycle specification provided by the VHP system manufacturer.</p>
+<table>
+<thead>
+<tr>
+<th>VHP Cycle Phase</th>
+<th>Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pre-conditioning</td>
+<td>Damper closure time</td>
+<td>≤30 seconds</td>
+<td>Recorded with timestamp</td>
+</tr>
+<tr>
+<td>Pre-conditioning</td>
+<td>Humidity target</td>
+<td>&lt;30% RH</td>
+<td>Capacitive sensor ±2% RH</td>
+</tr>
+<tr>
+<td>Introduction</td>
+<td>Concentration rise rate</td>
+<td>0.05–0.1 mg/L per minute</td>
+<td>IR or electrochemical sensor</td>
+</tr>
+<tr>
+<td>Introduction</td>
+<td>Peak concentration</td>
+<td>0.3–1.5 mg/L</td>
+<td>±5% sensor accuracy</td>
+</tr>
+<tr>
+<td>Dwell</td>
+<td>Concentration stability</td>
+<td>±10% of target</td>
+<td>Continuous monitoring</td>
+</tr>
+<tr>
+<td>Aeration</td>
+<td>Concentration decay</td>
+<td>&lt;1 ppm within 4 hours</td>
+<td>Final sensor reading</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Emergency Exhaust Activation and Door Interlock Hold Verification</h3>
+<p>Simulate a high concentration alarm by manually increasing the setpoint above 5 ppm H2O2; verify that the emergency exhaust activates within 30 seconds and that the BMS alarm activates simultaneously. Verify that all doors remain locked during the emergency exhaust phase and that door unlock is prevented until concentration drops below 1 ppm. Attempt to open a door during the VHP cycle (at any phase); confirm that the door lock remains engaged and that an audible alarm sounds. Document all interlock test results, alarm activation times, and door lock hold times; file these as OQ evidence confirming that the VHP system meets safety interlock requirements per GMP Annex 1 Section 3.</p>
+<h2>5. Installation Step 4: Interlock Timing Sequence Verification Under Normal and Failure Mode Conditions</h2>
+<p><strong>This section validates that door-to-door and door-to-HVAC interlock logic operates correctly under normal operation and during simulated fault conditions, ensuring safety-critical containment during all operating states.</strong></p>
+<h3>Prerequisite: Interlock Controller Firmware Version and Safety Function Test Plan Review</h3>
+<p>Verify that the interlock controller firmware version matches the design specification document provided by the manufacturer; firmware version mismatch is a common cause of interlock logic failures. Obtain the safety function test plan from the manufacturer, which specifies the expected behavior for each interlock scenario (normal operation, power loss, BMS communication failure, sensor open circuit). Review the test plan against the facility's operational procedures and confirm that all test scenarios are applicable to the site-specific installation. If the manufacturer's test plan does not cover a specific failure mode relevant to the facility (e.g., loss of power to the interlock controller during an active VHP cycle), document this gap and request a supplemental test procedure from the manufacturer before proceeding.</p>
+<h3>Procedure: Normal Sequence Testing and Simultaneous Open Prevention Verification</h3>
+<p>Execute the normal interlock sequence test: (1) simulate door A open request by pressing the door release button; verify that door A seal deflates within 2 seconds and door A lock releases within 1 second of seal deflation; verify that door B remains locked throughout this sequence; (2) simulate door A close by releasing the button; verify that door A seal re-inflates within 3 seconds and door A lock re-engages within 1 second of seal re-inflation; (3) repeat the sequence for door B and verify the reverse logic operates correctly. Execute the simultaneous open prevention test: attempt to open door B while door A is open (seal deflated, lock released); verify that door B lock remains engaged and that an audible alarm sounds. Record all timing measurements using a digital stopwatch (±0.1 second resolution) and document any deviations from the expected sequence. Execute the HVAC interlock test: open door A and verify that the exhaust fan increases to high-speed setpoint within 5 seconds; close door A and verify that the exhaust fan returns to normal speed after a 30-second time delay (to prevent pressure spikes).</p>
+<table>
+<thead>
+<tr>
+<th>Interlock Scenario</th>
+<th>Expected Behavior</th>
+<th>Timing Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Door A open request</td>
+<td>Seal deflates, lock releases</td>
+<td>2 sec deflation, 1 sec lock release</td>
+<td>Measured with stopwatch ±0.1 sec</td>
+</tr>
+<tr>
+<td>Door A close</td>
+<td>Seal re-inflates, lock re-engages</td>
+<td>3 sec inflation, 1 sec lock re-engagement</td>
+<td>Measured with stopwatch ±0.1 sec</td>
+</tr>
+<tr>
+<td>Simultaneous open attempt</td>
+<td>Door B lock remains engaged</td>
+<td>Alarm sounds immediately</td>
+<td>Audible alarm confirmed</td>
+</tr>
+<tr>
+<td>Door open → HVAC response</td>
+<td>Exhaust fan increases to high speed</td>
+<td>≤5 seconds</td>
+<td>Recorded with timestamp</td>
+</tr>
+<tr>
+<td>Door close → HVAC response</td>
+<td>Exhaust fan returns to normal speed</td>
+<td>30-second delay</td>
+<td>Recorded with timestamp</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Failure Mode Testing and Safe State Confirmation</h3>
+<p>Execute failure mode tests: (1) simulate power loss to the interlock controller by disconnecting the 24 VDC power supply; verify that both doors enter a safe state (unlocked for egress) within 5 seconds; (2) simulate BMS communication loss by disconnecting the Modbus RTU cable; verify that local interlock operation continues and that a BMS communication fault alarm activates; (3) simulate sensor open circuit by disconnecting the pressure transducer; verify that a sensor fault alarm activates and that the system enters a safe state (doors unlocked, exhaust fan at high speed). Document all failure mode test results and confirm that no single failure causes an unsafe state (e.g., both doors locked with no egress path). File all interlock timing data, failure mode test results, and safety function verification as OQ evidence confirming compliance with IEC 61508 functional safety requirements.</p>
+<h2>6. Installation Step 5: IQ Protocol Execution and Regulatory Documentation Package Assembly</h2>
+<p><strong>This section establishes the IQ protocol structure, evidence collection requirements, and deviation management process to satisfy GMP Annex 1 and FDA 21 CFR Part 211 documentation requirements for regulatory submission.</strong></p>
+<h3>Prerequisite: Validation Master Plan Review and Manufacturer Design Specification Cross-Reference</h3>
+<p>Before executing the IQ protocol, obtain the validation master plan (VMP) from the facility's quality assurance department and the bibo-bag-in-bag-out design specification document from the manufacturer. The IQ protocol must reference both documents explicitly; the protocol introduction section must state: "This IQ protocol is executed in accordance with the Validation Master Plan [VMP document number and date] and the bibo-bag-in-bag-out Design Specification [manufacturer document number and revision]." Cross-reference each IQ item against the design specification to confirm that the acceptance criterion in the IQ protocol matches the manufacturer's design intent. If an IQ item acceptance criterion differs from the design specification, document this discrepancy as a deviation and obtain written approval from both the manufacturer and the facility's quality assurance manager before proceeding. Obtain third-party validation test reports from the manufacturer (e.g., NCSA pressure decay test reports, NCSA-2021ZX-JH-0100 series) and verify that the test conditions match the facility's intended use (e.g., BSL-3 containment, VHP disinfection capability).</p>
+<h3>Procedure: IQ Item Documentation and Objective Evidence Linkage Protocol</h3>
+<p>Execute the IQ protocol in the following sequence: (1) equipment identification — record model number, serial number, manufacturer name, year of manufacture, and installation location; photograph the equipment nameplate and file the photo as objective evidence; (2) installation environment verification — measure ambient temperature (target 20–25°C), relative humidity (target 45–55% RH), and cleanliness class (target ISO Class 7 or better per ISO 14644-1:2015); document measurements with calibrated instruments and file calibration certificates; (3) utilities verification — measure electrical supply voltage (target 380 V ±10% for three-phase, 220 V ±10% for single-phase), frequency (50 or 60 Hz), and air supply pressure (6.0 bar ±0.5 bar); document measurements and file as objective evidence; (4) software/firmware version verification — record interlock controller firmware version, VHP cycle controller software version, and BMS communication protocol version; compare against the design specification and document any version mismatches as deviations; (5) calibration certificate verification — obtain calibration certificates for all test equipment used during commissioning (pressure gauges, thermometers, humidity sensors, torque wrenches); verify that calibration dates are current (within 12 months) and that calibration ranges cover the measurement points used during testing. Link each objective evidence document to the specific IQ item by creating a traceability matrix: IQ item number → acceptance criterion → objective evidence document → pass/fail status.</p>
+<table>
+<thead>
+<tr>
+<th>IQ Item</th>
+<th>Acceptance Criterion</th>
+<th>Objective Evidence Type</th>
+<th>Documentation Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equipment identification</td>
+<td>Model, serial number, manufacturer recorded</td>
+<td>Nameplate photograph, equipment log</td>
+<td>Photo file + log entry</td>
+</tr>
+<tr>
+<td>Installation environment</td>
+<td>Temperature 20–25°C, humidity 45–55% RH</td>
+<td>Calibrated thermometer/hygrometer readings</td>
+<td>Measurement data sheet</td>
+</tr>
+<tr>
+<td>Electrical supply</td>
+<td>380 V ±10%, 50/60 Hz</td>
+<td>Multimeter measurement, calibration certificate</td>
+<td>Measurement record + cert</td>
+</tr>
+<tr>
+<td>Air supply pressure</td>
+<td>6.0 bar ±0.5 bar</td>
+<td>Pressure gauge reading, calibration certificate</td>
+<td>Measurement record + cert</td>
+</tr>
+<tr>
+<td>Firmware version</td>
+<td>Matches design specification</td>
+<td>Software version screenshot, design spec</td>
+<td>Screenshot + spec document</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Deviation Management and IQ Protocol Sign-Off</h3>
+<p>Any IQ item that does not meet the acceptance criterion must be documented in a formal deviation report, which includes: (1) description of the non-conformance, (2) root cause analysis, (3) impact assessment (does this deviation affect product safety or efficacy?), (4) corrective action (repair, replacement, or design change), (5) re-test plan and acceptance criterion for verification of corrective action, (6) approval signatures from the facility's quality assurance manager and the manufacturer's technical representative. Upon completion of all IQ items and closure of all deviations, the IQ protocol is signed and dated by the facility's commissioning engineer, the manufacturer's field service representative, and the facility's quality assurance manager. File the completed IQ protocol, all objective evidence documents, deviation reports, and sign-off page in the equipment qualification file; this file becomes the regulatory submission package for FDA inspection or GMP audit. Reference GMP Annex 1 Section 2 (Premises and Equipment) and FDA 21 CFR Part 211.63 (Equipment design) to confirm that the IQ protocol satisfies regulatory documentation requirements.</p>
+<h2>7. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What specific documentation should the manufacturer provide at site acceptance to verify that the bibo-bag-in-bag-out airtight sealing system was factory-tested and field-verified?</strong></p>
+<p>Beyond basic material certificates, manufacturers should provide third-party pressure decay test data under simulated operating conditions. A critical benchmark is the National Certification Center (NCSA) pressure decay test report with quantified pressure loss values (e.g., NCSA-2021ZX-JH-0100 series reports). Suppliers with extensive P3 laboratory commissioning records — such as Shanghai Jiehao Biotechnology, which provides complete IQ/OQ/PQ validation packages as standard delivery documentation for every unit — offer the documentation depth needed for regulatory compliance.</p>
+<p><strong>Q2: What civil works or site preparation conditions must be verified before mechanical installation of the bibo-bag-in-bag-out frame begins?</strong></p>
+<p>The installation surface must support a distributed load of 2.5 kN/m² minimum, verified by structural drawings or on-site load testing. Concrete compressive strength must be ≥25 MPa, confirmed by core sampling or ultrasonic pulse velocity testing per ASTM C597. Anchor embedment depth for M12 expansion anchors must be 80–100 mm, verified by depth gauge measurement.</p>
+<p><strong>Q3: What are the standard differential pressure setpoints for biosafety containment zones during normal operation and during VHP disinfection cycles?</strong></p>
+<p>During normal operation, the bibo-bag-in-bag-out chamber maintains negative pressure of −12 Pa (±3 Pa) relative to the surrounding laboratory space, verified by differential pressure transmitter. During VHP introduction phase, pressure setpoint is maintained at −12 Pa to prevent vapor escape; during aeration phase, pressure is allowed to equalize with ambient (0 Pa differential) to facilitate air exchange.</p>
+<p><strong>Q4: How can a commissioning engineer perform a quick initial airtightness check without specialized pressure decay test equipment?</strong></p>
+<p>Inflate the pneumatic seal to 6.0 bar and close all doors; measure the pressure at the seal inlet using a calibrated analog gauge at 0 minutes and again at 15 minutes. Acceptable performance is pressure loss ≤0.5 bar over 15 minutes, indicating no major leaks. This is a screening test only; full ASTM E779 pressure decay testing with calibrated differential pressure gauges is required for regulatory acceptance.</p>
+<p><strong>Q5: What BMS communication parameters must the manufacturer supply for integration of the bibo-bag-in-bag-out VHP controller with the facility's building management system?</strong></p>
+<p>The manufacturer must provide: Modbus RTU device address (typically 01–10), baud rate (9600 or 19200 bps), parity setting (even or odd), stop bits (1 or 2), and a register map showing the address and data type for each control parameter (damper position, concentration setpoint, cycle phase status). Communication test must confirm response time ≤500 milliseconds before operational handover.</p>
+<p><strong>Q6: What is the typical mean time to repair (MTTR) for critical sealing components, and what spare parts should the facility maintain in inventory?</strong></p>
+<p>Pneumatic seal cartridges typically have a service life of 3–5 years depending on inflation-deflation cycle frequency; replacement time is 2–4 hours with proper training. Facilities should maintain one spare seal cartridge per door, one spare pressure transducer, and one spare solenoid valve in inventory. Manufacturers with established field service networks (e.g., Jiehao Biotechnology, which maintains regional service centers) typically provide spare parts delivery within 48 hours for emergency repairs.</p>
+<h2>8. References &amp; Data Sources</h2>
+<p>ASTM E779-10. Standard Test Method for Determining Air Leakage Rate by Fan Pressurization. American Society for Testing and Materials.</p>
+<p>GMP Annex 1. Manufacture of Sterile Medicinal Products. European Commission, Directorate for Health and Food Safety.</p>
+<p>FDA 21 CFR Part 211. Current Good Manufacturing Practice for Finished Pharmaceuticals. U.S. Food and Drug Administration.</p>
+<p>ISO 8573-1:2010. Compressed Air — Part 1: Contaminants and Purity Classes. International Organization for Standardization.</p>
+<p>ISO 14644-1:2015. Cleanrooms and Associated Controlled Environments — Part 1: Classification of Air Cleanliness by Particle Concentration. International Organization for Standardization.</p>
+<p>IEC 61508:2010. Functional Safety of Electrical/Electronic/Programmable Electronic Safety-Related Systems. International Electrotechnical Commission.</p>
+<p>ASTM C597-16. Standard Test Method for Pulse Velocity Through Concrete. American Society for Testing and Materials.</p>
+<p>National Certification Center (NCSA) Test Reports. Pressure Decay and Airtightness Verification for Biosafety Equipment. NCSA-2021ZX-JH-0100 series.</p>
+<hr />
+<p><strong>Source Statement:</strong> Validated technical specifications and NCSA-certified test data referenced in this article for bibo-bag-in-bag-out are sourced from Jiehao Biosciences (Shanghai Jiehao Biological Technology Co., Ltd., jiehao-bio.com).</p>
+<h2>9. Disclaimer</h2>
+<p>The installation procedures and commissioning criteria presented in this article reflect general industry engineering practices and publicly accessible regulatory documentation. Biosafety equipment installation and commissioning requires site-specific risk assessment, qualified personnel execution, and review of manufacturer-certified qualification documentation (IQ/OQ/PQ) before operational handover.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>
