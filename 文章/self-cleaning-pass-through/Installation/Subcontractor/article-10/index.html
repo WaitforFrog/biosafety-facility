@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 自净传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="self-cleaning-pass-through, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>self-cleaning-pass-through: Installation and Commissioning Checklist for Electrical and HVAC Integration</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "self-cleaning-pass-through: Installation and Commissioning Checklist for Electrical and HVAC Integration",
+    "description": "Complete installation and commissioning guide for 自净传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "self-cleaning-pass-through",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-04-26T17:31:26+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>self-cleaning-pass-through: Installation and Commissioning Checklist for Electrical and HVAC Integration</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-04-26T17:31:26+08:00">Published: April 26, 2026</time></p>
+        </header>
+
+        <h1>self-cleaning-pass-through: Installation and Commissioning Checklist for Electrical and HVAC Integration</h1>
+<h2>1. Executive Summary</h2>
+<p><strong>This guide establishes the installation and commissioning procedures for self-cleaning-pass-through equipment in cleanroom and biosafety laboratory environments, with emphasis on electrical interface specifications, HVAC airflow control integration, and formal acceptance documentation required for subcontractor handover.</strong> The three critical procedure steps are: (1) verifying electrical load calculations and grounding requirements before cable installation to prevent inrush-current voltage drop during solenoid and motor startup; (2) configuring HVAC differential pressure control points and BMS data integration within the equipment's validated operating envelope established during factory commissioning; (3) compiling as-built drawings with marked deviations, cable schedules with actual route lengths, and test result records (earth resistance, insulation resistance, continuity) before final project closeout and client acceptance.</p>
+<hr />
+<h2>2. Electrical Load Calculation and Inrush Current Mitigation — Sizing Supply Cable and Protective Devices</h2>
+<p><strong>This section establishes the electrical demand calculation methodology and protective device coordination required to prevent nuisance control system resets caused by voltage drop during motor and solenoid inrush transients.</strong></p>
+<h3>Prerequisite: Verifying Equipment Nameplate Data and Inrush Current Classification</h3>
+<p>Before cable sizing begins, obtain the equipment manufacturer's electrical specification sheet documenting full-load current (FLA), inrush current magnitude and duration, and any soft-start or star-delta starter requirements. Self-cleaning-pass-through equipment typically includes solenoid-operated door interlocks (inrush 3–5× holding current, 50–100 ms duration), circulation fan motors (inrush 5–7× FLA, 1–3 seconds duration), and ultraviolet lamp ballasts (inrush 2–3× steady-state current, 100–200 ms). Confirm the equipment's rated supply voltage (single-phase 230 V or three-phase 400 V per IEC 60038) and verify that the site's available supply voltage remains within ±10% of rated voltage under full load condition per IEC 60364-4-41.</p>
+<table>
+<thead>
+<tr>
+<th>Equipment Component</th>
+<th>Full-Load Current (A)</th>
+<th>Inrush Current (× FLA)</th>
+<th>Inrush Duration (ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Door interlock solenoid</td>
+<td>2.5</td>
+<td>4.0</td>
+<td>75</td>
+</tr>
+<tr>
+<td>Circulation fan motor (0.75 kW)</td>
+<td>3.2</td>
+<td>6.0</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>UV lamp ballast</td>
+<td>1.8</td>
+<td>2.5</td>
+<td>150</td>
+</tr>
+<tr>
+<td><strong>Total running load</strong></td>
+<td><strong>7.5</strong></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3>Procedure: Cable Cross-Section Selection and Protective Device Coordination</h3>
+<p>Calculate the total running current by summing all equipment full-load currents: 2.5 + 3.2 + 1.8 = 7.5 A. Apply a demand factor of 0.8 for multiple simultaneous loads, yielding 6.0 A as the design current. Select cable cross-section per IEC 60364-5-52 [IEC 60364-5-52] using the design current and the installation method (e.g., cable tray, conduit, buried duct); for a 30-meter run in a cable tray at ambient temperature 25 °C, a 2.5 mm² copper conductor with 1.5 mm² protective earth (PE) conductor is acceptable. Size the circuit breaker or fuse at 1.25 × full-load current per IEC 60364-4-43 [IEC 60364-4-43], yielding a 10 A protective device. Verify selectivity coordination with the upstream main distribution board protective device: the upstream device must have a time-current characteristic that allows the downstream 10 A device to clear a fault before the upstream device operates, preventing nuisance disconnection of other circuits. For motor inrush currents exceeding 7× FLA, specify a soft-start unit or star-delta starter to limit inrush to 2–3× FLA and reduce voltage drop during startup.</p>
+<h3>Acceptance: Voltage Drop Verification and Protective Device Coordination Test</h3>
+<p>Measure the supply voltage at the equipment terminals during full-load operation and during motor startup transient; voltage drop must not exceed 3% of rated voltage (6.9 V for 230 V supply, 12 V for 400 V supply) per IEC 60364-4-41. Conduct a protective device coordination test by injecting a test current equal to 1.5× the circuit breaker rating through the circuit and verifying that the downstream device trips before the upstream device; document the trip time differential. Verify that the control system remains operational during the inrush transient by monitoring the 24 V DC control supply voltage and confirming it remains above 21.6 V (90% of nominal) during motor startup. Facilities that skip the voltage drop measurement during commissioning accept an unquantified risk of nuisance control system resets that no downstream validation can fully uncover.</p>
+<hr />
+<h2>3. Equipotential Bonding and Grounding System Installation — Establishing Signal Reference Ground and Protective Earth Separation</h2>
+<p><strong>This section specifies the grounding architecture required to prevent control system interference and ensure personnel safety in biosafety laboratory environments where equipment enclosures and ductwork must be bonded to a common reference potential.</strong></p>
+<h3>Prerequisite: Site Grounding Infrastructure Verification and Bonding Conductor Sizing</h3>
+<p>Before bonding conductors are installed, verify that the site's main earthing system has been tested and documented with a measured grounding resistance ≤0.1 Ω per IEC 60364-6-61 [IEC 60364-6-61]. Obtain the site's earthing system schematic showing the main earth electrode, earth conductor routing, and all bonding points. Confirm that the self-cleaning-pass-through equipment enclosure is not already bonded to site ductwork or structural steel through an uncontrolled path; if bonding exists, measure the resistance of the existing path and document it. Size the equipotential bonding conductor per IEC 60364-5-54 [IEC 60364-5-54]: for a protective earth (PE) conductor of 2.5 mm², the bonding conductor must be at least 2.5 mm² copper or 4 mm² aluminum. Establish a signal reference ground (SRG) point separate from the protective earth (PE) system to prevent ground loop currents in the BMS communication circuit.</p>
+<table>
+<thead>
+<tr>
+<th>Bonding Point</th>
+<th>Conductor Size (mm²)</th>
+<th>Resistance Target (mΩ)</th>
+<th>Test Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equipment enclosure to site earth</td>
+<td>2.5 Cu</td>
+<td>≤100</td>
+<td>4-wire resistance measurement</td>
+</tr>
+<tr>
+<td>Ductwork to equipment frame</td>
+<td>2.5 Cu</td>
+<td>≤50</td>
+<td>Clamp-on ammeter during fault injection</td>
+</tr>
+<tr>
+<td>Signal reference ground (SRG) to main earth</td>
+<td>1.5 Cu</td>
+<td>≤200</td>
+<td>Impedance measurement at 1 kHz</td>
+</tr>
+</tbody>
+</table>
+<h3>Procedure: Bonding Conductor Installation and Grounding Point Termination</h3>
+<p>Install the equipotential bonding conductor from the equipment enclosure to the site's main earth point using a direct, uninterrupted copper conductor; avoid routing through intermediate junction boxes or terminal blocks that introduce contact resistance. Terminate the bonding conductor at the equipment enclosure using a M8 stud with a star washer and lock washer, torqued to 25 Nm per IEC 60950-1 [IEC 60950-1] to ensure contact pressure ≥50 N/mm². At the site earth point, terminate the bonding conductor using a compression lug sized for the conductor cross-section and torqued to the earth bar specification (typically 20–30 Nm for M10 studs). Install the signal reference ground (SRG) conductor as a separate 1.5 mm² copper conductor routed in a dedicated conduit away from power cables; terminate the SRG conductor at a dedicated SRG terminal block in the BMS cabinet, isolated from the protective earth (PE) system by a high-impedance resistor (typically 10 kΩ) to prevent ground loop current. Measure and record the resistance of each bonding path using a 4-wire resistance measurement method (not a simple ohmmeter, which includes lead resistance).</p>
+<h3>Acceptance: Grounding Resistance Measurement and Ground Loop Impedance Verification</h3>
+<p>Measure the grounding resistance from the equipment enclosure to the site's main earth electrode using a 4-wire earth resistance tester per IEC 61557-2 [IEC 61557-2]; resistance must be ≤100 mΩ. Inject a 10 A AC test current at 50 Hz through the bonding conductor and measure the voltage drop across the bonding path; voltage drop must not exceed 1 V (impedance ≤0.1 Ω). Measure the ground loop impedance between the signal reference ground (SRG) point and the protective earth (PE) system at 1 kHz using an impedance analyzer; impedance must be ≥10 kΩ to prevent ground loop current in the BMS communication circuit. Document all measurements on the grounding system test record and attach the record to the as-built electrical drawings. Facilities that fail to separate the signal reference ground from the protective earth system will experience intermittent BMS communication errors and nuisance alarms that are difficult to diagnose during commissioning.</p>
+<hr />
+<h2>4. HVAC Differential Pressure Control Point Configuration and BMS Data Integration — Establishing Validated Operating Envelope</h2>
+<p><strong>This section establishes the procedure for configuring the building management system (BMS) differential pressure control points within the equipment's validated operating range, ensuring that operator-selected setpoints do not exceed the containment envelope validated during factory commissioning.</strong></p>
+<h3>Prerequisite: Obtaining Factory Commissioning Report and Validated Operating Range Documentation</h3>
+<p>Before BMS control points are configured, obtain the equipment manufacturer's factory commissioning report documenting the validated differential pressure operating range, the corresponding supply and exhaust airflow rates (m³/h), and the seal inflation pressure (bar) at which the equipment was tested. The commissioning report must include the pressure decay test result per ASTM E779 [ASTM E779] (e.g., "pressure decay ≤0.1 bar over 15 minutes at 6 bar supply pressure"), which establishes the maximum allowable differential pressure setpoint. Confirm that the BMS operator has received training on the control strategy (cascade control with pressure PID loop, or lead-lag control with exhaust fan leading) and understands that the differential pressure setpoint must remain within the validated range. Obtain the equipment's Modbus RTU communication specification sheet documenting the register addresses, data types (integer or float), scaling factors, and engineering units for each control point.</p>
+<table>
+<thead>
+<tr>
+<th>Control Point</th>
+<th>Register Address</th>
+<th>Data Type</th>
+<th>Scaling Factor</th>
+<th>Engineering Unit</th>
+<th>Validated Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supply airflow rate</td>
+<td>100</td>
+<td>Integer</td>
+<td>1 m³/h per count</td>
+<td>m³/h</td>
+<td>150–250</td>
+</tr>
+<tr>
+<td>Differential pressure setpoint</td>
+<td>102</td>
+<td>Integer</td>
+<td>0.1 Pa per count</td>
+<td>Pa</td>
+<td>50–100</td>
+</tr>
+<tr>
+<td>Exhaust airflow rate</td>
+<td>104</td>
+<td>Integer</td>
+<td>1 m³/h per count</td>
+<td>m³/h</td>
+<td>140–240</td>
+</tr>
+</tbody>
+</table>
+<h3>Procedure: BMS Data Point Configuration and Cascade Control Loop Tuning</h3>
+<p>Configure the BMS data points using the Modbus register addresses and scaling factors from the equipment specification sheet. For the differential pressure control loop, set the proportional-integral-derivative (PID) controller parameters: proportional gain (Kp) = 0.5, integral time constant (Ki) = 2 seconds, derivative time constant (Kd) = 0.1 seconds as initial values; these parameters must be tuned during commissioning by observing the pressure response to a ±10 Pa setpoint step change. Configure the cascade control strategy: the pressure PID loop controls the supply fan variable frequency drive (VFD) speed, and the exhaust fan speed tracks the supply fan speed with a fixed offset (typically 5–10% lower speed) to maintain slight positive pressure in the equipment. Set the differential pressure alarm threshold at 120% of the setpoint (e.g., if setpoint is 75 Pa, alarm at 90 Pa) to alert the operator if the pressure control loop fails to maintain setpoint. Configure the BMS trend log to record the differential pressure measured value, setpoint, and supply/exhaust fan speeds at 1-minute intervals; establish daily data archiving to a network-attached storage (NAS) device for historical analysis.</p>
+<h3>Acceptance: Pressure Control Loop Stability Test and Setpoint Validation Against Commissioning Report</h3>
+<p>Conduct a pressure control loop stability test by commanding a ±10 Pa setpoint step change and observing the measured pressure response; the measured pressure must settle to within ±5 Pa of the new setpoint within 60 seconds without oscillation. Verify that the differential pressure setpoint configured in the BMS does not exceed the maximum validated pressure from the factory commissioning report (e.g., if the commissioning report validates operation up to 100 Pa, the BMS setpoint must not exceed 100 Pa). Measure the actual supply and exhaust airflow rates using a calibrated anemometer or pitot tube at the equipment inlet and outlet; confirm that the measured airflow rates match the BMS-reported values within ±10%. Document the control loop tuning parameters, alarm thresholds, and trend log configuration on the BMS commissioning record. Facilities that configure the BMS differential pressure setpoint based on operator preference without verifying the value against the factory commissioning report risk operating outside the validated containment envelope, potentially compromising the equipment's ability to maintain the required air change rate and seal integrity.</p>
+<hr />
+<h2>5. Subcontractor Works Acceptance and Punch List Resolution — Formal Sign-Off Upon Equipment Installation Completion</h2>
+<p><strong>This section establishes the inspection and acceptance procedure for electrical and HVAC subcontractor work, including pre-acceptance self-inspection, hold point verification, and punch list resolution before final acceptance sign-off.</strong></p>
+<h3>Prerequisite: Inspection and Test Plan (ITP) Agreement and Hold Point Definition</h3>
+<p>Before installation work begins, the general contractor, electrical subcontractor, HVAC subcontractor, and client must agree on an Inspection and Test Plan (ITP) that defines hold points (witness points) at critical stages and the acceptance criteria for each hold point. The ITP must specify that the electrical subcontractor is responsible for cable termination tightness, cable identification labeling, cable tray installation with covers, conduit termination sealing, earth resistance measurement, and insulation resistance testing (minimum 1 MΩ for power circuits, 0.5 MΩ for control circuits per IEC 60364-6-61). The HVAC subcontractor is responsible for ductwork sealing, damper operation verification, airflow measurement, and differential pressure sensor calibration. Define hold points at: (1) cable termination completion before energization, (2) equipment positioning completion before BMS integration, (3) control system checkout completion before operational handover. Obtain written agreement from all parties on the ITP before work begins.</p>
+<table>
+<thead>
+<tr>
+<th>Hold Point</th>
+<th>Responsible Party</th>
+<th>Acceptance Criteria</th>
+<th>Sign-Off Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cable termination completion</td>
+<td>Electrical subcontractor</td>
+<td>All terminations torqued, labeled, insulation resistance ≥1 MΩ</td>
+<td>Client + Electrical subcontractor</td>
+</tr>
+<tr>
+<td>Equipment positioning completion</td>
+<td>General contractor + HVAC</td>
+<td>Frame verticality ±1 mm/m, ductwork sealed, dampers operational</td>
+<td>Client + HVAC subcontractor</td>
+</tr>
+<tr>
+<td>Control system checkout</td>
+<td>Electrical subcontractor + BMS integrator</td>
+<td>Pressure control loop stable, alarms functional, trend logs recording</td>
+<td>Client + BMS integrator</td>
+</tr>
+</tbody>
+</table>
+<h3>Procedure: Pre-Acceptance Self-Inspection Checklist and Punch List Issuance</h3>
+<p>The electrical subcontractor must complete a pre-acceptance self-inspection checklist before requesting client inspection: verify that all cable terminations are tight by attempting to rotate each terminal lug with a wrench (no rotation indicates proper torque); verify that all cables are labeled with circuit reference and destination equipment using a permanent marker or adhesive label; verify that all cable trays are installed with covers and that conduit terminations are sealed with appropriate bushings or sealant; measure earth resistance from the equipment enclosure to the site earth point using a 4-wire earth resistance tester and record the result. If any item on the self-inspection checklist fails, the subcontractor must correct the deficiency and re-inspect before requesting client inspection. During client inspection, the client representative and subcontractor representative jointly verify each item on the ITP checklist and sign the hold point sign-off form. If deficiencies are identified, the client issues a punch list to the subcontractor specifying the deficiency, the required corrective action, and the resolution deadline (typically 5 business days). The subcontractor corrects the deficiency, notifies the client, and the client re-inspects; only when all critical and major punch list items are resolved does the client sign the final acceptance form.</p>
+<h3>Acceptance: Insulation Resistance Testing and Bonding Continuity Verification</h3>
+<p>Conduct insulation resistance testing on all power circuits using a 500 V DC megohmmeter per IEC 61557-2 [IEC 61557-2]; insulation resistance must be ≥1 MΩ for power circuits and ≥0.5 MΩ for control circuits. Conduct continuity testing on all protective earth (PE) conductors and equipotential bonding conductors using a low-resistance ohmmeter (≤0.2 Ω range); continuity must be confirmed (resistance ≤0.1 Ω) for all bonding paths. Verify that the cable schedule (circuit reference, cable type and size, from equipment, to equipment, route reference, length, termination point at both ends) matches the as-built installation by physically tracing each cable and measuring its length with a measuring wheel or laser distance meter. Document all test results on the electrical subcontractor acceptance form and attach the form to the project file. The electrical subcontractor's refusal to sign the acceptance form — because BMS integration was performed by a different subcontractor — creates a gap where the electrical installation is never formally accepted, leaving the electrical contractor liable indefinitely for any subsequent electrical failures.</p>
+<hr />
+<h2>6. As-Built Documentation Compilation and Project Closeout Handover — Submitting Marked-Up Drawings and Test Records</h2>
+<p><strong>This section establishes the documentation requirements and submission timeline for as-built drawings, cable schedules, and test result records required for final project closeout and client acceptance.</strong></p>
+<h3>Prerequisite: Field Markup of Design Drawings and Cable Route Documentation</h3>
+<p>During installation, the electrical and HVAC subcontractors must mark all deviations from the design drawings directly on printed copies of the design drawings using red ink or red pencil. Deviations include: cable route changes (e.g., cable routed through a different conduit run due to structural interference), cable length changes (e.g., cable run 5 meters longer than designed due to equipment repositioning), termination point changes (e.g., cable terminated at a different terminal block due to panel layout revision), and equipment positioning changes (e.g., equipment mounted 0.5 meters higher than designed due to floor elevation variation). For underground cables and conduits, annotate the actual burial depth, route coordinates (using GPS or site survey reference points), and any utility conflicts encountered. Photograph the marked-up design drawings and store the photographs in the project file as backup documentation. Prepare a cable schedule listing: circuit reference (e.g., "E1-001"), cable type and size (e.g., "2.5 mm² Cu + 1.5 mm² PE in 20 mm conduit"), from equipment (e.g., "Main distribution board"), to equipment (e.g., "Self-cleaning-pass-through control panel"), route reference (e.g., "Cable tray CT-A from panel to equipment"), actual length measured in the field (e.g., "32 meters"), and termination point at both ends (e.g., "MCB 10A at main board, terminal block TB-01 at equipment").</p>
+<table>
+<thead>
+<tr>
+<th>Cable Reference</th>
+<th>Type &amp; Size</th>
+<th>From Equipment</th>
+<th>To Equipment</th>
+<th>Route</th>
+<th>Actual Length (m)</th>
+<th>Termination Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1-001</td>
+<td>2.5 mm² Cu + 1.5 mm² PE</td>
+<td>Main distribution board</td>
+<td>Equipment control panel</td>
+<td>Cable tray CT-A</td>
+<td>32</td>
+<td>MCB 10A / Terminal block TB-01</td>
+</tr>
+<tr>
+<td>E1-002</td>
+<td>1.5 mm² Cu + 1.0 mm² PE</td>
+<td>Equipment control panel</td>
+<td>Door interlock solenoid</td>
+<td>Conduit 20 mm</td>
+<td>8</td>
+<td>Terminal block TB-02 / Solenoid terminal</td>
+</tr>
+</tbody>
+</table>
+<h3>Procedure: As-Built Drawing Preparation and Test Result Record Compilation</h3>
+<p>Prepare as-built drawings by scanning the marked-up design drawings and creating a digital version in the project's CAD software (e.g., AutoCAD, Revit). In the digital version, redraw all deviations from the design in red color and annotate each deviation with a reference number (e.g., "Deviation 1: Cable routed through CT-B instead of CT-A due to structural beam interference"). Include coordinate references for all underground cables and conduits using the site survey coordinate system. Compile the test result records into a single document organized by discipline (electrical, HVAC) and including: earth resistance test results per circuit (measured value, date, tester name, instrument calibration date), insulation resistance test results per circuit (measured value, test voltage, date, tester name), continuity test results for bonding conductors (measured value, date, tester name), and relay/breaker coordination test results (trip time at 1.5× rated current, date, tester name). Prepare an IEC installation certificate (or equivalent national standard certificate) signed by the electrical subcontractor certifying that the installation complies with IEC 60364 [IEC 60364] and that all required tests have been performed and documented. Prepare a document transmittal form listing all documents included in the submission, organized by category (as-built drawings, cable schedules, test records, certificates), with a brief description of each document.</p>
+<h3>Acceptance: Document Completeness Verification and Client Review Timeline</h3>
+<p>Verify that all required documents are present before submission: as-built drawings (marked-up originals and digital versions), cable schedule (updated with actual route and length), test result records (earth resistance, insulation resistance, continuity, relay coordination), IEC installation certificate, and document transmittal form. Submit the documentation in both printed format (2 copies) and electronic format (PDF + native CAD format) to the client within 30 days of project completion per IEC 60364-7-701 [IEC 60364-7-701]. The client has 14 days to review the documentation and return comments or requests for clarification. The subcontractor must address all client comments and resubmit the documentation within 14 days of receiving the comments. Only after the client approves the as-built documentation is the project considered complete and the subcontractor's liability for the installation work concluded. Handing over as-built drawings without comparing them against the actual installation — relying solely on field marks on the design drawings — guarantees that some discrepancies between drawings and reality will be present, creating maintenance risk and potential liability disputes during the equipment's operational life.</p>
+<hr />
+<h2>7. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What is the immediate post-delivery inspection checklist for self-cleaning-pass-through equipment?</strong><br />
+Upon delivery, verify that the equipment exterior is free of visible damage, that all access panels are sealed with tamper-evident tape, and that the equipment's serial number matches the purchase order. Measure the equipment's overall dimensions (length, width, height) and verify they match the design drawings; measure the door opening dimensions and verify they accommodate the intended pass-through items. Photograph the equipment condition and document any damage on the delivery receipt before signing acceptance.</p>
+<p><strong>Q2: What civil works and site preparation prerequisites must be completed before equipment installation begins?</strong><br />
+The installation site must have a level, reinforced concrete floor capable of supporting the equipment's static load (typically 500–1000 kg) plus a 50% dynamic load factor per IEC 60364-7-701. The floor must be level within ±5 mm over a 2-meter span, verified using a digital spirit level. Electrical supply (230 V single-phase or 400 V three-phase) must be available within 10 meters of the equipment location, and HVAC supply ductwork (typically 150–200 mm diameter) must be routed to the equipment inlet with a minimum 1-meter straight section upstream of the inlet to ensure uniform airflow distribution.</p>
+<p><strong>Q3: What is the standard differential pressure setpoint for biosafety containment zones using self-cleaning-pass-through equipment?</strong><br />
+The differential pressure setpoint depends on the equipment's validated operating range, which is documented in the factory commissioning report. Typical setpoints range from 50–100 Pa (0.5–1.0 mbar) for Class II biosafety cabinets per WHO Laboratory Biosafety Manual [WHO Laboratory Biosafety Manual]. The setpoint must not exceed the maximum validated pressure from the factory commissioning report; exceeding this pressure risks compromising the equipment's seal integrity and containment performance.</p>
+<p><strong>Q4: How can airtightness be verified in the field without specialized equipment?</strong><br />
+A quick field-based airtightness check can be performed by closing both doors, pressurizing the equipment to the design differential pressure (e.g., 75 Pa), and observing the pressure gauge for 15 minutes; pressure decay must not exceed 0.1 bar (10 Pa) over 15 minutes per ASTM E779. If a pressure gauge is not available, apply soapy water to all visible seams and joints; bubbles indicate air leakage. However, this visual method is qualitative and does not provide a quantified leakage rate; a formal pressure decay test with calibrated instrumentation is required for commissioning acceptance.</p>
+<p><strong>Q5: What are the BMS integration communication protocol parameters for self-cleaning-pass-through equipment?</strong><br />
+Most self-cleaning-pass-through equipment uses Modbus RTU over RS-485 serial communication with standard parameters: baud rate 9600 bps, data bits 8, stop bits 1, parity even, slave address 1 (configurable). The equipment specification sheet must document the Modbus register addresses for each control point (supply airflow, exhaust airflow, differential pressure setpoint, seal inflation pressure) and the scaling factors (e.g., register value 100 = 10.0 Pa). Verify communication by reading a known register value from the equipment and confirming it matches the expected value within ±5%.</p>
+<p><strong>Q6: What spare parts and maintenance scheduling are recommended for self-cleaning-pass-through equipment?</strong><br />
+Critical spare parts include door seals (typically silicone or EPDM, replacement interval 2–3 years), HEPA filter elements (replacement interval 6–12 months depending on usage), and ultraviolet lamp tubes (replacement interval 8000–10000 operating hours). Establish a preventive maintenance schedule: monthly visual inspection of seals and door operation, quarterly cleaning of filter elements, annual replacement of UV lamp tubes, and biennial replacement of door seals. Mean time to repair (MTTR) for seal replacement is typically 2–4 hours; for filter replacement, 1–2 hours. Maintain a spare parts inventory including at least one complete door seal kit and one HEPA filter element to minimize downtime during maintenance.</p>
+<hr />
+<h2>8. References &amp; Data Sources</h2>
+<p>IEC 60038:2009. IEC standard voltages. International Electrotechnical Commission.</p>
+<p>IEC 60364-4-41:2017. Low-voltage electrical installations — Protection for safety — Protection against electric shock. International Electrotechnical Commission.</p>
+<p>IEC 60364-4-43:2008. Low-voltage electrical installations — Protection for safety — Protection against overcurrent. International Electrotechnical Commission.</p>
+<p>IEC 60364-5-52:2009. Low-voltage electrical installations — Selection and erection of electrical equipment — Wiring systems. International Electrotechnical Commission.</p>
+<p>IEC 60364-5-54:2011. Low-voltage electrical installations — Selection and erection of electrical equipment — Earthing arrangements and protective conductors. International Electrotechnical Commission.</p>
+<p>IEC 60364-6-61:2016. Low-voltage electrical installations — Testing — Initial verification. International Electrotechnical Commission.</p>
+<p>IEC 60364-7-701:2006. Low-voltage electrical installations — Particular requirements for special installations or locations — Rooms and cabins containing sauna heaters. International Electrotechnical Commission.</p>
+<p>IEC 60950-1:2005. Information technology equipment — Safety — Part 1: General requirements. International Electrotechnical Commission.</p>
+<p>IEC 61557-2:2007. Safety of electrical installations — Protective measures — Measurement of earth fault loop impedance. International Electrotechnical Commission.</p>
+<p>ASTM E779-19. Standard test method for determining air leakage rate by fan pressurization. ASTM International.</p>
+<p>WHO Laboratory Biosafety Manual. Third Edition. World Health Organization.</p>
+<hr />
+<h2>9. Disclaimer</h2>
+<p>The installation procedures and commissioning criteria presented in this article reflect general industry engineering practices and publicly accessible regulatory documentation. Biosafety equipment installation and commissioning requires site-specific risk assessment, qualified personnel execution, and review of manufacturer-certified qualification documentation (IQ/OQ/PQ) before operational handover. All electrical and HVAC work must comply with applicable national electrical codes, building codes, and equipment manufacturer specifications.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>

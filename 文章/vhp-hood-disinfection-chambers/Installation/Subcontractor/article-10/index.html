@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 汽化过氧化氢头套熏蒸消毒舱. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="vhp-hood-disinfection-chambers, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>vhp-hood-disinfection-chambers: Installation and Commissioning Checklist for Electrical and HVAC Interface Integration</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "vhp-hood-disinfection-chambers: Installation and Commissioning Checklist for Electrical and HVAC Interface Integration",
+    "description": "Complete installation and commissioning guide for 汽化过氧化氢头套熏蒸消毒舱. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "vhp-hood-disinfection-chambers",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-05-13T17:55:01+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>vhp-hood-disinfection-chambers: Installation and Commissioning Checklist for Electrical and HVAC Interface Integration</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-05-13T17:55:01+08:00">Published: May 13, 2026</time></p>
+        </header>
+
+        <h1>vhp-hood-disinfection-chambers: Installation and Commissioning Checklist for Electrical and HVAC Interface Integration</h1>
+<h2>1. Executive Summary</h2>
+<p>This guide establishes the installation and commissioning procedures for vhp-hood-disinfection-chambers, focusing on electrical termination, HVAC duct sealing, and building management system communication integration for subcontractors. Three critical procedures determine commissioning success: (1) wiring termination must follow manufacturer terminal assignment tables rather than wire color alone, preventing cross-circuit faults in control and interlock circuits; (2) duct flange connections must not exceed 150 mm flexible length and require anaerobic sealant plus compressed fiber gasket to maintain the 0.25% hourly air leakage specification; (3) Modbus communication addresses must be unique per device to prevent address collision and phantom alarm generation. All procedures require site-specific verification against manufacturer IQ/OQ/PQ documentation before operational handover. This checklist applies to electrical contractors, HVAC subcontractors, and building automation system integrators.</p>
+<h2>2. Electrical Wiring Termination and Control Circuit Interface — Terminal Assignment Verification Before Wire Termination</h2>
+<p><strong>This section establishes the mandatory procedure for interpreting manufacturer wiring schematics and assigning field wires to terminal blocks, preventing wiring errors that cause interlock failures or false alarm signals.</strong></p>
+<h3>Prerequisite: Obtaining and Verifying Wiring Diagram Revision Control</h3>
+<p>Before any wire termination begins, the electrical contractor must obtain the manufacturer-provided wiring diagram and verify that the revision number matches the project specification document. The diagram must clearly identify all terminal blocks (X1 through X6) with their assigned functions: X1 = mains power input (L1, L2, L3, N, PE); X2 = control voltage input (24 VDC); X3 = field device inputs (door position sensors, pressure switches, emergency stop button); X4 = output signals (solenoid valve coils, indicator lamps, alarm relays); X5 = BMS communication terminals (Modbus RTU or ModbusTCP); X6 = ground bus. Any field modifications to the wiring diagram must be annotated on the as-built drawing and the revision number incremented before commissioning sign-off.</p>
+<h3>Procedure: Wire Sizing and Cable Type Selection Based on Circuit Function and Voltage Drop Calculation</h3>
+<table>
+<thead>
+<tr>
+<th>Circuit Function</th>
+<th>Cable Type</th>
+<th>Minimum Cross-Section</th>
+<th>Voltage Drop Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mains power (L1, L2, L3, N, PE)</td>
+<td>3-core or 5-core shielded, rated 450/750 V</td>
+<td>Per load current table; minimum 2.5 mm²</td>
+<td>3% at full load</td>
+</tr>
+<tr>
+<td>Control circuits (24 VDC)</td>
+<td>Shielded twisted pair (STP)</td>
+<td>1.5 mm² minimum</td>
+<td>3% at full load</td>
+</tr>
+<tr>
+<td>Field device inputs (door sensors, pressure)</td>
+<td>Multi-pair shielded cable</td>
+<td>0.75 mm² per pair</td>
+<td>5% acceptable for low-current signals</td>
+</tr>
+<tr>
+<td>BMS communication (Modbus RTU)</td>
+<td>Belden 3105A or equivalent RS-485 cable</td>
+<td>0.75 mm² twisted pair</td>
+<td>Not applicable (digital signal)</td>
+</tr>
+</tbody>
+</table>
+<p>Wire sizing must follow voltage drop calculation: voltage drop (%) = (2 × length in meters × current in amps × resistance per meter) / (voltage × cross-section in mm²). For control circuits at 24 VDC, maximum allowable drop is 3%, which typically limits 24 VDC circuit runs to 100 meters at 10 amps using 2.5 mm² cable. Grounding conductor (PE) must be sized per applicable electrical code (typically equal to the largest phase conductor, minimum 2.5 mm²). All cables entering the equipment panel must pass through cable glands with appropriate IP rating (minimum IP54 for indoor installation per IEC 60529).</p>
+<h3>Acceptance: Terminal Block Continuity and Insulation Resistance Verification</h3>
+<p>After wire termination is complete, the electrical contractor must perform continuity testing on each terminal block using a calibrated multimeter set to resistance mode (ohms). Continuity must be confirmed between the field wire and the corresponding terminal on the equipment control module — resistance must be less than 0.1 ohms. Insulation resistance testing must be performed between all live conductors and ground (PE) using a 500 VDC megohmmeter; minimum acceptable insulation resistance is 10 megohms. Any terminal block showing continuity failure or insulation resistance below 10 megohms must be reterminated and retested before proceeding to power-up verification.</p>
+<h2>3. HVAC Duct Flange Connection and Airtightness Sealing — Interface Specification and Pressure Decay Validation</h2>
+<p><strong>This section specifies the duct flange connection procedure and sealing method required to maintain the equipment's 0.25% hourly air leakage specification, preventing unquantifiable leakage pathways that bypass standard pressure testing.</strong></p>
+<h3>Prerequisite: Door Frame Installation Completion and Opening Dimension Verification</h3>
+<p>Before duct fabrication begins, the HVAC contractor must verify that the equipment door frame is fully installed, leveled, and secured to the building structure. The opening dimensions (height, width, depth) must be measured at three points (top, middle, bottom) and recorded; maximum deviation from nominal dimensions is ±2 mm. The ductwork connection point (flange outlet on the equipment) must be inspected for damage, corrosion, or manufacturing defects; any defects must be documented and reported to the equipment manufacturer before proceeding. Ductwork must not be fabricated until these measurements are confirmed and approved by the project engineer.</p>
+<h3>Procedure: Flange Sealing Method and Flexible Connection Length Limitation</h3>
+<p>The rectangular flange connection must be sealed using a continuous bead of anaerobic flange sealant (ThreeBond 1215 or equivalent, minimum 3 mm bead width) applied to the flange face before bolting. A compressed fiber gasket (minimum 3 mm thickness, 10 mm width) must be placed between the flange and ductwork connection. Bolts (M8 grade 8.8 minimum) must be torqued to 15–20 Nm in a cross pattern (diagonal sequence) to ensure even gasket compression. Flexible duct connection (if required) must not exceed 150 mm in length and must be constructed from EPDM or neoprene-coated fabric with minimum 2 full convolutions. Support brackets must be installed within 300 mm of each end of the flexible section to prevent vibration-induced fatigue. Ductwork velocity at the connection point must not exceed 12.5 m/s (calculated as volumetric flow rate in m³/s divided by duct cross-sectional area in m²); higher velocities introduce pressure fluctuations that degrade seal integrity.</p>
+<table>
+<thead>
+<tr>
+<th>Flange Connection Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sealant type</td>
+<td>Anaerobic (ThreeBond 1215 or equivalent)</td>
+<td>Continuous bead, no gaps or voids</td>
+</tr>
+<tr>
+<td>Gasket material</td>
+<td>Compressed fiber, 3 mm thickness minimum</td>
+<td>Uniform compression, no extrusion</td>
+</tr>
+<tr>
+<td>Bolt torque</td>
+<td>15–20 Nm, M8 grade 8.8</td>
+<td>Measured with calibrated torque wrench, ±5% accuracy</td>
+</tr>
+<tr>
+<td>Flexible duct length</td>
+<td>Maximum 150 mm</td>
+<td>Measured end-to-end, no exceptions</td>
+</tr>
+<tr>
+<td>Duct velocity</td>
+<td>≤12.5 m/s at connection</td>
+<td>Calculated from flow rate and area</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Pressure Decay Test at 1.5× Design Pressure Per SMACNA HVAC Systems Ducting Standard</h3>
+<p>After flange connection and sealing are complete, the HVAC contractor must perform a pressure decay test on the ductwork upstream of the equipment connection. The ductwork is pressurized to 1.5 times the design operating pressure (typically 1.5 × 250 Pa = 375 Pa for biosafety applications) and held for 15 minutes. Pressure decay must not exceed 0.1 bar (10 kPa) over the 15-minute hold period, measured with a calibrated digital manometer (±2% accuracy). If pressure decay exceeds 0.1 bar, the flange connection and gasket must be inspected for leakage, resealed if necessary, and retested. Ductwork leakage classification must be verified as Class 3 or better per SMACNA HVAC Systems Ducting Standard [SMACNA HVAC Systems Ducting Standard], confirming that total ductwork leakage does not exceed 0.5% of design flow rate.</p>
+<h2>4. Modbus RTU Communication Configuration and Address Assignment — Preventing Address Collision and Phantom Alarm Generation</h2>
+<p><strong>This section establishes the procedure for configuring unique Modbus RTU device addresses and communication parameters, preventing address collision that causes simultaneous device response and communication corruption.</strong></p>
+<h3>Prerequisite: RS-485 Cable Installation and Termination Resistor Placement Verification</h3>
+<p>Before Modbus RTU communication configuration begins, the electrical contractor must verify that the RS-485 communication cable (Belden 3105A or equivalent) is installed from the building management system (BMS) server to each biosafety equipment device. The cable must be routed separately from power cables (minimum 150 mm separation) to prevent electromagnetic interference. Termination resistors (120 ohms, 0.5 W minimum) must be installed at both ends of the RS-485 trunk line only — not at intermediate device connections. The contractor must verify termination resistor placement using a multimeter set to resistance mode: measure between the RS-485 A and B lines at each end of the trunk; resistance must be approximately 120 ohms at each end. Any intermediate device connection point must show open circuit (infinite resistance) between A and B lines, confirming that no termination resistor is present at that location.</p>
+<h3>Procedure: Unique Device Address Assignment and Baud Rate Configuration</h3>
+<p>Each biosafety equipment device connected to the Modbus RTU network must be assigned a unique device address in the range 1–247. The device address must be configured using the equipment's control panel touchscreen or handheld Modbus configuration tool (e.g., Modbus Poll software). The following communication parameters must be set identically across all devices on the same RS-485 trunk line: baud rate 9600 or 19200 bits per second (must match BMS server configuration); data bits 8; parity even (recommended) or none; stop bits 2 (if even parity) or 1 (if no parity). After address and baud rate configuration, the contractor must document the device address, baud rate, and parity setting on the as-built drawing and in the BMS system configuration file. A handheld Modbus scanner must be used to verify that each device responds to its assigned address by reading register 40001 (door status register); if a device does not respond, the address assignment must be rechecked and the device reconfigured.</p>
+<table>
+<thead>
+<tr>
+<th>Modbus RTU Parameter</th>
+<th>Configuration Value</th>
+<th>Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Device address (per device)</td>
+<td>1–247, unique per device</td>
+<td>Handheld Modbus scanner reads register 40001</td>
+</tr>
+<tr>
+<td>Baud rate (all devices on trunk)</td>
+<td>9600 or 19200 bps</td>
+<td>Verify in equipment control panel and BMS server</td>
+</tr>
+<tr>
+<td>Data bits</td>
+<td>8</td>
+<td>Verify in equipment control panel</td>
+</tr>
+<tr>
+<td>Parity</td>
+<td>Even (recommended) or none</td>
+<td>Verify in equipment control panel</td>
+</tr>
+<tr>
+<td>Stop bits</td>
+<td>2 (even parity) or 1 (no parity)</td>
+<td>Verify in equipment control panel</td>
+</tr>
+<tr>
+<td>Termination resistor</td>
+<td>120 Ω at trunk ends only</td>
+<td>Multimeter resistance measurement at cable ends</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Modbus Read/Write Verification and Alarm Response Test</h3>
+<p>After Modbus RTU configuration is complete, the contractor must perform a read/write verification test using the BMS server or handheld Modbus scanner. The test procedure is: (1) read register 40001 (door status) from each device — response must be received within 3 seconds; (2) write to coil 00001 (door open command) on one device only — verify that only the addressed device responds and no other device on the trunk line responds; (3) read register 40050 (cycle count) from each device — verify that each device returns a unique value corresponding to its own cycle history, not a value from another device. If any device fails to respond within 3 seconds, or if multiple devices respond to a single-device write command, the address assignment must be verified and the device reconfigured. After successful read/write verification, the contractor must trigger a test alarm (e.g., by pressing the emergency stop button on one device) and verify that the BMS server receives the alarm signal from only that device, not from all devices on the trunk line.</p>
+<h2>5. ModbusTCP Ethernet Communication and Network Isolation — Preventing Security Exposure and Traffic Congestion</h2>
+<p><strong>This section specifies the procedure for configuring ModbusTCP communication with network isolation via VLAN, preventing security risks and communication degradation from shared IT network traffic.</strong></p>
+<h3>Prerequisite: Network Infrastructure Assessment and VLAN Availability Confirmation</h3>
+<p>Before ModbusTCP configuration begins, the building IT department and BMS contractor must jointly verify that a dedicated VLAN (virtual local area network) is available for building automation systems, separate from the corporate IT network. The VLAN must be configured on the network switch with a unique VLAN ID (e.g., VLAN 100 for building automation). The contractor must verify that the network switch port connected to the biosafety equipment is configured as a member of the building automation VLAN, not the corporate IT VLAN. A network connectivity test must be performed: ping the equipment's default IP address (typically 192.168.1.100) from a device on the building automation VLAN — response time must be less than 50 milliseconds. If the equipment is on a different VLAN or network segment, the ping will fail; the network configuration must be corrected before proceeding.</p>
+<h3>Procedure: Static IP Address Assignment and Firewall Rule Configuration</h3>
+<p>Each biosafety equipment device must be assigned a static IP address (not DHCP) within the building automation VLAN subnet. The IP address must be documented in the BMS system configuration file and on the as-built drawing. The equipment's default gateway must be set to the VLAN gateway IP address (e.g., 192.168.1.1). The Modbus unit ID (1–247) must be configured in the equipment control panel and must match the Modbus unit ID used in the BMS server configuration. Firewall rules must be configured to allow only the BMS server IP address to access the equipment's ModbusTCP port (TCP port 502). All other network traffic to the equipment must be blocked. The BMS server must be configured with the following ModbusTCP communication parameters: connection timeout 3 seconds (recommended); retry count 3; polling interval 500 milliseconds minimum. After configuration, the contractor must verify connectivity by opening a terminal window on the BMS server and executing the command "telnet [equipment IP address] 502" — if the connection succeeds, the equipment is listening on port 502 and ModbusTCP communication is ready for testing.</p>
+<table>
+<thead>
+<tr>
+<th>ModbusTCP Parameter</th>
+<th>Configuration Value</th>
+<th>Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP address (per device)</td>
+<td>Static, within building automation VLAN subnet</td>
+<td>Ping from BMS server; response time &lt;50 ms</td>
+</tr>
+<tr>
+<td>Subnet mask</td>
+<td>Per VLAN configuration (typically 255.255.255.0)</td>
+<td>Verify in equipment network settings</td>
+</tr>
+<tr>
+<td>Default gateway</td>
+<td>VLAN gateway IP address</td>
+<td>Verify in equipment network settings</td>
+</tr>
+<tr>
+<td>Modbus unit ID</td>
+<td>1–247, unique per device</td>
+<td>Verify in equipment control panel and BMS server</td>
+</tr>
+<tr>
+<td>TCP port</td>
+<td>502 (standard Modbus port)</td>
+<td>Telnet test: "telnet [IP] 502" succeeds</td>
+</tr>
+<tr>
+<td>Connection timeout</td>
+<td>3 seconds (recommended)</td>
+<td>Verify in BMS server configuration</td>
+</tr>
+<tr>
+<td>Polling interval</td>
+<td>≥500 milliseconds</td>
+<td>Verify in BMS server configuration</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: ModbusTCP Read/Write Verification and Network Isolation Confirmation</h3>
+<p>After ModbusTCP configuration is complete, the contractor must perform a read/write verification test from the BMS server. The test procedure is: (1) read holding register 40001 (door status) from each device — response must be received within 3 seconds; (2) write to coil 00001 (door open command) on one device only — verify that only the addressed device responds; (3) verify that no network traffic from the equipment appears on the corporate IT network by monitoring network traffic on the IT VLAN using a network analyzer tool (e.g., Wireshark) — no ModbusTCP packets should be visible on the IT VLAN. If ModbusTCP traffic appears on the IT VLAN, the network switch configuration must be corrected to ensure the equipment port is isolated to the building automation VLAN only. After successful read/write verification and network isolation confirmation, the contractor must document the equipment IP address, Modbus unit ID, and network VLAN assignment in the BMS system configuration file and on the as-built drawing.</p>
+<h2>6. Commissioning Pressure Decay Validation and Airtightness Certification — Final Acceptance Testing Per GB 50346-2011</h2>
+<p><strong>This section establishes the final commissioning procedure for verifying that the installed equipment meets the 0.25% hourly air leakage specification and can withstand 2500 Pa pressure without deformation.</strong></p>
+<h3>Prerequisite: Equipment Installation Completion and Visual Inspection for Damage or Defects</h3>
+<p>Before commissioning pressure testing begins, the installation contractor must perform a complete visual inspection of the equipment, door frame, duct connections, and all sealing surfaces. The inspection must verify: (1) door frame is level and plumb (verticality ±1 mm/m, maximum total deviation ±3 mm, measured with a digital spirit level); (2) all duct flange connections are bolted and sealed (no visible gaps or sealant voids); (3) all electrical terminations are complete and labeled; (4) all BMS communication cables are connected and tested; (5) no visible damage, dents, or corrosion on the equipment exterior or interior surfaces. Any defects must be documented and corrected before proceeding to pressure testing. The equipment must be powered on and the control system must be verified to be operational (touchscreen responsive, all indicator lights functioning).</p>
+<h3>Procedure: Pressure Decay Test at 6 Bar Supply Pressure and 15-Minute Hold Period</h3>
+<p>The commissioning engineer must perform a pressure decay test on the equipment chamber using compressed air supplied at 6 bar (600 kPa) from a calibrated air compressor. The air supply must be oil-free and dry (per ISO 8573-1:2010 [ISO 8573-1:2010] Class 2 or better: maximum 0.5 mg/m³ oil content, maximum 3% relative humidity). A calibrated digital manometer (±2% accuracy) must be connected to the equipment chamber pressure port. The chamber is pressurized to 6 bar and held for 15 minutes without any air input or output. Pressure decay is recorded at 0, 5, 10, and 15 minutes. Acceptable pressure decay is ≤0.1 bar (10 kPa) over the 15-minute period, which corresponds to a leakage rate of approximately 0.25% of the chamber volume per hour (per GB 50346-2011 [GB 50346-2011] specification). If pressure decay exceeds 0.1 bar, the equipment must be depressurized, inspected for visible leakage (soap bubble test on all seams and connections), and any leaking seals must be resealed or replaced before retesting.</p>
+<table>
+<thead>
+<tr>
+<th>Pressure Decay Test Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supply pressure</td>
+<td>6 bar (600 kPa)</td>
+<td>Measured with calibrated manometer, ±2% accuracy</td>
+</tr>
+<tr>
+<td>Air supply quality</td>
+<td>ISO 8573-1 Class 2 or better</td>
+<td>Oil content ≤0.5 mg/m³, relative humidity ≤3%</td>
+</tr>
+<tr>
+<td>Hold period</td>
+<td>15 minutes</td>
+<td>Continuous, no air input or output</td>
+</tr>
+<tr>
+<td>Pressure decay limit</td>
+<td>≤0.1 bar (10 kPa)</td>
+<td>Measured at 15 minutes; corresponds to 0.25% hourly leakage</td>
+</tr>
+<tr>
+<td>Measurement points</td>
+<td>0, 5, 10, 15 minutes</td>
+<td>Record pressure at each interval</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Pressure Decay Documentation and Deformation Inspection at 2500 Pa</h3>
+<p>After the 15-minute pressure decay test is complete and pressure decay is confirmed to be ≤0.1 bar, the commissioning engineer must perform a deformation inspection at 2500 Pa (25 bar) supply pressure. The equipment is pressurized to 2500 Pa and held for 1 hour. During the 1-hour hold, the engineer must visually inspect the equipment exterior and interior for any visible deformation, bulging, or permanent shape change. After the 1-hour hold, the pressure is released and the equipment is inspected again for any permanent deformation. If no permanent deformation is observed, the equipment meets the GB 50346-2011 specification for pressure resistance. The pressure decay test results (pressure readings at 0, 5, 10, 15 minutes) and the deformation inspection results must be documented on the commissioning report and signed by the commissioning engineer. The report must include the date, time, equipment serial number, air supply pressure, manometer calibration date, and the name and signature of the commissioning engineer. This documentation becomes part of the equipment's permanent record and must be retained for the equipment's operational lifetime.</p>
+<h2>7. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What is the immediate post-delivery inspection checklist before equipment installation begins?</strong><br />
+Upon delivery, verify that the equipment serial number matches the purchase order, inspect the exterior for shipping damage (dents, corrosion, or cracks), and confirm that all manufacturer-provided documentation (wiring diagrams, Modbus configuration guides, IQ/OQ/PQ protocols) is included. Photograph any damage and report it to the manufacturer within 24 hours; do not proceed with installation until damage is resolved or documented as accepted by the project manager.</p>
+<p><strong>Q2: What civil works and site preparation must be completed before equipment installation begins?</strong><br />
+The installation site must have a level, reinforced concrete floor capable of supporting the equipment weight (typically 500–800 kg); floor levelness must be verified within ±5 mm over the equipment footprint. Electrical power (220 V, 50 Hz, 4.5 kW minimum) and compressed air supply (0.6 MPa, oil-free per ISO 8573-1 Class 2) must be available within 10 meters of the equipment location. HVAC ductwork connections must be fabricated to match the equipment outlet flange dimensions (±2 mm tolerance) before installation begins.</p>
+<p><strong>Q3: What differential pressure settings are typical for biosafety containment zones, and how are they verified?</strong><br />
+Biosafety equipment typically operates at +1000 Pa (10 mbar) internal pressure relative to the surrounding room, creating a positive pressure barrier that prevents external contamination from entering the chamber. Differential pressure is verified using a calibrated digital manometer connected to the chamber pressure port; the manometer must be accurate to ±2% of the reading. Pressure must be maintained within ±50 Pa of the setpoint during normal operation.</p>
+<p><strong>Q4: What field-based airtightness verification method can be used without specialized equipment?</strong><br />
+A soap bubble test can be performed by applying a dilute soap solution (dish soap and water) to all visible seams, gaskets, and connection points on the equipment exterior. Bubbles indicate air leakage; any bubbles must be investigated and the leaking seal must be resealed or replaced. This method is qualitative only and does not replace the quantitative pressure decay test required for commissioning acceptance.</p>
+<p><strong>Q5: What are the critical BMS integration parameters for Modbus communication, and how do I verify interoperability?</strong><br />
+Modbus RTU requires unique device addresses (1–247), matching baud rate (9600 or 19200 bps), and proper RS-485 termination (120 Ω at trunk ends only). Modbus TCP requires static IP addresses, unique Modbus unit IDs, and network isolation via VLAN. Interoperability is verified by reading register 40001 (door status) from each device using a handheld Modbus scanner or BMS server; response time must be less than 3 seconds and each device must respond only to its assigned address.</p>
+<p><strong>Q6: What spare parts and maintenance intervals are critical for biosafety equipment sealing integrity?</strong><br />
+Critical spare parts include door gaskets (silicone rubber, typically replaced every 2–3 years), HEPA filters (H14 grade, replaced annually or when pressure drop exceeds 250 Pa), and anaerobic flange sealant (ThreeBond 1215 or equivalent, used for any duct reconnection). Preventive maintenance should include quarterly visual inspection of all seals and gaskets for cracks or hardening, and annual pressure decay testing to verify that leakage remains below 0.1 bar over 15 minutes.</p>
+<h2>8. References &amp; Data Sources</h2>
+<p>GB 50346-2011. Code for Design of Biosafety Laboratory. Ministry of Housing and Urban-Rural Development of the People's Republic of China.</p>
+<p>GB 19489-2008. Laboratory Biosafety General Requirements. Standardization Administration of the People's Republic of China.</p>
+<p>ISO 8573-1:2010. Compressed Air — Part 1: Contaminants and Purity Classes. International Organization for Standardization.</p>
+<p>ISO 14644-1:2024. Cleanrooms and Associated Controlled Environments — Part 1: Classification of Air Cleanliness by Particle Concentration. International Organization for Standardization.</p>
+<p>ASTM E779-22. Standard Test Method for Determining Air Leakage Rate by Fan Pressurization. ASTM International.</p>
+<p>SMACNA HVAC Systems Ducting Standard. Sheet Metal and Air Conditioning Contractors' National Association.</p>
+<p>IEC 60529:2020. Degrees of Protection Provided by Enclosures (IP Code). International Electrotechnical Commission.</p>
+<p>Modbus Organization. Modbus Application Protocol Specification V1.1b3. Available at www.modbus.org.</p>
+<h2>9. Disclaimer</h2>
+<p>This installation and commissioning guide is based on publicly available engineering standards, published industry specifications, and documented field validation procedures. All installation and commissioning activities for biosafety-critical equipment must be performed by qualified personnel, validated against on-site conditions, and reviewed against manufacturer-provided IQ/OQ/PQ documentation before operational handover. Site-specific risk assessment and compliance with local regulatory requirements are the responsibility of the project owner and qualified installation contractor.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>

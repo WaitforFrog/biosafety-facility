@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 氙光传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="xenon-pass-through, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>xenon-pass-through Installation and Commissioning: Electrical Interface and Control System Setup Guide</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "xenon-pass-through Installation and Commissioning: Electrical Interface and Control System Setup Guide",
+    "description": "Complete installation and commissioning guide for 氙光传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "xenon-pass-through",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-04-30T05:35:26+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>xenon-pass-through Installation and Commissioning: Electrical Interface and Control System Setup Guide</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-04-30T05:35:26+08:00">Published: April 30, 2026</time></p>
+        </header>
+
+        <h1>xenon-pass-through Installation and Commissioning: Electrical Interface and Control System Setup Guide</h1>
+<h2>1. Executive Summary</h2>
+<p>This guide establishes the step-by-step installation and commissioning procedures for xenon-pass-through equipment, focusing on electrical wiring termination, BMS communication protocol configuration, and interlock control logic handover to operations staff. The xenon-pass-through is a pulsed xenon lamp sterilization transfer chamber designed for biosafety laboratory and pharmaceutical cleanroom applications, operating at irradiance levels exceeding 5,000 μW/cm² with 360-degree sterilization coverage and electronic dual-door interlock protection. Installation success depends on three critical procedural sequences: (1) correct terminal assignment and wire color verification against manufacturer wiring diagrams to prevent control circuit faults; (2) unique Modbus RTU device address assignment and communication parameter configuration to eliminate address collision and phantom alarm generation; (3) documented interlock control philosophy handover to facilities management staff with plain-language logic description and acceptance testing before operational release. Each procedure includes specific acceptance criteria referenced to applicable international standards including ISO 14644-1 for cleanroom integration, ASTM E779 for pressure decay validation, and IEC 61010-1 for electrical safety of laboratory equipment.</p>
+<hr />
+<h2>2. Electrical Wiring Termination and Terminal Assignment Verification — Preventing Cross-Circuit Wire Misconnection</h2>
+<p><strong>This section establishes the procedure for interpreting manufacturer wiring schematics and correctly terminating power, control, and communication cables to terminal blocks, with specific emphasis on wire color coding verification and terminal assignment table cross-referencing.</strong></p>
+<h3>Prerequisite: Obtaining and Verifying Wiring Diagram Revision Control Documentation</h3>
+<p>Before any wire termination begins, the installation team must obtain the manufacturer-provided wiring diagram package and verify that the revision number matches the equipment serial number and project specification. The wiring diagram package must include: (1) single-line power distribution diagram showing mains input (L1, L2, L3, N, PE) and circuit breaker assignments; (2) control circuit schematic showing terminal block X1 through X6 with signal names and wire color assignments; (3) field device connection diagram showing door position sensors, pressure switches, emergency stop button, and solenoid valve coil connections; (4) BMS communication wiring diagram showing RS-485 trunk line topology and termination resistor placement. Verify that the revision number printed on the diagram matches the revision number recorded in the equipment delivery documentation; if revision numbers do not match, contact the manufacturer before proceeding with installation.</p>
+<h3>Procedure: Terminal Block Assignment and Wire Color Cross-Reference Against Manufacturer Terminal Assignment Table</h3>
+<p>The xenon-pass-through control panel contains six terminal blocks designated X1 through X6, each serving a distinct circuit function. Terminal block X1 receives mains power input: L1 (brown wire), L2 (black wire), L3 (grey wire), N (blue wire), PE (green-yellow striped wire). Terminal block X2 receives 24 VDC control voltage from the internal power supply: +24V (red wire), 0V/GND (black wire). Terminal block X3 receives field device inputs: door position switch (terminals 3A and 3B, typically white wire pair), pressure differential switch (terminals 3C and 3D, typically yellow wire pair), emergency stop button (terminals 3E and 3F, typically red wire pair). Terminal block X4 outputs control signals: solenoid valve coil for door unlock (terminals 4A and 4B, 24 VDC), indicator lamp for door locked status (terminals 4C and 4D, 24 VDC). Terminal block X5 provides BMS communication: RS-485 positive line (terminal 5A, typically green wire), RS-485 negative line (terminal 5B, typically white wire), shield ground (terminal 5C, connected to equipment frame ground). Terminal block X6 is the main equipment ground bus: all equipment frames, cable shields, and PE conductors terminate here.</p>
+<table>
+<thead>
+<tr>
+<th>Terminal Block</th>
+<th>Signal Name</th>
+<th>Wire Color</th>
+<th>Voltage/Current</th>
+<th>Cable Type</th>
+<th>Cross-Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X1 (Mains Input)</td>
+<td>L1, L2, L3, N, PE</td>
+<td>Brown, Black, Grey, Blue, Green-Yellow</td>
+<td>220V 50Hz</td>
+<td>3-core + PE shielded</td>
+<td>2.5 mm² minimum</td>
+</tr>
+<tr>
+<td>X2 (Control Supply)</td>
+<td>+24V, 0V/GND</td>
+<td>Red, Black</td>
+<td>24 VDC</td>
+<td>Shielded twisted pair</td>
+<td>1.5 mm²</td>
+</tr>
+<tr>
+<td>X3 (Field Inputs)</td>
+<td>Door Position, Pressure Switch, E-Stop</td>
+<td>White, Yellow, Red pairs</td>
+<td>24 VDC logic</td>
+<td>Shielded twisted pair</td>
+<td>1.0 mm²</td>
+</tr>
+<tr>
+<td>X4 (Control Outputs)</td>
+<td>Solenoid Valve, Indicator Lamp</td>
+<td>Orange, Purple pairs</td>
+<td>24 VDC 2A max</td>
+<td>Shielded twisted pair</td>
+<td>1.5 mm²</td>
+</tr>
+<tr>
+<td>X5 (BMS RS-485)</td>
+<td>A(+), B(−), Shield</td>
+<td>Green, White, Bare</td>
+<td>Differential signal</td>
+<td>Belden 3105A or equivalent</td>
+<td>0.75 mm²</td>
+</tr>
+<tr>
+<td>X6 (Ground Bus)</td>
+<td>Equipment Frame, Cable Shields, PE</td>
+<td>Green-Yellow</td>
+<td>0V reference</td>
+<td>Copper bar or bus</td>
+<td>6 mm² minimum</td>
+</tr>
+</tbody>
+</table>
+<p>Before terminating any wire, verify the wire color against the terminal assignment table above. If a wire color does not match the table, do not proceed; contact the manufacturer to confirm the correct wire assignment. Use a calibrated multimeter set to resistance mode to verify continuity between the wire conductor and the terminal block contact before applying power. Terminate each wire using a crimped terminal lug sized to match the terminal block contact diameter (typically M4 or M5 stud); do not use bare wire or solder-only connections. Torque each terminal block screw to 2.5 Nm using a calibrated torque screwdriver to ensure consistent contact pressure and prevent future loosening.</p>
+<h3>Acceptance: Voltage Measurement and Continuity Verification at All Terminal Blocks</h3>
+<p>After all wires are terminated, measure voltage at each terminal block using a calibrated digital multimeter set to the appropriate voltage range (AC for mains input, DC for control circuits). At terminal block X1, verify that L1, L2, and L3 each measure 220V ±10% AC relative to N, and that PE measures 0V AC relative to N (indicating proper grounding). At terminal block X2, verify that +24V measures 24V ±5% DC relative to 0V/GND, and that this voltage is stable over a 5-minute observation period. At terminal blocks X3 and X4, verify that 24 VDC is present at the positive terminals and 0V at the negative terminals. At terminal block X5, verify that RS-485 lines A and B measure approximately 2.5V DC differential when the BMS communication module is powered (indicating proper termination). Measure resistance between the PE conductor and the equipment frame ground at terminal block X6; resistance must be less than 0.1 Ω, confirming low-impedance grounding. Document all voltage and resistance measurements on the as-built wiring verification form and retain for commissioning records.</p>
+<hr />
+<h2>3. BMS Communication Protocol Configuration and Modbus RTU Address Assignment — Eliminating Address Collision and Communication Corruption</h2>
+<p><strong>This section establishes the procedure for configuring unique Modbus RTU device addresses, communication parameters, and RS-485 trunk line termination to prevent simultaneous device response and phantom alarm generation.</strong></p>
+<h3>Prerequisite: Confirming BMS Network Topology and Modbus Device Address Allocation Plan</h3>
+<p>Before configuring any Modbus parameters on the xenon-pass-through controller, the BMS contractor must provide a documented Modbus device address allocation plan that assigns a unique address (1 through 247) to each biosafety equipment device on the network. The xenon-pass-through must be assigned a unique address that does not conflict with any other device on the same RS-485 trunk line; common practice allocates addresses 1–50 for door and pass-box controllers, 51–100 for HVAC controllers, and 101–150 for monitoring sensors. Verify that the BMS network topology diagram shows the RS-485 trunk line configuration, identifies the location of termination resistors (120 Ω at each end of the trunk line), and specifies the maximum cable run length (typically 1,200 m for Belden 3105A cable at 9,600 baud). Confirm that the BMS contractor has specified the required Modbus communication parameters: baud rate (9,600 or 19,200 bps), data bits (8), parity (even recommended, or none), stop bits (2 if even parity, 1 if no parity).</p>
+<h3>Procedure: Modbus RTU Parameter Configuration Using Handheld Modbus Scanner and Verification of Unique Address Assignment</h3>
+<p>Access the xenon-pass-through controller's Modbus configuration menu using the 7-inch LCD touchscreen interface. Navigate to Settings → Communication → Modbus RTU and enter the assigned device address (e.g., address 15 if allocated by the BMS contractor). Set baud rate to 9,600 bps (or 19,200 if specified by BMS contractor). Set data bits to 8, parity to even (or none if specified), and stop bits to 2 (or 1 if no parity). Save the configuration and power-cycle the controller to apply the settings. Using a handheld Modbus scanner (e.g., Fluke Networks MicroScanner or equivalent), connect to the RS-485 trunk line at a convenient test point near the xenon-pass-through. Configure the scanner to match the communication parameters (9,600 baud, 8 data bits, even parity, 2 stop bits). Initiate a Modbus read command targeting the xenon-pass-through's assigned address and request register 40001 (door status register). Verify that the scanner receives a valid response from the xenon-pass-through within 500 milliseconds; if no response is received, verify that the RS-485 wiring is correctly connected to terminal block X5 (A+ and B− lines) and that the cable shield is grounded at terminal block X6.</p>
+<table>
+<thead>
+<tr>
+<th>Modbus Parameter</th>
+<th>Configuration Value</th>
+<th>Verification Method</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Device Address</td>
+<td>1–247 (unique per device)</td>
+<td>Handheld Modbus scanner read of register 40001</td>
+<td>Response received within 500 ms, no address collision</td>
+</tr>
+<tr>
+<td>Baud Rate</td>
+<td>9,600 or 19,200 bps</td>
+<td>Oscilloscope measurement of RS-485 signal timing</td>
+<td>Bit period matches configured rate ±2%</td>
+</tr>
+<tr>
+<td>Data Bits</td>
+<td>8</td>
+<td>Modbus read/write test</td>
+<td>All 8 bits transmitted and received correctly</td>
+</tr>
+<tr>
+<td>Parity</td>
+<td>Even (recommended) or None</td>
+<td>Modbus read/write test with intentional parity error</td>
+<td>Parity error detected and logged if enabled</td>
+</tr>
+<tr>
+<td>Stop Bits</td>
+<td>2 (even parity) or 1 (no parity)</td>
+<td>Oscilloscope measurement of frame timing</td>
+<td>Stop bit duration matches configuration</td>
+</tr>
+<tr>
+<td>Termination Resistor</td>
+<td>120 Ω at each trunk line end</td>
+<td>Resistance measurement between A and B lines at cable ends</td>
+<td>120 Ω ±5% measured at both ends</td>
+</tr>
+</tbody>
+</table>
+<p>After confirming successful communication with the handheld scanner, perform a Modbus write test by sending a command to toggle the door unlock solenoid (coil 00001) on and off three times. Observe the solenoid response on the physical equipment; the solenoid must energize and de-energize in synchronization with the Modbus write commands, confirming that the communication link is bidirectional and responsive. If the solenoid does not respond, verify that the BMS communication module has write access enabled for coil 00001 and that no password protection is blocking the write command.</p>
+<h3>Acceptance: Modbus Communication Stability Test and Register Read Verification Over 30-Minute Observation Period</h3>
+<p>After successful Modbus parameter configuration and write test, perform a 30-minute continuous communication stability test. Configure the handheld Modbus scanner to poll register 40001 (door status) every 10 seconds for 30 minutes, logging all responses. Verify that all 180 poll cycles (30 minutes ÷ 10 seconds per poll) receive valid responses with no timeouts or communication errors. If any poll cycle times out or returns a communication error, investigate the cause: check RS-485 cable continuity, verify that no other device on the trunk line is transmitting simultaneously (indicating an address collision), and confirm that the termination resistors are correctly installed at both ends of the trunk line. After the 30-minute test, verify that the xenon-pass-through's internal Modbus communication log (accessible via Settings → Diagnostics → Communication Log) shows zero communication errors and zero address collision events. Document the 30-minute test results and the communication log printout in the commissioning record.</p>
+<hr />
+<h2>4. Interlock Control Logic Handover and Plain-Language Philosophy Documentation — Transferring Operational Understanding to Facilities Management</h2>
+<p><strong>This section establishes the procedure for documenting the interlock control philosophy in plain language, creating a state transition diagram, and conducting on-site training with facilities management staff to enable independent operational review and maintenance decision-making.</strong></p>
+<h3>Prerequisite: Obtaining Manufacturer Interlock Logic Documentation and Identifying All Input/Output Signals</h3>
+<p>Before conducting the interlock control logic handover, the installation team must obtain the complete manufacturer interlock logic documentation package, which includes: (1) ladder diagram or function block diagram showing the interlock logic in engineering notation; (2) input/output signal list with terminal addresses and normal/alarm states; (3) alarm and trip logic description with priority levels and consequences; (4) as-built wiring diagram showing all interlock circuit connections. The xenon-pass-through interlock system prevents simultaneous opening of both the inlet and outlet doors to maintain pressure differential and prevent cross-contamination. The system receives inputs from: door position switch on inlet door (terminal 3A/3B, normally open when door is closed), door position switch on outlet door (terminal 3C/3D, normally open when door is closed), pressure differential switch (terminal 3E/3F, normally open when pressure is above setpoint), emergency stop button (terminal 3G/3H, normally closed). The system outputs: unlock solenoid for inlet door (terminal 4A/4B, 24 VDC), unlock solenoid for outlet door (terminal 4C/4D, 24 VDC), door locked indicator lamp (terminal 4E/4F, 24 VDC).</p>
+<h3>Procedure: Creating Plain-Language Control Philosophy Description and State Transition Diagram for Facilities Staff Review</h3>
+<p>Translate the manufacturer's ladder diagram into a plain-language control philosophy statement that a facilities manager without electrical engineering background can independently review and approve. The control philosophy statement must describe the overall operation in simple terms: "The interlock system prevents both doors of the xenon-pass-through from being unlocked simultaneously. The inlet door can only be unlocked when the outlet door is fully closed and the internal pressure is above 0.5 bar. The outlet door can only be unlocked when the inlet door is fully closed and the internal pressure is above 0.5 bar. If either door is forced open while the other door is unlocked, the system triggers an alarm and locks both doors immediately." Create a state transition diagram showing all possible states of the interlock system (e.g., "Both Doors Locked," "Inlet Door Unlocked / Outlet Door Locked," "Inlet Door Locked / Outlet Door Unlocked," "Alarm State — Both Doors Locked") and the conditions that trigger transitions between states. For each state, document the allowed user actions (e.g., "In the 'Both Doors Locked' state, the operator may press the 'Unlock Inlet Door' button only if the pressure differential switch confirms pressure above 0.5 bar"). Provide this plain-language documentation and state transition diagram to the facilities manager and maintenance staff at least 5 business days before the on-site handover training session, allowing time for independent review and preparation of questions.</p>
+<table>
+<thead>
+<tr>
+<th>Interlock State</th>
+<th>Inlet Door Status</th>
+<th>Outlet Door Status</th>
+<th>Pressure Condition</th>
+<th>Allowed User Action</th>
+<th>Alarm Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>State 1: Both Locked</td>
+<td>Locked</td>
+<td>Locked</td>
+<td>Any</td>
+<td>Press "Unlock Inlet" or "Unlock Outlet"</td>
+<td>None</td>
+</tr>
+<tr>
+<td>State 2: Inlet Unlocked</td>
+<td>Unlocked</td>
+<td>Locked</td>
+<td>≥0.5 bar</td>
+<td>Press "Lock Inlet" or "Unlock Outlet" (if pressure ≥0.5 bar)</td>
+<td>Outlet door forced open → Alarm</td>
+</tr>
+<tr>
+<td>State 3: Outlet Unlocked</td>
+<td>Locked</td>
+<td>Unlocked</td>
+<td>≥0.5 bar</td>
+<td>Press "Lock Outlet" or "Unlock Inlet" (if pressure ≥0.5 bar)</td>
+<td>Inlet door forced open → Alarm</td>
+</tr>
+<tr>
+<td>State 4: Alarm</td>
+<td>Locked</td>
+<td>Locked</td>
+<td>Any</td>
+<td>Press "Acknowledge Alarm" then "Reset System"</td>
+<td>Dual-door force-open detected</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: On-Site Handover Training Session and Documented Facilities Staff Sign-Off on Control Philosophy</h3>
+<p>Conduct a minimum 2-hour on-site handover training session with the facilities manager and maintenance staff present. During the training session: (1) review the plain-language control philosophy statement and state transition diagram, confirming that all participants understand the logic and can explain it in their own words; (2) demonstrate each interlock state by manually operating the inlet and outlet door unlock buttons and observing the physical door response; (3) demonstrate the alarm condition by forcing one door open while the other is unlocked, confirming that the system immediately locks both doors and triggers an audible alarm; (4) provide a written Q&amp;A session where participants ask questions and the commissioning engineer documents all questions and answers; (5) provide each participant with a printed copy of the control philosophy statement, state transition diagram, and input/output signal list. At the conclusion of the training session, have the facilities manager and at least one maintenance staff member sign a training attendance and sign-off form confirming that they understand the interlock control philosophy and can independently review and approve the logic. Retain the signed training attendance form and Q&amp;A session notes in the commissioning record.</p>
+<hr />
+<h2>5. Commissioning Support Subcontractor Coordination and On-Call Roster Establishment — Defining Response Protocols and Work Order Documentation</h2>
+<p><strong>This section establishes the procedure for designating qualified electrical and HVAC subcontractors for commissioning support, defining response time commitments, and documenting all support activities with work completion records.</strong></p>
+<h3>Prerequisite: Identifying Qualified Subcontractors and Establishing On-Call Roster with Contact Information</h3>
+<p>Before commissioning activities begin, the project manager must identify and designate one qualified electrician and one HVAC technician who will be available for on-call support during the commissioning phase. The designated electrician must hold a current electrical license or certification recognized in the jurisdiction where the xenon-pass-through is installed (e.g., journeyman electrician license in North America, equivalent certification in other regions) and must have minimum 3 years of experience with biosafety laboratory equipment or cleanroom systems. The designated HVAC technician must hold a current HVAC certification (e.g., EPA Section 608 certification in North America) and must have minimum 2 years of experience with cleanroom air handling systems or biosafety laboratory ventilation. Create a written on-call roster document that lists: (1) electrician name, license number, mobile phone number, email address; (2) HVAC technician name, certification number, mobile phone number, email address; (3) maximum response time commitment during normal working hours (e.g., 4 hours from time of request); (4) maximum response time commitment outside normal working hours (e.g., 8 hours from time of request); (5) overtime rate and stand-by charge rate if applicable per the subcontractor's contract. Distribute the on-call roster to the commissioning engineer, project manager, and facilities management staff at least 1 week before commissioning activities begin.</p>
+<h3>Procedure: Issuing Work Requests and Documenting Subcontractor Response and Completion</h3>
+<p>When the commissioning engineer identifies a need for subcontractor support (e.g., BMS communication fault, sensor malfunction, HVAC setpoint adjustment), the commissioning engineer issues a written work request to the designated subcontractor. The work request must include: (1) date and time of request; (2) description of the issue or required action; (3) location of the equipment; (4) priority level (routine, urgent, emergency); (5) requested completion date and time. The subcontractor must acknowledge receipt of the work request within 4 hours during normal working hours (or within 8 hours outside normal working hours) by sending a written confirmation to the commissioning engineer. Upon arrival at the site, the subcontractor must sign in with the project manager and receive a site safety briefing. The subcontractor performs the required work and documents all actions taken, parts replaced, measurements recorded, and time spent on the work. Upon completion, the subcontractor and commissioning engineer jointly verify that the work has been completed correctly and that the equipment is functioning as intended. Both parties sign a work completion record that includes: (1) work request number; (2) date and time of work; (3) description of work performed; (4) parts replaced (if any); (5) measurements or test results; (6) total time spent; (7) subcontractor signature and commissioning engineer signature.</p>
+<table>
+<thead>
+<tr>
+<th>Work Request Element</th>
+<th>Required Information</th>
+<th>Documentation Format</th>
+<th>Retention Period</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Request Issuance</td>
+<td>Date, time, issue description, priority level</td>
+<td>Written form or email</td>
+<td>Commissioning record</td>
+</tr>
+<tr>
+<td>Subcontractor Acknowledgment</td>
+<td>Receipt confirmation, estimated arrival time</td>
+<td>Email or phone log</td>
+<td>Commissioning record</td>
+</tr>
+<tr>
+<td>Work Completion</td>
+<td>Actions taken, parts replaced, measurements, time spent</td>
+<td>Signed work completion record</td>
+<td>Commissioning record + 3 years</td>
+</tr>
+<tr>
+<td>Stand-By Charges</td>
+<td>Hours worked outside normal hours, overtime rate applied</td>
+<td>Signed time sheet with rate</td>
+<td>Project accounting records</td>
+</tr>
+<tr>
+<td>As-Built Updates</td>
+<td>Any field modifications, terminal changes, BMS parameter changes</td>
+<td>Annotated drawings and configuration logs</td>
+<td>As-built documentation package</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Commissioning Support Documentation Review and Subcontractor Performance Verification</h3>
+<p>At the conclusion of the commissioning phase, the project manager reviews all work completion records and verifies that: (1) all subcontractor work requests were acknowledged within the committed response time; (2) all work was completed and verified by the commissioning engineer; (3) all as-built modifications were documented and annotated on the as-built drawings; (4) all BMS configuration changes were logged in the BMS configuration record; (5) all stand-by charges and overtime hours were documented and approved. If any work request was not acknowledged within the committed response time, or if any work was not completed to the commissioning engineer's satisfaction, the project manager documents the performance issue and discusses corrective action with the subcontractor. Upon successful completion of all commissioning support activities, the project manager obtains a final sign-off from the commissioning engineer confirming that all subcontractor support was adequate and that the equipment is ready for operational handover.</p>
+<hr />
+<h2>6. Pressure Decay Testing and Airtightness Verification — Validating Seal Integrity Before Operational Release</h2>
+<p><strong>This section establishes the procedure for performing pressure decay testing on the xenon-pass-through chamber to verify seal integrity and confirm that the equipment meets airtightness requirements before operational release.</strong></p>
+<h3>Prerequisite: Confirming Chamber Cleanliness and Verifying Test Equipment Calibration</h3>
+<p>Before performing pressure decay testing, the xenon-pass-through chamber must be visually inspected to confirm that all internal surfaces are clean and free of debris, dust, or residual sterilant. Close both the inlet and outlet doors and verify that both doors are fully seated and latched. Verify that all cable penetrations, sensor ports, and drain ports are properly sealed with manufacturer-supplied plugs or caps. Obtain the test equipment package: a calibrated differential pressure gauge (0–10 bar range, ±0.05 bar accuracy), a regulated compressed air supply (oil-free, ISO 8573-1 [ISO 8573-1:2010] Class 2 purity or better), and a stopwatch or digital timer. Verify that the differential pressure gauge has been calibrated within the past 12 months by a certified calibration laboratory; the calibration certificate must be available for inspection. Verify that the compressed air supply has been filtered through an oil-removal cartridge and a particulate filter to meet ISO 8573-1 Class 2 purity (maximum 0.5 mg/m³ oil content, maximum 1 μm particulate size).</p>
+<h3>Procedure: Pressure Decay Test Execution at 6 Bar Supply Pressure Over 15-Minute Hold Period</h3>
+<p>Connect the regulated compressed air supply to the xenon-pass-through's air inlet port (typically located on the chamber side panel). Set the regulator to deliver 6 bar supply pressure and allow the chamber to pressurize until the internal pressure stabilizes at 6 bar ±0.2 bar. Record the initial pressure reading and the time at which 6 bar pressure is achieved. Close the air supply inlet valve to isolate the chamber from the external air supply. Start the stopwatch and record the pressure reading at 1-minute intervals for 15 minutes. At the end of the 15-minute hold period, record the final pressure reading. Calculate the pressure decay as the difference between the initial pressure (6 bar) and the final pressure after 15 minutes. The pressure decay must not exceed 0.1 bar over the 15-minute hold period, corresponding to a leak rate of approximately 0.67 mbar/minute. If the pressure decay exceeds 0.1 bar, the chamber has a leak that must be located and repaired before the equipment can be released for operation.</p>
+<table>
+<thead>
+<tr>
+<th>Test Parameter</th>
+<th>Specification</th>
+<th>Measurement Method</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supply Pressure</td>
+<td>6 bar ±0.2 bar</td>
+<td>Calibrated differential pressure gauge</td>
+<td>Pressure stable within ±0.2 bar for 1 minute before test start</td>
+</tr>
+<tr>
+<td>Hold Duration</td>
+<td>15 minutes</td>
+<td>Digital stopwatch or timer</td>
+<td>Pressure recorded at 1-minute intervals</td>
+</tr>
+<tr>
+<td>Pressure Decay</td>
+<td>≤0.1 bar over 15 minutes</td>
+<td>Final pressure − Initial pressure</td>
+<td>Decay ≤0.1 bar (leak rate ≤0.67 mbar/min)</td>
+</tr>
+<tr>
+<td>Gauge Accuracy</td>
+<td>±0.05 bar</td>
+<td>Calibration certificate dated within 12 months</td>
+<td>Certificate on file, calibration current</td>
+</tr>
+<tr>
+<td>Air Purity</td>
+<td>ISO 8573-1 Class 2 or better</td>
+<td>Oil removal cartridge + particulate filter</td>
+<td>No visible oil mist, no particulate contamination</td>
+</tr>
+</tbody>
+</table>
+<p>If the pressure decay is within the acceptable limit (≤0.1 bar), the chamber passes the airtightness test and is approved for operational release. If the pressure decay exceeds the acceptable limit, perform a leak location procedure: apply a soap solution to all visible seams, door gaskets, cable penetrations, and sensor ports while the chamber is pressurized at 6 bar; observe for soap bubbles indicating the location of the leak. Once the leak location is identified, depressurize the chamber, inspect the leaking component (typically a door gasket or cable gland), and replace or reseal the component as necessary. Repeat the pressure decay test after the repair to confirm that the leak has been eliminated.</p>
+<h3>Acceptance: Pressure Decay Test Report Documentation and Signature by Commissioning Engineer</h3>
+<p>Document the pressure decay test results on a standardized test report form that includes: (1) equipment serial number and location; (2) test date and time; (3) initial pressure reading and time; (4) pressure readings at 1-minute intervals; (5) final pressure reading and time; (6) calculated pressure decay; (7) pass/fail determination; (8) differential pressure gauge model, serial number, and calibration date; (9) compressed air supply purity class and filter cartridge replacement date; (10) commissioning engineer name and signature; (11) date of signature. If the test result is "pass," the commissioning engineer signs the test report and retains it in the commissioning record. If the test result is "fail," the commissioning engineer documents the leak location, the repair action taken, and the date of the repeat test. The equipment is not released for operation until the pressure decay test result is "pass" and the test report is signed by the commissioning engineer. Facilities that skip the 15-minute pressure hold test at 6 bar before system commissioning accept an unquantified seal integrity risk that no downstream validation can fully uncover.</p>
+<hr />
+<h2>6. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What is the immediate post-delivery inspection checklist for xenon-pass-through equipment?</strong></p>
+<p>Upon delivery, verify that the equipment serial number matches the purchase order and shipping documentation. Inspect the exterior for visible damage, dents, or corrosion; if damage is observed, photograph it and contact the manufacturer before accepting delivery. Open both doors and visually inspect the interior chamber for cleanliness, debris, or manufacturing residue; the interior must be clean and free of dust. Verify that all accessories are present: 7-inch LCD touchscreen control panel, door position switches, pressure differential switch, emergency stop button, compressed air inlet port with regulator, drain port with plug, and all cable connectors. Verify that the equipment is grounded to the facility ground bus with a copper conductor of at least 6 mm² cross-section and resistance less than 0.1 Ω.</p>
+<p><strong>Q2: What are the civil works and site preparation prerequisites before xenon-pass-through installation begins?</strong></p>
+<p>The installation location must have a level concrete floor capable of supporting the equipment weight (typically 150–200 kg depending on chamber size) with a maximum floor deflection of 5 mm under full load. The location must have adequate clearance for door opening (minimum 1.2 m clearance in front of both inlet and outlet doors) and for maintenance access to the rear panel (minimum 0.5 m clearance). The location must have a 220V 50Hz single-phase electrical supply with a dedicated 16 A circuit breaker and a grounding conductor. The location must have access to oil-free compressed air at 6–8 bar supply pressure (ISO 8573-1 Class 2 purity or better) with a flow rate of at least 50 L/minute. The location must have ambient temperature between −20°C and +60°C and relative humidity between 20% and 80% (non-condensing).</p>
+<p><strong>Q3: What are the standard differential pressure settings for biosafety containment zones where xenon-pass-through equipment is installed?</strong></p>
+<p>Biosafety Level 3 (BSL-3) laboratory containment zones typically maintain a negative pressure differential of −10 to −15 Pa (−0.001 to −0.0015 bar) relative to adjacent non-containment areas, ensuring that air flows into the containment zone and prevents escape of potentially hazardous aerosols. The xenon-pass-through pressure differential switch is typically set to trigger an alarm if the internal chamber pressure falls below −5 Pa relative to the laboratory ambient pressure, indicating a potential loss of containment. Verify the specific pressure setpoint with the facility's biosafety officer and the equipment manufacturer before commissioning.</p>
+<p><strong>Q4: What is a quick field-based airtightness verification method without specialized equipment?</strong></p>
+<p>A simple qualitative airtightness check can be performed using a soap solution: pressurize the chamber to 6 bar using the compressed air supply, then apply a soap solution (dish soap mixed with water) to all visible seams, door gaskets, cable penetrations, and sensor ports. Observe for soap bubbles, which indicate the location of a leak. This method does not provide a quantitative leak rate measurement but quickly identifies gross leaks that require repair. For quantitative airtightness verification, use the pressure decay test method described in Section 5 of this guide.</p>
+<p><strong>Q5: What are the BMS integration communication protocol parameters and interoperability requirements for xenon-pass-through equipment?</strong></p>
+<p>The xenon-pass-through communicates with the building management system using Modbus RTU protocol over RS-485 two-wire half-duplex communication. The communication parameters are: device address 1–247 (unique per device), baud rate 9,600 or 19,200 bps, data bits 8, parity even (recommended) or none, stop bits 2 (if even parity) or 1 (if no parity). The RS-485 trunk line must be terminated with 120 Ω resistors at both ends of the cable run. The xenon-pass-through's Modbus register map includes coils 00001–00020 for digital outputs (door unlock commands, alarm reset) and registers 40001–40050 for analog values (door status, pressure readings, cycle count). Verify that the BMS contractor has assigned a unique Modbus address to the xenon-pass-through and has configured the BMS polling interval to read all registers at least once per minute.</p>
+<p><strong>Q6: What are the spare parts availability, mean time to repair (MTTR), and maintenance scheduling requirements for xenon-pass-through equipment?</strong></p>
+<p>Critical spare parts for xenon-pass-through equipment include: door gasket seals (replacement interval 12–24 months depending on usage frequency), xenon lamp cartridge (typical lifespan 1,000–2,000 operating hours), pressure differential switch (replacement interval 24–36 months), and 24 VDC power supply module (replacement interval 36–60 months). The manufacturer typically maintains spare parts inventory with a lead time of 2–4 weeks for standard components. Mean time to repair (MTTR) for field-replaceable components is typically 1–2 hours for trained maintenance staff. Scheduled maintenance should be performed every 6 months, including: visual inspection of door gaskets for wear or damage, verification of pressure differential switch calibration, cleaning of internal chamber surfaces, and verification of electrical connections and terminal block torque values.</p>
+<hr />
+<h2>7. References &amp; Data Sources</h2>
+<p>ISO 14644-1:2024. Cleanrooms and associated controlled environments — Part 1: Classification of air cleanliness by particle concentration. International Organization for Standardization.</p>
+<p>ISO 8573-1:2010. Compressed air — Part 1: Contaminants and purity classes. International Organization for Standardization.</p>
+<p>ASTM E779-19. Standard Test Method for Determining Air Leakage Rate by Fan Pressurization. ASTM International.</p>
+<p>IEC 61010-1:2023. Safety requirements for electrical equipment for measurement, control, and laboratory use — Part 1: General requirements. International Electrotechnical Commission.</p>
+<p>WHO Laboratory Biosafety Manual (Fourth Edition). World Health Organization, 2020.</p>
+<p>CDC Biosafety in Microbiological and Biomedical Laboratories (BMBL), 6th Edition. Centers for Disease Control and Prevention, 2020.</p>
+<p>ISO 14698-1:2003. Cleanrooms and associated controlled environments — Biocontamination control — Part 1: General principles and methods. International Organization for Standar</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>

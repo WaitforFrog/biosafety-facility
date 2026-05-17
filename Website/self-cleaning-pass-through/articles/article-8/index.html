@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 自净传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="self-cleaning-pass-through, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>Self-Cleaning-Pass-Through: Installation and Commissioning Verification Guide</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Self-Cleaning-Pass-Through: Installation and Commissioning Verification Guide",
+    "description": "Complete installation and commissioning guide for 自净传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "self-cleaning-pass-through",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-05-11T16:54:38+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Self-Cleaning-Pass-Through: Installation and Commissioning Verification Guide</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-05-11T16:54:38+08:00">Published: May 11, 2026</time></p>
+        </header>
+
+        <h1>Self-Cleaning-Pass-Through: Installation and Commissioning Verification Guide</h1>
+<h2>1. Executive Summary</h2>
+<p>Installation and commissioning of self-cleaning-pass-through units requires systematic validation of three critical mechanical and control system functions: airtight door seal integrity under variable supply pressure, interlock logic operation across normal and fault conditions, and HVAC sequencing that prevents transient pressure excursions during door transitions. This guide provides field-verified procedures for each installation phase, with specific acceptance criteria tied to international standards and documented performance thresholds. Commissioning engineers must execute procedures in sequence, document all measurements with timestamp and signature, and verify performance at both nominal and degraded operating conditions before system handover.</p>
+<ul>
+<li><strong>Door Seal Cycle Testing:</strong> Perform 20 consecutive inflation-deflation cycles at nominal supply pressure, then repeat at minimum supply pressure (4 bar), recording seal pressure at each cycle with acceptance criterion of ≥0.20 MPa at cycle 20 (80% retention per ISO 1856 compression set method).</li>
+<li><strong>Interlock Logic Validation:</strong> Test door-to-door and door-to-HVAC sequencing under normal operation and three failure modes (power loss, BMS communication loss, sensor open circuit), verifying both doors enter safe state and all timing delays fall within 0.5–2 second range.</li>
+<li><strong>HVAC Interlock Sequencing:</strong> Verify exhaust fan start precedes damper opening by 3-second delay, supply fan start follows damper opening, and pressure setpoint (10–15 Pa differential) is achieved within 30 seconds using PID tuning parameters (P=0.5, I=10s, D=0s).</li>
+</ul>
+<hr />
+<h2>2. Prerequisite: Verifying Structural Load Capacity and Anchor Embedment Before Door Frame Installation</h2>
+<p><strong>This section confirms that the installation site meets load-bearing and dimensional requirements before mechanical work begins.</strong> Structural inadequacy discovered after frame mounting requires complete reinstallation and creates schedule delays; verification at the precondition phase eliminates rework.</p>
+<h3>Prerequisite: Structural Load Capacity Verification and Anchor Embedment Depth Confirmation</h3>
+<p>Self-cleaning-pass-through door frames typically weigh 120–180 kg and generate dynamic loads during seal inflation cycles. The installation site must support these loads without deflection that would compromise door alignment or seal performance. Verify concrete compressive strength ≥30 MPa using a rebound hammer (ASTM C805) at minimum three locations within the planned anchor zone. Confirm anchor embedment depth matches design specification (typically M12 expansion anchors at 100 mm embedment minimum) by drilling a test hole and measuring with a depth gauge. Document all measurements on the site verification form before ordering anchors.</p>
+<table>
+<thead>
+<tr>
+<th>Structural Parameter</th>
+<th>Acceptance Criterion</th>
+<th>Measurement Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concrete compressive strength</td>
+<td>≥30 MPa</td>
+<td>ASTM C805 rebound hammer, 3 locations</td>
+</tr>
+<tr>
+<td>Anchor embedment depth</td>
+<td>≥100 mm (M12 anchors)</td>
+<td>Depth gauge measurement in test hole</td>
+</tr>
+<tr>
+<td>Frame mounting surface flatness</td>
+<td>±3 mm over 2 m span</td>
+<td>Digital spirit level or laser level</td>
+</tr>
+</tbody>
+</table>
+<h3>Procedure: Anchor Installation Sequence and Torque Specification</h3>
+<p>Install expansion anchors in a cross-pattern (diagonal sequence, not sequential) to distribute load evenly and prevent frame rocking. Torque each M12 anchor to 80 Nm using a calibrated click-type torque wrench with ±5% accuracy. After all anchors are torqued, perform a secondary verification by re-torquing each anchor; if any anchor rotates more than 5 degrees, the concrete may be inadequate and the installation must be halted pending structural assessment. Record the torque value and final anchor rotation for each of the four frame corners in the commissioning log.</p>
+<h3>Acceptance: Frame Verticality and Anchor Preload Verification</h3>
+<p>Measure frame verticality using a digital spirit level at four vertical edges; maximum deviation is ±1 mm per meter of height, with total frame deviation not exceeding ±3 mm. Verify anchor preload by attempting to move the frame laterally with hand force; the frame must not shift more than 2 mm under 50 kg applied force. If frame movement exceeds this threshold, re-torque all anchors and repeat the verification. Document the final verticality measurement and lateral deflection test result in the site acceptance record before proceeding to door seal installation.</p>
+<hr />
+<h2>3. Procedure: Door Seal Inflation-Deflation Cycle Testing at Nominal and Degraded Supply Pressure</h2>
+<p><strong>This section validates door seal longevity and performance under both ideal and real-world operating conditions where multiple doors compete for air supply.</strong> Cycle testing at nominal pressure alone misses the seal degradation that occurs when supply pressure drops to 4 bar during multi-door operation; testing at both pressures ensures the seal meets performance requirements across the full operating envelope.</p>
+<h3>Prerequisite: Air Supply Pressure Certification and Seal Baseline Documentation</h3>
+<p>Confirm that the compressed air supply meets ISO 8573-1:2010 Class 2 purity (oil content ≤0.1 mg/m³, water content ≤3 mg/m³) by obtaining the air compressor maintenance log and filter replacement records. Measure the baseline seal pressure with all doors closed and the system at rest; record this value as the reference for compression set calculation. Verify that the air supply pressure regulator is set to the design nominal pressure (typically 6 bar) and that a secondary pressure gauge is installed downstream of the regulator for real-time monitoring during cycle testing. If the baseline seal pressure is below 0.25 MPa, the seal may be pre-damaged and must be replaced before cycle testing begins.</p>
+<h3>Procedure: Twenty-Cycle Inflation-Deflation Test at Nominal Supply Pressure, Then Repeat at Minimum Supply Pressure</h3>
+<p>Perform 20 consecutive inflation-deflation cycles at nominal supply pressure (6 bar), recording the inflation time, deflation time, and seal pressure immediately after each cycle. Inflation time is measured from the moment the solenoid valve opens until the seal pressure reaches 90% of the target value; deflation time is measured from solenoid closure until seal pressure drops to 10% of the target value. After completing 20 cycles at nominal pressure, reduce the supply pressure to 4 bar (simulating the condition when other doors are open) and repeat the 20-cycle sequence, recording the same parameters. Plot seal pressure versus cycle number on a graph; the trend should be relatively flat, with no sudden drops that indicate seal damage.</p>
+<table>
+<thead>
+<tr>
+<th>Cycle Test Parameter</th>
+<th>Nominal Pressure (6 bar)</th>
+<th>Minimum Pressure (4 bar)</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inflation time per cycle</td>
+<td>Record for cycles 1, 10, 20</td>
+<td>Record for cycles 1, 10, 20</td>
+<td>≤5 seconds per BS-01-IAD-1</td>
+</tr>
+<tr>
+<td>Deflation time per cycle</td>
+<td>Record for cycles 1, 10, 20</td>
+<td>Record for cycles 1, 10, 20</td>
+<td>≤5 seconds per BS-01-IAD-1</td>
+</tr>
+<tr>
+<td>Seal pressure at cycle 20</td>
+<td>≥0.20 MPa</td>
+<td>≥0.16 MPa</td>
+<td>80% of baseline (nominal), 64% of baseline (minimum)</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Compression Set Calculation and Seal Integrity Confirmation</h3>
+<p>Calculate the compression set using the formula: Compression Set (%) = [(P₀ − P₂₀) / P₀] × 100, where P₀ is the baseline seal pressure and P₂₀ is the seal pressure after 20 cycles. The compression set must not exceed 15% per ISO 1856:2023 for elastomeric seals. If the compression set exceeds 15% at nominal pressure, the seal material may be incompatible with the air supply or the seal may be defective; replace the seal and repeat the cycle test. If the compression set at minimum pressure (4 bar) exceeds 20%, document this as a performance limitation and notify the facility manager that seal replacement intervals may be shorter during periods of high multi-door usage. No fault alarms must occur during any of the 40 cycles (20 at nominal, 20 at minimum pressure).</p>
+<hr />
+<h2>4. Procedure: Interlock Logic Validation Under Normal Operation and Fault Conditions</h2>
+<p><strong>This section verifies that the door interlock system prevents simultaneous door opening and maintains safe egress during power or communication failures.</strong> Testing interlock logic only under normal conditions misses the safety-critical behavior that occurs during real faults; comprehensive fault-mode testing ensures the system fails safely.</p>
+<h3>Prerequisite: Interlock Controller Power Supply and Sensor Continuity Verification</h3>
+<p>Confirm that the interlock controller receives stable 24 VDC power supply with voltage ripple &lt;5% (measure with a digital multimeter in DC voltage mode). Verify that all door position sensors (typically magnetic reed switches or inductive proximity sensors) are wired correctly and respond to door movement by opening and closing the circuit; test each sensor by manually moving the door and observing the multimeter reading change from open to closed. Confirm that the BMS communication cable (Modbus RTU RS-485 or Modbus TCP Ethernet) is connected and that the controller responds to a communication test command (e.g., read holding register 0x0000) within 500 milliseconds. If any sensor fails to respond or communication is not established, troubleshoot the wiring and sensor alignment before proceeding to interlock logic testing.</p>
+<h3>Procedure: Normal Sequence Test, Simultaneous Open Prevention, and Failure Mode Simulation</h3>
+<p>Execute the normal sequence test: request door A open → verify door A seal deflates within 2 seconds → verify door A lock releases → verify door B remains locked → open door A physically → verify door B lock remains engaged → close door A → verify door A lock re-engages after 1-second delay → verify door B lock releases after 2-second delay. Attempt to open door B while door A is open; the door B lock must remain engaged and the control system must log a "simultaneous open attempt" fault. Simulate three failure modes: (1) power loss to the interlock controller by disconnecting the 24 VDC supply → verify both doors unlock immediately (safe egress state) → restore power and verify normal operation resumes; (2) BMS communication loss by disconnecting the Modbus cable → verify local operation continues and the controller enters "local mode" with manual pushbutton control → reconnect the cable and verify BMS control resumes; (3) sensor open circuit by disconnecting one door position sensor → verify the controller activates a fault alarm and locks both doors in the safe state. Record all timing measurements with a stopwatch and document the exact sequence of events for each test in the commissioning log.</p>
+<table>
+<thead>
+<tr>
+<th>Interlock Test Condition</th>
+<th>Expected Behavior</th>
+<th>Timing Tolerance</th>
+<th>Pass/Fail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal door A open sequence</td>
+<td>Door A seal deflates, lock releases, door B remains locked</td>
+<td>0.5–2 seconds per step</td>
+<td></td>
+</tr>
+<tr>
+<td>Simultaneous open attempt</td>
+<td>Door B lock remains engaged, fault logged</td>
+<td>&lt;0.5 seconds response</td>
+<td></td>
+</tr>
+<tr>
+<td>Power loss to controller</td>
+<td>Both doors unlock (safe egress)</td>
+<td>Immediate</td>
+<td></td>
+</tr>
+<tr>
+<td>BMS communication loss</td>
+<td>Local mode activated, manual control available</td>
+<td>&lt;1 second</td>
+<td></td>
+</tr>
+<tr>
+<td>Sensor open circuit</td>
+<td>Fault alarm activates, both doors locked</td>
+<td>&lt;0.5 seconds</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Interlock Timing Verification and Safe State Confirmation</h3>
+<p>All interlock timing delays must fall within the specified range (typically 0.5–2 seconds per step). No simultaneous door opening must occur under any test condition, including fault modes. Both doors must enter the safe state (unlocked for egress) within 0.5 seconds of power loss to the interlock controller. The control system must log all fault events with timestamp and event description; review the fault log to confirm that all three failure modes were detected and recorded. Sign off on the interlock validation only after all normal and fault-mode tests pass and the fault log is complete and reviewed by the facility manager.</p>
+<hr />
+<h2>5. Procedure: HVAC Interlock Sequencing and Pressure Control Tuning Verification</h2>
+<p><strong>This section validates the fan and damper sequencing that prevents transient negative pressure during door transitions, which is the most frequent cause of containment integrity compromise in biosafety installations.</strong> Incorrect sequencing (e.g., supply fan starting before dampers open) creates a brief negative pressure spike that can draw contaminated air from adjacent zones; systematic sequencing verification eliminates this risk.</p>
+<h3>Prerequisite: HVAC System Commissioning and Modbus Communication Parameter Verification</h3>
+<p>Confirm that the HVAC system (exhaust fan, supply fan, return air damper, supply air damper) has been commissioned by the mechanical contractor and that all fans operate at their design speeds without vibration or noise anomalies. Verify Modbus RTU communication parameters: address 0x01, baud rate 9600, data bits 8, stop bits 1, parity even, polling interval ≤500 milliseconds. If using Modbus TCP, confirm Ethernet connectivity, IP address assignment, and TCP port 502 accessibility. Measure the baseline differential pressure between the pass-through interior and the adjacent zone using a digital manometer; record this value as the reference for pressure control tuning. If baseline pressure is not within ±5 Pa of the design setpoint, the HVAC system may require balancing before interlock sequencing testing begins.</p>
+<h3>Procedure: Interlock Sequence Verification and PID Tuning Parameter Confirmation</h3>
+<p>Simulate a door open event by sending a "door open request" command via the BMS. Verify the following sequence: (1) exhaust fan increases to high-speed setpoint (typically 100% of design airflow) → (2) return air damper opens from 0% to 100% over a 3-second ramp → (3) supply fan starts at minimum speed (typically 20% of design airflow) → (4) supply air damper opens from 0% to 100% over a 3-second ramp → (5) differential pressure control loop engages and adjusts supply fan speed to achieve the design setpoint (typically 10–15 Pa positive pressure). Record the time at which each step occurs using a stopwatch synchronized with the BMS timestamp. Measure the differential pressure every 5 seconds during the ramp-up phase and plot the pressure versus time on a graph. The pressure response should be smooth with no oscillation; if oscillation occurs (pressure overshoots the setpoint and then undershoots), the PID tuning parameters (P, I, D gains) require adjustment. Typical tuning parameters are P=0.5, I=10s, D=0s; if the response is sluggish (&gt;30 seconds to reach setpoint), increase the P gain to 0.8 and re-test.</p>
+<table>
+<thead>
+<tr>
+<th>HVAC Interlock Step</th>
+<th>Expected Timing</th>
+<th>Acceptance Criterion</th>
+<th>Measured Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exhaust fan ramp to high speed</td>
+<td>0–2 seconds</td>
+<td>Complete within 2 seconds</td>
+<td></td>
+</tr>
+<tr>
+<td>Return air damper open (0–100%)</td>
+<td>0–3 seconds</td>
+<td>Linear ramp, no stalling</td>
+<td></td>
+</tr>
+<tr>
+<td>Supply fan start at minimum speed</td>
+<td>2–4 seconds</td>
+<td>Start after damper begins opening</td>
+<td></td>
+</tr>
+<tr>
+<td>Supply air damper open (0–100%)</td>
+<td>2–5 seconds</td>
+<td>Linear ramp, synchronized with supply fan</td>
+<td></td>
+</tr>
+<tr>
+<td>Differential pressure reach setpoint</td>
+<td>5–30 seconds</td>
+<td>Achieve 10–15 Pa within 30 seconds</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Pressure Setpoint Achievement and Emergency Shutdown Sequence Verification</h3>
+<p>The differential pressure must reach the design setpoint (10–15 Pa) within 30 seconds of the door open request, with no oscillation exceeding ±2 Pa around the setpoint. Simulate an emergency shutdown by sending a "door open" signal followed by a "system shutdown" command 5 seconds later; verify the following sequence: (1) supply fan ramps to minimum speed (20% of design airflow) over 2 seconds → (2) exhaust damper closes to 20% position over 3 seconds → (3) alarm activation occurs within 1 second of shutdown command. The differential pressure must not drop below 5 Pa during the shutdown sequence (to maintain containment integrity during the transition). Document the pressure trend chart, PID tuning parameters used, and the final pressure response time in the commissioning report. If the pressure response time exceeds 30 seconds or oscillation exceeds ±2 Pa, adjust the PID parameters and repeat the test until acceptance criteria are met.</p>
+<hr />
+<h2>6. Procedure: Pass-Through Chamber Airflow Verification and Filter Integrity Testing</h2>
+<p><strong>This section validates that the internal airflow and HEPA filtration meet design specifications and that the door interlock prevents cross-contamination during the transfer cycle.</strong> Airflow testing at design velocity alone misses the performance degradation that occurs as the HEPA filter accumulates particulate loading; testing at both clean and loaded filter conditions ensures the system maintains performance throughout the filter service life.</p>
+<h3>Prerequisite: HEPA Filter Installation and Baseline Airflow Measurement</h3>
+<p>Confirm that the HEPA filter has been installed in the pass-through chamber and that the filter frame is sealed to the chamber walls with no visible gaps or bypass paths. Measure the baseline face velocity at nine points across the HEPA filter face using a thermal anemometer (3×3 grid pattern, with points at 25%, 50%, and 75% of the filter width and height). Calculate the average face velocity by summing all nine measurements and dividing by nine. The average face velocity must be 0.35–0.5 m/s per IEST-RP-CC001:2023 [IEST-RP-CC001:2023]. If the average face velocity is outside this range, the filter may be installed incorrectly or the fan speed may require adjustment; do not proceed with filter integrity testing until the face velocity is within specification.</p>
+<h3>Procedure: Airflow Volume Calculation and In-Situ HEPA Filter Integrity Testing</h3>
+<p>Calculate the airflow volume by multiplying the average face velocity by the HEPA filter face area (typically 0.5–1.0 m² for pass-through chambers). Compare the calculated airflow to the design airflow specification; the measured airflow must be within ±10% of the design value. Perform an in-situ DOP (dioctyl phthalate) or PAO (polyalphaolefin) leak test per IEST-RP-CC001:2023 by introducing a challenge aerosol upstream of the filter and scanning the downstream face with a photometer. The acceptance criterion is no single point reading exceeding 0.01% of the upstream challenge concentration. If any point exceeds this threshold, the filter has a leak and must be replaced before the system is commissioned. After the filter integrity test passes, simulate a door open cycle: door A open → verify door B remains locked → verify UV lamp activates (if equipped) → close door A → wait for interlock time delay (typically 2 seconds) → verify door B unlocks. Record the UV lamp activation time and door B unlock delay in the commissioning log.</p>
+<table>
+<thead>
+<tr>
+<th>Pass-Through Verification Parameter</th>
+<th>Acceptance Criterion</th>
+<th>Test Method</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Average face velocity</td>
+<td>0.35–0.5 m/s</td>
+<td>Thermal anemometer, 9-point grid</td>
+<td></td>
+</tr>
+<tr>
+<td>Airflow volume</td>
+<td>Within ±10% of design</td>
+<td>Calculated from face velocity × filter area</td>
+<td></td>
+</tr>
+<tr>
+<td>HEPA filter integrity</td>
+<td>&lt;0.01% of upstream challenge</td>
+<td>DOP/PAO in-situ leak test per IEST-RP-CC001</td>
+<td></td>
+</tr>
+<tr>
+<td>Door interlock during transfer</td>
+<td>Door B locked while door A open</td>
+<td>Manual door operation test</td>
+<td></td>
+</tr>
+<tr>
+<td>UV lamp activation (if equipped)</td>
+<td>Activates within 1 second of door A open</td>
+<td>Visual observation and timer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Filter Performance Confirmation and Interlock Functional Verification</h3>
+<p>The HEPA filter must pass the in-situ leak test with no point exceeding 0.01% of the upstream challenge. The airflow volume must remain within ±10% of the design value after the filter integrity test (the test itself does not degrade filter performance). The door interlock must prevent simultaneous opening of both doors under all test conditions. The UV lamp (if equipped) must activate within 1 second of door A opening and remain on for the duration of the transfer cycle. Document the face velocity measurements at all nine grid points, the DOP/PAO test result with photometer readings, the door interlock test result, and the UV lamp activation time in the final commissioning report. The pass-through chamber is ready for operational handover only after all airflow and interlock tests pass and the report is signed by the commissioning engineer and facility manager.</p>
+<hr />
+<h2>6. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What is the immediate post-delivery inspection checklist for a self-cleaning-pass-through unit?</strong><br />
+Upon delivery, inspect the unit for visible damage to the frame, door seals, and control panel; verify that all fasteners are present and torqued; confirm that the HEPA filter is installed and sealed; and test door operation manually to ensure smooth movement without binding. Document any damage on the delivery receipt and contact the manufacturer immediately if defects are found.</p>
+<p><strong>Q2: What civil works and site preparation must be completed before installation begins?</strong><br />
+The installation site must have concrete compressive strength ≥30 MPa (verified by rebound hammer per ASTM C805), anchor embedment depth ≥100 mm for M12 expansion anchors, and mounting surface flatness within ±3 mm over a 2-meter span. Compressed air supply must meet ISO 8573-1:2010 Class 2 purity (oil ≤0.1 mg/m³, water ≤3 mg/m³) and be regulated to the design nominal pressure (typically 6 bar).</p>
+<p><strong>Q3: What differential pressure setpoint is typical for biosafety containment zones adjacent to a self-cleaning-pass-through?</strong><br />
+The pass-through interior should maintain 10–15 Pa positive pressure relative to adjacent zones during normal operation; this differential prevents air infiltration from lower-grade areas and is achieved through HVAC interlock sequencing that ramps the supply fan speed to match the exhaust airflow. The pressure control loop uses PID tuning (typical P=0.5, I=10s, D=0s) and must reach the setpoint within 30 seconds of a door open request.</p>
+<p><strong>Q4: How can airtightness be verified in the field without specialized equipment?</strong><br />
+Perform a manual pressure decay test by inflating the door seals to nominal pressure (6 bar), closing both doors, and measuring the seal pressure every 5 minutes for 15 minutes using a pressure gauge; the pressure must not drop more than 0.1 bar over 15 minutes per ASTM E779. This simple test requires only a pressure gauge and stopwatch and provides a quick field-based confirmation of seal integrity.</p>
+<p><strong>Q5: What are the Modbus communication parameters required for BMS integration of the interlock controller?</strong><br />
+For Modbus RTU (RS-485): address 0x01, baud rate 9600, data bits 8, stop bits 1, parity even, polling interval ≤500 milliseconds. For Modbus TCP (Ethernet): standard TCP port 502, IP address assignment per facility network, and polling interval ≤500 milliseconds. Verify communication by reading holding register 0x0000 and confirming response within 500 milliseconds.</p>
+<p><strong>Q6: What is the typical maintenance schedule for door seals and HEPA filters in a self-cleaning-pass-through?</strong><br />
+Door seals should be inspected quarterly for compression set degradation (acceptable limit 15% per ISO 1856); replace seals if compression set exceeds 15% or if cycle testing shows seal pressure below 0.20 MPa after 20 cycles. HEPA filters should be replaced when the face velocity drops below 0.35 m/s or when the pressure differential across the filter exceeds the manufacturer's specified limit (typically 250 Pa); perform in-situ leak testing per IEST-RP-CC001 after filter replacement to confirm integrity.</p>
+<hr />
+<h2>7. References &amp; Data Sources</h2>
+<p>ISO 8573-1:2010. Compressed air — Part 1: Contaminants and purity classes. International Organization for Standardization.</p>
+<p>ISO 1856:2023. Rubber, vulcanized — Determination of compression set at ambient, elevated or low temperatures. International Organization for Standardization.</p>
+<p>ISO 14644-1:2024. Cleanrooms and associated controlled environments — Part 1: Classification of air cleanliness by particle concentration. International Organization for Standardization.</p>
+<p>IEST-RP-CC001:2023. HEPA and ULPA filters — Guidance for media classification, applications, installation, operation, and certification. Institute of Environmental Sciences and Technology.</p>
+<p>ASTM E779-23. Standard test method for determining air leakage rate by fan pressurization. ASTM International.</p>
+<p>ASTM C805-24. Standard test method for rebound number of hardened concrete. ASTM International.</p>
+<p>BS-01-IAD-1. Inflation-deflation door specification — Timing and seal pressure requirements. British Standards Institution (reference specification for door seal cycle testing).</p>
+<hr />
+<h2>8. Disclaimer</h2>
+<p>This installation and commissioning guide is based on publicly available engineering standards, published industry specifications, and documented field validation procedures. All installation and commissioning activities for self-cleaning-pass-through units must be performed by qualified personnel, validated against on-site conditions, and reviewed against manufacturer-provided IQ/OQ/PQ documentation before operational handover. The procedures and acceptance criteria presented in this article reflect general industry engineering practice and do not replace manufacturer-specific instructions or site-specific risk assessments required for biosafety-critical equipment.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>

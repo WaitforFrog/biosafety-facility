@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 渡槽. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="sinks-troughs, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>sinks-troughs Installation and Commissioning: Mechanical Seal Integrity and Interlock System Verification Guide</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "sinks-troughs Installation and Commissioning: Mechanical Seal Integrity and Interlock System Verification Guide",
+    "description": "Complete installation and commissioning guide for 渡槽. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "sinks-troughs",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-04-25T18:44:56+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>sinks-troughs Installation and Commissioning: Mechanical Seal Integrity and Interlock System Verification Guide</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-04-25T18:44:56+08:00">Published: April 25, 2026</time></p>
+        </header>
+
+        <h1>sinks-troughs Installation and Commissioning: Mechanical Seal Integrity and Interlock System Verification Guide</h1>
+<h2>1. Executive Summary</h2>
+<p>This guide establishes the installation and commissioning procedures for biosafety sinks-troughs equipment, focusing on mechanical seal integrity validation, pneumatic door cycle performance, and interlock system sequencing under operational conditions. The three critical procedures are: (1) mechanical frame installation and seal assembly with pressure decay testing at 6 bar supply pressure to verify leakage rates below 0.1 bar per 15 minutes per ASTM E779; (2) pneumatic airtight door inflation-deflation cycle testing across 20 consecutive cycles at nominal and minimum supply pressures to confirm seal compression set remains below 15% per ISO 1856; (3) interlock logic debugging and BMS communication verification using Modbus RTU protocol at 9600 baud with polling intervals ≤500 milliseconds to ensure door interlocks prevent simultaneous opening and pressure control maintains setpoint within ±10 Pa of target differential pressure.</p>
+<hr />
+<h2>2. Mechanical Frame Installation and Structural Load Verification</h2>
+<p><strong>This section establishes the prerequisite structural conditions and anchor installation sequence that determine whether the sinks-troughs unit can maintain airtightness under operational pressure cycling.</strong></p>
+<h3>Prerequisite: Verifying Concrete Embedment Depth and Anchor Bolt Torque Specifications Before Frame Mounting</h3>
+<p>The installation site must provide a concrete wall or structural support with minimum compressive strength of 25 MPa (verified by core sample testing per ASTM C42 if site documentation is unavailable). Anchor bolt embedment depth must be minimum 100 mm into concrete for M12 expansion anchors; if embedment depth is less than 80 mm, the installation must be relocated or supplemented with through-bolts and backing plates. Verify anchor bolt spacing matches the sinks-troughs frame drawing (typically 400 mm center-to-center for standard units); deviations greater than ±5 mm require structural engineer approval before proceeding.</p>
+<h3>Procedure: Torque Sequence for Expansion Anchor Installation and Frame Leveling — Cross-Pattern at 80 Nm Per M12 Anchor</h3>
+<p>Install M12 expansion anchors in a cross-pattern sequence (diagonal pairs, not sequential) to ensure uniform load distribution and prevent frame racking. Torque each anchor to 80 Nm using a calibrated click-type torque wrench with ±5% accuracy; verify torque wrench calibration certificate is dated within 12 months of installation. After all anchors reach 80 Nm, perform a second pass at 85 Nm to confirm no anchor slips (indicating inadequate embedment or concrete failure). Measure frame verticality using a digital spirit level at four corners; maximum deviation must be ±1 mm per meter of frame height, with total frame deviation not exceeding ±3 mm. If frame deviation exceeds ±3 mm, do not proceed to seal assembly — document the deviation and request structural correction before continuing.</p>
+<table>
+<thead>
+<tr>
+<th>Anchor Installation Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bolt Grade and Size</td>
+<td>M12 Class 8.8 Stainless Steel</td>
+<td>Tensile strength ≥640 MPa</td>
+</tr>
+<tr>
+<td>Embedment Depth</td>
+<td>Minimum 100 mm into concrete</td>
+<td>Core sample verification per ASTM C42</td>
+</tr>
+<tr>
+<td>Torque Value (First Pass)</td>
+<td>80 Nm ± 5%</td>
+<td>Calibrated torque wrench with certificate</td>
+</tr>
+<tr>
+<td>Torque Value (Second Pass)</td>
+<td>85 Nm ± 5%</td>
+<td>No anchor slip detected</td>
+</tr>
+<tr>
+<td>Frame Verticality</td>
+<td>±1 mm per meter</td>
+<td>Total deviation ≤±3 mm measured with digital level</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Frame Anchor Torque Verification and Verticality Confirmation — No Slip at 85 Nm, Deviation ≤±3 mm</h3>
+<p>After the second torque pass at 85 Nm, perform a witness test by applying a 500 N lateral force to the frame at mid-height and confirming no visible movement or anchor rotation occurs. Document the as-found torque values for all anchors in the commissioning log; any anchor below 78 Nm (97% of 80 Nm specification) must be re-torqued and re-tested. Measure frame verticality at four corners and record the maximum deviation; if any corner exceeds ±3 mm, the frame installation fails acceptance and must be corrected before seal assembly begins.</p>
+<p>Frame installation is complete when all anchors meet torque specification, no slip is detected at 85 Nm, and frame verticality is confirmed within ±3 mm total deviation. Proceed to seal assembly only after documenting these measurements in the commissioning record with photographs of the torque wrench display and spirit level readings.</p>
+<hr />
+<h2>3. Pneumatic Airtight Door Seal Assembly and Inflation-Deflation Cycle Testing</h2>
+<p><strong>This section validates the mechanical seal integrity and pneumatic performance of the airtight door under repeated operational cycles, simulating the degraded supply pressure conditions that occur during multi-door operation.</strong></p>
+<h3>Prerequisite: Confirming Air Supply Pressure Stability and Oil-Free Air Certification Per ISO 8573-1:2010</h3>
+<p>Before seal assembly begins, verify the compressed air supply system is capable of delivering 6 bar ±0.5 bar at the sinks-troughs inlet with oil-free air quality per ISO 8573-1:2010 Class 2 (particle size ≤1 µm, water content ≤25 mg/m³, oil content ≤0.5 mg/m³). Obtain the air compressor maintenance log and confirm the last oil separator cartridge replacement was within 12 months; if no maintenance record exists, the air supply must be treated as non-compliant and cannot be used until a certified air quality test is performed. Install a differential pressure gauge (0-10 bar range, ±2% accuracy) at the sinks-troughs inlet and record the baseline supply pressure; if pressure fluctuates more than ±0.3 bar during a 5-minute observation period, the air supply system requires stabilization (accumulator tank or pressure regulator adjustment) before proceeding.</p>
+<h3>Procedure: Seal Assembly Installation and 20-Cycle Inflation-Deflation Test at Nominal and Minimum Supply Pressures</h3>
+<p>Install the silicone rubber seal strips (19 mm × 15 mm per specification) into the door frame grooves, ensuring no gaps or twisted sections exist along the entire perimeter. Verify seal compression by measuring the gap between door and frame at four corners using a 0.5 mm feeler gauge; the feeler gauge must not pass through any gap (indicating proper seal compression). Perform the first inflation-deflation cycle at nominal supply pressure (6 bar) and record the inflation time (target ≤5 seconds per BS-01-IAD-1 specification), deflation time (target ≤5 seconds), and seal pressure at the end of inflation (baseline measurement). Repeat this cycle 19 additional times (total 20 cycles) at nominal pressure, recording inflation time, deflation time, and seal pressure for each cycle. After completing 20 cycles at nominal pressure, reduce the supply pressure to 4 bar (simulating minimum supply pressure when multiple doors are operating simultaneously) and repeat the 20-cycle test sequence, recording the same parameters.</p>
+<table>
+<thead>
+<tr>
+<th>Cycle Test Parameter</th>
+<th>Nominal Supply (6 bar)</th>
+<th>Minimum Supply (4 bar)</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inflation Time</td>
+<td>Target ≤5 seconds</td>
+<td>Target ≤6 seconds</td>
+<td>All cycles meet target</td>
+</tr>
+<tr>
+<td>Deflation Time</td>
+<td>Target ≤5 seconds</td>
+<td>Target ≤6 seconds</td>
+<td>All cycles meet target</td>
+</tr>
+<tr>
+<td>Seal Pressure at Cycle 1</td>
+<td>Baseline (record value)</td>
+<td>Baseline (record value)</td>
+<td>≥0.25 MPa</td>
+</tr>
+<tr>
+<td>Seal Pressure at Cycle 20</td>
+<td>≥0.20 MPa (80% of baseline)</td>
+<td>≥0.16 MPa (80% of baseline)</td>
+<td>Compression set ≤15% per ISO 1856</td>
+</tr>
+<tr>
+<td>Fault Alarm Activation</td>
+<td>No alarm during cycles</td>
+<td>No alarm during cycles</td>
+<td>Zero fault events across 40 cycles</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Seal Pressure Retention and Compression Set Calculation — Cycle 20 Pressure ≥80% of Cycle 1 Baseline</h3>
+<p>Calculate the compression set for each test condition using the formula: Compression Set (%) = [(P₁ − P₂₀) / P₁] × 100, where P₁ is seal pressure at cycle 1 and P₂₀ is seal pressure at cycle 20. Acceptance criterion is compression set ≤15% per ISO 1856:2012 for both nominal and minimum supply pressure conditions. If compression set exceeds 15% at either pressure condition, the seal assembly fails acceptance; document the failure in a deviation report and replace the seal strips before re-testing. Create a pressure trend chart plotting seal pressure across all 40 cycles (20 at nominal, 20 at minimum); the chart must show a stable or slightly declining trend with no abrupt pressure drops (which would indicate seal damage or air leak).</p>
+<p>Seal assembly is complete when all 40 cycles (20 nominal + 20 minimum pressure) are executed without fault alarms, inflation and deflation times meet specification, and compression set is confirmed ≤15% at both pressure conditions. Document the cycle test results with timestamp for each cycle, pressure trend chart, and pass/fail determination signed by the commissioning engineer.</p>
+<hr />
+<h2>4. Interlock Logic Debugging and HVAC Sequencing Verification</h2>
+<p><strong>This section validates the mechanical and electrical interlock system that prevents simultaneous door opening and ensures correct HVAC fan and damper sequencing to maintain containment pressure integrity.</strong></p>
+<h3>Prerequisite: Confirming BMS Communication Protocol Parameters and Differential Pressure Sensor Calibration Before Interlock Testing</h3>
+<p>Verify the Building Management System (BMS) is configured for Modbus RTU communication at 9600 baud, even parity, 1 stop bit, and 8 data bits; confirm the polling interval is ≤500 milliseconds per the control specification. Calibrate the differential pressure transmitter (0-25 Pa range, ±2% accuracy) using a precision manometer or calibrated pressure source; record the calibration certificate and confirm calibration date is within 12 months. Verify the pressure setpoint is configured in the BMS as 10-15 Pa positive pressure relative to the adjacent zone (typical for biosafety containment); if the setpoint differs from this range, document the deviation and obtain approval from the facility engineer before proceeding. Confirm all door position sensors (open/closed switches) are functioning by manually opening and closing each door and observing the BMS display; if any sensor fails to register, the interlock system cannot be tested and the sensor must be replaced.</p>
+<h3>Procedure: Interlock Sequence Verification — Exhaust Fan Start, Damper Open Delay, Supply Fan Start, Pressure Setpoint Achievement</h3>
+<p>Execute the interlock sequence test in the following order: (1) initiate system startup from the BMS; (2) observe exhaust fan start and record the timestamp; (3) verify return air damper begins opening within 3 seconds of exhaust fan start (0-10V control signal, linear ramp); (4) verify supply fan starts within 5 seconds of exhaust fan start; (5) verify supply air damper begins opening within 3 seconds of supply fan start; (6) monitor differential pressure rise and record the time required to reach setpoint (target &lt;30 seconds per PID tuning specification). Repeat this sequence three times and record all timestamps and pressure readings. Perform an emergency shutdown test by opening a door during normal operation and confirming the following sequence: (1) door open signal detected; (2) 5-second delay before supply fan speed reduction; (3) supply fan reduces to minimum speed (typically 30% of full speed); (4) exhaust damper closes to 20% position; (5) alarm activates on BMS display. Document the emergency shutdown sequence with timestamps for each step.</p>
+<table>
+<thead>
+<tr>
+<th>Interlock Sequence Step</th>
+<th>Expected Timing</th>
+<th>Acceptance Criterion</th>
+<th>Test Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exhaust Fan Start</td>
+<td>T = 0 seconds</td>
+<td>Fan motor current ≥80% of rated</td>
+<td>Pass / Fail</td>
+</tr>
+<tr>
+<td>Return Air Damper Open</td>
+<td>T = 0-3 seconds</td>
+<td>0-10V signal ramps linearly</td>
+<td>Pass / Fail</td>
+</tr>
+<tr>
+<td>Supply Fan Start</td>
+<td>T = 0-5 seconds</td>
+<td>Fan motor current ≥80% of rated</td>
+<td>Pass / Fail</td>
+</tr>
+<tr>
+<td>Supply Air Damper Open</td>
+<td>T = 3-8 seconds</td>
+<td>0-10V signal ramps linearly</td>
+<td>Pass / Fail</td>
+</tr>
+<tr>
+<td>Pressure Setpoint Achievement</td>
+<td>T = 8-38 seconds</td>
+<td>Differential pressure ±10 Pa of setpoint</td>
+<td>Pass / Fail</td>
+</tr>
+<tr>
+<td>Emergency Shutdown (Door Open)</td>
+<td>T = 0-5 seconds</td>
+<td>Supply fan to minimum, exhaust damper to 20%</td>
+<td>Pass / Fail</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Interlock Sequence Completion Within Timing Specification and Pressure Setpoint Stability ±10 Pa</h3>
+<p>All three interlock sequence tests must complete without deviation from the timing specification; if any step exceeds the specified timing window, document the deviation and adjust the PID tuning parameters (typical adjustment: increase proportional gain P from 0.5 to 0.7 if response is too slow). Verify differential pressure remains within ±10 Pa of setpoint for a minimum of 5 minutes after reaching setpoint; if pressure oscillates beyond ±10 Pa, the PID tuning requires further adjustment. Confirm the emergency shutdown sequence executes correctly in all three test runs; if any step fails to execute, the interlock logic contains a programming error and must be corrected before system commissioning is complete.</p>
+<p>Interlock system is complete when all three interlock sequence tests pass, pressure setpoint is achieved within 30 seconds and maintained within ±10 Pa, and emergency shutdown sequence executes correctly. Document all test results with timestamps, pressure trend charts, and pass/fail determination in the commissioning record.</p>
+<hr />
+<h2>5. VHP Disinfection System Integration and Cycle Validation</h2>
+<p><strong>This section validates the hydrogen peroxide vapor disinfection cycle integration with the HVAC interlock system, ensuring safe vapor concentration control and emergency aeration capability.</strong></p>
+<h3>Prerequisite: Confirming H₂O₂ Sensor Calibration and HVAC Damper Closure Verification Before VHP Cycle Execution</h3>
+<p>Calibrate the hydrogen peroxide concentration sensor (electrochemical or infrared type, 0-10 mg/L range, ±5% reading accuracy) using certified calibration gas or a calibration kit provided by the sensor manufacturer; record the calibration certificate and confirm calibration date is within 6 months. Verify the HVAC system can close both supply and exhaust dampers to achieve a sealed room condition; perform a manual damper closure test and confirm differential pressure remains stable (±5 Pa) for 5 minutes with dampers closed. Confirm the emergency exhaust system (typically a dedicated exhaust fan or damper) is capable of activating within 30 seconds of receiving a high H₂O₂ concentration alarm (&gt;5 ppm); test this by simulating a high concentration alarm signal and observing the emergency exhaust activation. Verify the room humidity is below 30% relative humidity before beginning the VHP cycle; if humidity exceeds 30%, the pre-conditioning phase must extend until humidity drops below 30% (typically 30-60 minutes depending on room size and HVAC capacity).</p>
+<h3>Procedure: VHP Cycle Execution — Pre-Conditioning, Introduction, Dwell, and Aeration Phases with Concentration Monitoring</h3>
+<p>Execute the VHP cycle in four phases: (1) pre-conditioning phase — reduce room humidity to &lt;30% RH by operating the HVAC system with supply and exhaust dampers open; monitor humidity sensor and record the time required to reach &lt;30% RH; (2) introduction phase — close HVAC dampers, introduce VHP vapor at a controlled rate (typically 0.3-1.5 mg/L target concentration), and monitor H₂O₂ concentration rise; record the time required to reach target concentration and the peak concentration achieved; (3) dwell phase — maintain target concentration for the specified dwell time (typically 20-30 minutes for standard disinfection cycles); record concentration stability (acceptable range ±0.2 mg/L around target); (4) aeration phase — activate the emergency exhaust system and monitor H₂O₂ concentration decline; record the time required to reduce concentration to &lt;1 ppm (safe for room re-entry). Document all four phases with timestamps, concentration readings, and any alarms or deviations from the planned cycle.</p>
+<table>
+<thead>
+<tr>
+<th>VHP Cycle Phase</th>
+<th>Target Parameter</th>
+<th>Acceptance Criterion</th>
+<th>Measured Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pre-Conditioning</td>
+<td>Humidity reduction to &lt;30% RH</td>
+<td>Time ≤90 minutes</td>
+<td>_____ minutes</td>
+</tr>
+<tr>
+<td>Introduction</td>
+<td>Peak concentration 0.3-1.5 mg/L</td>
+<td>Concentration within range</td>
+<td>_____ mg/L</td>
+</tr>
+<tr>
+<td>Dwell</td>
+<td>Concentration stability ±0.2 mg/L</td>
+<td>Concentration variance &lt;0.2 mg/L</td>
+<td>_____ mg/L variance</td>
+</tr>
+<tr>
+<td>Aeration</td>
+<td>Concentration reduction to &lt;1 ppm</td>
+<td>Time ≤60 minutes</td>
+<td>_____ minutes</td>
+</tr>
+<tr>
+<td>Emergency Exhaust</td>
+<td>Activation time ≤30 seconds</td>
+<td>Damper opens and exhaust fan starts</td>
+<td>Pass / Fail</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: VHP Cycle Completion with Concentration Within Specification and Emergency Exhaust Functionality Confirmed</h3>
+<p>After the aeration phase is complete, verify the final H₂O₂ concentration is below 1 ppm (safe for room re-entry) and record the total cycle time. Compare the measured cycle parameters (peak concentration, dwell time, total cycle time) against the validated cycle specification provided by the VHP equipment manufacturer; if any parameter deviates by more than ±10% from the specification, document the deviation and investigate the root cause (e.g., humidity control issue, damper leakage, sensor drift). Perform a second VHP cycle test to confirm repeatability; the second cycle must achieve the same peak concentration (±0.1 mg/L) and total cycle time (±5 minutes) as the first cycle. If the second cycle deviates significantly from the first, the system requires troubleshooting before operational use.</p>
+<p>VHP system is complete when the first and second VHP cycles both achieve target concentration within specification, dwell time is maintained, aeration reduces concentration to &lt;1 ppm, and emergency exhaust activates within 30 seconds of high concentration alarm. Document all cycle parameters with timestamps, concentration trend charts, and pass/fail determination in the commissioning record.</p>
+<hr />
+<h2>6. OQ (Operational Qualification) Test Execution and System Performance Validation</h2>
+<p><strong>This section establishes the OQ test protocol sequence and acceptance criteria that demonstrate the sinks-troughs system operates correctly under all specified conditions and responds appropriately to alarm conditions.</strong></p>
+<h3>Prerequisite: Confirming IQ (Installation Qualification) Completion and OQ Protocol Approval Before Test Execution</h3>
+<p>Verify all IQ tests (mechanical frame installation, seal assembly, interlock logic, VHP system integration) are documented as complete and passed in the commissioning record; do not begin OQ testing if any IQ test is incomplete or failed. Obtain the OQ protocol document (typically provided by the equipment manufacturer or facility engineering team) and confirm it is approved and signed by the facility engineer and quality assurance representative; if the protocol is not approved, obtain approvals before proceeding. Review the OQ protocol to identify all prerequisite IQ tests referenced in each OQ test; confirm each prerequisite IQ test is documented as passed before executing the corresponding OQ test. Prepare the OQ test log template with columns for test number, test purpose, prerequisite IQ tests, procedure steps, expected result, acceptance criteria, as-found result, pass/fail determination, and commissioning engineer signature.</p>
+<h3>Procedure: OQ Test Sequence Execution — Control System Operation, Safety Interlock Tests, Performance Tests, and Alarm Response Tests</h3>
+<p>Execute OQ tests in the following sequence (do not skip or reorder tests): (1) control system operation tests — verify manual mode operation (door open/close buttons), automatic mode operation (setpoint adjustment, pressure control), and alarm acknowledgment function; (2) safety interlock tests — verify all interlock conditions from the IQ phase (door interlock prevents simultaneous opening, HVAC sequencing prevents pressure loss, emergency shutdown activates correctly); (3) performance tests — verify pressure control accuracy (±10 Pa of setpoint), cycle times (inflation ≤5 seconds, deflation ≤5 seconds), and BMS communication (Modbus RTU polling interval ≤500 ms); (4) alarm response tests — simulate low pressure alarm, door interlock alarm, and BMS communication loss, and verify the system responds correctly (alarm display, emergency shutdown activation, manual override capability). For each OQ test, document the procedure steps as executed, record the as-found result at each step, and determine pass/fail based on the acceptance criteria. If any OQ test fails, document the failure in a deviation report, perform corrective action, and repeat the failed test (document the repeat test in the same OQ record or a new OQ record if the deviation is significant).</p>
+<table>
+<thead>
+<tr>
+<th>OQ Test Category</th>
+<th>Test Purpose</th>
+<th>Prerequisite IQ Tests</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Control System Operation</td>
+<td>Verify manual/automatic modes and alarm acknowledgment</td>
+<td>IQ-1 (Frame Installation), IQ-2 (Seal Assembly)</td>
+<td>All buttons respond correctly, setpoint adjustable ±5 Pa</td>
+</tr>
+<tr>
+<td>Safety Interlock Tests</td>
+<td>Verify door interlock and HVAC sequencing</td>
+<td>IQ-3 (Interlock Logic), IQ-4 (VHP Integration)</td>
+<td>Door interlock prevents simultaneous opening, HVAC sequence correct</td>
+</tr>
+<tr>
+<td>Performance Tests</td>
+<td>Verify pressure control accuracy and cycle times</td>
+<td>IQ-2 (Seal Assembly), IQ-3 (Interlock Logic)</td>
+<td>Pressure ±10 Pa of setpoint, cycle times ≤5 seconds</td>
+</tr>
+<tr>
+<td>Alarm Response Tests</td>
+<td>Verify system response to low pressure, interlock, and communication loss</td>
+<td>All IQ tests</td>
+<td>Alarms display correctly, emergency shutdown activates</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: OQ Test Protocol Completion with All Tests Passed and Deviation Reports Resolved</h3>
+<p>After all OQ tests are executed, review the OQ test log and confirm that all tests are marked as passed; if any test is marked as failed, the OQ is incomplete and cannot be signed off. For any failed OQ test, verify that a corresponding deviation report exists, corrective action was taken, and the test was repeated and passed. Obtain signatures from the commissioning engineer, facility engineer, and quality assurance representative on the OQ test log; the signatures confirm that the system has been validated to operate correctly under all specified conditions. If any OQ test deviation requires protocol amendment (e.g., acceptance criteria change, new test procedure), document the amendment in the OQ record and obtain approval from the facility engineer and quality assurance representative before signing off.</p>
+<p>OQ testing is complete when all OQ tests pass, all deviations are resolved with documented corrective actions, and the OQ test log is signed by all required parties. The system is now qualified for operational use and ready for PQ (Performance Qualification) testing or handover to the facility operations team.</p>
+<hr />
+<h2>7. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What is the minimum concrete compressive strength required for sinks-troughs anchor installation, and how is it verified if site documentation is unavailable?</strong></p>
+<p>Minimum concrete compressive strength is 25 MPa. If site documentation is unavailable, perform core sample testing per ASTM C42 by extracting three 100 mm diameter cores from the installation area and testing them in a compression testing machine; average the three results and confirm the average is ≥25 MPa before proceeding with anchor installation.</p>
+<p><strong>Q2: What is the acceptable pressure decay rate for the sinks-troughs unit during airtightness testing, and which standard defines this criterion?</strong></p>
+<p>Acceptable pressure decay is ≤0.1 bar over 15 minutes at 6 bar supply pressure per ASTM E779 (Standard Test Method for Determining Air Leakage Rate by Fan Pressurization). This criterion ensures the unit maintains containment integrity during operational pressure cycling and meets biosafety laboratory requirements per ISO 14644-1:2024.</p>
+<p><strong>Q3: How should the differential pressure setpoint be configured for a biosafety containment zone, and what is the acceptable control tolerance?</strong></p>
+<p>Typical differential pressure setpoint is 10-15 Pa positive pressure relative to the adjacent zone (lower-risk area). Acceptable control tolerance is ±10 Pa of setpoint, meaning the system must maintain pressure between 0-25 Pa (if setpoint is 10-15 Pa) during normal operation. This tolerance is verified during IQ pressure control testing and confirmed during OQ performance testing.</p>
+<p><strong>Q4: What is the compression set acceptance criterion for pneumatic door seals, and how is it calculated from cycle test data?</strong></p>
+<p>Compression set must be ≤15% per ISO 1856:2012 (Standard Test Methods for Determination of Compression Set Under Constant Deflection in the Circumstances of Elastic Deformation). Calculate compression set as: [(P₁ − P₂₀) / P₁] × 100, where P₁ is seal pressure at cycle 1 and P₂₀ is seal pressure at cycle 20. If compression set exceeds 15%, the seal assembly fails acceptance and must be replaced.</p>
+<p><strong>Q5: What are the Modbus RTU communication parameters required for BMS integration with the sinks-troughs control system?</strong></p>
+<p>Modbus RTU parameters are: 9600 baud rate, even parity, 1 stop bit, 8 data bits, and polling interval ≤500 milliseconds. These parameters must be configured in the BMS before interlock logic testing begins; verify configuration by observing BMS communication status and confirming no communication errors occur during a 10-minute observation period.</p>
+<p><strong>Q6: What is the recommended spare parts inventory for sinks-troughs equipment, and what is the typical mean time to repair (MTTR) for critical seal components?</strong></p>
+<p>Critical spare parts include silicone rubber seal strips (19 mm × 15 mm), differential pressure transmitter (0-25 Pa range), H₂O₂ concentration sensor, and door position switches. Typical MTTR for seal replacement is 2-4 hours (including system depressurization, seal removal, installation, and pressure testing). Maintain a minimum of two complete seal kits in inventory to minimize downtime during maintenance.</p>
+<hr />
+<h2>8. References &amp; Data Sources</h2>
+<p>ISO 14644-1:2024 Cleanrooms and associated controlled environments — Part 1: Classification of air cleanliness by particle concentration. International Organization for Standardization.</p>
+<p>ISO 1856:2012 Rubber, vulcanized — Determination of compression set at ambient, elevated or low temperatures. International Organization for Standardization.</p>
+<p>ISO 8573-1:2010 Compressed air — Part 1: Contaminants and purity classes. International Organization for Standardization.</p>
+<p>ASTM E779-23 Standard Test Method for Determining Air Leakage Rate by Fan Pressurization. ASTM International.</p>
+<p>ASTM C42/C42M-20 Standard Test Method for Obtaining and Testing Drilled Cores and Sawed Beams of Concrete. ASTM International.</p>
+<p>WHO Laboratory Biosafety Manual (Fourth Edition, 2020). World Health Organization.</p>
+<p>CDC Biosafety in Microbiological and Biomedical Laboratories (BMBL, 6th Edition, 2020). Centers for Disease Control and Prevention.</p>
+<p>GMP Guidance for Industry: Sterile Drug Products Produced by Aseptic Processing (2004). U.S. Food and Drug Administration.</p>
+<p>SMACNA HVAC Duct Construction Standards — Metal and Flexible (3rd Edition, 2018). Sheet Metal and Air Conditioning Contractors' National Association.</p>
+<hr />
+<h2>9. Disclaimer</h2>
+<p>This installation and commissioning guide is based on publicly available engineering standards, published industry data, and documented field validation procedures. Given the critical safety requirements of biosafety laboratories and cleanrooms, all installation and commissioning activities must be performed by qualified personnel, validated against on-site conditions, and reviewed against manufacturer-provided IQ/OQ/PQ documentation. The procedures and acceptance criteria presented in this article reflect general industry engineering practice and do not replace manufacturer-specific installation instructions or facility-specific engineering requirements. Facilities must conduct site-specific risk assessment and obtain approval from qualified engineers and regulatory authorities before operational handover.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>

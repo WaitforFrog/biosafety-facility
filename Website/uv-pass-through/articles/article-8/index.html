@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for UV传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="uv-pass-through, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>uv-pass-through Installation and Commissioning: Airflow Verification, Interlock Sequencing, and Pressure Control Integration</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "uv-pass-through Installation and Commissioning: Airflow Verification, Interlock Sequencing, and Pressure Control Integration",
+    "description": "Complete installation and commissioning guide for UV传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "uv-pass-through",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-04-22T02:56:16+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>uv-pass-through Installation and Commissioning: Airflow Verification, Interlock Sequencing, and Pressure Control Integration</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-04-22T02:56:16+08:00">Published: April 22, 2026</time></p>
+        </header>
+
+        <h1>uv-pass-through Installation and Commissioning: Airflow Verification, Interlock Sequencing, and Pressure Control Integration</h1>
+<h2>1. Executive Summary</h2>
+<p>This guide establishes the field commissioning procedure for ultraviolet transfer chambers (uv-pass-through) installed in pharmaceutical, biotechnology, and medical device manufacturing cleanrooms, with emphasis on validating airflow performance, door interlock logic, and differential pressure control integration per ISO 14644-1:2024 and IEST-RP-CC001.2 standards. Three critical commissioning steps determine operational readiness: (1) face velocity measurement across the HEPA filter at minimum nine points using thermal anemometry, with acceptance at 0.36–0.54 m/s per design specification; (2) interlock timing verification under normal and failure-mode conditions, confirming door-to-door lock sequencing and HVAC response within 0.5–2.0 second intervals; (3) differential pressure sensor calibration and BMS communication validation, ensuring alarm setpoints match installed sensor calibration certificates and Modbus RTU polling operates without dropped registers. Facilities that defer these three validations until after equipment handover accept unquantified containment and cross-contamination risks that no downstream environmental monitoring can fully uncover.</p>
+<hr />
+<h2>2. Airflow Performance Verification: Face Velocity Measurement and HEPA Filter Integrity Testing</h2>
+<p><strong>This section establishes the field measurement protocol for validating airflow volume and filter performance under clean and loaded filter conditions, preventing acceptance of undersized or degraded filtration capacity.</strong></p>
+<h3>Prerequisite: Confirming Supply Air Pressure, Filter Housing Integrity, and Thermal Anemometer Calibration Before Measurement</h3>
+<p>Before commencing face velocity measurement, verify that the uv-pass-through supply air system has operated continuously for a minimum of 30 minutes at design airflow setpoint to establish thermal equilibrium. Confirm that the HEPA filter housing shows no visible damage, corrosion, or separation at gasket interfaces by visual inspection and tactile pressure testing at four corners of the filter frame. Obtain the thermal anemometer calibration certificate (accuracy ±3% of reading or better, traceable to NIST within 12 months) and verify that the instrument has been powered for minimum 15 minutes before measurement to stabilize the sensor thermistor.</p>
+<h3>Procedure: Nine-Point Face Velocity Grid Measurement and Airflow Volume Calculation</h3>
+<p>Establish a 3×3 measurement grid across the HEPA filter face, dividing the filter into nine equal quadrants. Record face velocity at the center point of each quadrant using the thermal anemometer held perpendicular to the filter surface, with the probe tip positioned 25 mm from the filter media surface. Record all nine readings to 0.01 m/s precision. Calculate the arithmetic mean of the nine readings; this value represents the average face velocity. Multiply the average face velocity by the effective filter face area (700 mm × 700 mm = 0.49 m²) to obtain the volumetric airflow rate in cubic meters per hour (m³/h). Document all nine individual readings, the calculated mean, and the resulting airflow volume in the commissioning logbook.</p>
+<table>
+<thead>
+<tr>
+<th>Measurement Point</th>
+<th>Grid Position</th>
+<th>Face Velocity (m/s)</th>
+<th>Deviation from Mean (%)</th>
+<th>Pass/Fail Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Top-Left</td>
+<td>—</td>
+<td>—</td>
+<td>±15% of mean</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Top-Center</td>
+<td>—</td>
+<td>—</td>
+<td>±15% of mean</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Top-Right</td>
+<td>—</td>
+<td>—</td>
+<td>±15% of mean</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Mid-Left</td>
+<td>—</td>
+<td>—</td>
+<td>±15% of mean</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Mid-Center</td>
+<td>—</td>
+<td>—</td>
+<td>±15% of mean</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Mid-Right</td>
+<td>—</td>
+<td>—</td>
+<td>±15% of mean</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Bottom-Left</td>
+<td>—</td>
+<td>—</td>
+<td>±15% of mean</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Bottom-Center</td>
+<td>—</td>
+<td>—</td>
+<td>±15% of mean</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Bottom-Right</td>
+<td>—</td>
+<td>—</td>
+<td>±15% of mean</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Average Face Velocity 0.36–0.54 m/s and Airflow Volume Within ±10% of Design Specification</h3>
+<p>The calculated average face velocity must fall within the design range of 0.36–0.54 m/s per the uv-pass-through technical specification sheet. No individual measurement point shall deviate more than ±15% from the calculated mean; if any point exceeds this tolerance, investigate for filter media damage, gasket separation, or supply duct blockage. The resulting volumetric airflow (mean face velocity × 0.49 m²) must be within ±10% of the design airflow value documented on the equipment nameplate. If airflow falls below the lower acceptance threshold, perform in-situ HEPA filter integrity testing using dioctyl phthalate (DOP) or polyalphaolefin (PAO) challenge per IEST-RP-CC001.2 before proceeding to interlock commissioning.</p>
+<hr />
+<h2>3. Interlock Timing Sequence Verification: Door Lock Sequencing and HVAC Response Under Normal and Fault Conditions</h2>
+<p><strong>This section validates the electromechanical and pneumatic interlock logic that prevents simultaneous opening of both pass-box doors, the critical safety function that maintains containment integrity during material transfer.</strong></p>
+<h3>Prerequisite: Confirming Electrical Power Supply Stability, Pneumatic Supply Pressure, and Interlock Controller Firmware Version</h3>
+<p>Before commencing interlock timing tests, verify that the 24 VDC power supply to the interlock controller maintains voltage between 23.5–24.5 VDC under full load (all solenoid valves and indicator lights energized simultaneously). Confirm that the pneumatic supply pressure to the door seal inflation system is stable at the design setpoint (typically 6.0 bar ±0.5 bar) by observing the pressure gauge on the supply manifold for a minimum of 5 minutes without drift exceeding ±0.2 bar. Record the interlock controller firmware version from the device display or configuration menu and cross-reference against the manufacturer's current release documentation to confirm no obsolete firmware versions are installed.</p>
+<h3>Procedure: Sequential Door Open-Close Cycle with Timing Measurement and Simultaneous Open Prevention Test</h3>
+<p>Initiate a normal door open sequence by pressing the door A open button on the control panel. Using a digital stopwatch, record the elapsed time from button press to audible solenoid valve actuation (typically 0.1–0.3 seconds). Continue timing until the door A mechanical lock releases and the door swings freely (typically 0.5–1.5 seconds total). Verify that door B remains mechanically locked throughout this sequence by attempting manual door B opening (should require sustained force without movement). Release door A and allow it to close fully; record the time from door A closure to the audible solenoid valve de-energizing (typically 0.2–0.5 seconds). Repeat the sequence in reverse (door B open, door A locked). Perform a simultaneous open prevention test by pressing both door A and door B open buttons simultaneously; verify that only one door lock releases and the second door remains locked for the full interlock delay period (typically 2.0–5.0 seconds).</p>
+<table>
+<thead>
+<tr>
+<th>Interlock Sequence Step</th>
+<th>Expected Timing (seconds)</th>
+<th>Measured Timing (seconds)</th>
+<th>Pass/Fail Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Door A open button press to solenoid actuation</td>
+<td>0.1–0.3</td>
+<td>—</td>
+<td>Within specification</td>
+</tr>
+<tr>
+<td>Solenoid actuation to mechanical lock release</td>
+<td>0.4–1.2</td>
+<td>—</td>
+<td>Within specification</td>
+</tr>
+<tr>
+<td>Door A closure to solenoid de-energizing</td>
+<td>0.2–0.5</td>
+<td>—</td>
+<td>Within specification</td>
+</tr>
+<tr>
+<td>Simultaneous open attempt: lock-out delay</td>
+<td>2.0–5.0</td>
+<td>—</td>
+<td>Door B remains locked</td>
+</tr>
+<tr>
+<td>HVAC exhaust fan ramp-up after door open</td>
+<td>1.0–3.0</td>
+<td>—</td>
+<td>Fan reaches high-speed setpoint</td>
+</tr>
+<tr>
+<td>HVAC exhaust fan ramp-down after door close</td>
+<td>2.0–5.0</td>
+<td>—</td>
+<td>Fan returns to normal speed</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: All Interlock Timing Intervals Within Specification and Both Doors Never Simultaneously Unlocked</h3>
+<p>All measured timing intervals must fall within the ranges specified in the interlock controller configuration documentation (typically 0.5–2.0 seconds per step). The simultaneous open prevention test must confirm that pressing both door buttons results in only one door unlocking; the second door must remain locked for the full interlock delay period without exception. If the interlock controller is integrated with the building management system (BMS), verify that the BMS receives a "door open" alarm signal within 2 seconds of door A or door B opening and that the alarm clears within 2 seconds of door closure. Document all timing measurements and any deviations from specification in the commissioning logbook; deviations exceeding ±0.5 seconds warrant investigation of solenoid valve response time or pneumatic supply pressure stability.</p>
+<hr />
+<h2>4. Differential Pressure Sensor Calibration and Zero-Point Adjustment: Field Calibration Procedure for Installed Pressure Transmitters</h2>
+<p><strong>This section establishes the field calibration protocol for differential pressure transmitters that monitor pass-box interior pressure relative to ambient, ensuring alarm setpoints match validated sensor accuracy rather than nameplate assumptions.</strong></p>
+<h3>Prerequisite: Obtaining Reference Pressure Standard, Verifying Transmitter Mounting Stress, and Confirming Cable Shield Grounding</h3>
+<p>Before commencing calibration, obtain a reference pressure gauge with accuracy of ±0.05% of full scale or better, with a valid calibration certificate traceable to NIST or equivalent national standards laboratory within the past 12 months. Inspect the differential pressure transmitter mounting at the pass-box wall for visible stress, corrosion, or loose fasteners; verify that all process connection tubing is routed without sharp bends or kinks that could introduce mounting strain. Confirm that the transmitter cable shield is grounded to the equipment frame at a single point (typically at the transmitter connector) and that no ground loops exist between the transmitter and the BMS data acquisition module. Power up the transmitter and allow it to stabilize for a minimum of 30 minutes before commencing calibration; record the initial display reading as the "as-found" value.</p>
+<h3>Procedure: Zero-Point Calibration, Span Verification, and Transmitter Output Linearity Check</h3>
+<p>Vent both the high-pressure and low-pressure ports of the differential pressure transmitter to atmosphere using short lengths of flexible tubing connected to a common manifold. Record the transmitter display reading; this reading should be 0.0 Pa (or 0.00 mbar, depending on display units). If the reading deviates from zero by more than ±1% of the transmitter's full-scale range (e.g., ±1 Pa for a 0–100 Pa transmitter), adjust the zero-point trim potentiometer or software zero offset until the display reads 0.0 Pa. Record the adjustment value as the "as-left" zero offset. Next, apply a known reference pressure (typically 50% of full scale, e.g., 50 Pa for a 0–100 Pa transmitter) using the reference pressure gauge connected to the high-pressure port while the low-pressure port remains vented to atmosphere. Record the transmitter display reading and calculate the error as a percentage of full scale. If the error exceeds ±1% of full scale, adjust the span trim potentiometer or software span factor until the reading matches the reference pressure within ±0.5% of full scale.</p>
+<table>
+<thead>
+<tr>
+<th>Calibration Step</th>
+<th>Reference Value</th>
+<th>Transmitter Reading (As-Found)</th>
+<th>Transmitter Reading (As-Left)</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zero-point calibration (both ports vented)</td>
+<td>0.0 Pa</td>
+<td>—</td>
+<td>0.0 Pa</td>
+<td>±1% FS</td>
+</tr>
+<tr>
+<td>Span calibration at 50% FS (50 Pa applied)</td>
+<td>50 Pa</td>
+<td>—</td>
+<td>50 Pa</td>
+<td>±1% FS</td>
+</tr>
+<tr>
+<td>Linearity check at 25% FS (25 Pa applied)</td>
+<td>25 Pa</td>
+<td>—</td>
+<td>25 Pa</td>
+<td>±1.5% FS</td>
+</tr>
+<tr>
+<td>Linearity check at 75% FS (75 Pa applied)</td>
+<td>75 Pa</td>
+<td>—</td>
+<td>75 Pa</td>
+<td>±1.5% FS</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Transmitter Output Accuracy ±1% of Full Scale Across Entire Operating Range and Calibration Certificate Issued</h3>
+<p>After zero and span adjustment, verify transmitter accuracy at three additional reference pressures (25%, 50%, and 75% of full scale) using the reference pressure gauge. All readings must be within ±1% of full scale of the reference value. Issue a field calibration certificate documenting the transmitter serial number, calibration date, as-found and as-left values, reference pressure gauge serial number and calibration certificate reference, and the next calibration due date (typically 12 months from calibration date). If the transmitter cannot be brought within ±1% of full scale after adjustment, remove the transmitter from service and return it to the manufacturer for factory recalibration or replacement. Do not proceed with BMS integration or system commissioning until all differential pressure transmitters have been successfully calibrated and documented.</p>
+<hr />
+<h2>5. BMS Control Point Mapping and Modbus RTU Communication Verification: Data Exchange Protocol Validation and Alarm Setpoint Confirmation</h2>
+<p><strong>This section validates the communication link between the uv-pass-through control system and the building management system, ensuring that alarm setpoints are programmed from calibrated sensor data rather than nameplate assumptions.</strong></p>
+<h3>Prerequisite: Confirming BMS Network Connectivity, Modbus RTU Baud Rate Configuration, and Sensor Calibration Certificate Availability</h3>
+<p>Before commencing BMS communication testing, verify that the uv-pass-through Modbus RTU gateway is connected to the BMS network via a shielded twisted-pair cable with proper termination resistors (120 ohms) at both ends of the communication line. Confirm that the Modbus RTU baud rate, parity, and stop-bit configuration on the uv-pass-through controller matches the BMS configuration (typical settings: 9600 baud, even parity, 2 stop bits per Modbus RTU specification). Obtain the calibration certificates for all differential pressure transmitters, temperature sensors, and humidity sensors that feed data to the BMS; these certificates establish the validated operating range and alarm setpoint limits for each sensor.</p>
+<h3>Procedure: Modbus Register Polling, Data Type Verification, and Alarm Setpoint Validation</h3>
+<p>Using Modbus Poll software or equivalent Modbus RTU diagnostic tool, connect to the uv-pass-through Modbus gateway and sequentially read all defined input registers (typically 16-bit integer or 32-bit floating-point format). Record the register address, data type, engineering units, and current value for each register. Verify that the scaling factor applied to each register (e.g., raw value × 0.1 = pressure in Pa) matches the transmitter calibration certificate. For each analog input register, apply a known reference value (e.g., 50 Pa reference pressure to the differential pressure transmitter) and verify that the Modbus register value updates within 2 seconds and displays the correct scaled value. Confirm that all alarm setpoints programmed in the BMS match the validated operating range from the sensor calibration certificates; for example, if a differential pressure transmitter is calibrated to ±1% of full scale (±1 Pa for a 0–100 Pa transmitter), the BMS alarm setpoint for "low pressure" should be set to no lower than 5 Pa (5% of full scale) to avoid nuisance alarms from sensor noise.</p>
+<table>
+<thead>
+<tr>
+<th>Modbus Register</th>
+<th>Data Type</th>
+<th>Engineering Units</th>
+<th>Scaling Factor</th>
+<th>Alarm Setpoint (from Calibration Certificate)</th>
+<th>BMS Programmed Setpoint</th>
+<th>Match (Yes/No)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>16-bit integer</td>
+<td>Pressure (Pa)</td>
+<td>×0.1</td>
+<td>50 Pa (high alarm)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>101</td>
+<td>16-bit integer</td>
+<td>Pressure (Pa)</td>
+<td>×0.1</td>
+<td>10 Pa (low alarm)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>102</td>
+<td>32-bit float</td>
+<td>Temperature (°C)</td>
+<td>×1.0</td>
+<td>28°C (high alarm)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>103</td>
+<td>16-bit integer</td>
+<td>Humidity (%)</td>
+<td>×0.1</td>
+<td>65% (high alarm)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: All Modbus Registers Polling Without Errors, Alarm Setpoints Match Calibration Certificates, and BMS Trend Logging Captures Data at Configured Interval</h3>
+<p>Perform a 30-minute continuous Modbus polling stress test at 1-second polling intervals; verify that no communication errors (CRC failures, timeout errors, or dropped polls) occur during this period. Confirm that the BMS operator workstation displays all uv-pass-through parameters with correct engineering units and that alarm conditions trigger BMS alarm log entries within 2 seconds of the alarm condition occurring. Verify that BMS trend logging captures data at the configured interval (typically 5-minute or 15-minute intervals) and that no data gaps or duplicate timestamps appear in the trend log. If any Modbus communication errors occur during the stress test, investigate cable routing for electromagnetic interference sources, verify termination resistor installation, and confirm that no other devices are transmitting on the same Modbus network segment simultaneously.</p>
+<hr />
+<h2>6. UV Lamp Activation Interlock and Contamination Control Verification: Validating Ultraviolet Disinfection Sequence and Door-to-Lamp Timing Logic</h2>
+<p><strong>This section validates the ultraviolet lamp activation sequence that occurs when the pass-box interior is unoccupied, ensuring that UV disinfection occurs only when both doors are closed and the interior is confirmed empty.</strong></p>
+<h3>Prerequisite: Confirming UV Lamp Warm-Up Time, Lamp Intensity Measurement Equipment Availability, and Safety Interlocks for Accidental Exposure</h3>
+<p>Before commencing UV lamp testing, verify that the ultraviolet lamps installed in the uv-pass-through are rated for the design duty cycle (typically T5-8W lamps with 10,000-hour rated life per the equipment nameplate). Allow the UV lamps to warm up for a minimum of 5 minutes after initial power-up to reach stable light output; UV lamp intensity increases approximately 10–15% during the first 5 minutes of operation. Obtain a UV intensity meter (wavelength 254 nm, accuracy ±10% or better) and verify that the meter has been calibrated within the past 12 months. Confirm that the pass-box control system includes a safety interlock that prevents UV lamp activation if either door is open or if the door lock sensors indicate an unlocked condition.</p>
+<h3>Procedure: Door Closure Verification, UV Lamp Activation Timing, and Interior Intensity Measurement at Three Locations</h3>
+<p>Close both pass-box doors and verify that both door lock sensors register a "locked" signal on the control panel display. Initiate the UV disinfection cycle by pressing the "UV Disinfect" button on the control panel (or equivalent control sequence per the equipment manual). Record the elapsed time from button press to UV lamp illumination (typically 0.5–2.0 seconds). Using the UV intensity meter, measure the ultraviolet intensity at three locations inside the pass-box interior: (1) center of the interior chamber, (2) lower corner near the floor, and (3) upper corner near the ceiling. Record all three intensity measurements in W/m² or mW/cm² units. Allow the UV lamps to operate for the programmed disinfection duration (typically 5–15 minutes per facility protocol) and then record the time from cycle completion to automatic UV lamp shutdown.</p>
+<table>
+<thead>
+<tr>
+<th>UV Disinfection Sequence Step</th>
+<th>Expected Timing (seconds)</th>
+<th>Measured Timing (seconds)</th>
+<th>Pass/Fail Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Door closure to UV lamp activation</td>
+<td>0.5–2.0</td>
+<td>—</td>
+<td>Within specification</td>
+</tr>
+<tr>
+<td>UV lamp warm-up to stable intensity</td>
+<td>5.0</td>
+<td>—</td>
+<td>Intensity stable ±5%</td>
+</tr>
+<tr>
+<td>Interior intensity at chamber center</td>
+<td>10–20 W/m²</td>
+<td>—</td>
+<td>Within design range</td>
+</tr>
+<tr>
+<td>Interior intensity at lower corner</td>
+<td>8–18 W/m²</td>
+<td>—</td>
+<td>Minimum 80% of center value</td>
+</tr>
+<tr>
+<td>Interior intensity at upper corner</td>
+<td>8–18 W/m²</td>
+<td>—</td>
+<td>Minimum 80% of center value</td>
+</tr>
+<tr>
+<td>UV disinfection cycle duration</td>
+<td>5–15 minutes</td>
+<td>—</td>
+<td>Per facility protocol</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: UV Lamp Activation Occurs Only When Both Doors Locked, Interior Intensity Meets Design Specification, and Accidental Exposure Prevention Confirmed</h3>
+<p>Verify that the UV lamp does not activate if either door is open or if the door lock sensors indicate an unlocked condition; attempt to open door A while the UV disinfection cycle is running and confirm that the UV lamps shut off immediately and the door lock remains engaged. Confirm that the measured interior UV intensity at the chamber center is within the design range (typically 10–20 W/m² for T5-8W lamps at 700 mm distance) and that intensity at the lower and upper corners is at least 80% of the center value, indicating uniform disinfection coverage. Document all UV lamp activation timings, intensity measurements, and any deviations from specification in the commissioning logbook. If interior intensity falls below the design minimum at any location, investigate for lamp degradation, reflective surface contamination, or misalignment of lamp fixtures; replace lamps or clean reflective surfaces as required before final system acceptance.</p>
+<hr />
+<h2>6. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What is the immediate post-delivery inspection checklist for a uv-pass-through unit before installation begins?</strong></p>
+<p>Upon delivery, inspect the exterior packaging for visible damage and photograph any dents, cracks, or shipping damage before opening. Remove the unit from packaging and verify that all components listed on the packing slip are present: door assemblies, frame components, UV lamp fixtures, control panel, and all fasteners and gaskets. Operate both doors manually (with power disconnected) to confirm smooth operation without binding or excessive friction; verify that the door seals are intact and show no cracks or permanent deformation.</p>
+<p><strong>Q2: What civil works and site preparation prerequisites must be completed before mechanical installation of the uv-pass-through frame begins?</strong></p>
+<p>The installation location must have a level concrete floor with flatness tolerance ±3 mm over 3 meters per ASTM E1155; use a laser level or precision straightedge to verify. Verify that the wall or partition where the pass-box will be mounted can support the equipment weight (typically 150–200 kg) plus dynamic loads from door operation; confirm anchor embedment depth and concrete compressive strength (minimum 25 MPa) with the facility structural engineer. Ensure that electrical power (24 VDC, 10 A minimum) and compressed air supply (6.0 bar ±0.5 bar, oil-free per ISO 8573-1:2010 Class 2) are available within 2 meters of the installation location.</p>
+<p><strong>Q3: What are the standard differential pressure setpoints for biosafety containment zones where a uv-pass-through is installed?</strong></p>
+<p>Differential pressure setpoints depend on the biosafety level and facility design: for BSL-2 cleanrooms, maintain positive pressure of 10–25 Pa relative to adjacent non-classified areas; for BSL-3 laboratories, maintain negative pressure of 25–50 Pa relative to adjacent areas per CDC BMBL guidelines. The uv-pass-through interior should maintain the same pressure as the adjacent cleanroom or containment zone; differential pressure transmitters should be configured with alarm setpoints at ±50% of the design differential pressure to provide early warning of HVAC system degradation.</p>
+<p><strong>Q4: What quick field-based airtightness verification method can be performed without specialized equipment?</strong></p>
+<p>A qualitative smoke test can be performed using a smoke pencil or incense stick held near all door seals, gasket interfaces, and pass-box-to-wall connections while the unit is operating at design airflow; smoke should be drawn toward the pass-box interior (indicating positive pressure) or blown away from the pass-box (indicating negative pressure) without escaping at seams. For quantitative verification, perform a pressure decay test per ASTM E779: pressurize the pass-box interior to 6 bar using the pneumatic supply, close all isolation valves, and measure the pressure drop over 15 minutes; acceptable decay is ≤0.1 bar over 15 minutes, indicating acceptable seal integrity.</p>
+<p><strong>Q5: What are the BMS integration communication protocol parameters and interoperability requirements for uv-pass-through control systems?</strong></p>
+<p>The uv-pass-through control system communicates via Modbus RTU (RS-485 serial protocol) at 9600 baud, even parity, 2 stop bits per Modbus RTU specification; the BMS must support this protocol or use a Modbus gateway converter. All analog input registers (pressure, temperature, humidity) are 16-bit integer or 32-bit floating-point format with scaling factors defined in the equipment documentation; the BMS must apply these scaling factors to convert raw register values to engineering units. Alarm setpoints must be programmed from the installed sensor calibration certificates, not from equipment nameplate values, to ensure alarm thresholds match validated sensor accuracy.</p>
+<p><strong>Q6: What spare parts availability and maintenance scheduling should be established for critical sealing components in a uv-pass-through system?</strong></p>
+<p>Critical sealing components include door gaskets (elastomer or silicone, typically replaced every 2–3 years or after 10,000 door cycles), pneumatic seal inflation bladders (typically replaced every 3–5 years), and UV lamps (replaced every 10,000 operating hours or annually, whichever occurs first). Maintain a spare parts inventory including one complete door gasket set, one pneumatic seal bladder, and two replacement UV lamps on-site to minimize downtime during maintenance. Establish a preventive maintenance schedule with quarterly visual inspections of gaskets and seals, semi-annual pressure decay testing, and annual UV lamp intensity verification per the equipment manufacturer's recommendations.</p>
+<hr />
+<h2>7. References &amp; Data Sources</h2>
+<p>ISO 14644-1:2024 Cleanrooms and associated controlled environments — Part 1: Classification of air cleanliness by particle concentration. International Organization for Standardization.</p>
+<p>IEST-RP-CC001.2 HEPA and ULPA Filters. Institute of Environmental Sciences and Technology.</p>
+<p>ISO 8573-1:2010 Compressed air — Part 1: Contaminants and purity classes. International Organization for Standardization.</p>
+<p>ASTM E779-19 Standard Test Method for Determining Air Leakage Rate by Fan Pressurization. American Society for Testing and Materials.</p>
+<p>ASTM E1155-96 Standard Test Method for Determining Air Leakage of Buildings. American Society for Testing and Materials.</p>
+<p>CDC BMBL Centers for Disease Control and Prevention Biosafety in Microbiological and Biomedical Laboratories. U.S. Department of Health and Human Services.</p>
+<p>WHO Laboratory Biosafety Manual. World Health Organization.</p>
+<p>Modbus Organization Modbus RTU Protocol Specification. Modbus Organization.</p>
+<p>ISO 17025:2017 General requirements for the competence of testing and calibration laboratories. International Organization for Standardization.</p>
+<hr />
+<h2>8. Disclaimer</h2>
+<p>This installation and commissioning guide is based on publicly available engineering standards, published industry data, and documented field validation procedures referenced in Section 7. Given the critical safety requirements of biosafety laboratories and cleanrooms, all installation and commissioning activities must be performed by qualified personnel, validated against on-site conditions, and reviewed against manufacturer-provided IQ/OQ/PQ documentation before operational handover. The procedures and acceptance criteria presented in this article reflect general industry engineering practice and do not supersede manufacturer-specific instructions, local regulatory requirements, or facility-specific risk assessments.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>
