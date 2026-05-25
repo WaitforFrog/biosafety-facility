@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 自净传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="self-cleaning-pass-through, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>Self-Cleaning-Pass-Through: Installation and Commissioning Verification Guide</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Self-Cleaning-Pass-Through: Installation and Commissioning Verification Guide",
+    "description": "Complete installation and commissioning guide for 自净传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "self-cleaning-pass-through",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-05-09T20:01:19+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Self-Cleaning-Pass-Through: Installation and Commissioning Verification Guide</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-05-09T20:01:19+08:00">Published: May 09, 2026</time></p>
+        </header>
+
+        <h1>Self-Cleaning-Pass-Through: Installation and Commissioning Verification Guide</h1>
+<h2>1. Executive Summary</h2>
+<p>This guide establishes the procedural framework for installing and commissioning self-cleaning-pass-through equipment in pharmaceutical, biotechnology, and medical research facilities, with emphasis on electrical interface specifications, HVAC integration sequencing, and pressure containment validation. Installation success depends on three critical procedure steps executed in strict sequence: (1) mechanical frame installation with verified structural load capacity and anchor embedment depth per site civil works documentation; (2) electrical and control system integration with single-point grounding for analog signal circuits and dedicated VLAN isolation for ModbusTCP communication to prevent electromagnetic interference and network security exposure; (3) pressure decay testing and interlock logic validation confirming differential pressure maintenance below 0.1 bar per 15 minutes at 6 bar supply per ASTM E779 [ASTM E779:2019], with both door interlocks functioning to prevent simultaneous opening across any operational state.</p>
+<hr />
+<h2>2. Mechanical Installation and Structural Load Verification — Frame Mounting and Anchor Embedment Depth Confirmation</h2>
+<p><strong>This section establishes the prerequisite structural conditions and anchor installation sequence that determine whether the self-cleaning-pass-through frame can maintain pressure differential without progressive seal degradation or frame deflection.</strong></p>
+<h3>Prerequisite: Verifying Structural Load Capacity and Anchor Embedment Depth Before Door Frame Mounting</h3>
+<p>Before any mechanical installation begins, the site civil works contractor must provide written certification that the mounting surface (concrete wall, steel frame, or composite panel) meets the load-bearing requirements specified in the equipment manufacturer's structural design documentation. The self-cleaning-pass-through frame typically weighs 180–280 kg depending on internal fan and filter assembly configuration, and the pressure differential load (typically 50–100 Pa differential across the frame perimeter) creates additional lateral stress on anchor points. Verify that the mounting surface has been inspected for cracks, spalling, or prior anchor holes that could compromise new anchor embedment depth. Obtain a copy of the concrete strength test report (compressive strength minimum 25 MPa per ISO 1920-1 [ISO 1920-1:2008]) and confirm that anchor embedment depth matches the manufacturer's specification — typically 60–80 mm for M12 expansion anchors in concrete, or 40–50 mm for M10 anchors in composite panels.</p>
+<h3>Procedure: Torque Sequence for Expansion Anchor Installation — Cross-Pattern at 80 Nm Per M12 Anchor</h3>
+<p>Install expansion anchors in a cross-pattern sequence (diagonal pairs, not sequential around the perimeter) to distribute load evenly and prevent frame rocking during tightening. Use a calibrated click-type torque wrench with ±5% accuracy and apply 80 Nm torque to each M12 anchor (or 50 Nm for M10 anchors) in the following sequence: tighten anchor 1 (top-left) to 80 Nm, then anchor 3 (bottom-right) to 80 Nm, then anchor 2 (top-right) to 80 Nm, then anchor 4 (bottom-left) to 80 Nm. After completing the first pass, re-verify each anchor at 80 Nm to confirm no relaxation occurred. Measure frame verticality using a digital spirit level (±0.5 mm/m accuracy) at four points on the frame perimeter; maximum total deviation must not exceed ±3 mm across the full frame height.</p>
+<table>
+<thead>
+<tr>
+<th>Anchor Type</th>
+<th>Embedment Depth (mm)</th>
+<th>Torque Specification (Nm)</th>
+<th>Concrete Strength Minimum (MPa)</th>
+<th>Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M12 Expansion</td>
+<td>60–80</td>
+<td>80 ± 4</td>
+<td>25</td>
+<td>Calibrated torque wrench, ±5% accuracy</td>
+</tr>
+<tr>
+<td>M10 Expansion</td>
+<td>40–50</td>
+<td>50 ± 2.5</td>
+<td>25</td>
+<td>Calibrated torque wrench, ±5% accuracy</td>
+</tr>
+<tr>
+<td>M12 Chemical Anchor</td>
+<td>70–90</td>
+<td>85 ± 4</td>
+<td>20</td>
+<td>Torque wrench + pull-out test per ASTM D4541</td>
+</tr>
+<tr>
+<td>Frame Verticality</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Digital spirit level, ±0.5 mm/m</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Frame Verticality ±1 mm/m, Maximum Total Deviation ±3 mm — Measured with Digital Spirit Level</h3>
+<p>After anchor torque verification, measure frame verticality at four cardinal points (top-left, top-right, bottom-left, bottom-right) using a digital spirit level with ±0.5 mm/m resolution. Record the deviation at each point and calculate the maximum total deviation across all four measurements. Acceptance criterion: no single measurement shall exceed ±1 mm/m, and the maximum total deviation across all four points shall not exceed ±3 mm. If any measurement exceeds this threshold, loosen the anchors in the cross-pattern sequence, re-inspect the mounting surface for debris or surface irregularities, and re-torque to specification. Facilities that skip frame verticality verification accept unquantified risk of progressive seal degradation and pressure differential loss during operational cycling.</p>
+<hr />
+<h2>3. Electrical Interface Configuration and Control Cable Shielding — Signal Integrity and EMI Mitigation</h2>
+<p><strong>This section specifies the electrical interface requirements and cable routing discipline that prevent electromagnetic interference from degrading sensor signal quality and control system responsiveness.</strong></p>
+<h3>Prerequisite: Confirming Power Supply Voltage Stability and Dedicated Circuit Breaker Isolation Before Control System Wiring</h3>
+<p>The self-cleaning-pass-through control system typically requires 230 V AC single-phase or 380 V AC three-phase power supply (verify exact requirement from equipment nameplate), with maximum voltage variation of ±10% per IEC 60038 [IEC 60038:2009]. Before connecting any control cables, verify that the facility's main distribution board provides a dedicated circuit breaker (minimum 16 A for single-phase, 20 A for three-phase) with earth leakage protection (RCD/GFCI rated 30 mA, 30 ms response time per IEC 61008 [IEC 61008-1:2012]). Measure the supply voltage at the equipment connection point using a calibrated multimeter (±2% accuracy) and confirm stability over a 5-minute observation period; voltage fluctuation exceeding ±10% indicates upstream distribution problems that must be resolved before proceeding. Verify that the facility's grounding system has been tested and certified to meet earth resistance requirements (maximum 4 ohms per IEC 61936-1 [IEC 61936-1:2010]).</p>
+<h3>Procedure: Shielded Cable Installation with Single-Point Grounding for Analog Signals — 150 mm Separation from Power Cables</h3>
+<p>Install all analog signal cables (4–20 mA pressure transmitter, 0–10 V differential pressure sensor) in individual shielded twisted pairs with overall braided shield. Terminate the shield at the controller input terminal only (receiving end); insulate the shield at the field device end using a non-conductive ferrule or heat-shrink tubing to prevent ground loop formation. Maintain minimum 150 mm separation between power cables (&gt;400 V) and signal cables throughout the installation route; use separate cable trays or conduit runs where possible. For the differential pressure transmitter circuit, connect the shield to the controller's analog ground terminal (typically labeled "AGND" or "0V") using a 360° shield clamp on the connector backshell. Route all cables away from variable frequency drives (VFD), welding equipment, and large motor starter panels; if unavoidable proximity exists, use steel wire armoring (SWA) or steel conduit for the signal cable section within 1 meter of the EMI source.</p>
+<table>
+<thead>
+<tr>
+<th>Cable Type</th>
+<th>Shielding Configuration</th>
+<th>Termination Point</th>
+<th>Separation from Power (mm)</th>
+<th>Grounding Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4–20 mA Analog</td>
+<td>Individual shielded pair</td>
+<td>Receiving end only</td>
+<td>150 minimum</td>
+<td>Single-point at controller AGND</td>
+</tr>
+<tr>
+<td>0–10 V Analog</td>
+<td>Individual shielded pair</td>
+<td>Receiving end only</td>
+<td>150 minimum</td>
+<td>Single-point at controller AGND</td>
+</tr>
+<tr>
+<td>Modbus RS-485</td>
+<td>Overall braided shield</td>
+<td>One end only</td>
+<td>150 minimum</td>
+<td>Equipotential bonding if &gt;50 m</td>
+</tr>
+<tr>
+<td>Power Supply</td>
+<td>Unshielded or armored</td>
+<td>—</td>
+<td>—</td>
+<td>Separate tray from signal cables</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Signal-to-Noise Ratio ≥40 dB for Analog Signals — Verified with Oscilloscope at Controller Input Terminal</h3>
+<p>After cable installation is complete, connect an oscilloscope (minimum 100 MHz bandwidth, 8-bit vertical resolution) to the controller's analog input terminal and measure the signal quality with the field device (pressure transmitter or differential pressure sensor) operating at nominal setpoint. Capture a 10-second waveform sample and calculate the signal-to-noise ratio (SNR) as 20 × log₁₀(signal amplitude / noise amplitude). Acceptance criterion: SNR ≥40 dB for all analog circuits. If SNR falls below 40 dB, identify the noise source by temporarily disconnecting the signal cable shield at the field device end and re-measuring; if SNR improves, a ground loop exists and the shield termination must be corrected. Verify that no ground loop currents exist by measuring voltage between the cable shield and the controller ground using a millivolt meter; acceptable range is 0–50 mV DC. Facilities that commission equipment with SNR &lt;40 dB accept degraded sensor responsiveness and potential false alarm activation during normal operation.</p>
+<hr />
+<h2>4. Interlock Control Logic Handover and Operational Documentation — Control Philosophy and State Transition Verification</h2>
+<p><strong>This section establishes the documentation and training requirements that enable facilities management to independently review and approve the interlock logic without requiring continuous electrical engineering support.</strong></p>
+<h3>Prerequisite: Obtaining Complete Interlock Logic Documentation Including Control Philosophy Description and State Transition Diagram</h3>
+<p>Before any interlock testing begins, the equipment supplier must provide a complete control logic handover package that includes: (1) a plain-language control philosophy description (minimum 200 words) explaining the overall operation and safety intent, (2) a state transition diagram showing all possible door states and the conditions that permit transition between states, (3) an input/output list in table format with signal names, signal types (DI/DO/AI/AO), terminal addresses, and normal/alarm states, (4) alarm and trip logic descriptions with priority levels and reset procedures, and (5) an as-built wiring diagram with loop diagrams for each interlock circuit. The control philosophy must explicitly state the safety rule — for example: "The interlock system prevents both doors of the pass-through from being open simultaneously to maintain pressure differential between the clean and non-clean zones. Door B can only be unlocked when Door A is fully closed and sealed, confirmed by a door position switch reading." Request that the supplier provide this documentation in both printed and electronic format (PDF plus native CAD files) at least 14 days before the scheduled commissioning date.</p>
+<h3>Procedure: Interlock Logic Verification Using State Transition Testing — All Door State Combinations and Transition Conditions</h3>
+<p>Conduct a systematic state transition test by manually cycling the doors through all possible states while monitoring the control system's response. Begin with both doors closed and sealed (normal state); verify that the control system displays "Ready" status and allows operator selection of either door for opening. Open Door A and verify that Door B remains locked (control system output to Door B solenoid lock remains de-energized). Attempt to open Door B while Door A is open; the control system must reject this command and display an alarm message (e.g., "Door A must be closed before Door B can open"). Close Door A and verify that the door position switch confirms full closure; only after this confirmation should the control system permit Door B to unlock. Repeat this sequence in reverse (open Door B first, then attempt Door A). Document each state transition and the control system's response in a test log. Verify that the interlock logic matches the state transition diagram provided in the control philosophy documentation.</p>
+<table>
+<thead>
+<tr>
+<th>Interlock State</th>
+<th>Door A Status</th>
+<th>Door B Status</th>
+<th>Control System Response</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial</td>
+<td>Closed &amp; Sealed</td>
+<td>Closed &amp; Sealed</td>
+<td>"Ready" status displayed</td>
+<td>Both doors locked, operator can select either door</td>
+</tr>
+<tr>
+<td>Door A Opening</td>
+<td>Opening</td>
+<td>Locked</td>
+<td>Door A solenoid energized</td>
+<td>Door B remains locked, no alarm</td>
+</tr>
+<tr>
+<td>Door A Open</td>
+<td>Open</td>
+<td>Locked</td>
+<td>"Door A Open" status</td>
+<td>Door B solenoid de-energized, alarm if Door B unlock attempted</td>
+</tr>
+<tr>
+<td>Door A Closing</td>
+<td>Closing</td>
+<td>Locked</td>
+<td>Door A solenoid de-energizing</td>
+<td>Door B remains locked until Door A fully closed</td>
+</tr>
+<tr>
+<td>Door A Closed</td>
+<td>Closed &amp; Sealed</td>
+<td>Locked</td>
+<td>Position switch confirms closure</td>
+<td>Door B unlock permitted, "Ready" status after 2-second delay</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Interlock Logic Matches State Transition Diagram — All Door State Combinations Tested and Documented</h3>
+<p>After completing the state transition test sequence, compare the actual control system responses against the state transition diagram provided in the control philosophy documentation. Create a verification matrix with columns for "Planned State Transition," "Actual Control Response," and "Acceptance Status (Pass/Fail)." All state transitions must match the documented logic; any deviation must be investigated and corrected before proceeding to pressure testing. Conduct a 2-hour on-site handover training session with the facilities manager and maintenance staff, using the control philosophy description and state transition diagram as training materials. Document training attendance and provide a Q&amp;A session notes summary. Facilities that commission equipment without verifying interlock logic against documented state transitions accept unquantified risk of unintended simultaneous door opening during maintenance or emergency scenarios.</p>
+<hr />
+<h2>5. Building Management System Integration and ModbusTCP Communication Configuration — Network Isolation and Protocol Parameter Verification</h2>
+<p><strong>This section specifies the network architecture and communication parameter configuration that enable secure BMS integration without exposing biosafety equipment to network security risks or traffic congestion.</strong></p>
+<h3>Prerequisite: Confirming Dedicated VLAN Availability and Network Isolation from Corporate IT Systems Before Equipment Connection</h3>
+<p>Before connecting the self-cleaning-pass-through to the facility's building management system, verify that the facility's network infrastructure includes a dedicated VLAN (Virtual Local Area Network) for building automation systems, physically isolated from the corporate IT network via firewall rules. The equipment's ModbusTCP interface (default port 502 per RFC 1782 [RFC 1782:1995]) must not be exposed to the same network segment as office workstations, email servers, or internet-connected systems. Request from the facility's IT department: (1) confirmation that a dedicated VLAN exists for building automation, (2) a static IP address assignment (typically in the range 192.168.1.0/24 or 10.0.0.0/8 per RFC 1918 [RFC 1918:1996]), (3) firewall rules that restrict access to the equipment's IP address to only the BMS server and authorized maintenance terminals, and (4) documentation of the network topology showing the equipment's connection point and VLAN membership. Verify that no other biosafety equipment or critical facility systems share the same network segment as the self-cleaning-pass-through.</p>
+<h3>Procedure: ModbusTCP Configuration Parameters and Register Mapping — Static IP Address, Subnet Mask, and Unit ID Assignment</h3>
+<p>Configure the self-cleaning-pass-through's ModbusTCP interface with the following parameters: (1) static IP address (e.g., 192.168.1.100, assigned by facility IT), (2) subnet mask (typically 255.255.255.0 for /24 networks), (3) default gateway (typically 192.168.1.1 or facility IT-specified address), (4) Modbus unit ID (range 1–247, typically 1 for single equipment or assigned sequentially if multiple devices exist on the network), (5) TCP port 502 (standard Modbus port, do not change unless facility firewall requires alternative port), (6) connection timeout 3 seconds, (7) retry count 3, and (8) polling interval 500 ms minimum. Verify that the equipment's register mapping uses standard Modbus addressing: holding registers 40001–49999 for read/write parameters (e.g., setpoints, control commands), input registers 10001–19999 for read-only parameters (e.g., sensor readings, status flags). Test communication using Modbus function codes 03 (read holding registers), 04 (read input registers), 06 (write single register), and 16 (write multiple registers). Document all configuration parameters in the BMS integration documentation.</p>
+<table>
+<thead>
+<tr>
+<th>ModbusTCP Parameter</th>
+<th>Configuration Value</th>
+<th>Standard Reference</th>
+<th>Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP Address</td>
+<td>Static (e.g., 192.168.1.100)</td>
+<td>RFC 1918</td>
+<td>Ping from BMS server</td>
+</tr>
+<tr>
+<td>Subnet Mask</td>
+<td>255.255.255.0 (/24)</td>
+<td>RFC 1918</td>
+<td>Verify network connectivity</td>
+</tr>
+<tr>
+<td>Modbus Unit ID</td>
+<td>1–247 (assigned)</td>
+<td>Modbus TCP Specification</td>
+<td>Read device ID register</td>
+</tr>
+<tr>
+<td>TCP Port</td>
+<td>502</td>
+<td>RFC 1782</td>
+<td>Telnet to port 502</td>
+</tr>
+<tr>
+<td>Connection Timeout</td>
+<td>3 seconds</td>
+<td>Modbus Best Practice</td>
+<td>Monitor BMS logs for timeout events</td>
+</tr>
+<tr>
+<td>Polling Interval</td>
+<td>≥500 ms</td>
+<td>Modbus TCP Specification</td>
+<td>Verify no communication errors in BMS</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: IP Connectivity Verified with Ping, Port 502 Listening Confirmed with Telnet, No Duplicate Unit IDs on Network</h3>
+<p>After configuration is complete, verify IP connectivity by executing a ping command from the BMS server to the equipment's IP address (e.g., <code>ping 192.168.1.100</code>); acceptable response time is &lt;50 ms with 0% packet loss. Verify that port 502 is listening by executing a telnet command to the equipment's IP address and port (e.g., <code>telnet 192.168.1.100 502</code>); a successful connection should display a Modbus TCP banner or remain open without error. Scan the network for duplicate Modbus unit IDs using the BMS software's device discovery function; if duplicate unit IDs are detected, reconfigure the equipment's unit ID to a unique value. Monitor the BMS logs for 24 hours after commissioning to confirm that no communication timeouts, retry errors, or register read failures occur. Facilities that commission equipment without verifying network isolation and communication parameters accept risk of network congestion degrading sensor responsiveness and potential unauthorized access to equipment control functions.</p>
+<hr />
+<h2>6. Pressure Decay Testing and Airtightness Verification — Differential Pressure Maintenance and Seal Integrity Confirmation</h2>
+<p><strong>This section establishes the pressure testing procedure and acceptance criteria that quantify the self-cleaning-pass-through's ability to maintain differential pressure and prevent cross-contamination between zones.</strong></p>
+<h3>Prerequisite: Confirming Air Supply Pressure and Oil-Free Air Certification Per ISO 8573-1 Before Pressure Testing Begins</h3>
+<p>Before conducting pressure decay testing, verify that the facility's compressed air supply meets ISO 8573-1:2010 [ISO 8573-1:2010] Class 2 purity requirements: particle size ≤1 µm (maximum 400 particles per cm³), water content ≤5 mg/m³ (dew point ≤–40°C), and oil content ≤0.1 mg/m³. Obtain a copy of the air compressor maintenance log and filter replacement schedule; confirm that the compressor's intake filter and after-cooler have been serviced within the last 6 months. Measure the supply pressure at the equipment's air inlet using a calibrated pressure gauge (±2% accuracy); acceptable range is 5.5–6.5 bar (80–95 psi). If the supply pressure is outside this range, adjust the facility's air regulator or contact the compressor maintenance contractor before proceeding. Verify that the equipment's internal air filter (typically a 3 µm particulate filter) has been inspected and is free of debris or moisture accumulation.</p>
+<h3>Procedure: Pressure Decay Test at 6 Bar Supply — 15-Minute Hold Period with Continuous Pressure Monitoring</h3>
+<p>Connect a calibrated differential pressure transmitter (±1% accuracy, 0–10 bar range) to the equipment's pressure monitoring port and record the baseline pressure with both doors closed and sealed. Pressurize the equipment to 6 bar using the facility's compressed air supply and allow 2 minutes for pressure stabilization. Begin the 15-minute hold period and record pressure readings at 1-minute intervals (total 15 readings). Calculate the pressure decay rate as (initial pressure – final pressure) / 15 minutes. Acceptable decay rate is ≤0.1 bar per 15 minutes at 6 bar supply per ASTM E779:2019 [ASTM E779:2019]. If decay rate exceeds 0.1 bar per 15 minutes, conduct a visual inspection of all door seals, frame gaskets, and pressure port connections for visible damage, debris, or improper seating. If no visible defects are found, apply a soap solution to all seal surfaces and observe for bubble formation indicating air leakage; mark any leak locations and contact the equipment supplier for seal replacement or frame re-torquing.</p>
+<table>
+<thead>
+<tr>
+<th>Test Parameter</th>
+<th>Specification</th>
+<th>Measurement Method</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supply Pressure</td>
+<td>5.5–6.5 bar</td>
+<td>Calibrated pressure gauge, ±2%</td>
+<td>Within range, stable ±0.2 bar over 2 minutes</td>
+</tr>
+<tr>
+<td>Test Duration</td>
+<td>15 minutes</td>
+<td>Digital timer</td>
+<td>Continuous monitoring, no interruption</td>
+</tr>
+<tr>
+<td>Pressure Decay Rate</td>
+<td>≤0.1 bar per 15 min</td>
+<td>Differential pressure transmitter, ±1%</td>
+<td>Decay &lt;0.1 bar from 6 bar to 5.9 bar minimum</td>
+</tr>
+<tr>
+<td>Seal Integrity</td>
+<td>Visual + soap solution</td>
+<td>Bubble formation observation</td>
+<td>No bubbles at any seal surface</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Pressure Decay ≤0.1 bar Over 15 Minutes at 6 Bar Supply — ASTM E779 Method Reference</h3>
+<p>After the 15-minute hold period is complete, calculate the final pressure decay and compare against the acceptance criterion of ≤0.1 bar per 15 minutes. If the measured decay is ≤0.1 bar, the equipment passes the pressure decay test and seal integrity is confirmed. Record the test results in the commissioning log with date, time, initial pressure, final pressure, decay rate, and operator signature. Repeat the pressure decay test a second time after a 30-minute rest period to confirm repeatability; the second test result must also be ≤0.1 bar per 15 minutes. If either test result exceeds 0.1 bar per 15 minutes, the equipment is not acceptable for operational use and must be returned to the supplier for seal replacement or frame re-torquing. Facilities that skip the 15-minute pressure hold test at 6 bar before system commissioning accept an unquantified seal integrity risk that no downstream validation can fully uncover.</p>
+<hr />
+<h2>7. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What is the immediate post-delivery inspection checklist for self-cleaning-pass-through equipment?</strong></p>
+<p>Upon delivery, inspect the equipment for visible damage to the frame, doors, or seals; verify that all fasteners are present and torque-checked per the manufacturer's specification; confirm that the control panel is intact and all indicator lights function; and verify that the equipment's serial number and model designation match the purchase order. Request a copy of the factory pressure decay test report (typically performed at 6 bar for 15 minutes per ASTM E779) and confirm that the reported decay rate is ≤0.1 bar per 15 minutes. If any damage is observed or test reports are missing, document the discrepancy in writing and contact the supplier before installation begins.</p>
+<p><strong>Q2: What civil works and site preparation prerequisites must be completed before mechanical installation begins?</strong></p>
+<p>The mounting surface (concrete wall or steel frame) must be inspected for cracks, spalling, or prior anchor holes and must have a minimum compressive strength of 25 MPa per ISO 1920-1. Verify that the mounting surface is level (±3 mm maximum deviation across the full frame height) and that adequate clearance exists for door swing (typically 90–120 degrees depending on door configuration). Confirm that electrical power (230 V AC or 380 V AC as specified) and compressed air supply (5.5–6.5 bar, ISO 8573-1 Class 2 purity) are available within 5 meters of the installation location.</p>
+<p><strong>Q3: What are the standard differential pressure settings for biosafety containment zones using self-cleaning-pass-through equipment?</strong></p>
+<p>Differential pressure across the pass-through is typically maintained at 50–100 Pa (0.5–1.0 mbar) depending on the facility's biosafety level classification and HVAC design. For BSL-3 facilities, a minimum differential pressure of 50 Pa is recommended to ensure airflow from clean to non-clean zones; for BSL-4 facilities, differential pressure may be increased to 100 Pa or higher. Verify the specific differential pressure requirement from the facility's HVAC design documentation and the equipment supplier's specification sheet before commissioning.</p>
+<p><strong>Q4: What is a quick field-based airtightness verification method without specialized equipment?</strong></p>
+<p>Apply a soap solution (diluted dish soap in water) to all door seals, frame gaskets, and pressure port connections while the equipment is pressurized to 6 bar; observe for bubble formation indicating air leakage. Mark any leak locations with a marker and contact the equipment supplier for seal replacement. This method provides qualitative confirmation of seal integrity but does not quantify the decay rate; for quantitative verification, use a calibrated differential pressure transmitter and conduct the 15-minute pressure hold test per ASTM E779.</p>
+<p><strong>Q5: What are the BMS integration communication protocol parameters and interoperability requirements?</strong></p>
+<p>The self-cleaning-pass-through typically uses ModbusTCP protocol on port 502 with standard register addressing (holding registers 40001–49999, input registers 10001–19999). Configure a static IP address (e.g., 192.168.1.100), subnet mask (255.255.255.0), and unique Modbus unit ID (1–247). Verify network isolation via dedicated VLAN and firewall rules restricting access to only the BMS server. Test communication using Modbus function codes 03 (read holding), 04 (read input), 06 (write single), and 16 (write multiple).</p>
+<p><strong>Q6: What are the spare parts availability, mean time to repair (MTTR), and maintenance scheduling requirements for critical sealing components?</strong></p>
+<p>Critical sealing components (door gaskets, frame seals, pressure port O-rings) typically have a service life of 3–5 years depending on operational cycling frequency and environmental conditions. Request from the equipment supplier a list of recommended spare parts (typically door gaskets, filter cartridges, and solenoid valve coils) and confirm that these parts are available with a lead time of ≤2 weeks. Schedule preventive maintenance every 12 months to inspect seals for degradation, replace filter cartridges, and verify pressure decay performance per ASTM E779; mean time to repair (MTTR) for seal replacement is typically 2–4 hours.</p>
+<hr />
+<h2>8. References &amp; Data Sources</h2>
+<p>ISO 1920-1:2008. Testing of cement — Part 1: Determination of strength. International Organization for Standardization.</p>
+<p>ISO 8573-1:2010. Compressed air — Part 1: Contaminants and purity classes. International Organization for Standardization.</p>
+<p>ISO 14644-1:2024. Cleanrooms and associated controlled environments — Part 1: Classification of air cleanliness by particle concentration. International Organization for Standardization.</p>
+<p>ASTM E779:2019. Standard test method for determining air leakage rate by fan pressurization. ASTM International.</p>
+<p>IEC 60038:2009. IEC standard voltages. International Electrotechnical Commission.</p>
+<p>IEC 61008-1:2012. Residual current operated circuit-breakers without integral overcurrent protection for household and similar uses — Part 1: General rules. International Electrotechnical Commission.</p>
+<p>IEC 61936-1:2010. Power installations exceeding 1 kV AC — Part 1: Common rules. International Electrotechnical Commission.</p>
+<p>RFC 1782:1995. Transmission of IP over FDDI. Internet Engineering Task Force.</p>
+<p>RFC 1918:1996. Address allocation for private internets. Internet Engineering Task Force.</p>
+<p>WHO Laboratory Biosafety Manual. Third Edition. World Health Organization.</p>
+<hr />
+<h2>9. Disclaimer</h2>
+<p>This installation and commissioning guide is based on publicly available engineering standards, published industry data, and documented field validation procedures. Given the critical safety requirements of biosafety laboratories and cleanrooms, all installation and commissioning activities must be performed by qualified personnel, validated against on-site conditions, and reviewed against manufacturer-provided IQ/OQ/PQ documentation before operational handover.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>

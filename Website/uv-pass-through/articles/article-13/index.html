@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for UV传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="uv-pass-through, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>uv-pass-through Installation and Commissioning: Pressure Decay Validation and System Integration Guide</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "uv-pass-through Installation and Commissioning: Pressure Decay Validation and System Integration Guide",
+    "description": "Complete installation and commissioning guide for UV传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "uv-pass-through",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-05-04T11:13:22+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>uv-pass-through Installation and Commissioning: Pressure Decay Validation and System Integration Guide</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-05-04T11:13:22+08:00">Published: May 04, 2026</time></p>
+        </header>
+
+        <h1>uv-pass-through Installation and Commissioning: Pressure Decay Validation and System Integration Guide</h1>
+<h2>1. Executive Summary</h2>
+<p>This guide establishes the procedural framework for installing and commissioning UV pass-through transfer chambers in biosafety laboratory environments, with emphasis on pressure integrity validation, interlock system verification, and commissioning report archiving per ASTM E779 and ISO 14644 standards. The installation sequence prioritizes mechanical frame alignment and airtight door seating before electrical integration, followed by differential pressure sensor calibration and full system performance testing. Three critical acceptance criteria govern commissioning completion: pressure decay rate ≤0.1 L/s at 25 Pa differential pressure per ASTM E779, interlock response time ≤2 seconds between door lock/unlock states, and UV lamp irradiance ≥0.5 mW/cm² at the pass box interior surface measured at 254 nm wavelength.</p>
+<hr />
+<h2>2. Mechanical Frame Installation and Structural Load Verification — Foundation Preparation and Anchor Embedment Depth Confirmation</h2>
+<p><strong>This section establishes the prerequisite structural conditions and anchor installation sequence that determine whether the pass box frame will maintain pressure integrity during operational cycling.</strong></p>
+<h3>Prerequisite: Verifying Structural Load Capacity and Anchor Embedment Depth Before Door Frame Mounting</h3>
+<p>Before any mechanical installation begins, the receiving facility must provide a structural load analysis confirming that the mounting surface (concrete floor, steel frame, or wall) can support the uv-pass-through unit's operational load of 280 kg plus dynamic loads from door cycling. The mounting surface must be inspected for cracks, spalling, or surface contamination that would prevent proper anchor seating. Anchor embedment depth must be verified using a depth gauge: M12 expansion anchors require minimum 80 mm embedment in concrete with compressive strength ≥25 MPa; shallower embedment will cause anchor pull-out during pressure cycling and frame misalignment.</p>
+<h3>Procedure: Torque Sequence for Expansion Anchor Installation and Frame Leveling — Cross-Pattern at 80 Nm Per M12 Anchor</h3>
+<p>Install M12 stainless steel expansion anchors in a cross-pattern sequence (anchor 1 → anchor 3 → anchor 2 → anchor 4) to prevent frame rocking during tightening. Torque each anchor to 80 Nm using a calibrated click-type torque wrench with ±5% accuracy; verify torque wrench calibration certificate is valid within 12 months before use. After all anchors reach 80 Nm, verify frame verticality using a digital spirit level: maximum deviation ±1 mm per meter of frame height, total frame deviation ±3 mm across the full 1200 mm height. If frame deviation exceeds ±3 mm, loosen anchors sequentially and re-shim the base until verticality is achieved, then re-torque to 80 Nm.</p>
+<table>
+<thead>
+<tr>
+<th>Anchor Installation Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anchor Material</td>
+<td>M12 Stainless Steel 304</td>
+<td>Visual inspection — no corrosion or surface defects</td>
+</tr>
+<tr>
+<td>Embedment Depth</td>
+<td>Minimum 80 mm in concrete ≥25 MPa</td>
+<td>Depth gauge measurement ±2 mm</td>
+</tr>
+<tr>
+<td>Torque Value</td>
+<td>80 Nm per anchor</td>
+<td>Calibrated torque wrench ±5% accuracy</td>
+</tr>
+<tr>
+<td>Frame Verticality</td>
+<td>±1 mm/m maximum</td>
+<td>Digital spirit level reading</td>
+</tr>
+<tr>
+<td>Total Frame Deviation</td>
+<td>±3 mm across 1200 mm height</td>
+<td>Laser level or precision straightedge</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Frame Verticality ±1 mm/m and Anchor Torque Verification — Measured with Digital Spirit Level and Calibrated Torque Wrench</h3>
+<p>After anchor installation and frame leveling, perform a final verification: measure frame verticality at four points (top-left, top-right, bottom-left, bottom-right) using a digital spirit level with ±0.05° resolution; record all readings and confirm maximum deviation is ±1 mm/m. Re-verify anchor torque on all four anchors using the same calibrated torque wrench; if any anchor reads below 75 Nm, re-torque to 80 Nm and re-measure verticality. Document all measurements in the commissioning log with equipment serial numbers and calibration certificate references. Frame installation is complete when verticality is confirmed and all anchor torques are within specification.</p>
+<hr />
+<h2>3. Differential Pressure Sensor Calibration and Zero Point Adjustment — Field Calibration Procedure for Installed Pressure Transmitters</h2>
+<p><strong>This section establishes the pre-calibration verification steps and zero-point adjustment procedure that prevent false pressure readings caused by mounting stress rather than true sensor drift.</strong></p>
+<h3>Prerequisite: Confirming Sensor Mounting Torque and Cable Shield Grounding Before Zero-Point Calibration</h3>
+<p>Before adjusting the differential pressure transmitter zero point, verify that the sensor is not reading a zero offset caused by process connection strain. Power up the transmitter for a minimum of 30 minutes to allow thermal stabilization; record the initial reading on the display or BMS interface. Check the mounting torque on the process connection (the fitting that connects the sensor to the pass box interior and exterior pressure ports) using a calibrated torque wrench: the connection should be torqued to 25 Nm ±2 Nm for M14 fittings; if torque is below 20 Nm or above 30 Nm, loosen the fitting, re-torque to 25 Nm, and re-record the sensor reading after 5 minutes stabilization. Verify that the sensor cable shield is grounded to the facility ground bus at a single point only; multiple ground paths create ground loops that introduce noise into the pressure signal.</p>
+<h3>Procedure: Zero-Point Calibration Using Reference Pressure Gauge — Vent Both Sides to Atmosphere and Adjust Zero Trim</h3>
+<p>Vent both the high-pressure and low-pressure ports of the differential pressure transmitter to atmosphere using 1/4-inch stainless steel tubing; connect a reference pressure gauge (±0.05% full-scale accuracy, traceable calibration certificate valid within 12 months) to the high-pressure port to verify atmospheric pressure. Record the transmitter reading as the "as-found" value; if the reading is not 0.0 Pa, note the offset. Locate the zero potentiometer on the transmitter circuit board (typically labeled "ZERO ADJ" or "OFFSET"); using a non-conductive adjustment tool, turn the potentiometer clockwise or counterclockwise until the transmitter display reads 0.0 Pa ±0.1 Pa. Record the "as-left" value and the number of potentiometer turns required. Disconnect the reference gauge and tubing, reconnect the process connections, and verify the transmitter reading returns to 0.0 Pa ±0.1 Pa after 5 minutes stabilization.</p>
+<table>
+<thead>
+<tr>
+<th>Calibration Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reference Gauge Accuracy</td>
+<td>±0.05% Full-Scale</td>
+<td>Calibration certificate valid within 12 months</td>
+</tr>
+<tr>
+<td>Transmitter Warm-Up Time</td>
+<td>Minimum 30 minutes</td>
+<td>Thermal stabilization before measurement</td>
+</tr>
+<tr>
+<td>Process Connection Torque</td>
+<td>25 Nm ±2 Nm for M14</td>
+<td>Calibrated torque wrench ±5% accuracy</td>
+</tr>
+<tr>
+<td>Zero-Point Adjustment Range</td>
+<td>±5% of full-scale</td>
+<td>As-found to as-left deviation recorded</td>
+</tr>
+<tr>
+<td>Post-Calibration Verification</td>
+<td>0.0 Pa ±0.1 Pa</td>
+<td>Transmitter display reading after 5 minutes</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Zero-Point Offset ≤0.1 Pa and Calibration Certificate Documentation — Recorded with Equipment Serial Numbers and Valid Calibration Dates</h3>
+<p>After zero-point adjustment, perform a span calibration verification: apply a known reference pressure of 50 Pa to the high-pressure port (using a precision pressure regulator and reference gauge) and record the transmitter reading; the reading must be 50 Pa ±0.5 Pa (±1% of applied pressure). If the span error exceeds ±1%, contact the transmitter manufacturer for recalibration or replacement. Document the calibration procedure in the commissioning log: record the reference gauge serial number and calibration certificate number, the transmitter serial number, the as-found and as-left zero values, the span verification result, the date of calibration, and the signature of the commissioning engineer. File the reference gauge calibration certificate in the project commissioning report appendix. The transmitter is accepted for operational use when zero-point offset is ≤0.1 Pa and span verification is within ±1%.</p>
+<hr />
+<h2>4. Pass Box Performance Verification Testing — Validating Airflow, Filtration Efficiency, and Interlock Performance of Transfer Chambers</h2>
+<p><strong>This section establishes the multi-point airflow measurement procedure and filter integrity test method that detect performance degradation from HEPA filter loading and verify interlock system response.</strong></p>
+<h3>Prerequisite: Confirming HVAC System Commissioning and Filter Face Accessibility Before Airflow Measurement</h3>
+<p>Before measuring pass box airflow, verify that the facility HVAC system has been commissioned and is operating at design conditions: supply air pressure ≥25 Pa above ambient, exhaust air pressure ≤-25 Pa below ambient, and HVAC system runtime ≥4 hours to establish stable pressure differentials. Inspect the HEPA filter face for visible damage, tears, or bypass paths; if damage is present, replace the filter before proceeding. Ensure the thermal anemometer (measurement accuracy ±3% of reading or ±0.05 m/s, whichever is greater) has been calibrated within 12 months and is functioning correctly by performing a zero-check in still air. Verify that the pass box interior is accessible for measurement and that no obstructions block the filter face.</p>
+<h3>Procedure: Nine-Point Air Velocity Measurement Across HEPA Filter Face — 3×3 Grid Pattern and Average Velocity Calculation</h3>
+<p>Measure air face velocity at nine points across the HEPA filter face using a 3×3 grid pattern: divide the filter face into nine equal squares and measure velocity at the center of each square using the thermal anemometer. Record all nine readings in the commissioning log. Calculate the average face velocity by summing all nine readings and dividing by nine. The acceptance criterion per IEST-RP-CC001 is 0.35–0.54 m/s; if the average velocity is below 0.35 m/s, the HVAC system supply pressure is insufficient and must be increased; if above 0.54 m/s, the supply pressure is excessive and must be reduced. After velocity adjustment, re-measure all nine points and recalculate the average. Perform an in-situ DOP/PAO filter integrity test per IEST-RP-CC001: introduce a 0.3 µm polydisperse aerosol upstream of the filter at a concentration of 10–20 µg/L, scan the downstream face with a photometer, and verify that no single point reading exceeds 0.01% of the upstream challenge concentration.</p>
+<table>
+<thead>
+<tr>
+<th>Airflow Verification Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Measurement Grid Pattern</td>
+<td>3×3 grid (9 points)</td>
+<td>Minimum 9 velocity readings</td>
+</tr>
+<tr>
+<td>Thermal Anemometer Accuracy</td>
+<td>±3% of reading or ±0.05 m/s</td>
+<td>Calibration certificate valid within 12 months</td>
+</tr>
+<tr>
+<td>Average Face Velocity</td>
+<td>0.35–0.54 m/s</td>
+<td>IEST-RP-CC001 standard</td>
+</tr>
+<tr>
+<td>Filter Integrity Test Method</td>
+<td>DOP/PAO in-situ leak test</td>
+<td>Photometer scan of filter face</td>
+</tr>
+<tr>
+<td>Downstream Challenge Limit</td>
+<td>≤0.01% of upstream concentration</td>
+<td>No single point exceeds threshold</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Average Face Velocity Within 0.35–0.54 m/s and Filter Integrity ≤0.01% Penetration — Verified with Calibrated Thermal Anemometer and Photometer</h3>
+<p>After airflow measurement and filter integrity testing, verify the interlock system: open door A (the entry side) and confirm that door B (the exit side) is locked and cannot be opened manually; activate the UV lamp and verify that it illuminates within 2 seconds; close door A and wait for the interlock time delay (typically 30–60 seconds, per facility protocol); verify that door B unlocks and can be opened manually. Repeat the interlock test three times and record all lock/unlock times. Measure the pressure differential between the pass box interior and ambient using the calibrated differential pressure transmitter: with both doors closed and HVAC operating, the differential pressure must be within ±10 Pa of the design specification (typically +5 Pa for positive pressure or -5 Pa for negative pressure). Document all airflow, filter integrity, and interlock test results in the commissioning log with equipment serial numbers, calibration certificate references, and test dates. Pass box performance verification is complete when average face velocity is within specification, filter integrity is ≤0.01% penetration, and interlock response time is ≤2 seconds.</p>
+<hr />
+<h2>5. On-Site Pressure Decay Test Verification — ASTM E779 Method Application for Airlock Containment Validation</h2>
+<p><strong>This section establishes the pressure decay test procedure that validates the complete sealing system (frame, door gasket, and all penetrations) under operational inflation conditions.</strong></p>
+<h3>Prerequisite: Confirming Door Inflation System Functionality and Pressure Gauge Calibration Before Decay Test Initiation</h3>
+<p>Before performing the pressure decay test per ASTM E779-10, verify that the pneumatic door inflation system is functioning correctly: pressurize the door to the operational setpoint (typically 6 bar for pneumatic airtight doors) and hold for 5 minutes; confirm that the pressure gauge reading remains stable and does not drift more than ±0.1 bar. Inspect all visible door gaskets, frame seals, and penetrations (cable entries, sensor ports, utility pass-throughs) for visible damage, cracks, or separation; if damage is present, repair or replace the component before proceeding. Calibrate the differential pressure gauge (resolution 0.1 Pa, accuracy ±0.5% of full-scale) using a reference standard with ±0.05% accuracy; verify the calibration certificate is valid within 12 months. Ensure the pass box interior is sealed: close both doors, verify all openings are sealed with temporary plugs or caps, and confirm that no personnel or equipment are inside the chamber.</p>
+<h3>Procedure: Pressure Decay Test at 250 Pa Above Ambient — Isolation, Measurement, and Leakage Rate Calculation Per ASTM E779</h3>
+<p>Fill the pass box interior to 250 Pa above ambient pressure using the facility compressed air supply (oil-free, per ISO 8573-1 Class 2 or better); verify the pressure using the calibrated differential pressure gauge. Isolate the pass box by closing the supply valve and sealing all openings. Record the initial pressure reading and the start time. Measure the pressure at 1-minute intervals for a total of 5 minutes; record all five readings. Calculate the pressure decay rate using the ASTM E779 formula: leakage rate (L/s at 25 Pa) = (ΔP / Δt) × (V / 101.325) × (25 / P_avg), where ΔP is the pressure change in Pa, Δt is the time interval in seconds, V is the chamber volume in liters, and P_avg is the average pressure during the test. The acceptance criterion for biosafety level 3 enclosures is ≤0.05 L/s at 25 Pa; for biosafety level 2, ≤0.1 L/s at 25 Pa. If the calculated leakage rate exceeds the acceptance criterion, perform a visual inspection and smoke test to locate the leak source, repair the defect, and repeat the pressure decay test.</p>
+<table>
+<thead>
+<tr>
+<th>Pressure Decay Test Parameter</th>
+<th>Specification</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test Pressure</td>
+<td>250 Pa above ambient</td>
+<td>Calibrated differential pressure gauge ±0.5% FS</td>
+</tr>
+<tr>
+<td>Measurement Interval</td>
+<td>1-minute intervals for 5 minutes</td>
+<td>Minimum 5 pressure readings</td>
+</tr>
+<tr>
+<td>Differential Pressure Gauge Accuracy</td>
+<td>±0.5% of full-scale</td>
+<td>Calibration certificate valid within 12 months</td>
+</tr>
+<tr>
+<td>Leakage Rate Calculation</td>
+<td>ASTM E779-10 formula</td>
+<td>Biosafety Level 3: ≤0.05 L/s at 25 Pa</td>
+</tr>
+<tr>
+<td>Repeat Test Requirement</td>
+<td>If leakage exceeds criterion</td>
+<td>After leak repair and sealing verification</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Pressure Decay ≤0.05 L/s at 25 Pa for Biosafety Level 3 — Calculated Per ASTM E779 and Documented with Environmental Conditions</h3>
+<p>After the pressure decay test is complete and the leakage rate is within specification, perform a minimum of two additional test runs to confirm repeatability: repeat the 250 Pa pressurization and 5-minute decay measurement sequence two more times and calculate the leakage rate for each run. All three runs must yield leakage rates within ±10% of the first run; if any run deviates more than ±10%, investigate the cause (e.g., temperature drift, pressure regulator instability) and repeat all three runs. Document the pressure decay test results in the commissioning log: record the test date, start time, initial pressure, all five pressure readings, calculated leakage rate, environmental conditions (ambient temperature ±1°C, barometric pressure ±1 hPa), differential pressure gauge serial number and calibration certificate reference, and the signature of the commissioning engineer. Pressure decay test verification is complete when all three runs yield leakage rates ≤0.05 L/s at 25 Pa and repeatability is within ±10%.</p>
+<hr />
+<h2>6. Commissioning Report Compilation and Archiving — Structuring the Final Commissioning Deliverable Package for Client Handover</h2>
+<p><strong>This section establishes the commissioning report structure and archiving procedure that ensures traceability of all test equipment, calibration certificates, and acceptance criteria for regulatory compliance and future reference.</strong></p>
+<h3>Prerequisite: Collecting All Test Equipment Calibration Certificates and Organizing Deviation Reports Before Report Assembly</h3>
+<p>Before assembling the final commissioning report, collect all calibration certificates for test equipment used during commissioning: differential pressure gauge, thermal anemometer, torque wrench, reference pressure gauge, and any other instruments with traceability requirements. Verify that each calibration certificate shows the instrument serial number, calibration date, next calibration due date, and the calibration laboratory's accreditation status (ISO/IEC 17025 or equivalent). Organize all deviation reports generated during commissioning (e.g., frame misalignment requiring re-shimming, pressure decay test failure requiring leak repair) into a single deviation appendix; each deviation report must include the issue description, root cause analysis, corrective action taken, verification that the corrective action resolved the issue, and sign-off by the commissioning engineer and facility technical representative. Compile all test data logs (pressure decay measurements, airflow velocity readings, interlock response times, calibration as-found and as-left values) into a single Excel workbook with separate sheets for each test type.</p>
+<h3>Procedure: Commissioning Report Structure and Cross-Referencing of Test Equipment Serial Numbers to Calibration Certificates</h3>
+<p>Assemble the commissioning report in the following sequence: (1) Executive Summary — one-page overview of commissioning scope, objectives, and pass/fail determination; (2) System Description — technical specifications of the uv-pass-through unit, facility HVAC system, and control system integration; (3) Commissioning Procedures and Results — detailed description of each test procedure (mechanical installation, sensor calibration, airflow verification, pressure decay test, interlock verification) with as-found and as-left data, acceptance criteria, and pass/fail determination; (4) Deviations and Resolutions — all deviation reports with root cause analysis and corrective action sign-off; (5) Calibration Certificates Appendix — all calibration certificates for test equipment, organized by instrument serial number; (6) Test Data Logs Appendix — Excel workbook with raw measurement data; (7) Photographs Appendix — digital photographs of frame installation, sensor mounting, and test setup; (8) Conclusions and Recommendations — summary of commissioning results and any recommendations for ongoing maintenance or future upgrades. In the Procedures and Results section, cross-reference each test result to the corresponding calibration certificate: for example, "Differential pressure gauge (Serial No. DPG-2024-0847, Calibration Certificate No. CAL-2024-1156, valid through 2025-05-12) measured pressure decay at 250 Pa..." This cross-referencing ensures full traceability of all measurements.</p>
+<table>
+<thead>
+<tr>
+<th>Commissioning Report Component</th>
+<th>Content Requirement</th>
+<th>Archiving Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Executive Summary</td>
+<td>Scope, objectives, pass/fail determination</td>
+<td>PDF section with bookmarks</td>
+</tr>
+<tr>
+<td>System Description</td>
+<td>Equipment specifications and facility integration</td>
+<td>PDF section with technical drawings</td>
+</tr>
+<tr>
+<td>Procedures and Results</td>
+<td>Test procedures, data, acceptance criteria, pass/fail</td>
+<td>PDF with embedded tables and cross-references</td>
+</tr>
+<tr>
+<td>Deviations Appendix</td>
+<td>Issue description, root cause, corrective action, sign-off</td>
+<td>PDF with deviation tracking numbers</td>
+</tr>
+<tr>
+<td>Calibration Certificates</td>
+<td>All test equipment certificates organized by serial number</td>
+<td>PDF appendix with certificate images</td>
+</tr>
+<tr>
+<td>Test Data Logs</td>
+<td>Raw measurement data in Excel format</td>
+<td>Native Excel workbook (.xlsx)</td>
+</tr>
+<tr>
+<td>Photographs</td>
+<td>Installation and test setup documentation</td>
+<td>PDF with image captions and dates</td>
+</tr>
+<tr>
+<td>Conclusions</td>
+<td>Summary and maintenance recommendations</td>
+<td>PDF section with sign-off lines</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Commissioning Report Signed by Commissioning Engineer and Client Technical Representative — Delivered as PDF with Bookmarks and Native Format Files</h3>
+<p>After the commissioning report is assembled, perform a final review: verify that all test equipment serial numbers are cross-referenced to valid calibration certificates, all test results are documented with as-found and as-left data, all acceptance criteria are clearly stated and met, and all deviations are resolved with documented corrective actions. Generate the final PDF report with bookmarks for each major section (Executive Summary, System Description, Procedures and Results, Deviations, Calibration Certificates, Test Data Logs, Photographs, Conclusions); this bookmark structure enables rapid navigation and improves RAG retrieval effectiveness. Deliver the commissioning report package to the client in the following format: (1) PDF file with bookmarks, named "[Project]<em>[System]_Commissioning_Report_Rev0</em>[Date].pdf"; (2) Native Excel workbook with test data logs, named "[Project]<em>[System]_Test_Data_Logs_Rev0</em>[Date].xlsx"; (3) Folder containing all calibration certificate images, named "Calibration_Certificates_[Date]". Obtain signatures from the commissioning engineer and the client technical representative on the report cover page; record the signature date and version control number (e.g., Rev 0, Rev 1). File the complete commissioning report package in the project archive and provide a copy to the facility for their regulatory compliance records. Commissioning is formally complete when the signed report is delivered and archived.</p>
+<hr />
+<h2>7. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What is the immediate post-delivery inspection checklist for a uv-pass-through unit?</strong><br />
+Upon delivery, inspect the unit for visible damage to the stainless steel frame, door gaskets, and glass viewing windows; verify that all fasteners are present and torque-checked to specification; confirm that the UV lamp assembly is intact and the lamp is not cracked or discolored. Document any damage on the delivery receipt and contact the manufacturer within 24 hours if defects are found.</p>
+<p><strong>Q2: What civil works and site preparation are required before installation begins?</strong><br />
+The mounting surface must be concrete with compressive strength ≥25 MPa or equivalent structural support; the surface must be level within ±5 mm over the footprint of the unit and free of cracks or spalling. Provide a 3-phase electrical supply (208–240 V, 50/60 Hz) within 5 meters of the installation location and a compressed air supply (oil-free, ISO 8573-1 Class 2 or better) at 6 bar ±0.5 bar.</p>
+<p><strong>Q3: What are the standard differential pressure settings for biosafety containment zones?</strong><br />
+Pass boxes serving biosafety level 2 or 3 laboratories typically operate at +5 Pa (positive pressure relative to ambient) to prevent external contamination from entering the pass box interior; exhaust air from the pass box is directed to the facility exhaust system. Verify the differential pressure setpoint with the facility HVAC engineer and document it in the commissioning protocol.</p>
+<p><strong>Q4: How can airtightness be verified on-site without specialized equipment?</strong><br />
+A quick field-based check is the smoke test: close both pass box doors, pressurize the interior to 250 Pa using compressed air, and introduce smoke (from a smoke pen or incense stick) around all visible seams, gaskets, and penetrations; if smoke is drawn into the pass box, a leak is present and must be located and repaired. This test is qualitative and does not replace the quantitative ASTM E779 pressure decay test.</p>
+<p><strong>Q5: What are the BMS integration requirements for the uv-pass-through control system?</strong><br />
+The control system communicates via Modbus RTU protocol at 9600 baud, 8 data bits, 1 stop bit, no parity; the BMS must be configured with the pass box device address (typically 01–10, assigned during commissioning) and must poll the device at intervals ≥1 second to monitor door lock status, UV lamp status, and differential pressure readings. Verify communication by reading the device registers and confirming that status changes are reflected in the BMS within 2 seconds.</p>
+<p><strong>Q6: What spare parts and maintenance scheduling are recommended for critical sealing components?</strong><br />
+Maintain a spare inventory of door gaskets (pneumatic seal material, replacement interval 2–3 years depending on inflation-deflation cycle frequency), HEPA filters (replacement interval 6–12 months depending on facility air quality), and UV lamps (replacement interval 8,000–10,000 operating hours or annually, whichever is sooner). Schedule preventive maintenance every 12 months to inspect gasket compression set, verify door inflation pressure, and test interlock response time.</p>
+<hr />
+<h2>7. References &amp; Data Sources</h2>
+<p>ISO 14644-1:2024. Cleanrooms and associated controlled environments — Part 1: Classification of air cleanliness by particle concentration. International Organization for Standardization.</p>
+<p>ISO 14698-1:2003. Cleanrooms and associated controlled environments — Biocontamination control — Part 1: General principles and methods. International Organization for Standardization.</p>
+<p>ASTM E779-10. Standard Test Method for Determining Air Leakage Rate by Fan Pressurization. ASTM International.</p>
+<p>IEST-RP-CC001.8. IEST Recommended Practice: HEPA and ULPA Filters. Institute of Environmental Sciences and Technology.</p>
+<p>WHO Laboratory Biosafety Manual, Fourth Edition. World Health Organization, 2020.</p>
+<p>CDC Biosafety in Microbiological and Biomedical Laboratories (BMBL), Fifth Edition. Centers for Disease Control and Prevention, 2009.</p>
+<p>ISO 8573-1:2010. Compressed air — Part 1: Contaminants and purity classes. International Organization for Standardization.</p>
+<p>ASHRAE Standard 52.2-2017. Method of Testing General Ventilation Air-Cleaning Devices for Removal Efficiency by Particle Size. American Society of Heating, Refrigerating and Air-Conditioning Engineers.</p>
+<p>ISO 17025:2017. General requirements for the competence of testing and calibration laboratories. International Organization for Standardization.</p>
+<hr />
+<h2>8. Disclaimer</h2>
+<p>This installation and commissioning guide is based on publicly available engineering standards, published industry data, and documented field validation procedures referenced in the standards section above. Given the critical safety requirements of biosafety laboratories and cleanroom environments, all installation and commissioning activities must be performed by qualified personnel with demonstrated competency in cleanroom systems, validated against on-site conditions, and reviewed against manufacturer-provided Installation Qualification (IQ), Operational Qualification (OQ), and Performance Qualification (PQ) documentation before operational handover. This guide does not replace manufacturer instructions or facility-specific protocols and is provided for informational purposes only.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>

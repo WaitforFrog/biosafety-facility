@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete installation and commissioning guide for 自净传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.">
+    <meta name="keywords" content="self-cleaning-pass-through, installation guide, commissioning checklist, site preparation, biosafety equipment, cleanroom installation">
+    <meta name="robots" content="index, follow">
+    <title>self-cleaning-pass-through: Installation and Commissioning Verification Protocol</title>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "self-cleaning-pass-through: Installation and Commissioning Verification Protocol",
+    "description": "Complete installation and commissioning guide for 自净传递窗. Step-by-step setup, site preparation, and validation requirements for cleanroom biosafety equipment.",
+    "keywords": [
+        "self-cleaning-pass-through",
+        "installation guide",
+        "commissioning checklist",
+        "site preparation",
+        "biosafety equipment",
+        "cleanroom installation"
+    ],
+    "datePublished": "2026-05-23T22:25:55+08:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "biosafety-facility.com",
+        "url": "https://www.biosafety-facility.com"
+    }
+}
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #34495e;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .standard-ref {
+            font-style: italic;
+            color: #666;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 3px solid #27ae60;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>self-cleaning-pass-through: Installation and Commissioning Verification Protocol</h1>
+            <p class="last-updated"><time itemprop="datePublished" datetime="2026-05-23T22:25:55+08:00">Published: May 23, 2026</time></p>
+        </header>
+
+        <h1>self-cleaning-pass-through: Installation and Commissioning Verification Protocol</h1>
+<h2>1. Executive Summary</h2>
+<p>Installation and commissioning of self-cleaning-pass-through systems requires systematic validation of three critical procedure sequences: mechanical door interlock timing under fault conditions, airtight seal performance across repeated inflation-deflation cycles at degraded supply pressure, and operational qualification testing executed in protocol-defined sequence with full calibration traceability. This guide establishes the procedural framework and acceptance criteria for commissioning engineers responsible for IQ/OQ validation in pharmaceutical, biotech, and cleanroom environments. The three core procedures—interlock logic verification, seal cycle testing, and OQ test execution—must be completed in sequence, with each procedure documented against specific acceptance thresholds before system handover.</p>
+<ul>
+<li><strong>Procedure 1:</strong> Validate door interlock timing and simultaneous-open prevention under normal and fault conditions; acceptance criterion is zero unintended door openings and interlock response time ≤2 seconds per step.</li>
+<li><strong>Procedure 2:</strong> Execute 20 consecutive seal inflation-deflation cycles at minimum supply pressure (4 bar); acceptance criterion is seal pressure retention ≥0.20 MPa at cycle 20 with compression set ≤15% per ISO 1856.</li>
+<li><strong>Procedure 3:</strong> Complete OQ test protocol in defined sequence with all test equipment calibrated and traceable; acceptance criterion is pass/fail determination for each OQ test with deviation documentation for any failures.</li>
+</ul>
+<hr />
+<h2>2. Installation Step 1: Pre-Commissioning Site Verification and Structural Load Capacity Confirmation</h2>
+<p><strong>This section establishes the prerequisite conditions and structural readiness requirements that must be verified before mechanical installation begins.</strong></p>
+<h3>Prerequisite: Verifying Structural Load Capacity and Anchor Embedment Depth Before Door Frame Mounting</h3>
+<p>Self-cleaning-pass-through door frames typically weigh 120–180 kg depending on configuration, with additional dynamic loads from door seal inflation cycles and HVAC pressure differentials. The installation site must provide concrete or steel substrate with minimum compressive strength of 25 MPa (concrete) or yield strength of 250 MPa (structural steel), verified by site structural drawings or core sampling. Anchor embedment depth for M12 expansion anchors must be minimum 80 mm into concrete substrate, with minimum concrete thickness of 120 mm behind the anchor point to prevent blowout failure. Verify that the installation location is free of active vibration sources (compressors, pumps, HVAC equipment) within 3 meters; vibration amplitude &gt;2 mm/s at the mounting surface will cause premature seal wear and interlock timing drift.</p>
+<h3>Procedure: Structural Load Verification and Anchor Point Preparation Using Calibrated Measurement Tools</h3>
+<p>Measure the concrete or steel substrate thickness at all four proposed anchor points using ultrasonic thickness gauge (calibrated within 12 months per ISO 9001 requirements). Record minimum thickness at each point; if any point measures &lt;120 mm concrete or &lt;6 mm steel, relocate anchor points or reinforce substrate before proceeding. Torque all M12 expansion anchors to 80 Nm using a calibrated click-type torque wrench with ±5% accuracy; verify torque wrench calibration certificate is dated within 12 months. After anchor installation, perform a pull-out test on one anchor (non-critical location) by applying 15 kN tensile load for 60 seconds using a hydraulic load cell; anchor must not slip or show permanent deformation.</p>
+<table>
+<thead>
+<tr>
+<th>Anchor Specification</th>
+<th>Minimum Requirement</th>
+<th>Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concrete substrate thickness</td>
+<td>120 mm minimum</td>
+<td>Ultrasonic thickness gauge</td>
+</tr>
+<tr>
+<td>Concrete compressive strength</td>
+<td>25 MPa minimum</td>
+<td>Site structural drawings or core sample test</td>
+</tr>
+<tr>
+<td>Anchor torque</td>
+<td>80 Nm ±5%</td>
+<td>Calibrated click-type torque wrench</td>
+</tr>
+<tr>
+<td>Pull-out test load</td>
+<td>15 kN for 60 seconds</td>
+<td>Hydraulic load cell, no permanent slip</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Frame Verticality ±1 mm/m, Maximum Total Deviation ±3 mm—Measured with Digital Spirit Level</h3>
+<p>After anchor installation and frame mounting, measure frame verticality at all four vertical edges using a digital spirit level with ±0.1 mm/m accuracy (calibrated within 12 months). Record deviation at top, middle, and bottom of each vertical edge. Maximum acceptable deviation is ±1 mm/m at any single measurement point, with total frame deviation (difference between most-vertical and least-vertical edge) not exceeding ±3 mm. If frame verticality exceeds acceptance criteria, loosen anchors, shim frame to correct position, and re-torque anchors to 80 Nm. Repeat verticality measurement after shimming; document as-found and as-left measurements in commissioning record.</p>
+<p>Structural load capacity verification ensures that the door frame will not experience settlement, vibration-induced loosening, or anchor pull-out during the 10-year design life of the equipment. Facilities that skip the pull-out test on at least one anchor accept an unquantified structural failure risk that no downstream commissioning validation can fully uncover.</p>
+<hr />
+<h2>3. Installation Step 2: Door Interlock Timing Sequence Verification Under Normal and Fault Operating Conditions</h2>
+<p><strong>This section validates the electronic and pneumatic interlock logic that prevents simultaneous door opening and ensures safe egress during power loss.</strong></p>
+<h3>Prerequisite: Confirming Interlock Controller Power Supply and BMS Communication Connectivity Before Sequence Testing</h3>
+<p>The interlock controller requires 24 VDC ±10% power supply with minimum 5 A capacity; verify power supply output voltage at the controller input terminals using a calibrated digital multimeter (accuracy ±1% of reading, calibrated within 12 months). Confirm that the BMS communication cable (Modbus RTU or equivalent) is connected and that the BMS system is powered and responding to controller queries. Perform a manual communication test by sending a read-coil command from the BMS to the controller and verify response within 500 milliseconds; if communication latency exceeds 1 second, investigate BMS network congestion or cable impedance issues before proceeding with interlock testing.</p>
+<h3>Procedure: Door-to-Door Interlock Timing Sequence Test—Normal Operation, Simultaneous-Open Prevention, and HVAC Interlock Coordination</h3>
+<p>Execute the following sequence with a stopwatch accurate to ±0.1 seconds (calibrated within 12 months):</p>
+<ol>
+<li>
+<p><strong>Normal sequence test:</strong> Press door A open request → record time when door A seal begins deflating → record time when door A lock releases → verify door B remains locked throughout → press door A close request → record time when door A seal begins inflating → record time when door A lock engages → verify door B unlock signal is available within 2 seconds of door A lock engagement.</p>
+</li>
+<li>
+<p><strong>Simultaneous-open prevention test:</strong> Open door A fully → attempt to open door B by pressing door B open request → verify door B lock remains engaged and door B does not open → record the blocking action and time delay (should be &lt;0.5 seconds from request to lock confirmation).</p>
+</li>
+<li>
+<p><strong>HVAC interlock coordination test:</strong> Verify that when door A opens, the exhaust fan increases to high-speed setpoint (typically 100% fan speed) within 3 seconds → when door A closes, verify exhaust fan returns to normal speed setpoint after a 30-second time delay (to allow residual air to exhaust).</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Interlock Event</th>
+<th>Acceptance Criterion</th>
+<th>Measurement Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Door seal deflation time</td>
+<td>≤5 seconds</td>
+<td>Stopwatch, record start and end time</td>
+</tr>
+<tr>
+<td>Door lock release delay after seal deflation</td>
+<td>≤2 seconds</td>
+<td>Stopwatch, measure from seal pressure &lt;0.05 MPa to lock release</td>
+</tr>
+<tr>
+<td>Simultaneous-open prevention response</td>
+<td>&lt;0.5 seconds</td>
+<td>Stopwatch, measure from door B open request to lock confirmation</td>
+</tr>
+<tr>
+<td>HVAC fan speed increase</td>
+<td>≤3 seconds to 100%</td>
+<td>Tachometer or BMS fan speed readout</td>
+</tr>
+<tr>
+<td>HVAC fan speed return to normal</td>
+<td>≤30 seconds after door close</td>
+<td>Tachometer or BMS fan speed readout</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Interlock Timing Within Specification and Fault-Mode Safe State Verification—Power Loss and Communication Loss Scenarios</h3>
+<p>Record all interlock timing measurements with stopwatch; all timing values must fall within the ranges specified in the table above. After normal sequence testing, execute fault-mode tests: (1) simulate power loss to the interlock controller by disconnecting 24 VDC supply → verify both doors enter safe state (unlock solenoids de-energize, allowing manual egress) within 5 seconds → reconnect power and verify system returns to normal operation; (2) simulate BMS communication loss by disconnecting the Modbus RTU cable → verify local interlock operation continues (door open/close buttons still function) and a "BMS Communication Loss" alarm activates on the control panel within 10 seconds.</p>
+<p>Interlock timing verification under fault conditions is the single most critical commissioning procedure for biosafety containment. Facilities that test interlock logic only under normal operating conditions—without testing power loss and communication failure scenarios—validate performance under ideal conditions but not under the degraded operating conditions that occur during real fault events. Document all interlock timing measurements, fault-mode responses, and alarm activations in the commissioning record with timestamps and test equipment serial numbers.</p>
+<hr />
+<h2>4. Installation Step 3: Airtight Door Seal Inflation-Deflation Cycle Testing at Minimum Supply Pressure</h2>
+<p><strong>This section establishes the mechanical cycle testing protocol that validates seal longevity and performance under degraded air supply conditions.</strong></p>
+<h3>Prerequisite: Confirming Air Supply Pressure Stability and Oil-Free Air Certification Per ISO 8573-1 Before Cycle Testing</h3>
+<p>The self-cleaning-pass-through requires compressed air supply at 6 bar nominal pressure with minimum purity class ISO 8573-1:2010 [ISO 8573-1:2010] Class 3 (particle size ≤4 µm, water content ≤3 mg/m³, oil content ≤1 mg/m³). Verify air supply pressure at the system inlet using a calibrated pressure gauge (accuracy ±1% of full scale, calibrated within 12 months); pressure must be stable within ±0.5 bar during the entire cycle test. Obtain the air compressor maintenance log and verify that the compressor has been serviced within the past 12 months and that an oil-removal filter (coalescent type) has been installed downstream of the compressor. If air supply purity is unknown, collect an air sample in a sterile container and submit to a certified laboratory for ISO 8573-1 analysis before proceeding.</p>
+<h3>Procedure: 20 Consecutive Seal Inflation-Deflation Cycles at Minimum Supply Pressure (4 Bar)—Pressure Monitoring and Seal Wear Assessment</h3>
+<p>Execute 20 consecutive inflation-deflation cycles at minimum supply pressure (4 bar), which represents the degraded supply condition that occurs when multiple doors are open simultaneously in a multi-chamber facility. For each cycle, record: (1) inflation time (seconds from solenoid energize to seal pressure ≥0.20 MPa), (2) deflation time (seconds from solenoid de-energize to seal pressure &lt;0.05 MPa), (3) peak seal pressure (MPa), and (4) minimum seal pressure after deflation (MPa). Use a calibrated digital pressure transducer (accuracy ±1% of reading, calibrated within 12 months) connected to the seal pressure port; record pressure data at 1-second intervals using a data logger or manual recording. After cycle 10, pause for 5 minutes and inspect the seal visually for cracks, permanent deformation, or discoloration; document observations in the commissioning record.</p>
+<table>
+<thead>
+<tr>
+<th>Cycle Number</th>
+<th>Inflation Time (s)</th>
+<th>Deflation Time (s)</th>
+<th>Peak Pressure (MPa)</th>
+<th>Minimum Pressure (MPa)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>20</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: Seal Pressure Retention ≥0.20 MPa at Cycle 20 with Compression Set ≤15% Per ISO 1856—Pressure Trend Analysis and Wear Documentation</h3>
+<p>All 20 cycles must complete without fault alarm activation. Inflation time must be ≤5 seconds for all cycles; deflation time must be ≤5 seconds for all cycles. Minimum seal pressure at cycle 20 must be ≥0.20 MPa (80% of initial nominal value of 0.25 MPa). Calculate compression set as: (Initial Pressure at Cycle 1 − Final Pressure at Cycle 20) / Initial Pressure at Cycle 1 × 100%; acceptable compression set is ≤15% per ISO 1856:2012 [ISO 1856:2012]. If compression set exceeds 15%, the seal has degraded beyond acceptable limits and must be replaced before system commissioning. Generate a pressure trend chart showing all 20 cycles with inflation time, deflation time, and minimum pressure plotted against cycle number; this chart must be included in the final commissioning report.</p>
+<p>Seal cycle testing at minimum supply pressure (4 bar) validates performance under the degraded supply condition that occurs during multi-door operation. Facilities that run cycle tests only at nominal supply pressure (6 bar) validate performance under ideal conditions but not under the real operating condition that occurs when multiple doors are open simultaneously. Document all cycle data, pressure trend charts, and seal wear observations in the commissioning record with test equipment serial numbers and calibration certificate references.</p>
+<hr />
+<h2>5. Installation Step 4: Control System Integration and BMS Communication Parameter Verification</h2>
+<p><strong>This section validates the electrical integration between the self-cleaning-pass-through control panel and the facility Building Management System.</strong></p>
+<h3>Prerequisite: Confirming BMS Network Topology and Modbus RTU Communication Parameters Before Controller Configuration</h3>
+<p>The self-cleaning-pass-through communicates with the facility BMS via Modbus RTU protocol over RS-485 serial cable. Verify that the BMS network topology includes a dedicated RS-485 trunk line with termination resistors (120 Ω) at both ends of the cable run; measure cable impedance using a calibrated multimeter (accuracy ±1% of reading, calibrated within 12 months) and verify impedance is 120 Ω ±10% at both termination points. Confirm that the BMS system is configured to accept Modbus RTU slave devices and that the BMS software version supports the required Modbus function codes (read coils, read holding registers, write single coil, write multiple registers). Obtain the BMS network documentation and verify that the self-cleaning-pass-through is assigned a unique Modbus slave address (typically 01–247) that does not conflict with other devices on the network.</p>
+<h3>Procedure: Modbus RTU Communication Parameter Configuration and Interoperability Testing—Address, Baud Rate, and Parity Verification</h3>
+<p>Configure the self-cleaning-pass-through controller with the following Modbus RTU parameters: (1) Slave Address: assign the address specified in the BMS network documentation (typically 01); (2) Baud Rate: set to 9600 bps (standard for facility BMS networks); (3) Parity: set to Even parity; (4) Data Bits: 8; (5) Stop Bits: 1. After configuration, perform a communication test by sending a Modbus read-coil command from the BMS to the controller requesting the status of door A lock (typically coil address 0001); verify that the controller responds with the correct coil status within 500 milliseconds. Repeat the test 10 times and record response time for each request; average response time must be &lt;500 milliseconds with no timeouts or communication errors.</p>
+<table>
+<thead>
+<tr>
+<th>Modbus Parameter</th>
+<th>Configuration Value</th>
+<th>Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slave Address</td>
+<td>Per BMS network documentation</td>
+<td>Read address from controller display or configuration file</td>
+</tr>
+<tr>
+<td>Baud Rate</td>
+<td>9600 bps</td>
+<td>Verify setting in controller configuration menu</td>
+</tr>
+<tr>
+<td>Parity</td>
+<td>Even</td>
+<td>Verify setting in controller configuration menu</td>
+</tr>
+<tr>
+<td>Communication Response Time</td>
+<td>&lt;500 milliseconds average</td>
+<td>Send 10 read-coil commands, record response time for each</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: BMS Communication Established with Zero Timeouts Over 100 Consecutive Modbus Transactions—Network Stability and Alarm Propagation Verification</h3>
+<p>Execute 100 consecutive Modbus read-coil transactions over a 10-minute period (one transaction every 6 seconds); record response time for each transaction and verify zero timeouts or communication errors. All response times must be &lt;500 milliseconds. After the 100-transaction test, verify that alarm conditions (low pressure alarm, door interlock alarm, seal failure alarm) are correctly transmitted to the BMS by triggering each alarm condition manually and confirming that the alarm appears on the BMS display within 5 seconds. Document all communication test results, response time statistics, and alarm propagation verification in the commissioning record.</p>
+<p>BMS communication integration is the critical link between the self-cleaning-pass-through control system and the facility monitoring infrastructure. Facilities that skip the 100-transaction communication stability test accept an unquantified network reliability risk that could result in undetected alarm conditions or loss of system visibility during critical operations.</p>
+<hr />
+<h2>6. Installation Step 5: Operational Qualification (OQ) Test Execution in Protocol-Defined Sequence with Full Calibration Traceability</h2>
+<p><strong>This section establishes the OQ test execution framework that validates system operation and alarm responses in accordance with IQ/OQ/PQ regulatory requirements.</strong></p>
+<h3>Prerequisite: Completing All IQ (Installation Qualification) Tests and Obtaining Calibration Certificates for All Test Equipment Before OQ Execution</h3>
+<p>OQ testing cannot begin until all IQ tests (site verification, structural load capacity, interlock timing, seal cycle testing, BMS communication) have been completed and documented with pass/fail determination. Verify that all test equipment used during OQ testing has valid calibration certificates dated within 12 months: digital multimeter (±1% accuracy), pressure gauge (±1% accuracy), stopwatch (±0.1 second accuracy), digital spirit level (±0.1 mm/m accuracy), and any other instruments used for measurements. Organize all calibration certificates by instrument serial number and prepare them for inclusion in the final commissioning report appendix. Confirm that the OQ test protocol has been reviewed and approved by the facility quality assurance department and that any protocol deviations have been documented and approved in writing before OQ execution begins.</p>
+<h3>Procedure: OQ Test Protocol Execution in Defined Sequence—Control System Operation, Safety Interlock Tests, Performance Tests, and Alarm Response Tests</h3>
+<p>Execute OQ tests in the following defined sequence (do not execute tests out of order):</p>
+<ol>
+<li>
+<p><strong>Control system operation tests:</strong> Verify manual mode operation (door open/close buttons function correctly), automatic mode operation (timer-based door cycling), setpoint adjustment (pressure setpoint can be changed and displayed correctly), and alarm acknowledgment (alarm can be cleared by pressing acknowledge button).</p>
+</li>
+<li>
+<p><strong>Safety interlock tests:</strong> Repeat the interlock timing sequence test from Installation Step 2, verify simultaneous-open prevention, verify HVAC interlock coordination, and verify fault-mode safe state (power loss and communication loss scenarios).</p>
+</li>
+<li>
+<p><strong>Performance tests:</strong> Verify pressure control accuracy (system maintains ±0.2 bar around setpoint), verify cycle time accuracy (door open/close cycle time matches specification ±5%), verify BMS communication (all coils and registers read/write correctly).</p>
+</li>
+<li>
+<p><strong>Alarm response tests:</strong> Trigger low pressure alarm by reducing supply pressure below alarm setpoint and verify alarm activates within 10 seconds; trigger door interlock alarm by attempting simultaneous door open and verify alarm activates; trigger BMS communication loss alarm by disconnecting Modbus cable and verify alarm activates within 10 seconds.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>OQ Test Category</th>
+<th>Test Purpose</th>
+<th>Prerequisite IQ Items</th>
+<th>Acceptance Criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Control system operation</td>
+<td>Verify manual/automatic modes and setpoint adjustment</td>
+<td>IQ Step 5 (BMS communication)</td>
+<td>All buttons function, setpoint adjusts ±0.1 bar</td>
+</tr>
+<tr>
+<td>Safety interlock tests</td>
+<td>Verify door interlock logic and fault-mode safe state</td>
+<td>IQ Step 2 (interlock timing)</td>
+<td>All interlock timing within specification, fault-mode safe state verified</td>
+</tr>
+<tr>
+<td>Performance tests</td>
+<td>Verify pressure control and cycle time accuracy</td>
+<td>IQ Step 3 (seal cycle testing)</td>
+<td>Pressure ±0.2 bar, cycle time ±5%</td>
+</tr>
+<tr>
+<td>Alarm response tests</td>
+<td>Verify all alarms activate and propagate to BMS</td>
+<td>IQ Step 5 (BMS communication)</td>
+<td>All alarms activate within 10 seconds, appear on BMS display</td>
+</tr>
+</tbody>
+</table>
+<h3>Acceptance: All OQ Tests Pass with Zero Deviations, or Deviations Documented and Corrected with Repeat Testing—OQ Test Log with Timestamps and Equipment Traceability</h3>
+<p>Each OQ test must show: (1) test purpose, (2) test method (step-by-step procedure), (3) as-found data (measurements before any corrective action), (4) as-left data (measurements after corrective action, if required), (5) acceptance criteria, (6) pass/fail determination, (7) test equipment used (serial number and calibration certificate reference), and (8) test date and time. If any OQ test fails, document the failure in a deviation report, perform corrective action, and repeat the affected OQ test; document the repeat test in the same OQ record or in a new OQ record marked "Repeat Test." All OQ test records must be signed by the commissioning engineer and reviewed by the facility quality assurance representative before system handover.</p>
+<p>OQ test execution in protocol-defined sequence is the regulatory foundation for IQ/OQ/PQ validation. Facilities that execute OQ tests in arbitrary sequence—rather than following the protocol's defined sequence—cannot demonstrate that prerequisite tests were completed before dependent tests, creating regulatory non-compliance findings during FDA or regulatory agency audits. Document all OQ test results, deviations, corrective actions, and repeat tests in the final commissioning report with full calibration traceability for all test equipment.</p>
+<hr />
+<h2>7. FAQ — Installation &amp; Commissioning Guide</h2>
+<p><strong>Q1: What is the immediate post-delivery inspection checklist for a self-cleaning-pass-through system?</strong></p>
+<p>Upon delivery, verify that the shipping container shows no visible damage and that the system is intact inside the container. Inspect the door frame for dents, cracks, or bent edges; inspect both doors for warping or seal damage; verify that all fasteners (bolts, nuts, screws) are present and tight; verify that the control panel is present and undamaged; verify that all documentation (manuals, calibration certificates, spare parts list) is included. If any damage is found, document it with photographs and contact the manufacturer before installation begins.</p>
+<p><strong>Q2: What are the civil works and site preparation prerequisites before mechanical installation begins?</strong></p>
+<p>The installation site must provide concrete or steel substrate with minimum compressive strength of 25 MPa (concrete) or yield strength of 250 MPa (structural steel). Anchor embedment depth for M12 expansion anchors must be minimum 80 mm into concrete substrate, with minimum concrete thickness of 120 mm behind the anchor point. The installation location must be free of active vibration sources (compressors, pumps, HVAC equipment) within 3 meters; vibration amplitude &gt;2 mm/s at the mounting surface will cause premature seal wear. Verify that the site has compressed air supply at 6 bar nominal pressure with ISO 8573-1 Class 3 purity (particle size ≤4 µm, water content ≤3 mg/m³, oil content ≤1 mg/m³).</p>
+<p><strong>Q3: What are the standard differential pressure settings for biosafety containment zones using self-cleaning-pass-through systems?</strong></p>
+<p>Self-cleaning-pass-through systems are typically installed between cleanroom zones with differential pressure maintained by the facility HVAC system, not by the pass-through itself. The pass-through maintains internal seal pressure at 0.25 MPa (2.5 bar) to ensure airtight door closure; this internal seal pressure is independent of the zone differential pressure. Facility HVAC systems typically maintain zone differential pressure at 10–25 Pa (0.001–0.0025 bar) depending on cleanroom classification (ISO 14644-1 Class 5–8). Consult the facility HVAC design documentation and the pass-through manufacturer's specifications for the correct differential pressure settings for your specific application.</p>
+<p><strong>Q4: What is a quick field-based airtightness verification method without specialized equipment?</strong></p>
+<p>A simple field test is the soap bubble test: close both doors, pressurize the internal chamber to 0.25 MPa using the system's air supply, apply soapy water solution around all door seals and frame joints, and observe for bubbles indicating air leakage. If bubbles appear, mark the location and investigate the cause (loose fastener, damaged seal, or misaligned frame). For a more quantitative test, measure pressure decay: pressurize the chamber to 0.25 MPa, close the air supply valve, and measure pressure drop over 15 minutes using a calibrated pressure gauge; acceptable pressure decay is ≤0.1 bar per 15 minutes per ASTM E779:2019 [ASTM E779:2019]. If pressure decay exceeds this threshold, the seal integrity is compromised and must be investigated.</p>
+<p><strong>Q5: What are the BMS integration communication protocol parameters and interoperability requirements?</strong></p>
+<p>Self-cleaning-pass-through systems communicate with facility BMS via Modbus RTU protocol over RS-485 serial cable at 9600 bps with Even parity, 8 data bits, and 1 stop bit. The system is configured as a Modbus RTU slave device with a unique slave address (typically 01–247) assigned by the facility BMS administrator. The BMS must support Modbus function codes 01 (read coils), 03 (read holding registers), 05 (write single coil), and 16 (write multiple registers). Verify that the BMS network includes termination resistors (120 Ω) at both ends of the RS-485 cable run and that cable impedance is 120 Ω ±10%. Test communication by sending 100 consecutive Modbus read-coil transactions over 10 minutes; all transactions must complete within 500 milliseconds with zero timeouts.</p>
+<p><strong>Q6: What are the spare parts availability, mean time to repair (MTTR), and maintenance scheduling requirements for critical sealing components?</strong></p>
+<p>Critical sealing components include the door seal (elastomer), seal inflation solenoid, and pressure transducer. Typical MTTR for seal replacement is 2–4 hours (seal removal, inspection, installation, and pressure testing); solenoid replacement is 1–2 hours; pressure transducer replacement is 1–2 hours. Spare parts should be stocked on-site or available from the manufacturer within 48 hours. Preventive maintenance includes annual inspection of seals for cracks or permanent deformation, annual calibration of pressure transducers, and annual replacement of air supply filter elements (coalescent type). Consult the manufacturer's maintenance manual for the complete preventive maintenance schedule and spare parts list specific to your system configuration.</p>
+<hr />
+<h2>7. References &amp; Data Sources</h2>
+<p>ISO 14644-1:2024. Cleanrooms and associated controlled environments — Part 1: Classification of air cleanliness by particle concentration. International Organization for Standardization.</p>
+<p>ISO 8573-1:2010. Compressed air — Part 1: Contaminants and purity classes. International Organization for Standardization.</p>
+<p>ISO 1856:2012. Rubber, vulcanized — Determination of compression set at ambient, elevated or low temperatures. International Organization for Standardization.</p>
+<p>ASTM E779:2019. Standard test method for determining air leakage rate by fan pressurization. ASTM International.</p>
+<p>ASTM E283:2023. Standard test method for determining rate of air leakage through exterior windows, curtain walls, and doors under specified pressure differences across the specimen. ASTM International.</p>
+<p>WHO Laboratory Biosafety Manual (4th Edition). World Health Organization.</p>
+<p>GMP Guidance for Industry: Sterile Drug Products Produced by Aseptic Processing. U.S. Food and Drug Administration.</p>
+<p>SMACNA HVAC Duct Construction Standards — Metal and Flexible. Sheet Metal and Air Conditioning Contractors' National Association.</p>
+<hr />
+<h2>8. Disclaimer</h2>
+<p>This installation and commissioning guide is based on publicly available engineering standards, published industry data, and documented field validation procedures. Given the critical safety requirements of biosafety laboratories and cleanrooms, all installation and commissioning activities must be performed by qualified personnel, validated against on-site conditions, and reviewed against manufacturer-provided IQ/OQ/PQ documentation. The procedures and acceptance criteria presented in this article reflect general industry engineering practice and do not supersede manufacturer specifications or facility-specific regulatory requirements. Installation and commissioning activities for biosafety-critical equipment require site-specific risk assessment and documented validation before operational handover.</p>
+
+        <footer>
+            <p class="last-updated">This article is for educational purposes only. Refer to current international standards and local regulations for specific project requirements.</p>
+        </footer>
+    </div>
+</body>
+</html>
